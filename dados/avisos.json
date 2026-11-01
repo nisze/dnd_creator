@@ -1,0 +1,16 @@
+{
+  "ua": {
+    "tag": "UA",
+    "titulo_pt": "Conteúdo não oficial (Unearthed Arcana)",
+    "texto_pt": "Material de playtest da Wizards of the Coast, não publicado oficialmente. A aceitação varia de mesa para mesa: confirme com o seu mestre antes de usar.",
+    "titulo_en": "Unofficial content (Unearthed Arcana)",
+    "texto_en": "Playtest material from Wizards of the Coast, not officially published. Acceptance varies from table to table: check with your DM before using it."
+  },
+  "homebrew": {
+    "tag": "3P",
+    "titulo_pt": "Conteúdo de terceiros",
+    "texto_pt": "Material criado por terceiros, não publicado pela Wizards of the Coast. A aceitação varia de mesa para mesa: confirme com o seu mestre antes de usar.",
+    "titulo_en": "Third-party content",
+    "texto_en": "Material created by third parties, not published by Wizards of the Coast. Acceptance varies from table to table: check with your DM before using it."
+  }
+}

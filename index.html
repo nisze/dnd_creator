@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criador de Personagem D&amp;D 5e</title>
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/ficha.css">
+    <script src="js/tema.js"></script>
+</head>
+<body>
+    <header id="topo">
+        <div class="marca"><svg class="logo-d20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.5l8.5 5v9l-8.5 5-8.5-5v-9z"/><path d="M12 2.5l-3.5 7.5h7zM8.5 10l-5-2.5M15.5 10l5-2.5M8.5 10L12 21.5M15.5 10L12 21.5M8.5 10l-5 6.5M15.5 10l5 6.5"/></svg><div class="marca-txt"><h1>D&amp;D 5e</h1><span class="edicao">Regras de 2014</span></div></div>
+        <div class="interruptores" id="interruptores"></div>
+        <nav class="acoes-topo" aria-label="Ações"><div class="menu-topo"><button type="button" class="sec" id="btn-menu" aria-haspopup="true" aria-expanded="false" aria-label="Mais opções" title="Mais opções">⋮</button><div class="menu-painel" id="menu-topo" hidden><button type="button" id="btn-novo">Novo personagem</button><button type="button" class="sec" id="btn-personagens">Meus personagens</button><button type="button" class="sec" id="btn-consulta">Consultar magias</button><button type="button" class="sec" id="btn-consulta-talentos">Consultar talentos</button></div></div></nav>
+    </header>
+    <div id="avisos-globais"></div>
+    <nav id="etapas" aria-label="Etapas da criação"></nav>
+    <div id="barra" aria-hidden="true"><div style="width:0"></div></div>
+    <main id="app">
+        <section id="painel-info" class="painel-info" aria-live="polite"></section>
+        <section id="painel-opcoes" class="painel-opcoes"><p class="vazio">Carregando dados...</p></section>
+    </main>
+    <footer id="rodape" hidden></footer>
+    <div id="toast" role="status"></div>
+    <button type="button" id="voltar-topo" class="sem-impressao" aria-label="Voltar ao topo" title="Voltar ao topo" hidden>&#9650;</button>
+
+    <script src="js/idioma.js"></script>
+    <script src="js/idioma-en.js"></script>
+    <script src="js/idioma-en-2.js"></script>
+    <script src="js/idioma-en-classes.js"></script>
+    <script src="js/idioma-en-3.js"></script>
+    <script src="js/idioma-en-ficha.js"></script>
+    <script src="js/idioma-en-racas.js"></script>
+    <script src="js/idioma-en-racas-orig.js"></script>
+    <script src="js/idioma-en-antec.js"></script>
+    <script src="js/estado.js"></script>
+    <script src="js/regras/nucleo.js"></script>
+    <script src="js/regras/talentos.js"></script>
+    <script src="js/regras/escolhas.js"></script>
+    <script src="js/regras/opcoes.js"></script>
+    <script src="js/regras/pericias.js"></script>
+    <script src="js/regras/atributos.js"></script>
+    <script src="js/regras/magias.js"></script>
+    <script src="js/regras/equipamento.js"></script>
+    <script src="js/regras/calculos.js"></script>
+    <script src="js/regras/criacao.js"></script>
+    <script src="js/regras/niveis.js"></script>
+    <script src="js/regras/ficha.js"></script>
+    <script src="js/armazenamento.js"></script>
+    <script src="js/ui/util.js"></script>
+    <script src="js/ui/escolhas-ui.js"></script>
+    <script src="js/ui/equipamento-ui.js"></script>
+    <script src="js/ui/etapas.js"></script>
+    <script src="js/ui/app.js"></script>
+    <script src="js/ui/ficha-impressa.js"></script>
+    <script src="js/ui/subir.js"></script>
+    <script src="js/ui/consulta.js"></script>
+    <script src="js/ui/consulta-talentos.js"></script>
+    <script src="js/ui/janela.js"></script>
+</body>
+</html>

@@ -1,0 +1,1713 @@
+{
+  "sidekicks_classes": [
+    {
+      "id": "sidekick:expert",
+      "titulo": "Expert",
+      "fonte": null,
+      "ua": false,
+      "secoes": [
+        {
+          "titulo": "Expert",
+          "nivel": 2,
+          "texto_en": "The Expert is a master of certain tasks or knowledge, favoring cunning over brawn. It might be a scout, a musician, a librarian, a clever street kid, a wily merchant or a burglar.\nTo gain the expert class, a creature must have at least one language in its stat block that it can speak.\nA sidekick gains the following class features as it gains levels, as summarized on the Expert table."
+        },
+        {
+          "titulo": "The expert",
+          "nivel": 4,
+          "texto_en": "The Expert\nLevel | Proficiency Bonus | Features\n1st | +2 | Bonus Proficiencies, Helpful\n2nd | +2 | Cunning Action\n3rd | +2 | Expertise\n4th | +2 | Ability Score Improvement\n5th | +3 | \n6th | +3 | Coordinated Strike\n7th | +3 | Evasion\n8th | +3 | Ability Score Improvement\n9th | +4 | \n10th | +4 | Ability Score Improvement\n11th | +4 | Inspiring Help (1d6)\n12th | +4 | Ability Score Improvement\n13th | +5 | \n14th | +5 | Reliable Talent\n15th | +5 | Expertise\n16th | +5 | Ability Score Improvement\n17th | +6 | \n18th | +6 | Sharp Mind\n19th | +6 | Ability Score Improvement\n20th | +6 | Inspiring Help"
+        },
+        {
+          "titulo": "Bonus Proficiencies",
+          "nivel": 3,
+          "texto_en": "1st-level Expert feature\nThe sidekick gains proficiency in one saving throw of your choice: Dexterity, Intelligence, or Charisma.\nIn addition, the sidekick gains proficiency in 5 skills of your choice, and it gains proficiency in light armor. If it is a humanoid or has simple or martial weapons in its stat block, it also gains proficiency in all simple weapons and with two tools of your choice."
+        },
+        {
+          "titulo": "Helpful",
+          "nivel": 3,
+          "texto_en": "1st-level Expert feature\nThe sidekick is adept at giving well-timed assistance; the sidekick can take the Help action as a bonus action."
+        },
+        {
+          "titulo": "Cunning Action",
+          "nivel": 3,
+          "texto_en": "2nd-level Expert feature\nThe sidekick's agility or quick thinking allows it to act speedily. On its turn in combat, it can take the Dash, Disengage, or Hide action as a bonus action."
+        },
+        {
+          "titulo": "Expertise",
+          "nivel": 3,
+          "texto_en": "3rd-level Expert feature\nChoose two of the sidekick's skill proficiencies. The sidekick's proficiency bonus is doubled for any ability check it makes that uses the chosen proficiencies."
+        },
+        {
+          "titulo": "Ability Score Improvement",
+          "nivel": 3,
+          "texto_en": "4th-level Expert feature\nAt 4th level and again at 8th, 10th, 12th, 16th, and 19th level, the sidekick increases one ability score of your choice by 2, or the sidekick increases two ability scores of your choice by 1. The sidekick can't increase an ability score above 20 using this feature."
+        },
+        {
+          "titulo": "Coordinated Strike",
+          "nivel": 3,
+          "texto_en": "6th-level Expert feature\nThe sidekick is adept at fighting in concert with a companion. When the sidekick uses its Helpful feature to aid an ally in attacking a creature, that target can be up to 30 feet away from the sidekick, and the sidekick can deal an extra 2d6 damage to it the next time the sidekick hits it with an attack roll before the end of the current turn. The extra damage is the same type of damage dealt by the attack."
+        },
+        {
+          "titulo": "Evasion",
+          "nivel": 3,
+          "texto_en": "7th-level Expert feature\nBecause of extraordinary good luck, the sidekick is skilled at avoiding danger. When the sidekick is subjected to an effect that allows it to make a Dexterity saving throw to take only half damage, it instead takes no damage if it succeeds on the saving throw, and only half damage if it failed. The sidekick doesn't benefit from this feature while incapacitated."
+        },
+        {
+          "titulo": "Inspiring Help",
+          "nivel": 3,
+          "texto_en": "11th-level Expert feature\nWhen the sidekick takes the Help action, the creature who receives the help also gains a 1d6 bonus to the d20 roll. If that roll is an attack roll, the creature can forgo adding the bonus to it, and then if the attack hits, the creature can add the bonus to the attack's damage roll against one target.\nAt 20th level, the bonus increases to 2d6."
+        },
+        {
+          "titulo": "Reliable Talent",
+          "nivel": 3,
+          "texto_en": "14th-level Expert feature\nThe sidekick has refined its skills to an exceptional degree. Whenever the sidekick makes an ability check that includes its whole proficiency bonus, it can treat a d20 roll of 9 or lower as a 10."
+        },
+        {
+          "titulo": "Sharp Mind",
+          "nivel": 3,
+          "texto_en": "18th-level Expert feature\nThe sidekick gains proficiency in one of the following saving throws of your choice: Intelligence, Wisdom, or Charisma."
+        },
+        {
+          "titulo": "Inspiring Help Improvement",
+          "nivel": 3,
+          "texto_en": "20th-level Expert feature\nAt 20th level, the bonus dice granted by the sidekick's Inspiring Help increases to 2d6."
+        }
+      ]
+    },
+    {
+      "id": "sidekick:spellcaster",
+      "titulo": "Spellcaster",
+      "fonte": null,
+      "ua": false,
+      "secoes": [
+        {
+          "titulo": "The Spellcaster",
+          "nivel": 2,
+          "texto_en": "A sidekick who becomes a Spellcaster walks the paths of magic. The sidekick might be a hedge wizard, a priest, a soothsayer, a magical performer, or a person with magic in their veins.\nTo gain the Spellcaster class, a creature must have at least one language in its stat block that it can speak.\nA sidekick gains the following class features as it gains levels, as summarized on the Spellcaster table."
+        },
+        {
+          "titulo": "The Spellcaster",
+          "nivel": 4,
+          "texto_en": "The Spellcaster | Spell Slots per Spell Level\nLevel | Proficiency Bonus | Features | Cantrips Known | Spells Known | 1st | 2nd | 3rd | 4th | 5th\n1st | +2 | Bonus Proficiencies, Spellcasting | 2 | 1 | 2 | - | - | - | -\n2nd | +2 |  | 2 | 2 | 2 | - | - | - | -\n3rd | +2 |  | 2 | 3 | 3 | - | - | - | -\n4th | +2 | Ability Score Improvement | 3 | 3 | 3 | - | - | - | -\n5th | +3 |  | 3 | 4 | 4 | 2 | - | - | -\n6th | +3 | Potent Cantrips | 3 | 4 | 4 | 2 | - | - | -\n7th | +3 |  | 3 | 5 | 4 | 3 | - | - | -\n8th | +3 | Ability Score Improvement | 3 | 5 | 4 | 3 | - | - | -\n9th | +4 |  | 3 | 6 | 4 | 3 | 2 | - | -\n10th | +4 |  | 4 | 6 | 4 | 3 | 2 | - | -\n11th | +4 |  | 4 | 7 | 4 | 3 | 3 | - | -\n12th | +4 | Ability Score Improvement | 4 | 7 | 4 | 3 | 3 | - | -\n13th | +5 |  | 4 | 8 | 4 | 3 | 3 | 1 | -\n14th | +5 | Empowered Spells | 4 | 8 | 4 | 3 | 3 | 1 | -\n15th | +5 |  | 4 | 9 | 4 | 3 | 3 | 2 | -\n16th | +5 | Ability Score Improvement | 4 | 9 | 4 | 3 | 3 | 2 | -\n17th | +6 |  | 4 | 10 | 4 | 3 | 3 | 3 | 1\n18th | +6 | Ability Score Improvement | 4 | 10 | 4 | 3 | 3 | 3 | 1\n19th | +6 |  | 4 | 11 | 4 | 3 | 3 | 3 | 2\n20th | +6 | Focused Casting | 4 | 11 | 4 | 3 | 3 | 3 | 2"
+        },
+        {
+          "titulo": "Bonus Proficiencies",
+          "nivel": 3,
+          "texto_en": "1st-level Spellcaster feature\nThe sidekick gains proficiency in one saving throw of your choice: Wisdom, Intelligence, or Charisma.\nIn addition, the sidekick gains proficiency in two skills of your choice from the following list: Arcana, History, Insight, Investigation, Medicine, Performance, Persuasion, and Religion.\nThe sidekick gains proficiency with light armor, and if it is a humanoid or has a simple or martial weapon in its stat block, it also gains proficiency with all simple weapons."
+        },
+        {
+          "titulo": "Spellcasting",
+          "nivel": 3,
+          "texto_en": "1st-level Spellcaster feature\nThe sidekick gains the ability to cast spells. (If the creature already has the Spellcasting trait, this feature replaces that trait.) Choose the Spellcaster's role: Mage, Healer, or Prodigy. This choice determines the spell list and spellcasting ability used by the sidekick, as shown on the Spellcasting table.\nRole | Spell List | Ability\nMage | Wizard | Intelligence\nHealer | Cleric and Druid | Wisdom\nProdigy | Bard and Warlock | Charisma\nSpell Slots. The Spellcaster table shows how many spell slots the sidekick has to cast its Spellcaster spells of 1st level and higher. To cast one of these spells, the sidekick must expend a slot of the spell's level or higher. The sidekick regains all expended spell slots when it finishes a long rest.\nSpells Known. The sidekick knows two cantrips and one 1st-level spell of your choice from its spell list.\nThe Cantrips Known and Spells Known columns of the Spellcaster table shows when the sidekick learns more spells of your choice. Each of the spells in the Spells Known column must be of a level for which the sidekick has spell slots, as shown on the table. For instance, when the sidekick reaches 5th level in this class, it can learn one new spell of 1st or 2nd level.\nAdditionally, when the sidekick gains a level in this class, you can choose one of the spells it knows from this class and replace it with another spell from its spell list. The new spell must be a cantrip or of a level for which the sidekick has spell slots.\nSpellcasting Ability. The sidekick's spellcasting ability for these spells depends on the choice you made on the Spellcasting table.\nThe sidekick uses its spellcasting ability whenever a spell refers to that ability. In addition, it uses its spellcasting ability modifier when setting the saving throw DC for a spell it casts and when making an attack roll with one.\nSpell save DC = 8 + your proficiency bonus + your spellcasting modifier\nSpell attack modifier = your proficiency bonus + your spellcasting modifier\nSpellcasting Focus. The sidekick can use a focus for its spells depending on the choice you made on the Spellcasting table. A Mage can use an arcane focus, a Priest can use a holy symbol, and a Prodigy can use an arcane focus or a musical instrument."
+        },
+        {
+          "titulo": "Ability Score Improvement",
+          "nivel": 3,
+          "texto_en": "4th-level Spellcaster feature\nAt 4th level and again at 8th, 12th, 16th, and 18th level, the sidekick increases one ability score of your choice by 2, or the sidekick increases two ability scores of your choice by 1. The sidekick can't increase an ability score above 20 using this feature."
+        },
+        {
+          "titulo": "Potent Cantrips",
+          "nivel": 3,
+          "texto_en": "6th-level Spellcaster feature\nThe sidekick can add its spellcasting ability modifier to the damage it deals with any cantrip."
+        },
+        {
+          "titulo": "Empowered Spells",
+          "nivel": 3,
+          "texto_en": "14th-level Spellcaster feature\nChoose one school of magic. Whenever the sidekick casts a spell of that school by expending a spell slot, the sidekick can add its spellcasting ability modifier to the spell's damage roll or healing roll, if any."
+        },
+        {
+          "titulo": "Focused Casting",
+          "nivel": 3,
+          "texto_en": "20th-level Spellcaster feature\nTaking damage can't break the sidekick's concentration on a spell."
+        }
+      ]
+    },
+    {
+      "id": "sidekick:warrior",
+      "titulo": "Warrior",
+      "fonte": null,
+      "ua": false,
+      "secoes": [
+        {
+          "titulo": "The Warrior",
+          "nivel": 2,
+          "texto_en": "A Warrior sidekick grows in martial prowess as it fights by your side. It might be a soldier, a town guard, a battle-trained beast, or any other creature honed for combat.\nA sidekick gains the following class features as it gains levels, as summarized on the Warrior table."
+        },
+        {
+          "titulo": "The Warrior",
+          "nivel": 4,
+          "texto_en": "The Warrior\nLevel | Proficiency Bonus | Features\n1st | +2 | Bonus Proficiencies, Martial Role\n2nd | +2 | Second Wind\n3rd | +2 | Improved Critical\n4th | +2 | Ability Score Improvement\n5th | +3 | \n6th | +3 | Extra Attack\n7th | +3 | Battle Readiness\n8th | +3 | Ability Score Improvement\n9th | +4 | \n10th | +4 | Improved Defense\n11th | +4 | Indomitable\n12th | +4 | Ability Score Improvement\n13th | +5 | \n14th | +5 | Ability Score Improvement\n15th | +5 | Extra Attack Improvement\n16th | +5 | Ability Score Improvement\n17th | +6 | \n18th | +6 | Indomitable Improvement\n19th | +6 | Ability Score Improvement\n20th | +6 | Second Wind Improvement"
+        },
+        {
+          "titulo": "Bonus Proficiencies",
+          "nivel": 3,
+          "texto_en": "1st-level Warrior feature\nThe sidekick gains proficiency in one saving throw of your choice: Strength, Dexterity, or Constitution.\nIn addition, the sidekick gains proficiency in two skills of your choice from the following list: Acrobatics, Animal Handling, Athletics, Intimidation, Nature, Perception, and Survival.\nThe sidekick gains proficiency with all armor, and if it is a humanoid or has a simple or martial weapon in its stat block, it gains proficiency with shields and all simple and martial weapons."
+        },
+        {
+          "titulo": "Martial Role",
+          "nivel": 3,
+          "texto_en": "1st-level Warrior feature\nEach warrior focuses on offense or defense in their training. Choose one of the following options:\nAttacker. The sidekick gains a +2 bonus to all attack rolls.\nDefender. The sidekick can use its reaction to impose disadvantage on the attack roll of a creature within 5 feet of it whose target isn't the sidekick, provided the sidekick can see the attacker."
+        },
+        {
+          "titulo": "Second Wind",
+          "nivel": 3,
+          "texto_en": "2nd-level Warrior feature\nThe sidekick can use a bonus action on its turn to regain hit points equal to 1d10 + its level in this class. Once it uses this feature, it must finish a short or long rest before it can use it again.\nThe sidekick can use this feature twice between rests starting at 20th level"
+        },
+        {
+          "titulo": "Improved Critical",
+          "nivel": 3,
+          "texto_en": "3rd-level Warrior feature\nThe sidekick's attack rolls score a critical hit on a roll of 19 or 20 on the d20."
+        },
+        {
+          "titulo": "Ability Score Improvement",
+          "nivel": 3,
+          "texto_en": "4th-level Warrior feature\nAt 4th level and again at 8th, 12th, 14th, 16th, and 19th level, the sidekick increases one ability score of your choice by 2, or the sidekick increases two ability scores of your choice by 1. The sidekick can't increase an ability score above 20 using this feature."
+        },
+        {
+          "titulo": "Extra Attack",
+          "nivel": 3,
+          "texto_en": "6th-level Warrior feature\nThe sidekick can attack twice, instead of once, whenever it takes the Attack action on its turn.\nThe number of attacks increases to three when the sidekick reaches 15th level.\nIf the sidekick has the Multiattack action, it can use Extra Attack or Multiattack on a turn, not both."
+        },
+        {
+          "titulo": "Battle Readiness",
+          "nivel": 3,
+          "texto_en": "7th-level Warrior feature\nThe sidekick has advantage on initiative rolls."
+        },
+        {
+          "titulo": "Improved Defense",
+          "nivel": 3,
+          "texto_en": "10th-level Warrior feature\nThe sidekick's Armor Class increases by 1."
+        },
+        {
+          "titulo": "Indomitable",
+          "nivel": 3,
+          "texto_en": "11th-level Warrior feature\nThe sidekick can reroll a saving throw that it fails, but it must use the new roll. When it uses this feature, it can't use the feature again until it finishes a long rest.\nThe sidekick can use this feature twice between long rests starting at 18th level."
+        }
+      ]
+    }
+  ],
+  "paginas": [
+    {
+      "id": "sidekicks",
+      "titulo": "Sidekicks",
+      "fonte": null,
+      "ua": false,
+      "secoes": [
+        {
+          "titulo": "Side Kicks",
+          "nivel": 2,
+          "texto_en": "This section provides a simple way to add a special NPC - called a sidekick - to the group of an adventurers. These rules take a creature with a low challenge rating and give it levels in one of three simple classes: Expert, Spellcaster or Warrior.\nA sidekick can be incorporated into a group at the party's inception, or a sidekick might join them during the campaign. For example, the party might meet a villager, an animal, or another creature, forge a friendship and invite the creature to join them on their adventures.\nYou can also use these rules to customize a monster as a DM."
+        },
+        {
+          "titulo": "Creating a Sidekick",
+          "nivel": 3,
+          "texto_en": "A sidekick can be any kind of creature with a stat block in the Monster Manual or another D&D book, but the challenge rating must be 1/2 or lower. You take the stat block and add to it, as explained in the \"Gaining a Sidekick Class\" section.\nTo join the adventurers, the Sidekick must be the friend of at least one of them. This friendship might be connected to a character's backstory or to events that have transpired in play. For example, a sidekick could be a childhood friend or pet, or might be a creature the adventurers saved. As a DM, you determine whether there is sufficient trust established for the creature to join the group.\nYou decide who plays the sidekick. Here are some options:\n- A player plays the sidekick as their second character - ideal when you only have one or two players.\n- A player plays the sidekick as their only character - ideal for a player who wants a character who's simpler than a typical player character.\n- The players jointly play the sidekick\n- You play the sidekick\nThere's no limit on the number of sidekicks in a group, but having more than one per player character can noticeably slow down the game. And when estimating the difficulty of an upcoming encounter, count each sidekick as a character."
+        },
+        {
+          "titulo": "Gaining a Sidekick Class",
+          "nivel": 3,
+          "texto_en": "When you create a sidekick, you choose the class it will have for the rest of its career: Expert, Spell-Caster, or Warrior, each of which is detailed below. If a sidekick class contains a choice, you may make the choice or let the players make it."
+        },
+        {
+          "titulo": "Starting Level",
+          "nivel": 4,
+          "texto_en": "The starting level of a sidekick is the same as the average level of the group. For example, if a 1st level group starts with a sidekick, that sidekick is also 1st level. But if a 10th level group invites a sidekick to join them, that sidekick starts at 10th level."
+        },
+        {
+          "titulo": "Leveling Up a Sidekick",
+          "nivel": 4,
+          "texto_en": "Whenever a group's average level goes up, the sidekick gains a level. It doesn't matter how much of the group's recent adventures the sidekick experienced; the sidekick levels up because of a combination of the adventures it shared with the group and its own training."
+        },
+        {
+          "titulo": "Hit points",
+          "nivel": 4,
+          "texto_en": "Whenever the sidekick gains a level, it gains one Hit Die, and its maximum increases. To determine the amount of the increase, roll the Hit Die (the type of die appears in the sidekick's stat block), and add its constitution modifier. It gains a minimum of 1 hit point per level.\nIf the sidekick drops to zero hit points and isn't killed outright, it falls unconscious and subsequently makes death saving throws, just like a player character."
+        },
+        {
+          "titulo": "Proficiency Bonus",
+          "nivel": 4,
+          "texto_en": "The sidekick's proficiency bonus is determined by its level in its class, shown in the class's table.\nWhenever the sidekick's proficiency bonus increases by 1, add 1 to the to hit modifier of all the attacks in its stat block, and increase the DCs in its stat block by 1."
+        },
+        {
+          "titulo": "Ability score increases",
+          "nivel": 4,
+          "texto_en": "Whenever the sidekick gains the Ability Score Improvement feature, adjust anything in its stat block that relies on an ability modifier that you increase. For example, if the sidekick has an attack that uses its Strength modifier, increase the attack's modifiers to hit and damage if the Strength modifier increases.\nIf it's unclear whether a melee attack in the stat block uses Strength or Dexterity, the attack can use either.\nSidekick Classes\nExpert\nSpellcaster\nWarrior"
+        }
+      ]
+    },
+    {
+      "id": "blessings",
+      "titulo": "Blessings",
+      "fonte": "Dungeon Masters Guide",
+      "ua": false,
+      "secoes": [
+        {
+          "titulo": null,
+          "nivel": 0,
+          "texto_en": "Source: Dungeon Masters Guide\nA character might receive a blessing from a deity for doing something truly momentous-an accomplishment that catches the attention of both gods and mortals.\nKilling rampaging gnolls rarely warrants such a blessing, but slaying the high priest of Tiamat as he attempts to summon the Dragon Queen might.\nA blessing is an appropriate reward for one of the following accomplishments:\n- Restoring the most sacred shrine of a god\n- Foiling an earthshaking plot by the enemies of a god\n- Helping a god's favored servant complete a holy quest\nAn adventurer might also receive a blessing in advance of a perilous quest. For example, a paladin could receive one before setting out on a quest to slay a terrifying lich that is responsible for a magical plague sweeping the land.\nA character should receive only a blessing that is useful to him or her, and some blessings come with expectations on the part of the benefactor. A god typically gives a blessing for a particular purpose, such as recovering a holy person's remains or toppling a tyrannical empire. The god might revoke a blessing if a character fails to pursue that purpose or acts counter to it.\nA character retains the benefits of a blessing forever or until it is taken away by the god who granted it. Unlike a magic item, such a blessing can't be suppressed by an antimagic field or similar effect.\nMost adventurers go their entire lives without receiving even one of these blessings. There is no limit on the number of blessings a character can receive, but it should be rare for a character to have more than one at a time. Moreover, a character can't benefit from multiple instances of a blessing at the same time. For example, a character can't benefit from two instances of the Blessing of Health at once."
+        },
+        {
+          "titulo": "Blessings",
+          "nivel": 2,
+          "texto_en": ""
+        },
+        {
+          "titulo": "Blessing of Health",
+          "nivel": 3,
+          "texto_en": "Your Constitution score increases by 2, up to a maximum of 22."
+        },
+        {
+          "titulo": "Blessing of Protection",
+          "nivel": 3,
+          "texto_en": "You gain a +1 bonus to AC and saving throws."
+        },
+        {
+          "titulo": "Blessing of Magic Resistance",
+          "nivel": 3,
+          "texto_en": "You have advantage on saving throws against spells and other magical effects."
+        },
+        {
+          "titulo": "Blessing of Understanding",
+          "nivel": 3,
+          "texto_en": "Your Wisdom score increases by 2, up to a maximum of 22."
+        },
+        {
+          "titulo": "Blessing of Valhalla",
+          "nivel": 3,
+          "texto_en": "This blessing grants you the power to summon spirit warriors, as if you had blown a silver Horn of Valhalla. Once you use this blessing, you can't use it again until 7 days have passed."
+        },
+        {
+          "titulo": "Blessing of Weapon Enhancement",
+          "nivel": 3,
+          "texto_en": "One nonmagical weapon in your possession becomes a +1 weapon whenever you wield it."
+        },
+        {
+          "titulo": "Blessing of Wound Closure",
+          "nivel": 3,
+          "texto_en": "This blessing grants you the benefits of a Periapt of Wound Closure."
+        }
+      ]
+    },
+    {
+      "id": "charms",
+      "titulo": "Charms",
+      "fonte": null,
+      "ua": false,
+      "secoes": [
+        {
+          "titulo": null,
+          "nivel": 0,
+          "texto_en": "A charm is a minor supernatural gift, which can be received in a large variety of ways. For example, a wizard who finds an eldritch secret in a dead archmage's spellbook might be infused with the magic of a charm, as might a character who solves a sphinx's riddle or drinks from a magic fountain. Legendary creatures, such as ancient gold dragons and unicorns, sometimes grace their allies with charms, and some explorers find themselves bearing the magic of a charm after discovering a long-lost location that is drenched in primeval magic.\nSome charms can be used only once, and others can be used a specific number of times before vanishing. If a charm lets you cast a spell, you are able to do so without spending a spell slot or providing any components (verbal, somatic, or material). In any case, a charm can't be used in the area created by an antimagic field or a similar effect, and a charm's effects are susceptible to dispel magic and the like. But the charm itself can't be removed from a creature by anything short of divine intervention or the wish spell."
+        },
+        {
+          "titulo": "Charms",
+          "nivel": 1,
+          "texto_en": ""
+        },
+        {
+          "titulo": "Azorius Charm",
+          "nivel": 3,
+          "texto_en": "When you activate this charm, you can cast the Hold Person (3rd-level version), Command, or Counterspell spell. The charm vanishes after you activate it."
+        },
+        {
+          "titulo": "Boros Charm",
+          "nivel": 3,
+          "texto_en": "When you activate this charm, you can cast the Crusader's Mantle or Haste spell. Alternatively, you can cast the Guiding Bolt spell, and if it hits, you regain a number of hit points equal to the damage it deals. The charm vanishes after you activate it."
+        },
+        {
+          "titulo": "Charm of Animal Conjuring",
+          "nivel": 3,
+          "texto_en": "This charm allows you to cast the Conjure Animals spell (3rd-level version) as an action. Once used three times, the charm vanishes from you."
+        },
+        {
+          "titulo": "Charm of Biting Cold",
+          "nivel": 3,
+          "texto_en": "This charm has 3 charges. As a bonus action, you can expend 1 of the charm's charges to wreathe your weapon attacks with biting cold for 1 minute. Until this effect ends, you deal an extra 1d6 cold damage when you hit with a melee or ranged weapon attack. Once all its charges have been expended, this charm vanishes from you."
+        },
+        {
+          "titulo": "Charm of Bounty",
+          "nivel": 3,
+          "texto_en": "This charm has 3 charges. As an action, you can expend 1 of the charm's charges to cast the Create Food and Water spell, requiring no components. Once all its charges have been expended, this charm vanishes from you."
+        },
+        {
+          "titulo": "Charm of Cold Resistance",
+          "nivel": 3,
+          "texto_en": "This charm allows you to give yourself resistance to cold damage as an action. This benefit lasts for 24 hours, after which the charm vanishes from you."
+        },
+        {
+          "titulo": "Charm of Darkvision",
+          "nivel": 3,
+          "texto_en": "This charm allows you to cast the Darkvision spell as an action, no components required. Once used three times, the charm goes away."
+        },
+        {
+          "titulo": "Charm of Feather Falling",
+          "nivel": 3,
+          "texto_en": "This charm grants you the benefits of a Ring of Feather Falling. These benefits last for 10 days, after which the charm vanishes from you."
+        },
+        {
+          "titulo": "Charm of Heroism",
+          "nivel": 3,
+          "texto_en": "This charm allows you to give yourself the benefit of a Potion of Heroism as an action. Once you do so, the charm vanishes from you."
+        },
+        {
+          "titulo": "Charm of Nine Lives",
+          "nivel": 3,
+          "texto_en": "When you drop to 0 hit points as a result of taking damage, you can choose to drop to 1 hit point instead. Once used nine times, the charm goes away."
+        },
+        {
+          "titulo": "Charm of Restoration",
+          "nivel": 3,
+          "texto_en": "This charm has 6 charges. You can use an action to expend some of its charges to cast one of the following spells: Greater Restoration (4 charges) or Lesser Restoration (2 charges). Once all its charges have been expended, the charm vanishes from you."
+        },
+        {
+          "titulo": "Charm of Snowball Strike",
+          "nivel": 3,
+          "texto_en": "This charm has 5 charges. As a bonus action, you can expend 1 of the charm's charges to create a magical snowball in your hand and throw it. You must have a hand free to hold the snowball, or the charge is wasted. The snowball is a magic ranged weapon with which you are proficient. It has a normal range of 20 feet and a long range of 60 feet, it deals 1d4 cold damage on a hit, and it scores a critical hit on a roll of 19 or 20. If you score a critical hit with the snowball, the target is blinded until the end of its next turn. The snowball vanishes immediately after you hit or miss with it, or at the end of your turn if you don't throw it. Once all its charges have been expended, this charm vanishes from you."
+        },
+        {
+          "titulo": "Charm of the Crystal Heart",
+          "nivel": 3,
+          "texto_en": "This charm grants you immunity to piercing and slashing damage from nonmagical attacks, but you gain vulnerability to bludgeoning damage. These effects last for 10 days, after which the charm vanishes from you."
+        },
+        {
+          "titulo": "Charm of the Ghoul",
+          "nivel": 3,
+          "texto_en": "This charm allows you to use an action to eat a mouthful of flesh from a humanoid that has been dead no longer than 1 day. When you do, you regain 3d8 + 3 hit points. Once used three times, the charm goes away."
+        },
+        {
+          "titulo": "Charm of the Ice Troll",
+          "nivel": 3,
+          "texto_en": "This charm allows you to use your reaction when you take cold damage to reduce the damage to 0. You regain a number of hit points equal to half the cold damage you would have taken. Once you do so, the charm vanishes from you."
+        },
+        {
+          "titulo": "Charm of the Maimed",
+          "nivel": 3,
+          "texto_en": "This charm allows you to regrow a lost appendage or organ, such as an arm, a foot, or an eye. After it is used once, the charm goes away."
+        },
+        {
+          "titulo": "Charm of the Mirage",
+          "nivel": 3,
+          "texto_en": "This charm allows you to cast the Hallucinatory Terrain spell (save DC 15) as an action. Once used, this charm vanishes from you."
+        },
+        {
+          "titulo": "Charm of the Slayer",
+          "nivel": 3,
+          "texto_en": "One sword in your possession becomes a Dragon Slayer or Giant Slayer (DM's choice) for the next 9 days. The charm then vanishes from you and the weapon returns to normal."
+        },
+        {
+          "titulo": "Charm of the Snow Walker",
+          "nivel": 3,
+          "texto_en": "This charm has 3 charges. As an action, you can expend 1 of the charm's charges to gain the following benefits for 24 hours:\n- You and your allies within 15 feet of you ignore difficult terrain caused by snow or ice.\n- You can see through areas heavily obscured by snow to a distance of 60 feet.\n- You are immune to the effects of extreme cold, as described in the Dungeon Master's Guide (though you gain no protection from cold damage).\nOnce all its charges have been expended, this charm vanishes from you."
+        },
+        {
+          "titulo": "Charm of the Storm",
+          "nivel": 3,
+          "texto_en": "You become charged with the power of the storm, to the extent that tiny sparks crackle in your eyes. You can cast the Lightning Bolt spell (3rd-level version) as an action. Once used three times, the charm vanishes from you."
+        },
+        {
+          "titulo": "Charm of the Swollen Hag",
+          "nivel": 3,
+          "texto_en": "This charm allows you to spit up a frog as an action. The frog understands you and obeys your commands. Once used three times, the charm goes away."
+        },
+        {
+          "titulo": "Charm of the Traveler's Haven",
+          "nivel": 3,
+          "texto_en": "This charm has 3 charges. As an action, you can expend 1 of the charm's charges to cast the Leomund's Tiny Hut spell, no components required. Once all its charges have been expended, this charm vanishes from you."
+        },
+        {
+          "titulo": "Charm of the Water Bearer",
+          "nivel": 3,
+          "texto_en": "This charm allows you to create up to 1 gallon of fresh water, which fills one or more empty containers in your possession. You can do this up to thrice per day for 10 days, after which this charm vanishes from you."
+        },
+        {
+          "titulo": "Charm of Treasure Sense",
+          "nivel": 3,
+          "texto_en": "While this charm lasts, you can use an action to pinpoint, by scent, the location of precious metals and stones, such as coins and gems, within 30 feet of you. The effect lasts for 3 days, after which the charm vanishes from you."
+        },
+        {
+          "titulo": "Charm of Vitality",
+          "nivel": 3,
+          "texto_en": "This charm allows you to give yourself the benefit of a Potion of Vitality as an action. Once you do so, the charm vanishes from you."
+        },
+        {
+          "titulo": "Dark Gift of Dahlver-Nar, He of the Many Teeth",
+          "nivel": 3,
+          "texto_en": "Dahlver-Nar's gift is the power to live many lives. Upon receiving this dark gift, the beneficiary instantly reincarnates when it dies, as though it was the target of a Reincarnate spell. The new body appears within 10 feet of the old one. After it has been used three times, the dark gift vanishes.\nThe beneficiary of this dark gift loses all of its teeth until it reincarnates for the third and final time."
+        },
+        {
+          "titulo": "Dark Gift of Delban, the Star of Ice and Hate",
+          "nivel": 3,
+          "texto_en": "Delban's gift is the power to unleash deadly cold. This dark gift allows its beneficiary to cast the Cone of Cold spell as an action. After it has been used seven times, the dark gift vanishes. Until it vanishes, the beneficiary also gains the benefits of a Ring of Warmth.\nThe beneficiary of this dark gift gains the following flaw: \"Fire terrifies me.\""
+        },
+        {
+          "titulo": "Dark Gift of Drizlash, the Nine-Eyed Spider",
+          "nivel": 3,
+          "texto_en": "Drizlash's gift is the power to walk on walls and ceilings. This dark gift allows its beneficiary to climb difficult surfaces, including upside down on ceilings, without needing to make an ability check.\nThe beneficiary of this dark gift grows an extra eye somewhere on its body. The eye is blind and ever open."
+        },
+        {
+          "titulo": "Dark Gift of Fekre, Queen of Poxes",
+          "nivel": 3,
+          "texto_en": "Fekre's gift is the power of spreading disease. This dark gift allows its beneficiary to cast the Contagion spell as an action. After it has been used three times, the dark gift vanishes.\nThe beneficiary of this dark gift reeks of filth."
+        },
+        {
+          "titulo": "Dark Gift of Great Taar Haak, the Five-Headed Destroyer",
+          "nivel": 3,
+          "texto_en": "Taar Haak's gift is great strength. This dark gift grants its beneficiary the benefit of a Belt of Fire Giant Strength. This benefit lasts for 10 days, after which the dark gift vanishes.\nThe beneficiary of this dark gift gains the following flaw: \"I like to bully others and make them feel weak and inferior.\""
+        },
+        {
+          "titulo": "Dark Gift of Khirad, the Star of Secrets",
+          "nivel": 3,
+          "texto_en": "Khirad's gift is the power of divination. This gift allows its beneficiary to cast the Scrying spell as an action. After it has been used three times, the dark gift vanishes."
+        },
+        {
+          "titulo": "Dark Gift of Norganas, the Finger of Oblivion",
+          "nivel": 3,
+          "texto_en": "Norganas's gift is the power to turn life into undeath. This dark gift allows its beneficiary to cast the Finger of Death spell as an action. After it has been used three times, the dark gift vanishes. When it vanishes, the beneficiary must succeed on a DC 15 Constitution saving throw or drop to 0 hit points.\nThis dark gift turns the beneficiary's blood pitch black and viscid, like tar."
+        },
+        {
+          "titulo": "Dark Gift of Savnok the Inscrutible",
+          "nivel": 3,
+          "texto_en": "Savnok's gift is the power to shield the mind. This dark gift takes the form of a Mind Blank spell cast on the beneficiary. The spell has an extended duration of 1 year, after which the dark gift vanishes.\nThe beneficiary's eyes melt away upon receiving this dark gift, leaving empty sockets that can still see."
+        },
+        {
+          "titulo": "Dark Gift of Seriach, the Hell Hound Whisperer",
+          "nivel": 3,
+          "texto_en": "Seriach's gift is the power to summon and control hell hounds. As an action, the beneficiary of this dark gift can summon and control two hell hounds. Both hounds appear at the same time. The beneficiary can summon hounds only once, and the dark gift vanishes when they die.\nThe beneficiary gains the ability to speak and understand Infernal, if he or she doesn't already know the language. (The hell hounds understand no other language.) Sulfurous smoke issues from the beneficiary's pores whenever he or she speaks Infernal."
+        },
+        {
+          "titulo": "Dark Gift of Shami-Amourae, the Lady of Delights",
+          "nivel": 3,
+          "texto_en": "Shami-Amourae's gift is the power of persuasion. This dark gift allows its beneficiary to cast the Suggestion spell as an action, and saving throws against the spell have disadvantage. After it has been used three times, the dark gift vanishes.\nThe beneficiary of this dark gift gains an extra finger on each hand, as well as the following flaw: \"I can't get enough pleasure. I desire others to create beauty for me at all times.\""
+        },
+        {
+          "titulo": "Dark Gift of Sykane, the Soul Hungerer",
+          "nivel": 3,
+          "texto_en": "Sykane's gift is the power to raise the recently deceased. This dark gift allows its beneficiary to cast the Raise Dead spell as an action. After it has been used three times, the dark gift vanishes.\nAs soon as this dark gift is received, the beneficiary's eyes glow a sickly yellow until the dark gift vanishes. The beneficiary also gains the following flaw: \"If I help someone, I expect payment in return.\""
+        },
+        {
+          "titulo": "Dark Gift of Tarakamedes, the Grave Wyrm",
+          "nivel": 3,
+          "texto_en": "Tarakamedes's gift is the power of flight. The beneficiary of this dark gift grows skeletal wings and gains a flying speed of 50 feet.\nThe beneficiary of this dark gift must eat bones or grave dirt to survive. At dawn, if the creature has not eaten at least 1 pound of bones or grave dirt in the past 24 hours, it dies."
+        },
+        {
+          "titulo": "Dark Gift of Vaund the Evasive",
+          "nivel": 3,
+          "texto_en": "Vaund's gift is the power of evasion. This dark gift grants its beneficiary the benefits of an Amulet of Proof Against Detection and Location and a Ring of Evasion. These benefits last for 10 days, after which the dark gift vanishes.\nThe beneficiary of this dark gift becomes twitchy and nervous, and also gains the following flaw: \"I can't give a straight answer to any question put to me.\""
+        },
+        {
+          "titulo": "Dark Gift of Yog the Invincible",
+          "nivel": 3,
+          "texto_en": "Yog's gift is one of physical resilience. This dark gift increases the beneficiary's hit point maximum by 30. This benefit lasts for 10 days, after which the dark gift vanishes.\nOily black fur covers the beneficiary's face and body."
+        },
+        {
+          "titulo": "Dark Gift of Yrrga, the Eye of Shadows",
+          "nivel": 3,
+          "texto_en": "Yrrga's gift is the power of true seeing. This dark gift grants its beneficiary the benefits of truesight out to a range of 60 feet. These benefits last for 30 days, after which the dark gift vanishes.\nThe eyes of the beneficiary become starry voids until the dark gift vanishes. The beneficiary of this dark gift also gains the following flaw: \"I believe that all life is pointless and look forward to death when it finally comes.\""
+        },
+        {
+          "titulo": "Dark Gift of Zantras, the Kingmaker",
+          "nivel": 3,
+          "texto_en": "Zantras's gift is power that comes from great presence and force of personality. This dark gift increases the beneficiary's Charisma by 4, up to a maximum of 22.\nThe beneficiary of this dark gift gains the following flaw: \"I won't take no for an answer.\""
+        },
+        {
+          "titulo": "Dark Gift of Zrin-Hala, the Howling Storm",
+          "nivel": 3,
+          "texto_en": "Zrin-Hala's gift is the power to create lightning. This dark gift allows its beneficiary to cast the Lightning Bolt spell as an action. After it has been used three times, the dark gift vanishes.\nAs soon as this dark gift is received, one side of the beneficiary's face sags and loses all feeling."
+        },
+        {
+          "titulo": "Dimir Charm",
+          "nivel": 3,
+          "texto_en": "When you activate this charm, you can cast the Blink or Sleep (3rd-level version) spell. Alternatively, when you take damage, you can use your reaction to turn invisible and teleport up to 30 feet to an unoccupied space you can see. You remain invisible until the start of your next turn or until you attack or cast a spell. The charm vanishes after you activate it."
+        },
+        {
+          "titulo": "Golgari Charm",
+          "nivel": 3,
+          "texto_en": "When you activate this charm, you can cast the Dispel Magic, False Life (3rd-level version), or Stinking Cloud spell. The charm vanishes after you activate it."
+        },
+        {
+          "titulo": "Gruul Charm",
+          "nivel": 3,
+          "texto_en": "When you activate this charm, you can cast the Heroism or Thunderwave spell (3rd-level versions). Alternatively, as a reaction when you miss with a weapon attack, you can make another attack against the target you missed. The charm vanishes after you activate it."
+        },
+        {
+          "titulo": "Izzet Charm",
+          "nivel": 3,
+          "texto_en": "When you activate this charm, you can cast the Dispel Magic or Lightning Bolt spell. Alternatively, as an action, you can regain one expended spell slot of 3rd level or lower. The charm vanishes after you activate it."
+        },
+        {
+          "titulo": "Orzhov Charm",
+          "nivel": 3,
+          "texto_en": "When you activate this charm, you can cast the Bestow Curse or Fear spell. Alternatively, when a creature you can see within 30 feet of you is reduced to 0 hit points, you can use your reaction to have it drop to 1 hit point instead. The charm vanishes after you activate it."
+        },
+        {
+          "titulo": "Rakdos Charm",
+          "nivel": 3,
+          "texto_en": "When you activate this charm, you can cast the Crown of Madness, Hellish Rebuke, or Shatter spell. The charm vanishes after you activate it."
+        },
+        {
+          "titulo": "Selesnya Charm",
+          "nivel": 3,
+          "texto_en": "When you activate this charm, you can cast the Aura of Vitality or Conjure Animals spell. Alternatively, as an action, you can give up to three creatures of your choice within 30 feet of you resistance to bludgeoning, piercing, and slashing damage until the end of your next turn. The charm vanishes after you activate it."
+        },
+        {
+          "titulo": "Simic Charm",
+          "nivel": 3,
+          "texto_en": "When you activate this charm, you can cast the Enhance Ability (3rd-level version), Enlarge/Reduce, or Gaseous Form spell. The charm vanishes after you activate it."
+        },
+        {
+          "titulo": "Vlagomir's Spark",
+          "nivel": 3,
+          "texto_en": "You gain 1 foot of height every hour and become proportionately heavier until you stand 21 feet tall and weigh 7,700 pounds. When you are 9 feet tall, your Strength becomes 19 unless it is already higher. For every 3 additional feet of height you gain, your Strength increases by 1, to a maximum of 23. Armor and clothing you are wearing and weapons you are carrying magically increase in size to match your growth. If you are the recipient of a Greater Restoration spell or similar magic, this charm vanishes from you, and you immediately shrink back to normal size, along with any armor, clothing, and weapons in your possession."
+        },
+        {
+          "titulo": "Supernatural Gifts: The Book of Many Things",
+          "nivel": 1,
+          "texto_en": ""
+        },
+        {
+          "titulo": "Charm of Balance",
+          "nivel": 3,
+          "texto_en": "Supernatural Gift (Charm)\nWhen a creature you can see within 60 feet of you damages you, you can use your reaction to deal an amount of force damage to that creature equal to half the damage you took. Once used three times, the charm vanishes from you."
+        },
+        {
+          "titulo": "Charm of Euryale",
+          "nivel": 3,
+          "texto_en": "Supernatural Gift (Charm)\nAs an action, you can unleash a petrifying wave of magic from your eyes in a 30-foot cone. Each creature in that area must make a DC 15 Constitution saving throw. On a failed save, a creature has the petrified condition for 1 hour. On a successful save, a creature is partially turned to stone and has the restrained condition. A restrained creature can repeat the save at the end of each of its turns, ending the effect on itself on a success.\nOnce you use this charm, it vanishes from you."
+        },
+        {
+          "titulo": "Charm of Many Things",
+          "nivel": 3,
+          "texto_en": "Supernatural Gift (Charm)\nYou are infused with a burst of magic from a Deck of Many Things. As an action, you can touch a willing creature other than yourself and bestow the effect of a single randomly determined card from the deck upon the target. Once you use this charm, it vanishes from you."
+        },
+        {
+          "titulo": "Charm of Ruin",
+          "nivel": 3,
+          "texto_en": "Supernatural Gift (Charm)\nAs an action, you can touch a nonmagical object, or a section of a larger nonmagical object, that fits in a 5-foot cube. The target is reduced to dust. Once used three times, the charm vanishes from you."
+        },
+        {
+          "titulo": "Charm of the Comet",
+          "nivel": 3,
+          "texto_en": "Supernatural Gift (Charm)\nAs an action, you can force a creature you can see within 60 feet of you to focus on you. For 1 minute, creatures other than you and the target are invisible to the target. The effect ends if any creature other than you damages the target or forces the target to make a saving throw. Once used three times, the charm vanishes from you."
+        },
+        {
+          "titulo": "Charm of the Donjon",
+          "nivel": 3,
+          "texto_en": "Supernatural Gift (Charm)\nYou can cast Otiluke's Resilient Sphere, requiring no spell components and using your Intelligence, Wisdom, or Charisma as the spellcasting ability (your choice). Once used three times, the charm vanishes from you."
+        },
+        {
+          "titulo": "Charm of the Fates",
+          "nivel": 3,
+          "texto_en": "Supernatural Gift (Charm)\nYou can tug on the threads of fate to tweak circumstance in your favor. After you make an ability check, an attack roll, or a saving throw, you can roll a d10 and add it to the total, potentially turning failure into success. Once used three times, the charm vanishes from you."
+        },
+        {
+          "titulo": "Charm of the Flames",
+          "nivel": 3,
+          "texto_en": "Supernatural Gift (Charm)\nAs an action, you can summon two bearded devils. The summoned devils appear in unoccupied spaces within 60 feet of you, obey your commands, and can’t summon other devils. The devils take their turns immediately after yours on the initiative count. A summoned devil remains for 10 minutes, until it or you die, or until you dismiss one or both summoned devils as an action. Once used three times, the charm vanishes from you."
+        },
+        {
+          "titulo": "Charm of the Fool",
+          "nivel": 3,
+          "texto_en": "Supernatural Gift (Charm)\nYou can cast Major Image, requiring no spell components and using your Intelligence, Wisdom, or Charisma as the spellcasting ability (your choice). When you cast the spell in this way, it lasts its full duration with no concentration required. Once used three times, the charm vanishes from you."
+        },
+        {
+          "titulo": "Charm of the Gem",
+          "nivel": 3,
+          "texto_en": "Supernatural Gift (Charm)\nAs an action, you create a spray of 4d10 gems in a 30-foot cone originating from you. Each creature in that area must make a DC 15 Dexterity saving throw. On a failed save, a creature takes an amount of bludgeoning damage equal to the number of gems created. On a successful save, a creature takes half as much damage. The gems remain after the effect ends, and each one is worth 10 gp. Once used three times, the charm vanishes from you."
+        },
+        {
+          "titulo": "Charm of the Jester",
+          "nivel": 3,
+          "texto_en": "Supernatural Gift (Charm)\nYou can cast Tasha's Hideous Laughter, requiring no spell components and using your Intelligence, Wisdom, or Charisma as the spellcasting ability (your choice). Once used three times, the charm vanishes from you."
+        },
+        {
+          "titulo": "Charm of the Key",
+          "nivel": 3,
+          "texto_en": "Supernatural Gift (Charm)\nAs a bonus action, you can touch a nonmagical melee weapon and imbue it with magic for 1 hour. For the duration, the weapon deals an extra 1d8 force damage on a hit and deals double damage to objects and structures. Once used three times, the charm vanishes from you."
+        },
+        {
+          "titulo": "Charm of the Knight",
+          "nivel": 3,
+          "texto_en": "Supernatural Gift (Charm)\nAs an action, you can summon two neutral good knights that are Celestials instead of Humanoids. The knights appear in unoccupied spaces within 60 feet of you and act as your allies. They take their turns immediately after yours on your initiative count. The knights remain for 10 minutes, until they or you die, or until you dismiss one or both of them as an action. Once used three times, the charm vanishes from you."
+        },
+        {
+          "titulo": "Charm of the Moon",
+          "nivel": 3,
+          "texto_en": "Supernatural Gift (Charm)\nAs an action, you make a minor wish. When you do, you create the effects of a spell of 5th level or lower. The spell takes effect as part of this action and requires no spell components. Your Intelligence, Wisdom, or Charisma is the spellcasting ability for this spell (your choice). Once you use this charm, it vanishes from you."
+        },
+        {
+          "titulo": "Charm of the Puzzle",
+          "nivel": 3,
+          "texto_en": "Supernatural Gift (Charm)\nYou can cast Hypnotic Pattern, requiring no spell components and using your Intelligence, Wisdom, or Charisma as the spellcasting ability (your choice). Once used three times, the charm vanishes from you."
+        },
+        {
+          "titulo": "Charm of the Rogue",
+          "nivel": 3,
+          "texto_en": "Supernatural Gift (Charm)\nYou can cast Mislead, requiring no spell components and using your Intelligence, Wisdom, or Charisma as the spellcasting ability (your choice). When you cast the spell in this way, it lasts its full duration with no concentration required. Once used three times, the charm vanishes from you."
+        },
+        {
+          "titulo": "Charm of the Sage",
+          "nivel": 3,
+          "texto_en": "Supernatural Gift (Charm)\nYou can cast Divination, requiring no material components and using your Intelligence as the spellcasting ability. Once you cast the spell three times, the charm vanishes from you."
+        },
+        {
+          "titulo": "Charm of the Skull",
+          "nivel": 3,
+          "texto_en": "Supernatural Gift (Charm)\nAs a bonus action, you can transform into a deathly apparition. Your game statistics are replaced by those of a wraith, except for your alignment and personality; your Intelligence, Wisdom, and Charisma scores; and your passive Wisdom (Perception) score and languages. You don’t have the wraith’s Create Specter ability. Your equipment vanishes when you transform but returns when the transformation ends. The transformation lasts for 1 minute, until your wraith form is reduced to 0 hit points, or until you use a bonus action to end it. If the wraith form is reduced to 0 hit points and there is still damage left over, the remaining damage applies to your normal hit points. Once used three times, the charm vanishes from you."
+        },
+        {
+          "titulo": "Charm of the Star",
+          "nivel": 3,
+          "texto_en": "Supernatural Gift (Charm)\nYou can cast Enhance Ability, requiring no spell components and using your Intelligence, Wisdom, or Charisma as the spellcasting ability (your choice). When you cast the spell in this way, it lasts its full duration with no concentration required. Once used three times, the charm vanishes from you."
+        },
+        {
+          "titulo": "Charm of the Sun",
+          "nivel": 3,
+          "texto_en": "Supernatural Gift (Charm)\nYou learn the Light cantrip if you don’t already know it. You can cast Sunburst, requiring no spell components and using your Intelligence, Wisdom, or Charisma as the spellcasting ability (your choice). Once used, the charm vanishes from you, and you unlearn the Light cantrip gained from this charm."
+        },
+        {
+          "titulo": "Charm of the Talons",
+          "nivel": 3,
+          "texto_en": "Supernatural Gift (Charm)\nAs an action, you can cast Dispel Magic, requiring no spell components and using your Intelligence, Wisdom, or Charisma as the spellcasting ability (your choice). If you successfully end any spells with it, you gain 1d6 temporary hit points for each spell level of the highest-level spell ended. Once used three times, the charm vanishes from you."
+        },
+        {
+          "titulo": "Charm of the Throne",
+          "nivel": 3,
+          "texto_en": "Supernatural Gift (Charm)\nYou can cast Mordenkainen's Magnificent Mansion, requiring no spell components and using your Intelligence, Wisdom, or Charisma as the spellcasting ability (your choice). Once used three times, the charm vanishes from you."
+        },
+        {
+          "titulo": "Charm of the Void",
+          "nivel": 3,
+          "texto_en": "Supernatural Gift (Charm)\nYou can cast Banishment, requiring no material components and using your Intelligence, Wisdom, or Charisma as the spellcasting ability (your choice). Once used three times, the charm vanishes from you."
+        }
+      ]
+    },
+    {
+      "id": "dark-gifts",
+      "titulo": "Dark Gifts",
+      "fonte": "Van Richten's Guide to Ravenloft",
+      "ua": false,
+      "secoes": [
+        {
+          "titulo": null,
+          "nivel": 0,
+          "texto_en": "Source: Van Richten's Guide to Ravenloft\nThe Dark Powers influence many who struggle within their clutches, tempting both the innocent and ambitious with whispered promises. These sinister bargains are rarely spoken, coming in dreams or mysterious visions, but their terms are always clear and their prices terrible."
+        },
+        {
+          "titulo": "Dark Bargains",
+          "nivel": 1,
+          "texto_en": "Characters who don't have a Dark Gift might gain one in the course of their adventures. At the DM's discretion, sinister forces might contact a character and offer them a Dark Gift in return for some service or future favor. If a character already has a Dark Gift, accepting such a bargain causes them to lose their current Dark Gift and gain a new one. A Dark Gift gained as a result of such a bargain reflects the agenda of the being or beings offering the bargain, be it the Dark Powers, a Darklord, or a more mysterious force. The particulars of the Dark Gift and how it will affect a character must be clear to a player before they choose whether or not to accept.\nThe offer of a Dark Gift might manifest in a dream, in a moment of frozen time, or when the character is alone. Typically, only one character is aware of a bargain, its terms, and whether or not it was accepted.\nThe DM might have a mysterious force intervene and offer a Dark Gift whenever a desperate or thematic instance presents itself, such as in any of the following cases:\n- A Darklord will negotiate with a party only if a character seals the deal by accepting their Dark Gift.\n- Time stops while a character is on the brink of death. A mysterious voice offers to save the character's life, but only if they accept its Dark Gift.\n- An experiment or magical accident goes wrong. The DM allows a character to accept a Dark Gift or some other peril as a result.\n- A character breaks a vow or suffers a curse, gaining a Dark Gift as a result.\n- A character touches a mysterious amber sarcophagus, and a force within entreats them to accept its influence in the form of a Dark Gift."
+        },
+        {
+          "titulo": "Dark Gifts",
+          "nivel": 1,
+          "texto_en": ""
+        },
+        {
+          "titulo": "Echoing Soul",
+          "nivel": 2,
+          "texto_en": "Your soul isn't your own or, at least, it wasn't always yours. Whether you've lived past lives, your soul was swapped into a different body, or you have a link connecting you to another being, you experience echoes from another life. These echoes grant you knowledge, talents, or even languages you can't always explain, but they also intrude on your perceptions and beliefs unexpectedly.\nRoll on or choose an option from the Soul Echoes table to determine the nature of this Dark Gift. Additionally, you gain the traits that follow."
+        },
+        {
+          "titulo": "Soul Echoes",
+          "nivel": 3,
+          "texto_en": "d6 | header\n1 | My soul is linked with that of a person elsewhere, perhaps another domain, world, or plane.\n2 | I have lived many times before, my soul reincarnating each time I die rather than passing on.\n3 | My consciousness was removed from my original body and implanted in this one.\n4 | I was physically and spiritually merged with another being.\n5 | I share my body with an intangible, otherworldly force.\n6 | Time fractures around me, and I sometimes collide with my own past or future.\nChanneled Prowess. You gain proficiency in two skills of your choice.\nInherent Tongue. You can speak, read, and write one additional language of your choice.\nIntrusive Echoes. Immediately after you make an attack roll, an ability check, or a saving throw and roll a 1 on the d20, your soul's memories emerge and overtake your perceptions and experiences. You might see people around you as someone other than who they are, or you become disoriented by a double-experience of the world around you. Roll on the Intrusive Echoes table to determine the effect of these vivid memories and perceptions. Once one of effects occur, these intrusive echoes can't manifest again until you finish a short or long rest."
+        },
+        {
+          "titulo": "Intrusive Echoes",
+          "nivel": 4,
+          "texto_en": "d6 | Effect\n1 | You are charmed by a creature you can see (of the DM's choice) for 1 minute or until the creature damages you.\n2 | You are frightened by a creature you can see (of the DM's choice) for 1 minute, or until the creature damages you.\n3 | You perceive another time or place around you until the end of your next turn. During this time, you are blinded to your actual surroundings.\n4 | You perceive a different time or place overlapping your surroundings. Your speed is halved until the end of your next turn.\n5 | Memories and sensations overwhelm you. You are incapacitated until the start of your next turn.\n6 | Your memory is one of triumph. You can reroll the ability check, attack roll, or saving throw that you just made. You must use the new roll."
+        },
+        {
+          "titulo": "Gathering Whispers",
+          "nivel": 2,
+          "texto_en": "You are haunted by spiritual beings, whether the souls of the departed or entities from another plane. Their voices endlessly whisper, taunt, or cajole, sometimes rising to unearthly howls. Only you can perceive the spirits, unless you allow them to speak through you. The spirits are intangible and invisible; anyone who can see invisible creatures sees only fleeting glimpses of these spirits as they haunt you.\nRoll on or choose an option from the Whispering Spirits table to determine what haunts you. Additionally, you gain the traits that follow."
+        },
+        {
+          "titulo": "Whispering Spirits",
+          "nivel": 3,
+          "texto_en": "d6 | header\n1 | A council of my dead ancestors watches over me.\n2 | Fiendish presences vie for my soul.\n3 | Unquiet souls are drawn to me and beg for peace.\n4 | The spirits of those I killed linger around me.\n5 | An alien intelligence intrudes upon my thoughts.\n6 | A sibling I don't have shares my body.\nSpirit Whispers. You learn the Message cantrip if you don't already know it, and require no components to cast it. When you cast the spell, the messages are delivered by one of your whispering spirits rather than you or the target's voice. Your spellcasting ability for this spell is Intelligence, Wisdom, or Charisma (your choice when you gain this Dark Gift).\nSudden Cacophony. When you are hit by an attack roll, you can use your reaction to channel your haunting spirits, letting their voices howl through you. If the attacker isn't deafened, add your proficiency bonus to your AC against that attack, potentially causing it to miss. Once this trait causes an attack to miss, you can't use the trait again until you finish a long rest.\nVoices from Beyond. Immediately after you make an attack roll, an ability check, or a saving throw and roll a 1 on the d20, the haunting voices grow too loud to ignore. Roll on the Voices from Beyond table to determine the effect of these voices. Once one of these effects occurs, none of these haunting voices manifest again until you finish a short or long rest."
+        },
+        {
+          "titulo": "Voices from Beyond",
+          "nivel": 3,
+          "texto_en": "d4 | Effect\n1 | You have disadvantage on the next attack roll, ability check, or saving throw you make.\n2 | You are deafened by the voices for 1 minute.\n3 | You are frightened of the creature closest to you, other than yourself, until the end of your next turn. If multiple creatures are closest, the DM chooses which creature you are frightened of.\n4 | Within the next 10 minutes, you can ask your spirits about the results of a specific course of action that you plan to take within the next 30 minutes. You can receive an omen as if you had cast the Augury spell. The omen manifests as whisperings from your spirits perceptible only to you."
+        },
+        {
+          "titulo": "Living Shadow",
+          "nivel": 2,
+          "texto_en": "The shadow you cast is animate and ever-present, even when lighting conditions would otherwise prevent it. Your shadow occasionally moves out of sync with you. Sometimes it appears to be undertaking random but mundane tasks, while at other times it acts out your darker impulses, threatening or even attacking other shadows. With effort, you can bend this shadow puppetry to your will.\nRoll on or choose an option from the Shadow Quirk table to determine how your living shadow behaves. Additionally, you gain the traits that follow."
+        },
+        {
+          "titulo": "Shadow Quirk",
+          "nivel": 3,
+          "texto_en": "d6 | Quirk\n1 | My shadow often holds weapons or bears wounds that don't exist.\n2 | When I'm distracted, my shadow panics and tries to get other people's attention, as if it's desperate to escape me.\n3 | When it's not being watched, my shadow makes threatening gestures or creeps toward people.\n4 | My shadow's movements mirror mine incorrectly—when I raise my left hand, my shadow moves its right.\n5 | My shadow fiddles with or occasionally breaks Tiny, nonmagical objects.\n6 | There's a slight but noticeable delay between my movements and those of my shadow.\nGrasping Shadow. You learn the Mage Hand cantrip if you don't already know it, and require no components to cast it. The hand created by the spell is shadowy but is not bound to your actual shadow. Your spellcasting ability for this spell is Intelligence, Wisdom, or Charisma (your choice when you gain this Dark Gift).\nShadow Strike. When you make a melee attack roll, you can increase your reach for that attack by 10 feet. Your shadow stretches and delivers the attack as if it were you. You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.\nOminous Will. Immediately after you make an attack roll, an ability check, or a saving throw and roll a 1 on the d20, your shadow exerts a will of its own and might assist or hinder you or those around you. The next time you or a creature within 30 feet of you that you can see makes an attack roll, an ability check, or a saving throw, roll a d4. If the number is odd, reduce the total by the number rolled. If the number is even, increase the total by the number rolled. Once this effect occurs, it can't happen again until you finish a short or long rest."
+        },
+        {
+          "titulo": "Mist Walker",
+          "nivel": 2,
+          "texto_en": "The Mists grip all who tread the Domains of Dread, but you know how to slip through their grasp. You can navigate the Mists successfully given enough time and a little luck, but this freedom comes with a price; if you remain in one area for too long, the Mists find you and drain your life force.\nRoll on or choose an option from the Misty Travels table to determine how you developed this Dark Gift. Additionally, you gain the traits that follow.\nd6 | Origin\n1 | You learned a secret about the nature of the Mists. Ever since, you can manipulate them, but the lands you walk have turned against you.\n2 | You fled into the Mists to escape someone or something that's hunting you. You can never rest for long, knowing you're still being pursued.\n3 | You're part of an organization, a family, or an itinerant community with experience traveling the Mists. They taught you how to do the same.\n4 | The Mists stole you from your home and fractured your memories of where you're from. You've been on a quest to find your way back ever since.\nMisty Step. You can cast the Misty Step spell, requiring no spell slot, and you must finish a long rest before you can cast it this way again. Your spellcasting ability for this spell is Intelligence, Wisdom, or Charisma (your choice when you gain this Dark Gift). If you have spell slots of 2nd level or higher, you can cast this spell with them.\nMist Traveler. When you enter the Mists intent on reaching a specific domain, you are treated as if you possess a Mist talisman keyed to that domain. To use this trait, you must know the name of the domain you have chosen as your destination, but you don't need to have previously visited that land. This trait doesn't allow you to bypass domain borders closed by a Darklord's will.\nPoisoned Roots. When you finish a long rest, the world around you in a 10-mile radius becomes a siphon that will eventually leech away your vitality. You can remain in the area safely for a number of weeks equal to your Constitution modifier (minimum of 1 week). Thereafter, each time you finish a long rest in the area, you must succeed on a DC 15 Constitution saving throw or gain 1 level of exhaustion that can't be removed while you remain in the area."
+        },
+        {
+          "titulo": "Second Skin",
+          "nivel": 2,
+          "texto_en": "There is another side of you that most people never see. When you show this side of yourself, you might become another person entirely, a celestial-like avenger, or a walking nightmare. Whatever the specifics of this form, it exaggerates some drive or hidden nature within you.\nRoll on or choose an option from the Second Form table to determine this other side of yourself. Additionally, you gain the traits that follow.\nd6 | Form\n1 | An exaggerated version of your own form\n2 | Hybrid form of humanoid and beast\n3 | An angelic, a demonic, or an aberrant form\n4 | A vaguely human-shaped creature made of slime\n5 | A fey-like shape, either brooding or passionate\n6 | A body constructed of metal, stone, or machinery\nTransformation. You can cast the Alter Self spell to appear in your second form. When you do so, you gain the effects of that spell's Change Appearance option and cannot end it to gain the benefits of a different option. Casting alter self in this way requires no spell slot, and you must finish a long rest before you can cast it this way again. Your spellcasting ability for this spell is Intelligence, Wisdom, or Charisma (your choice when you gain this Dark Gift). If you have spell slots of 2nd level or higher, you can cast this spell with them.\nWhen you cast Alter Self using this feature, some cosmetic aspect of your second form remains after the spell ends. This visibly marks you unless you actively hide or disguise it. The mark is a perceptible change such as scaly skin, stunted wings, eyes without pupils, or horns. The mark fades after you finish a long rest.\nInvoluntary Change. Certain circumstances can activate your Dark Gift. After you experience this catalyst, at the start of your next turn you must succeed on a DC 15 Charisma saving throw or use your action to cast Alter Self as described in the Transformation trait, even if you have already used it.\nRoll on or choose an option from the Change Catalyst table to determine what triggers your involuntary change."
+        },
+        {
+          "titulo": "Change Catylist",
+          "nivel": 3,
+          "texto_en": "d6 | Catalyst\n1 | Seeing a particular phase of the moon\n2 | The smell of a certain type of flower\n3 | The sound of ringing temple bells\n4 | Hearing a particular melody\n5 | Touching pure silver with your bare skin\n6 | Seeing someone resembling a specific individual"
+        },
+        {
+          "titulo": "Symbiotic Being",
+          "nivel": 2,
+          "texto_en": "A second being resides within your body along with you. It manifests physically somewhere on you and relies on you for its survival. At the same time, it offers you knowledge and other assistance, either of its own volition or because of your intertwined nature. The symbiote has its own personality and agenda, which might be at odds with yours. If you ignore the symbiote's desires, it might strive to interfere with you. There is no way to be rid of the symbiote while you have this Dark Gift. Even if you go to drastic lengths, such as severing the part of your body where the symbiote resides, it reappears on your body in another location at the next midnight.\nRoll on or choose an option from the Symbiotic Nature table to determine what sort of symbiotic being shares your body. Additionally, you gain the traits that follow."
+        },
+        {
+          "titulo": "Symbiotic Nature",
+          "nivel": 3,
+          "texto_en": "d6 | Symbiote\n1 | Tiny humanoid facial features protruding from your torso, palm, or the back of your head\n2 | An alien appendage inside an unhealing wound\n3 | A burrowing, worm-like being\n4 | An intrusive thought that inhabits your mind\n5 | A living tattoo\n6 | Crystal growths that replace a portion of your body\nEntwined Existence. Your symbiote is a separate entity with its own physical form bound to yours. It isn't a separate creature and relies on you to survive. It has Intelligence, Wisdom, and Charisma scores. The DM sets the symbiote's abilities or determines them randomly (roll 4d6 for each score, ignoring the lowest roll and totaling the rest). The symbiote can see and hear using your senses.\nThe symbiote speaks, reads, and understands two languages; one that you speak, as well as one appropriate to its nature. Choose one of the following skills: Arcana, Deception, History, Intimidation, Insight, Investigation, Nature, Religion, Perception, or Persuasion. You gain proficiency in that skill if you don't already have it, representing the symbiote's counsel and guidance.\nIf you die, so does your symbiote. If you are subsequently returned to life, your symbiote revives as well.\nSustained Symbiosis. Your symbiote has a vested interest in your survival and takes steps to ensure it. When you fail a saving throw, you can choose to have your symbiote expend one of your Hit Dice to roll it and add the number rolled to the saving throw, potentially turning the failure into a success. If it uses this feature on a death saving throw, you succeed on the save and regain 1 hit point regardless of the number rolled on the d20.\nOnce you succeed on a saving throw due to this trait, the symbiote can't use it again until you finish a long rest.\nSymbiotic Agenda. Your symbiote has an agenda that drives it, and it expects you to assist it in achieving those goals. How permissive or patient it is in resolving its agenda depends on its personality (work with your DM to determine these details). If you have an opportunity to advance its agenda and don't act on it, the symbiote can try to force your hand. You must succeed on a Charisma saving throw (DC 12 + the symbiote's Charisma modifier) or be charmed by the symbiote for 1d12 hours.\nWhile charmed, you must try to follow the symbiote's commands. If you take damage that is not self-inflicted, you can repeat the saving throw, ending the effect on a success.\nRoll or choose from the Symbiotic Agenda table to determine the symbiote's goal, working with your DM to detail the specifics or create another agenda."
+        },
+        {
+          "titulo": "Symbiotic Agenda",
+          "nivel": 3,
+          "texto_en": "d6 | Agenda\n1 | The symbiote seeks to destroy a specific type of being, such as fiends, trolls, or paladins.\n2 | The symbiote craves knowledge and is determined to solve a mystery or learn a secret.\n3 | The symbiote wants to bring a prophecy to fruition or to thwart one.\n4 | The symbiote seeks to defend the servants and interests of a powerful being or organization.\n5 | The symbiote wants to keep you from harm at all costs and believes it knows what's best for you.\n6 | The symbiote seeks to experience new sensations, the more bizarre the better."
+        },
+        {
+          "titulo": "Touch of Death",
+          "nivel": 2,
+          "texto_en": "Your touch is pain, harming whoever you come in contact with. The deathly power within you is beyond your control, afflicting any who touch your bare skin. By the same token, you can deliver death to your enemies with your touch.\nRoll on or choose an option from the Deadly Touch table to determine how this Dark Gift presents itself. Additionally, you gain the traits that follow."
+        },
+        {
+          "titulo": "Deadly Touch",
+          "nivel": 3,
+          "texto_en": "d6 | Manifestation\n1 | Your body is alchemically or biologically altered, infusing you with deadly chemicals.\n2 | The magic of a slighted druid or fey makes small plants wither and insects die in your presence.\n3 | You're the harbinger of a grim prophecy. Any creature your touch damages is marked with a temporary scar of a group, fiend, deity, or other force that takes an interest in you.\n4 | You survived a near-death experience—but shouldn't have. Ever since, death and ill omens follow you.\n5 | You are out of sync with time or reality. Anything you touch is warped by the distortion.\n6 | Every time you touch a creature, you hear the laughter of someone you once harmed.\nDeath Touch. You can focus your deadly touch against your foes. As an action, make one unarmed strike. On a hit, the target takes an additional 1d10 necrotic damage. This damage increases by 1d10 when you reach 5th level (2d10), 11th level (3d10), and 17th level (4d10).\nInescapable Death. When you hit a target with an attack roll and deal necrotic damage, you ignore the target's resistance to that damage.\nWithering Contact. When you start your turn grappling a creature or grappled by it, the creature takes 1d10 necrotic damage."
+        },
+        {
+          "titulo": "Watchers",
+          "nivel": 2,
+          "texto_en": "Something is always watching you and draws ethereal spirits that take the form of creatures made of shadowstuff, usually in the shape of Tiny beasts, that follow you and gather in your general vicinity. These creatures act like normal examples of their kind, but their behavior suggests a hint of malice. No matter what precautions you take, you can't permanently drive these spirits away. They always return, wait just beyond the reach of deterrents, or later crawl out of your clothes and equipment.\nRoll on or choose an option from the Watchers table to determine what sorts of forms the spirits typically take when they follow you."
+        },
+        {
+          "titulo": "Watchers",
+          "nivel": 3,
+          "texto_en": "d6 | Watchers\n1 | Carrion Eaters. Jackals, ravens, vultures\n2 | Inescapable Judgments. Animate tools of punishment, drifting eyeballs, religious iconography\n3 | Night Wings. Bats, moths, owls\n4 | Plague Carriers. Fleas, rats, squirrels\n5 | Unnatural Observers. Animate objects, clockwork devices, otherworldly voyeurs\n6 | Sea Skulkers. Crabs, eels, jellyfish\n7 | Stray Souls. Ghost orbs, shadows, ectoplasmic wisps\n8 | Venomous Vermin. Scorpions, serpents, spiders\nBorrowed Eyes. As an action, you can influence the presence guiding the watchers for 1 hour. For the duration, you gain advantage on Intelligence (Investigation) and Wisdom (Perception) checks, and you can't be blinded. Once you use this feature, you can't use it again until you finish a long rest.\nDread Presence. You have disadvantage on Charisma (Deception), Charisma (Performance), and Charisma (Persuasion) checks made against creatures that can see the watchers, and you have disadvantage on saving throws made against the Scrying spell.\nYou can temporarily disperse or hide the watchers with some effort. With 1 minute of work and a successful DC 15 Charisma (Animal Handling) check, you can suppress your Borrowed Eyes and Dread Presence for 1 hour. Once you successfully suppress these features, you can't do so again until you finish a long rest."
+        }
+      ]
+    },
+    {
+      "id": "draconic-gifts",
+      "titulo": "Draconic Gifts",
+      "fonte": "Fizban's Treasury of Dragons",
+      "ua": false,
+      "secoes": [
+        {
+          "titulo": null,
+          "nivel": 0,
+          "texto_en": "Source: Fizban's Treasury of Dragons\nThe death of a dragon can result in its power taking root in a character, whether that person is the dragon's chosen heir or the dragon's killer. The result of this investiture can vary widely in power and impact, from a minor charm to a complete transformation.\nSometimes, a draconic gift has an obvious visual manifestation, such as when a character is transformed into a dragonborn. Other gifts are invisible, but no less potent. But on some worlds, the investiture of draconic power is accompanied by some kind of physical manifestation, especially if it's derived from slaying a dragon. It might be small and easily hidden, but those who know to look can usually identify a dragonslayer (or another character who carries a draconic gift) by a telltale sign. The Draconic Marks table suggests some possibilities of what these marks might look like."
+        },
+        {
+          "titulo": "Draconic Marks",
+          "nivel": 5,
+          "texto_en": "d4 | Visual Manifestation\n1 | One or both of the character's eyes change color to resemble the dragon's eyes or scales.\n2 | The character's hair (or a streak of it) changes color to match the color of the dragon's scales.\n3 | A mark like a stylized dragon eye or claw appears on the body.\n4 | Patches of scales appear on the character's body, typically on the neck, shoulders, or forearms."
+        },
+        {
+          "titulo": "Draconic Gift Descriptions",
+          "nivel": 4,
+          "texto_en": "The draconic gifts detailed in this section have rarities like magic items. The rarity of a draconic gift corresponds roughly to the age category of the dragon that bestowed it, as shown in the Draconic Gift Rarity table.\nYou can use a more common draconic gift for an older dragon, but exercise caution going in the other direction. Very rare and legendary draconic gifts can unbalance the game if they're given to low-level characters.\nRarity | Age Category\nUncommon | Wyrmling\nRare | Young\nVery Rare | Adult\nLegendary | Ancient"
+        },
+        {
+          "titulo": "Draconic Familiar",
+          "nivel": 5,
+          "texto_en": "Draconic Gift, Uncommon\nYou gain the aid of a draconic familiar, which might be a splinter of the consciousness of a dragon that invested you with power.\nYou can cast the Find Familiar spell as a ritual without using any material components. When you cast the spell in this way, your familiar always takes the form of a pseudodragon.\nAdditionally, when you take the Attack action on your turn, you can forgo one of your own attacks to allow your pseudodragon familiar to make one attack of its own with its reaction."
+        },
+        {
+          "titulo": "Draconic Rebirth",
+          "nivel": 5,
+          "texto_en": "Draconic Gift, Uncommon\nYou become a dragonborn. You replace the racial traits of your original race with the traits of a chromatic, gem, or metallic dragonborn. The kind of dragonborn you become matches the family of the dragon that is the source of this gift. You can keep any skill proficiencies you gained from your previous race, or you gain proficiency in two skills of your choice."
+        },
+        {
+          "titulo": "Draconic Senses",
+          "nivel": 5,
+          "texto_en": "Draconic Gift, Rare\nYou gain keen senses like a dragon's.\nBlindsight. You have blindsight to a range of 10 feet. Within that range, you can effectively see anything that isn't behind total cover, even if you're blinded or in darkness. Moreover, you can see invisible creatures within that range, unless the creatures successfully hide from you.\nKeen Senses. You have advantage on Wisdom (Perception) checks."
+        },
+        {
+          "titulo": "Echo of Dragonsight",
+          "nivel": 5,
+          "texto_en": "Draconic Gift, Very Rare\nYou have begun to extend your awareness beyond the single world of the Material Plane that is your home.\nYou can cast Contact Other Plane as a ritual. The entity you contact is a dragon on another world in the Material Plane, so its knowledge of your world might be limited. Also, this dragon is an echo of the dragon who is the source of the gift, which might affect its attitude and behavior toward you."
+        },
+        {
+          "titulo": "Frightful Presence",
+          "nivel": 5,
+          "texto_en": "Draconic Gift, Very Rare\nEchoes of a dragon's might linger around you, and you can call on them to inspire fear in those who stand against you.\nAs a bonus action, you can manifest your frightful presence. Each creature of your choice that is within 120 feet of you and aware of you must make a Wisdom saving throw against a DC equal to 8 + your proficiency bonus + your Charisma modifier. A creature that fails becomes frightened of you for 1 minute. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.\nOnce you use this ability a number of times equal to your proficiency bonus, you can't use it again until you finish a long rest."
+        },
+        {
+          "titulo": "Psionic Reach",
+          "nivel": 5,
+          "texto_en": "Draconic Gift, Very Rare\nThe psionic energy of a gem dragon empowers your mind. You gain resistance to psychic damage.\nIn addition, you learn the Telekinesis spell. You can cast this spell without expending a spell slot. Once you cast this spell in this way, you can't do so again until you finish a long rest. You can also cast this spell using spell slots you have of the appropriate level. The spellcasting ability is Intelligence, Wisdom, or Charisma when you cast the spell with this gift (choose when you gain the gift)."
+        },
+        {
+          "titulo": "Scaled Toughness",
+          "nivel": 5,
+          "texto_en": "Draconic Gift, Legendary\nYour skin toughens, making you resistant to certain types of physical harm. You gain resistance to piercing and slashing damage."
+        },
+        {
+          "titulo": "Tongue of the Dragon",
+          "nivel": 5,
+          "texto_en": "Draconic Gift, Uncommon\nYou gain some of the majestic presence of a dragon.\nDragon's Speech. You can speak, read, and write Draconic.\nDragon's Voice. As a bonus action, you can make your voice audible up to 300 feet away for 1 minute.\nDragon's Wiles. You have advantage on Charisma (Persuasion) checks."
+        },
+        {
+          "titulo": "Feats as Draconic Gifts",
+          "nivel": 5,
+          "texto_en": "If your campaign uses the optional feat rules from the Player's Handbook, your Dungeon Master might give you a feat as a variant draconic gift. You gain one feat of your or the DM's choice, which is related in some way to the draconic power you have acquired. Consider these examples:\n- Your heightened senses give you a dragon's awareness of your surroundings (Alert or Observant).\n- Dragon's blood has made you hardy and resilient (Durable, Resilient, or Tough).\n- Exposure to the primal energy of a dragon's body has given you a magical affinity for one damage type (Elemental Adept).\n- You are infused with a dragon's charismatic gift for inspiration (Inspiring Leader).\n- You are imbued with a dragon's intellect (Keen Mind).\n- The dragon's gift lingers in the form of good luck (Lucky).\n- The dragon's inherent magic has transferred to your own blood (Magic Initiate)."
+        }
+      ]
+    },
+    {
+      "id": "epic-boons",
+      "titulo": "Epic Boons",
+      "fonte": "Dungeon Masters Guide",
+      "ua": false,
+      "secoes": [
+        {
+          "titulo": null,
+          "nivel": 0,
+          "texto_en": "Source: Dungeon Masters Guide\nAn Epic Boon is a special power available only to 20th level characters. Characters at that level gain such boons only if the DM wants them to and only when they find it appropriate. Epic Boons are best awarded after the characters complete a major quest, or accomplish something else particularly notable. A character might gain an epic boon after destroying an evil artifact, defeating an ancient dragon, or halting an incursion from the Outer Planes.\nThe text of a boon addresses its user. Unless a boon says otherwise, a character can't gain it more than once."
+        },
+        {
+          "titulo": "Boon of Combat Prowess",
+          "nivel": 3,
+          "texto_en": "When you miss with a melee weapon attack, you can choose to hit instead. Once you use this boon, you can't use it again until you finish a short rest."
+        },
+        {
+          "titulo": "Boon of Dimensional Travel",
+          "nivel": 3,
+          "texto_en": "As an action, you can cast the Misty Step spell, without using a spell slot or any components. Once you do so, you can't use this boon again until you finish a short rest."
+        },
+        {
+          "titulo": "Boon of Fate",
+          "nivel": 3,
+          "texto_en": "When another creature that you can see within 60 feet of you makes an ability check, an attack roll, or a saving throw, you can roll a d10 and apply the result as a bonus or penalty to the roll. Once you use this boon, you can't use it again until you finish a short rest."
+        },
+        {
+          "titulo": "Boon of Fortitude",
+          "nivel": 3,
+          "texto_en": "Your hit point maximum increases by 40."
+        },
+        {
+          "titulo": "Boon of High Magic",
+          "nivel": 3,
+          "texto_en": "You gain one 9th-level spell slot, provided that you already have one."
+        },
+        {
+          "titulo": "Boon of Immortality",
+          "nivel": 3,
+          "texto_en": "You stop aging. You are immune to any effect that would age you, and you can't die from old age."
+        },
+        {
+          "titulo": "Boon of Invincibility",
+          "nivel": 3,
+          "texto_en": "When you take damage from any source, you can reduce that damage to 0. Once you use this boon, you can't use it again until you finish a short rest."
+        },
+        {
+          "titulo": "Boon of Irresistible Offense",
+          "nivel": 3,
+          "texto_en": "You can bypass the damage resistances of any creature."
+        },
+        {
+          "titulo": "Boon of Luck",
+          "nivel": 3,
+          "texto_en": "You can add a d10 roll to any ability check, attack roll, or saving throw you make. Once you use this boon, you can't use it again until you finish a short rest."
+        },
+        {
+          "titulo": "Boon of Magic Resistance",
+          "nivel": 3,
+          "texto_en": "You have advantage on saving throws against spells and other magical effects."
+        },
+        {
+          "titulo": "Boon of Peerless Aim",
+          "nivel": 3,
+          "texto_en": "You can give yourself a +20 bonus to a ranged attack roll you make. Once you use this boon, you can't use it again until you finish a short rest."
+        },
+        {
+          "titulo": "Boon of Perfect Health",
+          "nivel": 3,
+          "texto_en": "You are immune to all diseases and poisons, and you have advantage on Constitution saving throws."
+        },
+        {
+          "titulo": "Boon of Planar Travel",
+          "nivel": 3,
+          "texto_en": "When you gain this boon, choose a plane of existence other than the Material Plane. You can now use an action to cast the Plane Shift spell (no spell slot or components required), targeting yourself only, and travel to the chosen plane, or from that plane back to the Material Plane. Once you use this boon, you can't use it again until you finish a short rest."
+        },
+        {
+          "titulo": "Boon of Quick Casting",
+          "nivel": 3,
+          "texto_en": "Choose one of your spells of 1st through 3rd level that has a casting time of 1 action. That spell's casting time is now 1 bonus action for you."
+        },
+        {
+          "titulo": "Boon of Recovery",
+          "nivel": 3,
+          "texto_en": "You can use a bonus action to regain a number of hit points equal to half your hit point maximum. Once you use this boon, you can't use it again until you finish a long rest."
+        },
+        {
+          "titulo": "Boon of Resilience",
+          "nivel": 3,
+          "texto_en": "You have resistance to bludgeoning, piercing, and slashing damage from nonmagical weapons."
+        },
+        {
+          "titulo": "Boon of Skill Proficiency",
+          "nivel": 3,
+          "texto_en": "You gain proficiency in all skills."
+        },
+        {
+          "titulo": "Boon of Speed",
+          "nivel": 3,
+          "texto_en": "Your walking speed increases by 30 feet. In addition, you can use a bonus action to take the Dash or Disengage action. Once you do so, you can't do so again until you finish a short rest."
+        },
+        {
+          "titulo": "Boon of Spell Mastery",
+          "nivel": 3,
+          "texto_en": "Choose one 1st-level sorcerer, warlock, or wizard spell that you can cast. You can now cast that spell at its lowest level without expending a spell slot."
+        },
+        {
+          "titulo": "Boon of Spell Recall",
+          "nivel": 3,
+          "texto_en": "You can cast any spell you know or have prepared without expending a spell slot. Once you do so, you can't use this boon again until you finish a long rest."
+        },
+        {
+          "titulo": "Boon of the Fire Soul",
+          "nivel": 3,
+          "texto_en": "You have immunity to fire damage. You can also cast Burning Hands (save DC 15) at will, without using a spell slot or any components."
+        },
+        {
+          "titulo": "Boon of the Night Spirit",
+          "nivel": 3,
+          "texto_en": "While completely in an area of dim light or darkness, you can become invisible as an action. You remain invisible until you take an action or a reaction."
+        },
+        {
+          "titulo": "Boon of the Stormborn",
+          "nivel": 3,
+          "texto_en": "You have immunity to lightning and thunder damage. You can also cast Thunderwave (save DC 15) at will, without using a spell slot or any components."
+        },
+        {
+          "titulo": "Boon of the Unfettered",
+          "nivel": 3,
+          "texto_en": "You have advantage on ability checks made to resist being grappled. In addition, you can use an action to automatically escape a grapple or free yourself of restraints of any kind."
+        },
+        {
+          "titulo": "Boon of Truesight",
+          "nivel": 3,
+          "texto_en": "You have truesight out to a range of 60 feet."
+        },
+        {
+          "titulo": "Boon of Undetectability",
+          "nivel": 3,
+          "texto_en": "You gain a +10 bonus to Dexterity (Stealth) checks, and you can't be detected or targeted by divination magic, including scrying sensors."
+        }
+      ]
+    },
+    {
+      "id": "supernatural-gifts",
+      "titulo": "Supernatural Gifts",
+      "fonte": "Mythic Odysseys of Theros",
+      "ua": false,
+      "secoes": [
+        {
+          "titulo": "Supernatural Gifts: Theros",
+          "nivel": 1,
+          "texto_en": "Source: Mythic Odysseys of Theros\nMost heroes of Theros have some kind of supernatural aid to help them achieve their goals. Often this aid comes from the gods, but some heroes might find their support from other beings, such as the sphinx Medomai, an oracle like Atris or Kydele, or a repository of mystical knowledge. Some heroes are born with supernatural power or born as a result of supernatural events.\nA character in Theros begins with one supernatural gift chosen from those in this section. Work with the DM to decide where your character's gift came from. Is it tied to the god you serve? Was it the result of a fateful encounter with a sphinx or an oracle? Does it indicate the nature of your birth? Each gift's description also includes a table to spark your imagination as you think about your character's gift.\nThese supernatural gifts are intended for starting characters, but some might be bestowed by gods as rewards for remarkable deeds.\n- Anvilwrought\n- Heroic Destiny\n- Iconoclast\n- Inscrutable\n- Lifelong Companion\n- Nyxborn\n- Oracle\n- Pious\n- Unscarred"
+        },
+        {
+          "titulo": "Anvilwrought",
+          "nivel": 2,
+          "texto_en": "You were forged in the fires of Purphoros's forge. Your appearance bears a metallic sheen and visible joints. The Anvilwrought Characteristics table suggests details of your life or origins. Additionally, you gain the following traits.\nConstructed Resilience. You were created to have remarkable fortitude, represented by the following benefits:\n- You have advantage on saving throws against being poisoned, and you have resistance to poison damage.\n- You don't need to eat, drink, or breathe.\n- You are immune to disease.\n- You don't need to sleep, and magic can't put you to sleep.\nSentry's Rest. When you take a long rest, you must spend at least six hours in an inactive, motionless state, rather than sleeping. In this state, you appear inert, but it doesn't render you unconscious, and you can see and hear as normal."
+        },
+        {
+          "titulo": "Anvilwrought Characteristics",
+          "nivel": 3,
+          "texto_en": "d6 | Characteristic\n1 | An oread who works in Purphoros's forge is the closest thing I have to a parent.\n2 | Purphoros made me to serve him.\n3 | I was created decades ago and, fearing that I'm growing obsolete, recently fled Mount Velus.\n4 | Purphoros regrets my creation and wants to reforge me into something better.\n5 | Purphoros intended me to carry on his work by making even greater creations of my own.\n6 | Someone in Mount Velus implanted a terrible secret within me in order to smuggle it out into the world."
+        },
+        {
+          "titulo": "Heroic Destiny",
+          "nivel": 2,
+          "texto_en": "Great deeds lie in your future, and it will take extraordinary effort to kill you before you accomplish those deeds. Choose or roll a random destiny using the Heroic Destiny table. Additionally, you gain the following traits.\nDefy Death. You have advantage on death saving throws.\nHard to Kill. When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead. Once you use this trait, you can't use it again until you finish a long rest."
+        },
+        {
+          "titulo": "Heroic Destiny",
+          "nivel": 3,
+          "texto_en": "d6 | Destiny\n1 | I'm destined to be the most skilled practitioner of a craft or trade.\n2 | I'm destined to earn a place among the stars of Nyx\n3 | I'm destined to become a god.\n4 | I'm destined to liberate my beloved from the clutches of the Underworld.\n5 | I was born while a kraken ravaged Meletis, and I'm destined to destroy that kraken.\n6 | I'm destined to uncover the secret of the gods' power."
+        },
+        {
+          "titulo": "Iconoclast",
+          "nivel": 2,
+          "texto_en": "No one can deny the reality of the gods of Theros, whose presence and deeds are visible in the night sky and sometimes directly in the mortal realm. But some people refute the idea that the gods are worthy of reverence. Such iconoclasts are common among the leonin, but members of any culture can adopt this supernatural gift. The Iconoclast Characteristics table presents suggestions for why you've become an iconoclast.\nYour denial of the gods gives you supernatural power to resist their influence in the world. You gain the following traits.\nEnlightened Protection. You can cast Protection from Evil and Good with this trait, targeting only yourself and requiring no material components. Once you do so, you can't cast it in this way again until you finish a long rest. Wisdom is your spellcasting ability for this trait.\nReject the Gods. You can't gain or lose Piety to any god. You instead gain the following traits at the character level listed in each one. Wisdom is your spellcasting ability for any spell that you cast through these traits."
+        },
+        {
+          "titulo": "Iconoclast Hero",
+          "nivel": 4,
+          "texto_en": "5th-level Iconoclast trait\nYou can cast Dispel Magic with this trait. Once you do so, you can't cast it in this way again until you finish a long rest."
+        },
+        {
+          "titulo": "Iconoclast Paragon",
+          "nivel": 4,
+          "texto_en": "11th-level Iconoclast trait\nYou can cast Dispel Evil and Good with this trait, requiring no material components. Once you do so, you can't cast it in this way again until you finish a long rest.\nIn addition, when you cast Dispel Magic using your Iconoclast Hero trait, you cast it as a 4th-level spell."
+        },
+        {
+          "titulo": "Iconoclast Archetype",
+          "nivel": 4,
+          "texto_en": "17th-level Iconoclast trait\nYou can cast Antimagic Field with this trait, requiring no material components. Once you do so, you can't cast it in this way again until you finish a long rest.\nIn addition, when you cast Dispel Magic using your Iconoclast Hero trait, you cast it as a 5th-level spell."
+        },
+        {
+          "titulo": "Iconoclast Characteristics",
+          "nivel": 3,
+          "texto_en": "d6 | Characteristic\n1 | I blame the gods for the death of those I cared about.\n2 | Multiple gods seek to use me to their ends, so I try to avoid all divine entanglements.\n3 | It's obvious the gods are fickle and unworthy of worship.\n4 | I know the world's future lies with mortals, not gods.\n5 | I'm convinced the gods want me dead.\n6 | I refuse to be a pawn in divine schemes."
+        },
+        {
+          "titulo": "Inscrutable",
+          "nivel": 2,
+          "texto_en": "Like a sphinx, you have a mind like a maze, impenetrable to mortal scrutiny. This might be a gift or training from an actual sphinx, the blessing (or curse) of a god, or an inexplicable talent. The Inscrutable Characteristics table suggests options for what makes you inscrutable. Additionally, you gain the following traits.\nPsychic Shield. You have resistance to psychic damage.\nSphinx's Shroud. You are immune to any effect that allows other creatures to sense your emotions or read your thoughts. Wisdom (Insight) checks made to ascertain your intentions or sincerity have disadvantage."
+        },
+        {
+          "titulo": "Inscrutable Characteristics",
+          "nivel": 3,
+          "texto_en": "d6 | Characteristic\n1 | I was educated by a sphinx in the Dakra Isles.\n2 | I am a devout adherent to one of Meletis's schools of philosophy\n3 | I only speak in the past tense, as if all things I say have already transpired.\n4 | I have sworn a vow to allow no living person to see behind the mask that covers my face at all times.\n5 | Why wouldn't I phrase every statement as a question?\n6 | I was born a sphinx, but a god cursed me into humanoid form and saddled me with the limits of mortal knowledge. I won't rest until I break the curse."
+        },
+        {
+          "titulo": "Lifelong Companion",
+          "nivel": 2,
+          "texto_en": "Behind many heroes is another hero whose greatness comes from the support and love they offer. Haktos had his beloved Perynes, Renata was accompanied by her servant Karados, and Siona sailed with her devoted crew. Like these partners, you are great and make others great. Consider the Companion Relationships table when determining your legendary connection. Any relationship with another player's character requires that player's consent. Additionally, you gain the following traits.\nBoon Aura. Your allies within 5 feet of you have advantage on saving throws against being frightened or charmed, provided you aren't incapacitated.\nCompanion's Protection. When a creature you can see within 5 feet of you is hit by an attack roll, you can use your reaction to cause the attack to hit you instead. Once you use this trait, you can't do so again until you finish a long rest."
+        },
+        {
+          "titulo": "Companion Relationships",
+          "nivel": 3,
+          "texto_en": "d6 | Relationship\n1 | Another character is my lover or dearest friend.\n2 | Another character is my sibling.\n3 | Another character is my parent or child.\n4 | Another character is a champion of my god.\n5 | After admiring another character from afar, I've finally won a position by their side.\n6 | I want nothing more than for another character to recognize my devotion and love me in return."
+        },
+        {
+          "titulo": "Nyxborn",
+          "nivel": 2,
+          "texto_en": "Born from the minds of the gods, the creatures that populate the gods' realm are called Nyxborn. Nyxborn creatures resemble mortal beings, but philosophers debate their true character. Are they idealized forms of mortal beings, free from the imperfections and transience that causes mortals to suffer and die? Or are they hollow and soulless shades, lacking the authenticity and pathos that make mortal existence worthwhile?\nA Nyxborn is like a fragment of divinity, an idea or a dream that is incarnate. You embody an idea—like the way leaves turn toward the sun or the feeling of ocean sand between the toes, the way the heart stirs when the tide of battle changes or the sadness that lingers when remembering a happy moment of childhood.\nThese ideas, dreams, memories, and feelings are the stuff Nyx is made of, and a Nyxborn is shaped from that raw material. You might have been specifically crafted by one of the gods to serve a certain purpose. Or your existence could be an accident caused by a confluence of supernatural forces. The Nyxborn Origin table offers a handful of suggestions that might explain how you came to be, and the Nyxborn Quirks table describes some special effects that might linger around your person.\nAdditionally, you gain the following traits.\nCloak of Stars. As an action, you wrap yourself in a starry cloak, appearing like a silhouette formed of the night sky. When you do, attack rolls have disadvantage against you. This cloak lasts for 1 minute, until you doff it (no action required), or until you die. Once you use this trait, you can't use it again until you finish a long rest.\nNyxborn Resistance. You have resistance to necrotic and radiant damage."
+        },
+        {
+          "titulo": "Nyxborn Origin",
+          "nivel": 3,
+          "texto_en": "d6 | Origin\n1 | One of my parents is a nyxborn, a nymph, or some other supernatural creature.\n2 | I was formed from Nyx by one of the gods to serve as a divine emissary.\n3 | I'm a side effect of some other divine action.\n4 | A god witnessed my birth, making me what I am.\n5 | I was rescued from the Underworld and took on supernatural characteristics when I returned to life.\n6 | I'm a song or other work of art brought to life."
+        },
+        {
+          "titulo": "Nyxborn Quirks",
+          "nivel": 3,
+          "texto_en": "d6 | Quirk\n1 | Whenever my weapon strikes something, the weapon gives off a shower of starry sparks.\n2 | My hair moves as if in a perpetual breeze.\n3 | My anger smells like burning autumn leaves.\n4 | When the sun shines on me just so, I glimmer with many colors.\n5 | My laughter causes nearby birds to erupt in song.\n6 | People who sleep near me always dream of the sea."
+        },
+        {
+          "titulo": "Oracle",
+          "nivel": 2,
+          "texto_en": "You possess a precious gift coveted not just by mortals but by the gods themselves: the gift of clear communication between the mortal and divine realms. As an oracle, you can perceive the whims of the gods and petition them for glimpses of their vast insight. This gift also comes with a curse, though, which typically takes the form of dire insights. Consult the Oracle Curse table to determine what unwanted revelations you receive.\nThe gods seek mortal oracles to act as their agents. As a result, most oracles devote themselves to the service of a single god and learn to ignore the voices of all others. Occasionally, two gods agree to share the services of an oracle. Oracles who try to remain independent often find themselves pursued by the agents of evil gods who would bind them to the god's service, if necessary.\nYou gain the following traits.\nEars of the Oracle. You can speak, read, and write Celestial, the language of the gods. In addition, a god might deliver a message through you, and you can decide whether to use your own voice or to allow the god's voice to come through your mouth to deliver the message, translated into any language you speak.\nOracle's Insight. The gods give you flashes of insight that help you bring your efforts to fruition. When you make an ability check, you can roll a d10 and add the number rolled to the check. You can wait until after you roll the d20 before deciding to add the d10, but you must decide before the DM says whether the roll succeeds or fails. Once you use this trait, you can't use it again until you finish a short or long rest.\nOracle's Piety. Your oracular abilities improve as your piety score increases. Instead of gaining the piety benefits associated with any god, you gain the following traits when you reach the specified piety score.\nWisdom is your spellcasting ability for any spell that you cast through these traits."
+        },
+        {
+          "titulo": "Augur",
+          "nivel": 4,
+          "texto_en": "Piety 3+ Oracle trait\nYou can cast Augury as a ritual with this trait. Once you do so, you can't cast it in this way again until you finish a long rest."
+        },
+        {
+          "titulo": "Seer",
+          "nivel": 4,
+          "texto_en": "Piety 10+ Oracle trait\nYou can cast Divination as a ritual with this trait. Once you do so, you can't cast it in this way again until you finish a long rest."
+        },
+        {
+          "titulo": "Sibyl",
+          "nivel": 4,
+          "texto_en": "Piety 25+ Oracle trait\nYou can cast Commune as a ritual with this trait. Once you do so, you can't cast it in this way again until you finish a long rest.\nYou also can't be surprised, provided you aren't incapacitated."
+        },
+        {
+          "titulo": "Divine Oracle",
+          "nivel": 4,
+          "texto_en": "Piety 50+ Oracle trait\nYou can increase your Intelligence or Wisdom score by 2, as well as increasing your maximum for the chosen score by 2."
+        },
+        {
+          "titulo": "Oracle Curse",
+          "nivel": 3,
+          "texto_en": "d8 | Flaw\n1 | I know exactly how I'm going to die, and I can't do or say anything to prevent it.\n2 | People who consult me for information rarely believe the answers I give them.\n3 | I'm haunted by nightmares foretelling the deaths of people I've never met.\n4 | I'm often distracted by the sights and sounds of things that other people can't perceive.\n5 | A horrible monster in Nyx watches me constantly, and I see it every time I venture outdoors.\n6 | Any time I grow close to someone, I see them aged, dying, or dead.\n7 | Whenever I receive a divine vision, I get an intense pain in my head or chest.\n8 | One of the gods intends to use me as an oracle whether I want to listen or not."
+        },
+        {
+          "titulo": "Pious",
+          "nivel": 2,
+          "texto_en": "Born with a particular connection to a deity, you have been winning favor with your god since birth. Consult the Pious Quirks table to determine how your faith might influence your personality. Additionally, you gain the following traits.\nPious Protection. If you fail a saving throw, you can reroll it, and you must use the new roll. Once you use this trait, you can't do so again until you finish a long rest.\nReligious Study. You have advantage on any Intelligence (Religion) check pertaining to your chosen god.\nStarting Piety. You begin with a piety score of 3 with your chosen god."
+        },
+        {
+          "titulo": "Pious Quirks",
+          "nivel": 3,
+          "texto_en": "d6 | Quirk\n1 | I often call people by the name of my god (or another god) by accident.\n2 | I stay up late at night watching the stars in hopes that my god will share a message with me.\n3 | I'm deeply jealous of my god's oracles, who seem to have a more intimate relationship with my god than I can ever hope to attain.\n4 | I dream of one day entering Nyx and being granted a permanent place at my god's side.\n5 | I have no home besides the temples of my god.\n6 | I can't prove it, but I suspect that my god might actually be my parent."
+        },
+        {
+          "titulo": "Unscarred",
+          "nivel": 2,
+          "texto_en": "Like the great hero Haktos, you are resistant to physical harm. Use the Unscarred Origin table to determine how you gained your legendary invulnerability. Additionally, you gain the following trait.\nUnscarred Resilience. When you take damage, you can use your reaction to roll a d12. Add your Constitution modifier to the number rolled, and reduce the damage by that total. After you use this trait, you can't use it again until you finish a short or long rest."
+        },
+        {
+          "titulo": "Unscarred Origin",
+          "nivel": 3,
+          "texto_en": "d6 | Origin\n1 | I was bathed in hydra's blood as an infant, and my wounds close too quickly to become mortal injuries.\n2 | I swallowed a magic stone that fell from Nyx, which made my skin hard as rock.\n3 | When I was wounded as a child, a god healed me. Now wounds are reluctant to undo the god's work.\n4 | I was rescued from the Underworld, and I'm not sure I fully returned to life—it's always so cold.\n5 | I was born on one of the Dakra Isles. All my people are naturally resilient, a fact I didn't realize until I lost my home and ventured into the world.\n6 | I don't know who one or more of my parents is, but my resilience (and other hints) provide clues to their immortal identity."
+        },
+        {
+          "titulo": "Supernatural Gifts: Wildemount",
+          "nivel": 1,
+          "texto_en": "Source: Explorer's Guide to Wildemount\nThe magic that sustains Hollow Ones is a mystery. Most Hollow Ones are reborn after dying in Blightshore, suggesting that the spell-scarred nature of the land brought them back for an unknown purpose. Yet some beings find that, days after they died, they awaken, clutching to life, with only a terrible emptiness inside to remind them of their death.\nIn Blightshore, Hollow Ones are seen as a people like any other. They seem strange, but the adventurous and hardy folk of Blightshore are used to making allies with strange creatures. Elsewhere, Hollow Ones are indistinguishable from living creatures, save for the faint stench of necromancy that lingers about them.\nThe transition from life to becoming a Hollow One affects different people to different degrees. Some let their anger and regret consume them. Others use their second chance to become a brighter force in the world. However, all Hollow Ones are marked by their new existence: feelings of unease, dread or sadness cling to them like tattered rags of their past life.\nThe Dungeon Master has the option to allow a character created in a Wildemount campaign to be a Hollow One. Alternatively, a character who perishes in the course of a campaign might return as a Hollow One, created by the mysterious forces that scar the land."
+        },
+        {
+          "titulo": "Hollow One",
+          "nivel": 2,
+          "texto_en": "As a Hollow One, the void left behind by your departed soul is filled with the strange magic of Blightshore. Becoming a Hollow One is a supernatural gift that bestows upon you the following traits.\nAgeless. You don't age, and effects that would cause you to age don't work on you.\nCling to Life. When you make a death saving throw and roll 16 or higher, you regain 1 hit point.\nRevenance. You retain your creature type, yet you register as undead to spells and other effects that detect the presence of the undead creature type.\nUnsettling Presence. As an action, you can unsettle a creature you can see within 15 feet of you. The target has disadvantage on the next saving throw it makes within the next minute. Constructs, undead, and creatures that can't be frightened are immune to this feature. Once you use this feature, you can't use it again until you finish a long rest."
+        },
+        {
+          "titulo": "Supernatural Blessing: Fate-Touched (HB)",
+          "nivel": 1,
+          "texto_en": "Source: Tal'Dorei Setting Reborn\nMost lives and souls find their ways easily along the paths of fate and destiny, oblivious and eager to be a part of the history meant for them. Some souls, however, carry themselves with mysterious influence, the golden threads of their fate subtly guiding history as they pass. Events both magnificent and catastrophic often follow such souls, which take the form of great rulers and terrible tyrants, powerful mages, religious leaders, and legendary heroes. These are the fate-touched.\nFew fate-touched ever become aware of their prominent nature. Without the confirmation of the gods themselves, few can know for certain that they bear this blessing. And this is as it should be, for people of renown and power grow easily jealous of those whose gifts outstrip their own. The surviving chronicles of the Age of Arcanum are filled with tales of magical hierarchs who enslaved those they took for fate-touched—or worse, attempted to extract the essence of fate from them by the most horrid means. Being touched by fate can be a blessing or a curse. It is most often those who bear the blessings of fortune who are remembered by history, while those cursed by fate are forgotten. Most cultures of Exandria have legends of those marked by ill fate simply by being born under the full light of Ruidus, the vermilion moon around which countless fell legends swirl.\nPlayer characters and NPCs gain this blessing by having the GM grant it to them, gaining the Fortune’s Grace feature as a result. A character might receive the blessing as a gift from the gods, or as a temporary and surprising phenomenon when the campaign shifts into a story arc focused on that character. An NPC ally might bear this blessing to help them survive as the characters protect them from a terrible threat. A previously benign NPC might even become a power-hungry villain as they test the limits of their fate-touched gift."
+        },
+        {
+          "titulo": "Fortune's Grace",
+          "nivel": 2,
+          "texto_en": "Your fate-touched essence can cause events to shift in your favor. When you make an attack roll, an ability check, or a saving throw, you can choose to reroll the d20. You must reroll the die before the outcome of the initial roll is determined.\nAlternatively, when a creature you can see makes an attack against you or makes a saving throw against one of your spells or features, you can force that creature to reroll the attack roll or saving throw.\nIf the roll that triggers the reroll is made with advantage or disadvantage, both d20s are rerolled. Once you use this feature, you can’t use it again until you finish a long rest."
+        }
+      ]
+    },
+    {
+      "id": "madness",
+      "titulo": "Madness",
+      "fonte": null,
+      "ua": false,
+      "secoes": [
+        {
+          "titulo": null,
+          "nivel": 0,
+          "texto_en": "In a typical campaign, characters aren't driven mad by the horrors they face and the carnage they inflict day after day, but sometimes the stress of being an adventurer can be too much to bear. If your campaign has a strong horror theme, you might want to use madness as a way to reinforce that theme, emphasizing the extraordinarily horrific nature of the threats the adventurers face."
+        },
+        {
+          "titulo": "Going Mad",
+          "nivel": 2,
+          "texto_en": "Various magical effects can inflict madness on an otherwise stable mind. Certain spells, such as contact other plane and symbol, can cause insanity, and you can use the madness rules here instead of the spell effects in the Player's Handbook. Diseases, poisons, and planar effects such as psychic wind or the howling winds of Pandemonium can all inflict madness. Some artifacts can also break the psyche of a character who uses or becomes attuned to them."
+        },
+        {
+          "titulo": "Madness Effects",
+          "nivel": 2,
+          "texto_en": "Madness can be short-term, long-term, or indefinite. Most relatively mundane effects impose short-term madness, which lasts for just a few minutes. More horrific effects or cumulative effects can result in long-term or indefinite madness.\nA character afflicted with short-term madness is subjected to an effect from the Short-Term Madness table for 1d10 minutes.\nA character afflicted with long-term madness is subjected to an effect from the Long-Term Madness table for 1d10 × 10 hours.\nA character afflicted with indefinite madness gains a new character flaw from the Indefinite Madness table that lasts until cured."
+        },
+        {
+          "titulo": "Curing Madness",
+          "nivel": 2,
+          "texto_en": "A calm emotions spell can suppress the effects of madness, while a lesser restoration spell can rid a character of a short-term or long-term madness. Depending on the source of the madness, remove curse or dispel evil might also prove effective. A greater restoration spell or more powerful magic is required to rid a character of indefinite madness."
+        },
+        {
+          "titulo": "Short Term Madness",
+          "nivel": 4,
+          "texto_en": "d100 | Effects (lasts 1d10 minutes)\n01-20 | The character retreats into his or her mind and becomes paralyzed. The effect ends if the character takes any damage.\n21-30 | The character becomes incapacitated and spends the duration screaming, laughing, or weeping.\n31-40 | The character becomes frightened and must use his or her action and movement each round to flee from the source of the fear.\n41-50 | The character begins babbling and is incapable of normal speech or spellcasting.\n51-60 | The character must use his or her action each round to attack the nearest creature.\n61-70 | The character experiences vivid hallucinations and has disadvantage on ability checks.\n71-75 | The character does whatever anyone tells them to do that isn't obviously self-destructive.\n76-80 | The character experiences an overpowering urge to eat something strange such as dirt, slime, or offal.\n81-90 | The character is stunned.\n91-100 | The character falls unconscious."
+        },
+        {
+          "titulo": "Long Term Madness",
+          "nivel": 4,
+          "texto_en": "d100 | Effects (lasts 1d10×10 hours)\n01-10 | The character feels compelled to repeat a specific activity over and over, such as washing hands, touching things, praying, or counting coins.\n11-20 | The character experiences vivid hallucinations and has disadvantage on ability checks.\n21-30 | The character suffers extreme paranoia. The character has disadvantage on Wisdom and Charisma checks\n31-40 | The character regards something (usually the source of madness) with intense revulsion, as if affected by the antipathy effect of the Antipathy/Sympathy spell.\n41-45 | The character experiences a powerful delusion. Choose a potion. The character imagines that they are under its effects.\n46-55 | The character becomes attached to a \"lucky charm,\" such as a person or an object, and has disadvantage on attack rolls, ability checks, and saving throws while more than 30 feet from it.\n56-65 | The character is blinded (25%) or deafened (75%).\n66-75 | The character experiences uncontrollable tremors or tics, which impose disadvantage on attack rolls, ability checks, and saving throws that involve Strength or Dexterity.\n76-85 | The character suffers from partial amnesia. The character knows who they are and retains racial traits and class features, but doesn't recognize other people or remember anything that happened before the madness took effect.\n86-90 | Whenever the character takes damage, they must succeed on a DC 15 Wisdom saving throw or be affected as though they failed a saving throw against the confusion spell. The confusion effect lasts for 1 minute.\n91-95 | The character loses the ability to speak.\n96-100 | The character falls unconscious. No amount of jostling or damage can wake the character."
+        },
+        {
+          "titulo": "Indefinite Madness",
+          "nivel": 4,
+          "texto_en": "d100 | Flaw (lasts until cured)\n01-15 | \"Being drunk keeps me sane.\"\n16-25 | \"I keep whatever I find.\"\n26-30 | \"I try to become more like someone else I know—adopting their style of dress, mannerisms, and name.\"\n31-35 | \"I must bend the truth, exaggerate, or outright lie to be interesting to other people.\"\n36-45 | \"Achieving my goal is the only thing of interest to me, and I'll ignore everything else to pursue it.\"\n46-50 | \"I find it hard to care about anything that goes on around me.\"\n51-55 | \"I don't like the way people judge me all the time.\"\n56-70 | \"I am the smartest, wisest, strongest, fastest, and most beautiful person I know.\"\n71-80 | \"I am convinced that powerful enemies are hunting me, and their agents are everywhere I go. I am sure they're watching me all the time.\"\n81-85 | \"There's only one person I can trust. And only I can see this special friend.\"\n86-95 | \"I can't take anything seriously. The more serious the situation, the funnier I find it.\"\n95-100 | \"I've discovered that I really like killing people.\""
+        }
+      ]
+    },
+    {
+      "id": "spell-points",
+      "titulo": "Variant: Spell Points",
+      "fonte": "Dungeon Masters Guide",
+      "ua": false,
+      "secoes": [
+        {
+          "titulo": null,
+          "nivel": 0,
+          "texto_en": "Source: Dungeon Masters Guide\nWith this variant system, a character who has the Spellcasting feature uses spell points instead spell slots to fuel spells. Spell points give a caster more flexibility, at the cost of greater complexity.\nIn this variant, each spell has a point cost based on its level. The Spell Point Cost table summarizes the cost in spell points of slots from 1st to 9th level. Cantrips don't require slots and therefore don't require spell points.\nInstead of gaining a number of spell slots to cast your spells from the Spellcasting feature, you gain a pool of spell points instead. You expend a number of spell points to create a spell slot of a given level, and then use that slot to cast a spell. You can't reduce your spell points total to less than 0, and you regain all spent spell points when you finish a long rest.\nSpells of 6th level and higher are particularly taxing to cast. You can use spell points to create one slot of each level of 6th or higher. You can't create another slot of the same level until you finish a long rest.\nThe number of spell points you have to spend is based on your level as a spellcaster, as shown in the Spell Points by Level table. Your level also determines the maximum-level spell slot you can create. Even though you might have enough points to create a slot above this maximum, you can't do so.\nThe Spell Points by Level table applies to bards, clerics, druids, sorcerers, and wizards. For a paladin or ranger, halve the character's level in that class and then consult the table. For a fighter (Eldritch Knight) or rogue (Arcane Trickster), divide the character's level in that class by three. For an Artificer, add half your levels (rounded up) in the artificer class to to determine your available spell points. Homebrew\nThis system can be applied to monsters that cast spells using spell slots, but it isn't recommended that you do so. Tracking spell point expenditures for a monster can be a hassle."
+        },
+        {
+          "titulo": "Spell Point Cost",
+          "nivel": 5,
+          "texto_en": "Spell Level | Point Cost\n1st | 2\n2nd | 3\n3rd | 5\n4th | 6\n5th | 7\n6th | 9\n7th | 10\n8th | 11\n9th | 13"
+        },
+        {
+          "titulo": "Spell Points by Level",
+          "nivel": 5,
+          "texto_en": "Class Level | Spell Points | Max Spell Level\n1st | 4 | 1st\n2nd | 6 | 1st\n3rd | 14 | 2nd\n4th | 17 | 2nd\n5th | 27 | 3rd\n6th | 32 | 3rd\n7th | 38 | 4th\n8th | 44 | 4th\n9th | 57 | 5th\n10th | 64 | 5th\n11th | 73 | 6th\n12th | 73 | 6th\n13th | 83 | 7th\n14th | 83 | 7th\n15th | 94 | 8th\n16th | 94 | 8th\n17th | 107 | 9th\n18th | 114 | 9th\n19th | 123 | 9th\n20th | 133 | 9th"
+        }
+      ]
+    },
+    {
+      "id": "this-is-your-life",
+      "titulo": "This is your Life",
+      "fonte": "Xanathars Guide to Everything",
+      "ua": false,
+      "secoes": [
+        {
+          "titulo": null,
+          "nivel": 0,
+          "texto_en": "Source: Xanathars Guide to Everything\nThe character creation rules in the player's handbook provide all the information you need to define your character in preparation for a life of adventuring. What they don't do is account for all the circumstances that shaped your character during the years between your birth and the start of your career as a member of a class.\nWhat did your character accomplish or experience before deciding to become an adventurer? What were the circumstances of your birth? How large is your family, and what sorts of relationships do you have with your relatives? Which people were the greatest influences on you during your formative years, for better or worse?\nTo answer these questions and more, you can use the tables and the advice in this section to compose a well-developed backstory for your character-an autobiography of sorts-that you can use to inform how you roleplay the character. Your DM can draw from this material as the campaign proceeds, creating situations and scenarios that build off your previous life experiences."
+        },
+        {
+          "titulo": "Ideas, Not Rules",
+          "nivel": 2,
+          "texto_en": "Even though these pages are full of tables and die rolls, they don't make up a rules system-in fact, the opposite is true. You can use as much or as little of this material as you desire, and you can make decisions in any order you want.\nFor instance, you might not want these tables to help you decide who your parents and siblings are, because that's among the information you've already come up with. But you can still use other parts, such as the section on life events, to provide added depth and detail."
+        },
+        {
+          "titulo": "How and When to Use the Tables",
+          "nivel": 3,
+          "texto_en": "If you're comfortable with letting the dice decide a certain fact about your character, go ahead and roll. If not, you can take charge and make the decision, choosing from among the possibilities on a table. Of course, you also have the option of disregarding the result of a die roll if it conflicts with another result. Likewise, if the text instructs you to roll on a table, that's not meant to be taken literally. You can always make your own choice.\nAlthough these tables are meant to augment the step-by-step character creation process in the player's handbook, they don't occupy a specific place in that process. You can use some of them early on-for instance, it's possible to determine your parents and other family members immediately after deciding your character's race-but you could also wait until later in the process. You might prefer to establish more facts about your character's game identity-such as your class, ability scores, and alignment-before supplementing that information with what's offered here."
+        },
+        {
+          "titulo": "Section by Section",
+          "nivel": 3,
+          "texto_en": "This material is divided into four sections, each addressing a different aspect of your character's backstory.\nOrigins. To find out who and where you came from, use the \"Origins\" section. When you're done, you will have a summary of facts about your parents, your siblings, and the circumstances under which you grew up.\nPersonal Decisions. After you have selected your character's background and class, use the appropriate tables to determine how you came to make those choices.\nLife Events. Your character's existence until now, no matter how brief or uneventful, has been marked by one or more life events-memorable happenings that have had an effect on who you are today.\nSupplemental Tables. Your life has intersected with the lives of plenty of other people, all the way from your infancy to today. When a result mentions such a person, you can use the supplemental tables to add needed details-such as race, class, or occupation-to that person. Some tables in the other sections direct you to one or more of the supplemental tables, and you can also use them any other time you see fit."
+        },
+        {
+          "titulo": "Origins",
+          "nivel": 2,
+          "texto_en": "The usual first step in creating your character's life story is to determine your early circumstances. Who were your parents? Where were you born? Did you have any siblings? Who raised you? You can address these questions by using the following tables."
+        },
+        {
+          "titulo": "Parents",
+          "nivel": 3,
+          "texto_en": "You had parents, of course, even if they didn't raise you. To determine what you know about these people, use the Parents table. If you want, you can roll separately on the table for your mother and your father. Use the supplemental tables as desired (particularly Class, Occupation, and Alignment) to learn more about your parents."
+        },
+        {
+          "titulo": "Parents",
+          "nivel": 4,
+          "texto_en": "d100 | Parents\n1-95 | You know who your parents are or were.\n96-100 | You do not know who your parents were.\nNonhuman Parents. If your character is a half-elf, a half-orc, or a tiefling, you can use one of the tables below to determine the race of each of your parents. When you have a result, randomly determine which part of the result refers to your father and which to your mother."
+        },
+        {
+          "titulo": "Half-Elf Parents",
+          "nivel": 4,
+          "texto_en": "d8 | Parents\n1-5 | One parent was an elf and the other was a human\n6 | One parent was an elf and the other was a half-elf.\n7 | One parent was a human and the other was a half-elf.\n8 | Both parents were half-elves."
+        },
+        {
+          "titulo": "Half-Orc Parents",
+          "nivel": 4,
+          "texto_en": "d8 | Parents\n1-3 | One parent was an orc and the other was a human.\n4-5 | One parent was an orc and the other was a half-orc.\n6-7 | One parent was a human and the other was a half-orc.\n8 | Both parents were half-orcs."
+        },
+        {
+          "titulo": "Tiefling Parents",
+          "nivel": 4,
+          "texto_en": "d8 | Parents\n1-4 | Both parents were humans, their infernal heritage dormant until you came along.\n5-6 | One parent was a tiefling and the other was a human.\n7 | One parent was a tiefling and the other was a devil.\n8 | One parent was a human and the other was a devil."
+        },
+        {
+          "titulo": "Birthplace",
+          "nivel": 3,
+          "texto_en": "After establishing your parentage, you can determine where you were born by using the Birthplace table. (Modify the result or roll again if you get a result that's inconsistent with what you know about your parents.) Once you have a result, roll percentile dice. On a roll of 00, a strange event coincided with your birth: the moon briefly turning red, all the milk within a mile spoiling, the water in the area freezing solid in midsummer, all the iron in the home rusting or turning to silver, or some other unusual event of your choice."
+        },
+        {
+          "titulo": "Birthplace",
+          "nivel": 4,
+          "texto_en": "d100 | Location\n1-50 | Home\n51-55 | Home of a family friend\n56-63 | Home of a healer or midwife\n64-65 | Carriage, cart, or wagon\n66-68 | Barn, shed, or other outbuilding\n69-70 | Cave\n71-72 | Field\n73-74 | Forest\n75-77 | Temple\n78 | Battlefield\n79-80 | Alley or street\n81-82 | Brothel, tavern or inn\n83-84 | Castle, keep, tower or palace\n85 | Sewer or rubbish heap\n86-88 | Among people of a different race\n89-91 | On board a boat or a ship\n92-93 | In a prison or in the headquarters of a secret organization\n94-95 | In a sage's laboratory\n96 | In the Feywild\n97 | In the Shadowfell\n98 | On the Astral Plane or Ethereal Plane\n99 | On an Inner Plane of your choice\n100 | On an Outer Plane of your choice"
+        },
+        {
+          "titulo": "Siblings",
+          "nivel": 3,
+          "texto_en": "You might be an only child or one of many children. Your siblings could be cherished friends or hated rivals. Roll on the Number of Siblings table to determine how many brothers or sisters you have. If you are a dwarf or an elf, subtract 2 from your roll. Then, roll on the Birth Order table for each sibling to determine that person's age relative to yours (older, younger, or born at the same time).\nOccupation. For each sibling of suitable age, roll on the Occupation supplemental table to determine what that person does for a living.\nAlignment. You can choose your siblings' alignments or roll on the Alignment supplemental table.\nStatus. By now, each of your siblings might be alive and well, alive and not so well, in dire straits, or dead. Roll on the Status supplemental table.\nRelationship. You can roll on the Relationship supplemental table to determine how your siblings feel about you. They might all have the same attitude toward you, or some might view you differently from how the others do.\nOther Details. You can decide any other details you like about each sibling, including gender, personality, and place in the world."
+        },
+        {
+          "titulo": "Number of Siblings",
+          "nivel": 4,
+          "texto_en": "d10 | Siblings\n1-2 | None\n3-4 | 1d3\n5-6 | 1d4+1\n7-8 | 1d6+2\n9-10 | 1d8+3"
+        },
+        {
+          "titulo": "Birth Order",
+          "nivel": 4,
+          "texto_en": "2d6 | Birth Order\n2 | Twin, triplet or quadruplet\n3-7 | Older\n8-12 | Younger"
+        },
+        {
+          "titulo": "Family and Friends",
+          "nivel": 3,
+          "texto_en": "Who raised you, and what was life like for you when you were growing up? You might have been raised by your parents, by relatives, or in an orphanage. Or you could have spent your childhood on the streets of a crowded city with only your fellow runaways and orphans to keep you company.\nUse the Family table to determine who raised you. If you know who your parents are but you get a result that does not mention one or both of them, use the Absent Parent table to determine what happened.\nNext, refer to the Family Lifestyle table to determine the general circumstances of your upbringing. (Chapter 5 of the player's handbook has more information about lifestyles.) The result on that table includes a number that is applied to your roll on the Childhood Home table, which tells you where you spent your early years. Wrap up this section by using the Childhood Memories table, which tells you how you were treated by other youngsters as you were growing up.\nSupplemental Tables. You can roll on the Relationship table to determine how your family members or other important figures in your life feel about you. You can also use the Race, Occupation, and Alignment tables to learn more about the family members or guardians who raised you."
+        },
+        {
+          "titulo": "Family",
+          "nivel": 4,
+          "texto_en": "d100 | Family\n1 | None\n2 | Institution, such as an asylum\n3 | Temple\n4-5 | Orphanage\n6-7 | Guardian\n8-15 | Paternal or maternal aunt, uncle, or both\n16-25 | Paternal or maternal grandparent(s)\n26-35 | Adoptive family (same or different race)\n36-55 | Single father or stepfather\n56-75 | Single mother or stepmother\n75-100 | Mother and father"
+        },
+        {
+          "titulo": "Absent Parent",
+          "nivel": 4,
+          "texto_en": "d4 | Fate\n1 | Your parent died (roll on the Cause of Death supplemental table).\n2 | Your parent was imprisoned, enslaved, or otherwise taken away.\n3 | Your parent abandoned you.\n4 | Your parent disappeared to an unknown fate."
+        },
+        {
+          "titulo": "Family Lifestyle",
+          "nivel": 4,
+          "texto_en": "3d6 | Lifestyle*\n3 | Wretched (-40)\n4-5 | Squalid (-20)\n6-8 | Poor (-10)\n9-12 | Modest (+0)\n13-15 | Comfortable (+10)\n16-17 | Wealthy (+20)\n18 | Aristocratic (+40)\n*After making this roll, apply the modifier from the Family-Life table to arrive at the result."
+        },
+        {
+          "titulo": "Childhood Home",
+          "nivel": 4,
+          "texto_en": "d100* | Home\n0 or lower | On the streets\n1-20 | Rundown shack\n21-30 | No permanent residence\n31-40 | Encampment or village in the wilderness\n41-50 | Apartment in a rundown neighborhood\n51-70 | Small house\n71-90 | Large house\n91-110 | Mansion\n111 or higher | Palace or castle\n*After making this roll, apply the modifier from the Family-Life table to arrive at the result."
+        },
+        {
+          "titulo": "Childhood Memories",
+          "nivel": 4,
+          "texto_en": "3d6 + Cha mod | Memory\n1-3 | I am still haunted by my childhood, when I was treated badly by my peers.\n4-5 | I spent most of my childhood alone, with no close friends.\n6-8 | Others saw me as being different or strange, and so I had few companions.\n9-12 | I had a few close friends and lived an ordinary childhood.\n13-15 | I had several friends, and my childhood was generally a happy one.\n16-17 | I always found it easy to make friends, and I loved being around people.\n18-25 | Everyone knew who I was, and I had friends everywhere I went."
+        },
+        {
+          "titulo": "Personal Decisions",
+          "nivel": 2,
+          "texto_en": "Your character's life takes a particular course depending on the choices you make for the character's background and class."
+        },
+        {
+          "titulo": "Background",
+          "nivel": 3,
+          "texto_en": "Roll on the appropriate table in this section as soon as you decide your background, or at any later time if you choose. If a background includes a special decision point, such as a folk hero's defining event or the specialty of a criminal or a sage, it's best to make that determination before using the pertinent table below.\n- Acolyte\n- Charlatan\n- Criminal\n- Entertainer\n- Folk Hero\n- Guild Artisan\n- Hermit\n- Noble\n- Outlander\n- Sage\n- Sailor\n- Soldier\n- Urchin"
+        },
+        {
+          "titulo": "Acolyte",
+          "nivel": 4,
+          "texto_en": "d6 | I became an acolyte because…\n1 | I ran away from home at an early age and found refuge in a temple.\n2 | My family gave me to a temple, since they were unable or unwilling to care for me.\n3 | I grew up in a household with strong religious convictions. Entering the service of one or more gods seemed natural.\n4 | An impassioned sermon struck a chord deep in my soul and moved me to serve the faith.\n5 | I followed a childhood friend, a respected acquaintance, or someone I loved into religious service.\n6 | After encountering a true servant of the gods, I was so inspired that I immediately entered the service of a religious group."
+        },
+        {
+          "titulo": "Charlatan",
+          "nivel": 4,
+          "texto_en": "d6 | I became a charlatan because…\n1 | I was left to my own devices, and my knack for manipulating others helped me survive.\n2 | I learned early on that people are gullible and easy to exploit.\n3 | I often got in trouble, but I managed to talk my way out of it every time.\n4 | I took up with a confidence artist, from whom I learned my craft.\n5 | After a charlatan fleeced my family, I decided to learn the trade so I would never be fooled by such deception again.\n6 | I was poor or I feared becoming poor, so I learned the tricks I needed to keep myself out of poverty."
+        },
+        {
+          "titulo": "Criminal",
+          "nivel": 4,
+          "texto_en": "d6 | I became a criminal because…\n1 | I resented authority in my younger days and saw a life of crime as the best way to fight against tyranny and oppression.\n2 | Necessity forced me to take up the life, since it was the only way I could survive.\n3 | I fell in with a gang of reprobates and ne'er-do-wells, and I learned my specialty from them.\n4 | A parent or relative taught me my criminal specialty to prepare me for the family business.\n5 | I left home and found a place in a thieves' guild or some other criminal organization.\n6 | I was always bored, so I turned to crime to pass the time and discovered I was quite good at it."
+        },
+        {
+          "titulo": "Entertainer",
+          "nivel": 4,
+          "texto_en": "d6 | I became an entertainer because…\n1 | Members of my family made ends meet by performing, so it was fitting for me to follow their example.\n2 | I always had a keen insight into other people, enough so that I could make them laugh or cry with my stories or songs.\n3 | I ran away from home to follow a minstrel troupe.\n4 | I saw a bard perform once, and I knew from that moment on what I was born to do.\n5 | I earned coin by performing on street corners and eventually made a name for myself.\n6 | A traveling entertainer took me in and taught me the trade."
+        },
+        {
+          "titulo": "Folk Hero",
+          "nivel": 4,
+          "texto_en": "d6 | I became a folk hero because…\n1 | I learned what was right and wrong from my family.\n2 | I was always enamored by tales of heroes and wished I could be something more than ordinary.\n3 | I hated my mundane life, so when it was time for someone to step up and do the right thing, I took my chance.\n4 | A parent or one of my relatives was an adventurer, and I was inspired by that person's courage.\n5 | A mad old hermit spoke a prophecy when I was born, saying that I would accomplish great things.\n6 | I have always stood up for those who are weaker than I am."
+        },
+        {
+          "titulo": "Guild Artisan",
+          "nivel": 4,
+          "texto_en": "d6 | I became a guild artisan because…\n1 | I was apprenticed to a master who taught me the guild's business.\n2 | | I helped a guild artisan keep a secret or complete a task, and in return I was taken on as an apprentice.\n3 | One of my family members who belonged to the guild made a place for me.\n4 | I was always good with my hands, so I took the opportunity to learn a trade.\n5 | I wanted to get away from my home situation and start a new life.\n6 | I learned the essentials of my craft from a mentor but had to join the guild to finish my training."
+        },
+        {
+          "titulo": "Hermit",
+          "nivel": 4,
+          "texto_en": "d6 | I became a hermit because…\n1 | My enemies ruined my reputation, and I fled to the wilds to avoid further disparagement.\n2 | I am comfortable with being isolated, as I seek inner peace.\n3 | I never liked the people I called my friends, so it was easy for me to strike out on my own.\n4 | I felt compelled to forsake my past, but did so with great reluctance, and sometimes I regret making that decision.\n5 | I lost everything-my home, my family, my friends. Going it alone was all I could do.\n6 | Society's decadence disgusted me, so I decided to leave it behind."
+        },
+        {
+          "titulo": "Noble",
+          "nivel": 4,
+          "texto_en": "d6 | I became a noble because…\n1 | I come from an old and storied family, and it fell to me to preserve the family name.\n2 | My family has been disgraced, and I intend to clear our name.\n3 | My family recently came by its title, and that elevation thrust us into a new and strange world.\n4 | My family has a title, but none of my ancestors have distinguished themselves since we gained it.\n5 | My family is filled with remarkable people. I hope to live up to their example.\n6 | I hope to increase my family's power and influence."
+        },
+        {
+          "titulo": "Outlander",
+          "nivel": 4,
+          "texto_en": "d6 | I became an outlander because…\n1 | I spent a lot of time in the wilderness as a youngster, and I came to love that way of life.\n2 | From a young age, I couldn't abide the stink of the cities and preferred to spend my time in nature.\n3 | I came to understand the darkness that lurks in the wilds, and I vowed to combat it.\n4 | My people lived on the edges of civilization, and I learned the methods of survival from my family.\n5 | After a tragedy I retreated to the wilderness, leaving my old life behind.\n6 | My family moved away from civilization, and I learned to adapt to my new environment."
+        },
+        {
+          "titulo": "Sage",
+          "nivel": 4,
+          "texto_en": "d6 | I became a sage because…\n1 | I was naturally curious, so I packed up and went to a university to learn more about the world.\n2 | My mentor's teachings opened my mind to new possibilities in that field of study.\n3 | I was always an avid reader, and I learned much about my favorite topic on my own.\n4 | I discovered an old library and pored over the texts I found there. That experience awakened a hunger for more knowledge.\n5 | I impressed a wizard who told me I was squandering my talents and should seek out an education to take advantage of my gifts.\n6 | | One of my parents or a relative gave me a basic education that whetted my appetite, and I left home to build on what I had learned."
+        },
+        {
+          "titulo": "Sailor",
+          "nivel": 4,
+          "texto_en": "d6 | I became a sailor because…\n1 | I was press-ganged by pirates and forced to serve on their ship until I finally escaped.\n2 | I wanted to see the world, so I signed on as a deck-hand for a merchant ship.\n3 | One of my relatives was a sailor who took me to sea.\n4 | | I needed to escape my community quickly, so I stowed away on a ship. When the crew found me, I was forced to work for my passage.\n5 | Reavers attacked my community, so I found refuge on a ship until I could seek vengeance.\n6 | I had few prospects where I was living, so I left to find my fortune elsewhere."
+        },
+        {
+          "titulo": "Soldier",
+          "nivel": 4,
+          "texto_en": "d6 | I became a soldier because…\n1 | I joined the militia to help protect my community from monsters.\n2 | A relative of mine was a soldier, and I wanted to carry on the family tradition.\n3 | The local lord forced me to enlist in the army.\n4 | War ravaged my homeland while I was growing up. Fighting was the only life I ever knew.\n5 | I wanted fame and fortune, so I joined a mercenary company, selling my sword to the highest bidder.\n6 | Invaders attacked my homeland. It was my duty to take up arms in defense of my people."
+        },
+        {
+          "titulo": "Urchin",
+          "nivel": 4,
+          "texto_en": "d6 | I became an urchin because…\n1 | Wanderlust caused me to leave my family to see the world. I look after myself.\n2 | I ran away from a bad situation at home and made my own way in the world.\n3 | Monsters wiped out my village, and I was the sole survivor. I had to find a way to survive.\n4 | A notorious thief looked after me and other orphans, and we spied and stole to earn our keep.\n5 | One day I woke up on the streets, alone and hungry, with no memory of my early childhood.\n6 | My parents died, leaving no one to look after me. I raised myself."
+        },
+        {
+          "titulo": "Class Training",
+          "nivel": 2,
+          "texto_en": "If you haven't chosen your class yet, do so now, keeping in mind your background and all the other details you have established so far. Once you've made your selection, roll a d6 and find the number you rolled on the appropriate table in this section, which describes how you came to be a member of that class.\nThe class sections earlier in this chapter have further story suggestions, which you can use in concert with the material here.\n- Barbarian\n- Bard\n- Cleric\n- Druid\n- Fighter\n- Monk\n- Paladin\n- Ranger\n- Rogue\n- Sorcerer\n- Warlock\n- Wizard"
+        },
+        {
+          "titulo": "Barbarian",
+          "nivel": 4,
+          "texto_en": "d6 | I became a barbarian because…\n1 | My devotion to my people lifted me in battle, making me powerful and dangerous.\n2 | The spirits of my ancestors called on me to carry out a great task.\n3 | I lost control in battle one day, and it was as if something else was manipulating my body, forcing it to kill every foe I could reach.\n4 | I went on a spiritual journey to find myself and instead found a spirit animal to guide, protect, and inspire me.\n5 | I was struck by lightning and lived. Afterward, I found a new strength within me that let me push beyond my limitations.\n6 | My anger needed to be channeled into battle, or I risked becoming an indiscriminate killer."
+        },
+        {
+          "titulo": "Bard",
+          "nivel": 4,
+          "texto_en": "d6 | I became a bard because…\n1 | I awakened my latent bardic abilities through trial and error.\n2 | I was a gifted performer and attracted the attention of a master bard who schooled me in the old techniques.\n3 | I joined a loose society of scholars and orators to learn new techniques of performance and magic.\n4 | I felt a calling to recount the deeds of champions and heroes, to bring them alive in song and story.\n5 | I joined one of the great colleges to learn old lore, the secrets of magic, and the art of performance.\n6 | I picked up a musical instrument one day and instantly discovered that I could play it."
+        },
+        {
+          "titulo": "Cleric",
+          "nivel": 4,
+          "texto_en": "d6 | I became a cleric because…\n1 | A supernatural being in service to the gods called me to become a divine agent in the world.\n2 | I saw the injustice and horror in the world and felt moved to take a stand against them.\n3 | My god gave me an unmistakable sign. I dropped everything to serve the divine.\n4 | Although I was always devout, it wasn't until I completed a pilgrimage that I knew my true calling.\n5 | I used to serve in my religion's bureaucracy but found I needed to work in the world, to bring the message of my faith to the darkest corners of the land.\n6 | I realize that my god works through me, and I do as commanded, even though I don't know why I was chosen to serve."
+        },
+        {
+          "titulo": "Druid",
+          "nivel": 4,
+          "texto_en": "d6 | I became a druid because…\n1 | I saw too much devastation in the wild places, too much of nature's splendor ruined by the despoilers. I joined a circle of druids to fight back against the enemies of nature.\n2 | I found a place among a group of druids after I fled a catastrophe.\n3 | I have always had an affinity for animals, so I explored my talent to see how I could best use it.\n4 | I befriended a druid and was moved by druidic teachings. I decided to follow my friend's guidance and give something back to the world.\n5 | While I was growing up, I saw spirits all around me — entities no one else could perceive. I sought out the druids to help me understand the visions and communicate with these beings.\n6 | I have always felt disgust for creatures of unnatural origin. For this reason, I immersed myself in the study of the druidic mysteries and became a champion of the natural order."
+        },
+        {
+          "titulo": "Fighter",
+          "nivel": 4,
+          "texto_en": "d6 | I became a fighter because…\n1 | I wanted to hone my combat skills, and so I joined a war college.\n2 | I squired for a knight who taught me how to fight, care for a steed , and conduct myself with honor. I decided to take up that path for myself.\n3 | Horrible monsters descended on my community, killing someone I loved. I took up arms to destroy those creatures and others of a similar nature.\n4 | I joined the army and learned how to fight as part of a group.\n5 | I grew up fighting, and I refined my talents by defending myself against people who crossed me.\n6 | I could always pick up just about any weapon and know how to use it effectively."
+        },
+        {
+          "titulo": "Monk",
+          "nivel": 4,
+          "texto_en": "d6 | I became a monk because…\n1 | I was chosen to study at a secluded monastery. There, I was taught the fundamental techniques required to eventually master a tradition.\n2 | I sought instruction to gain a deeper understanding of existence and my place in the world.\n3 | I stumbled into a portal to the Shadowfell and took refuge in a strange monastery, where I learned how to defend myself against the forces of darkness.\n4 | I was overwhelmed with grief after losing someone close to me, and I sought the advice of philosophers to help me cope with my loss.\n5 | I could feel that a special sort of power lay within me, so I sought out those who could help me call it forth and master it.\n6 | I was wild and undisciplined as a youngster, but then I realized the error of my ways. I applied to a monastery and became a monk as a way to live a life of discipline."
+        },
+        {
+          "titulo": "Paladin",
+          "nivel": 4,
+          "texto_en": "d6 | I became a paladin because…\n1 | A fantastical being appeared before me and called on me to undertake a holy quest.\n2 | One of my ancestors left a holy quest unfulfilled, so I intend to finish that work.\n3 | The world is a dark and terrible place. I decided to serve as a beacon of light shining out against the gathering shadows.\n4 | I served as a paladin's squire, learning all I needed to swear my own sacred oath.\n5 | Evil must be opposed on all fronts. I feel compelled to seek out wickedness and purge it from the world.\n6 | Becoming a paladin was a natural consequence of my unwavering faith. In taking my vows, I became the holy sword of my religion."
+        },
+        {
+          "titulo": "Ranger",
+          "nivel": 4,
+          "texto_en": "d6 | I became a ranger because…\n1 | I found purpose while I honed my hunting skills by bringing down dangerous animals at the edge of civilization.\n2 | I always had a way with animals, able to calm them with a soothing word and a touch.\n3 | I suffer from terrible wanderlust, so being a ranger gave me a reason not to remain in one place for too long.\n4 | I have seen what happens when the monsters come out from the dark. I took it upon myself to become the first line of defense against the evils that lie beyond civilization's borders.\n5 | I met a grizzled ranger who taught me woodcraft and the secrets of the wild lands.\n6 | I served in an army, learning the precepts of my profession while blazing trails and scouting enemy encampments."
+        },
+        {
+          "titulo": "Rogue",
+          "nivel": 4,
+          "texto_en": "d6 | I became a rogue because…\n1 | I've always been nimble and quick of wit, so I decided to use those talents to help me make my way in the world.\n2 | An assassin or a thief wronged me, so I focused my training on mastering the skills of my enemy to better combat foes of that sort.\n3 | An experienced rogue saw something in me and taught me several useful tricks.\n4 | I decided to turn my natural lucky streak into the basis of a career, though I still realize that improving my skills is essential.\n5 | I took up with a group of ruffians who showed m e how to get what I want through sneakiness rather than direct confrontation.\n6 | I'm a sucker for a shiny bauble or a sack of coins, as long as I can get my hands on it without risking life and limb."
+        },
+        {
+          "titulo": "Sorcerer",
+          "nivel": 4,
+          "texto_en": "d6 | I became a sorcerer because…\n1 | When I was born, all the water in the house froze solid , the milk spoiled, or all the iron turned to copper. My family is convinced that this event was a harbinger of stranger things to come for me.\n2 | I suffered a terrible emotional or physical strain, which brought forth my latent magical power. I have fought to control it ever since.\n3 | My immediate family never spoke of my ancestors, and when I asked, they would change the subject. It wasn't until I started displaying strange talents that the full truth of my heritage came out.\n4 | When a monster threatened one of my friends, I became filled with anxiety. I lashed out instinctively and blasted the wretched thing with a force that came from within me.\n5 | Sensing something special in me, a stranger taught me how to control my gift.\n6 | After I escaped from a magical conflagration, I realized that though I was unharmed, I was not unchanged. I began to exhibit unusual abilities that I am just beginning to understand."
+        },
+        {
+          "titulo": "Warlock",
+          "nivel": 4,
+          "texto_en": "d6 | I became a warlock because…\n1 | While wandering around in a forbidden place, I encountered an otherworldly being that offered to enter into a pact with me.\n2 | I was examining a strange tome I found in an abandoned library when the entity that would become my patron suddenly appeared before me.\n3 | I stumbled into the clutches of my patron after I accidentally stepped through a magical doorway.\n4 | When I was faced with a terrible crisis, I prayed to any being who would listen, and the creature that answered became my patron.\n5 | My future patron visited me in my dreams and offered great power in exchange for my service.\n6 | One of my ancestors had a pact with my patron, so that entity was determined to bind me to the same agreement."
+        },
+        {
+          "titulo": "Wizard",
+          "nivel": 4,
+          "texto_en": "d6 | I became a wizard because…\n1 | An old wizard chose me from among several candidates to serve an apprenticeship.\n2 | When I became lost in a forest, a hedge wizard found me, took me in, and taught me the rudiments of magic.\n3 | I grew up listening to tales of great wizards and knew I wanted to follow their path. I strove to be accepted at an academy of magic and succeeded.\n4 | One of my relatives was an accomplished wizard who decided I was smart enough to learn the craft.\n5 | While exploring an old tomb, library, or temple, I found a spellbook. I was immediately driven to learn all I could about becoming a wizard.\n6 | I was a prodigy who demonstrated mastery of the arcane arts at an early age. When I became old enough to set out on my own, I did so to learn more magic and expand my power."
+        },
+        {
+          "titulo": "Life Events",
+          "nivel": 2,
+          "texto_en": "No matter how long you've been alive, you have experienced at least one signature event that has markedly influenced your character. Life events include wondrous happenings and tragedies, conflicts and successes, and encounters with the unusual. They can help to explain why your character became an adventurer, and some might still affect your life even after they are long over.\nThe older a character is, the greater the chance for multiple life events, as shown on the Life Events by Age table. If you have already chosen your character's starting age, see the entry in the Life Events column that corresponds to how old you are. Otherwise, you can roll dice to determine your current age and number of life events randomly.\nAfter you know the number of life events your character has experienced, roll once on the Life Events table for each of them. Many of the results on that table direct you to one of the secondary tables that follow. Once you have determined all of your character's life events, you can arrange them in any chronological order you see fit."
+        },
+        {
+          "titulo": "Life Events by Age",
+          "nivel": 3,
+          "texto_en": "d100 | Current Age | Life Events\n01-20 | 20 years or younger | 1\n21-59 | 21-30 years | 1d4\n60-69 | 31-40 years | 1d6\n70-89 | 41-50 years | 1d8\n90-99 | 51-60 years | 1d10\n00 | 61 years or older | 1d12"
+        },
+        {
+          "titulo": "Life Events",
+          "nivel": 3,
+          "texto_en": "d100 | Event\n01-10 | You suffered a tragedy. Roll on the Tragedies table.\n11-20 | You gained a bit of good fortune. Roll on the Boons table.\n21-30 | You fell in love or got married. If you get this result more than once, you can choose to have a child instead. Work with your DM to determine the identity of your love interest.\n31-40 | You made an enemy of an adventurer. Roll a d6. An odd number indicates you are to blame for the rift, and an even number indicates you are blameless. Use the supplemental tables and work with your DM to determine this hostile character's identity and the danger this enemy poses to you.\n41-50 | You made a friend of an adventurer. Use the supplemental tables and work with your DM to add more detail to this friendly character and establish how your friendship began.\n51-70 | You spent time working in a job related to your background. Start the game with an extra 2d6 gp.\n71-75 | You met someone important. Use the supplemental tables to determine this character's identity and how this individual feels about you. Work out additional details with your DM as needed to fit this character into your backstory.\n76-80 | You went on an adventure. Roll on the Adventures table to see what happened to you. Work with your DM to determine the nature of the adventure and the creatures you encountered.\n81-85 | You had a supernatural experience. Roll on the Supernatural Events table to find out what it was.\n86-90 | You fought in a battle. Roll on the War table to learn what happened to you. Work with your DM to come up with the reason for the battle and the factions involved. It might have been a small conflict between your community and a band of ores, or it could have been a major battle in a larger war.\n91-95 | You committed a crime or were wrongly accused of doing so. Roll on the Crime table to determine the nature of the offense and on the Punishment table to see what became of you.\n96-99 | You encountered something magical. Roll on the Arcane Matters table.\n00 | Something truly strange happened to you. Roll on the Weird Stuff table."
+        },
+        {
+          "titulo": "Secondary Tables",
+          "nivel": 3,
+          "texto_en": "These tables add detail to many of the results on the Life Events table. The tables are in alphabetical order.\n- Adventures\n- Arcane Matters\n- Boons\n- Crime\n- Punishment\n- Supernatural Events\n- Tragedies\n- War\n- Weird Stuff"
+        },
+        {
+          "titulo": "Adventures",
+          "nivel": 4,
+          "texto_en": "d100 | Outcome\n01-10 | You nearly died. You have nasty scars on your body, and you are missing an ear, 1d3 fingers, or 1d4 toes.\n11-20 | You suffered a grievous injury. Although the wound healed, it still pains you from time to time.\n21-30 | You were wounded, but in time you fully recovered.\n31-40 | You contracted a disease while exploring a filthy warren. You recovered from the disease, but you have a persistent cough, pockmarks on your skin, or prematurely gray hair.\n41-50 | You were poisoned by a trap or a monster. You recovered, but the next time you make a saving throw against poison, you make the saving throw with disadvantage.\n51-60 | You lost something of sentimental value to you during your adventure. Remove one trinket from your possessions.\n61-70 | You were terribly frightened by something you encountered and ran away, abandoning your companions to their fate.\n71-80 | You learned a great deal during your adventure. The next time you make an ability check or a saving throw, you have advantage on the roll.\n81-90 | You found some treasure on your adventure. You have 2d6 gp left from your share of it.\n91-99 | You found a considerable amount of treasure on your adventure. You have 1d20 + 50 gp left from your share of it.\n00 | You came across a common magic item (of the DM’s choice)."
+        },
+        {
+          "titulo": "Arcane Matters",
+          "nivel": 4,
+          "texto_en": "d10 | Magical Event\n1 | You were charmed or frightened by a spell.\n2 | You were injured by the effect of a spell.\n3 | You witnessed a powerful spell being cast by a cleric, a druid, a sorcerer, a warlock, or a wizard.\n4 | You drank a potion (of the DM’s choice).\n5 | You found a Spell Scroll (of the DM’s choice) and succeeded in casting the spell it contained.\n6 | You were affected by teleportation magic.\n7 | You turned invisible for a time.\n8 | You identified an illusion for what it was.\n9 | You saw a creature being conjured by magic.\n10 | Your fortune was read by a diviner. Roll twice on the Life Events table, but don’t apply the results. Instead, the DM picks one event as a portent of your future (which might or might not come true)."
+        },
+        {
+          "titulo": "Boons",
+          "nivel": 4,
+          "texto_en": "d10 | Boon\n1 | A friendly wizard gave you a Spell Scroll containing one cantrip (of the DM’s choice).\n2 | You saved the life of a commoner, who now owes you a life debt. This individual accompanies you on your travels and performs mundane tasks for you, but will leave if neglected, abused, or imperiled. Determine details about this character by using the supplemental tables and working with your DM.\n3 | You found a riding horse.\n4 | You found some money. You have 1d20 gp in addition to your regular starting funds.\n5 | A relative bequeathed you a simple weapon of your choice.\n6 | You found something interesting. You gain one additional trinket.\n7 | You once performed a service for a local temple. The next time you visit the temple, you can receive healing up to your hit point maximum.\n8 | A friendly alchemist gifted you with a Potion of Healing or a flask of acid, as you choose.\n9 | You found a treasure map.\n10 | A distant relative left you a stipend that enables you to live at the comfortable lifestyle for 1d20 years. If you choose to live at a higher lifestyle, you reduce the price of the lifestyle by 2 gp during that time period."
+        },
+        {
+          "titulo": "Crime",
+          "nivel": 4,
+          "texto_en": "d8 | Crime\n1 | Murder\n2 | Theft\n3 | Burglary\n4 | Assault\n5 | Smuggling\n6 | Kidnapping\n7 | Extortion\n8 | Counterfeiting"
+        },
+        {
+          "titulo": "Punishment",
+          "nivel": 4,
+          "texto_en": "d12 | Punishment\n1-3 | You did not commit the crime and were exonerated after being accused.\n4-6 | You committed the crime or helped do so, but nonetheless the authorities found you not guilty.\n7-8 | You were nearly caught in the act. You had to flee and are wanted in the community where the crime occurred.\n9-12 | You were caught and convicted. You spent time in jail, chained to an oar, or performing hard labor. You served a sentence of 1d4 years or succeeded in escaping after that much time."
+        },
+        {
+          "titulo": "Supernatural Events",
+          "nivel": 4,
+          "texto_en": "d100 | Event\n01-05 | You were ensorcelled by a fey and enslaved for 1d6 years before you escaped.\n06-10 | You saw a demon and ran away before it could do anything to you.\n11-15 | A devil tempted you. Make a DC 10 Wisdom saving throw. On a failed save, your alignment shifts one step towards evil (if it’s not evil already), and you start the game with an additional 1d20 + 50 gp.\n16-20 | You woke up one morning miles from your home, with no idea how you got there.\n21-30 | You visited a holy site and felt the presence of the divine there.\n31-40 | You witnessed a falling red star, a face appearing in the frost, or some other bizarre happening. You are certain that it was an omen of some sort.\n41-50 | You escaped certain death and believe it was the intervention of a god that saved you.\n51-60 | You witnessed a minor miracle.\n61-70 | You explored an empty house and found it to be haunted.\n71-75 | You were briefly possessed. Roll a d6 to determine what type of creature possessed you: 1, celestial; 2, devil; 3, demon; 4, fey; 5, elemental; 6, undead.\n76-80 | You saw a ghost.\n81-85 | You saw a ghoul feeding on a corpse.\n86-90 | A celestial or a fiend visited you in your dreams to give a warning of dangers to come.\n91-95 | You briefly visited the Feywild or the Shadowfell.\n96-00 | You saw a portal that you believe leads to another plane of existence."
+        },
+        {
+          "titulo": "Tragedies",
+          "nivel": 4,
+          "texto_en": "d12 | Tragedy\n1-2 | A family member or a close friend died. Roll on the Cause of Death supplemental table to find out how.\n3 | A friendship ended bitterly, and the other person is now hostile to you. The cause might have been a misunderstanding or something you or the former friend did.\n4 | You lost all your possessions in a disaster, and you had to rebuild your life.\n5 | You were imprisoned for a crime you didn't commit and spent 1d6 years at hard labor, in jail, or shackled to an oar in a slave galley.\n6 | War ravaged your home community, reducing everything to rubble and ruin. In the aftermath, you either helped your town rebuild or moved somewhere else.\n7 | A lover disappeared without a trace. You have been looking for that person ever since.\n8 | A terrible blight in your home community caused crops to fail, and many starved. You lost a sibling or some other family member.\n9 | You did something that brought terrible shame to you in the eyes of your family. You might have been involved in a scandal, dabbled in dark magic, or offended someone important. The attitude of your family members toward you becomes indifferent at best, though they might eventually forgive you.\n10 | For a reason you were never told, you were exiled from your community. You then either wandered in the wilderness for a time or promptly found a new place to live.\n11 | A romantic relationship ended. Roll a d6. An odd number means it ended with bad feelings, while an even number means it ended amicably.\n12 | A current or prospective romantic partner of yours died. Roll on the Cause of Death supplemental table to find out how. If the result is murder, roll a d12. On a 1, you were responsible, whether directly or indirectly."
+        },
+        {
+          "titulo": "War",
+          "nivel": 4,
+          "texto_en": "d12 | War Outcome\n1 | You were knocked out and left for dead. You woke up hours later with no recollection of the battle.\n2-3 | You were badly injured in the fight, and you still bear the awful scars of those wounds.\n4 | You ran away from the battle to save your life, but you still feel shame for your cowardice.\n5-7 | You suffered only minor injuries, and the wounds all healed without leaving scars.\n8-9 | You survived the battle, but you suffer from terrible nightmares in which you relive the experience.\n10-11 | You escaped the battle unscathed, though many of your friends were injured or lost.\n12 | You acquitted yourself well in battle and are remembered as a hero. You might have received a medal for your bravery."
+        },
+        {
+          "titulo": "Weird Stuff",
+          "nivel": 4,
+          "texto_en": "d12 | What Happened\n1 | You were turned into a toad and remained in that form for 1d4 weeks.\n2 | You were petrified and remained a stone statue for a time until someone freed you.\n3 | You were enslaved by a hag, a satyr, or some other being and lived in that creature's thrall for 1d6 years.\n4 | A dragon held you as a prisoner for 1d4 months until adventurers killed it.\n5 | You were taken captive by a race of evil humanoids such as drow, kuo-toa, or quaggoths. You lived as a slave in the Underdark until you escaped.\n6 | You served a powerful adventurer as a hireling. You have only recently left that service. Use the supplemental tables and work with your DM to determine the basic details about your former employer.\n7 | You went insane for 1d6 years and recently regained your sanity. A tic or some other bit of odd behavior might linger.\n8 | A lover of yours was secretly a silver dragon.\n9 | You were captured by a cult and nearly sacrificed on an altar to the foul being the cultists served. You escaped, but you fear they will find you.\n10 | You met a demigod, an archdevil, an archfey, a demon lord, or a titan, and you lived to tell the tale.\n11 | You were swallowed by a giant fish and spent a month in its gullet before you escaped.\n12 | A powerful being granted you a Wish, but you squandered it on something frivolous."
+        },
+        {
+          "titulo": "Supplemental Tables",
+          "nivel": 2,
+          "texto_en": "The supplemental tables below give you a way to randomly determine characteristics and other facts about individuals who are part of your character’s life. Use these tables when directed to do so by another table, or when you simply want to come up with a piece of information quickly. The tables are in alphabetical order\n- Alignment\n- Cause of Death\n- Class\n- Occupation\n- Race\n- Relationship\n- Status"
+        },
+        {
+          "titulo": "Alignment",
+          "nivel": 3,
+          "texto_en": "3d6 | Alignment\n3 | Chaotic evil (50%) or chaotic neutral (50%)\n4-5 | Lawful evil\n6-8 | Neutral evil\n9-12 | Neutral\n13-15 | Neutral good\n16-17 | Lawful good (50%) or lawful neutral (50%)\n18 | Chaotic good (50%) or chaotic neutral (50%)"
+        },
+        {
+          "titulo": "Cause of Death",
+          "nivel": 3,
+          "texto_en": "d12 | Cause of Death\n1 | Unknown\n2 | Murdered\n3 | Killed in battle\n4 | Accident related to class or occupation\n5 | Accident unrelated to class or occupation\n6-7 | Natural causes, such as disease or old age\n8 | Apparent suicide\n9 | Torn apart by an animal or a natural disaster\n10 | Consumed by a monster\n11 | Executed for a crime or tortured to death\n12 | Bizarre event, such as being hit by a meteorite, struck down by an angry god, or killed by a hatching slaad egg"
+        },
+        {
+          "titulo": "Class",
+          "nivel": 3,
+          "texto_en": "d100 | Class\n01-07 | Barbarian\n08-14 | Bard\n15-29 | Cleric\n30-36 | Druid\n37-52 | Fighter\n53-58 | Monk\n59-64 | Paladin\n65-70 | Ranger\n71-84 | Rogue\n85-89 | Sorcerer\n90-94 | Warlock\n95-00 | Wizard"
+        },
+        {
+          "titulo": "Occupation",
+          "nivel": 3,
+          "texto_en": "d100 | Occupation\n01-05 | Academic\n06-10 | Adventurer (roll on the Class table)\n11 | Aristocrat\n12-26 | Artisan or guild member\n27-31 | Criminal\n32-36 | Entertainer\n37-38 | Exile, hermit, or refugee\n39-43 | Explorer or wanderer\n44-55 | Farmer or herder\n56-60 | Hunter or trapper\n61-75 | Laborer\n76-80 | Merchant\n81-85 | Politician\n86-90 | Priest\n91-95 | Sailor\n96-00 | Soldier"
+        },
+        {
+          "titulo": "Race",
+          "nivel": 3,
+          "texto_en": "d100 | Race\n01-40 | Human\n41-50 | Dwarf\n51-60 | Elf\n61-70 | Halfling\n71-75 | Dragonborn\n76-80 | Gnome\n81-85 | Half-elf\n86-90 | Half-orc\n91-95 | Tiefling\n96-00 | DM’s choice"
+        },
+        {
+          "titulo": "Relationship",
+          "nivel": 3,
+          "texto_en": "3d4 | Attitude\n3-4 | Hostile\n5-10 | Friendly\n11-12 | Indifferent"
+        },
+        {
+          "titulo": "Status",
+          "nivel": 3,
+          "texto_en": "3d6 | Status\n3 | Dead (roll on the Cause of Death table)\n4-5 | Missing or unknown\n6-8 | Alive, but doing poorly due to injury, financial trouble, or relationship difficulties\n9-12 | Alive and well\n13-15 | Alive and quite successful\n16-17 | Alive and infamous\n18 | Alive and famous"
+        },
+        {
+          "titulo": "What’s Next?",
+          "nivel": 2,
+          "texto_en": "When you're finished using these tables, you'll have a collection of facts and notes that — at a minimum — encapsulate what your character has been doing in the world up till now. Sometimes that might be all the information you want, but you don't have to stop there.\nBy using your creativity to stitch all these bits together into a continuous narrative, you can create a full-fledged autobiography for your character in as little as a few sentences — an excellent example of how the whole is greater than the sum of its parts.\nDid you get a couple of results on the tables that don't outright contradict each other but also don't seem to fit together smoothly? If so, now is your chance to explain what happened to you. For instance, let's say you were born in a castle, but your childhood home was in the wilderness. It could be that your parents traveled from their forest home to seek help from a midwife at the castle when your mother was close to giving birth. Or your parents might have been members of the castle's staff before you were born, but they were released from service soon after you came into the world.\nIn addition to deepening your own roleplaying experience, your character's history presents your DM with opportunities to weave those elements into the story of the campaign. Any way you look at it, adding definition to your character's pre-adventuring life is time well spent."
+        }
+      ]
+    },
+    {
+      "id": "survivors",
+      "titulo": "Survivors",
+      "fonte": "Van Richtens Guide to Ravenloft",
+      "ua": false,
+      "secoes": [
+        {
+          "titulo": null,
+          "nivel": 0,
+          "texto_en": "Source: Van Richtens Guide to Ravenloft\nTerror doesn't come just for the brave and prepared—often quite the opposite. Some of the most harrowing horror stories involve the least likely heroes, individuals who find their simple lives transformed into waking nightmares."
+        },
+        {
+          "titulo": "Survivors",
+          "nivel": 3,
+          "texto_en": "In most horror adventures, players will employ familiar, adventure-ready characters. That doesn't need to be the case, though. Instead, for short, low-power adventures, immersive retellings of tragic events, out-of-body experiences, or other unique tales, consider providing players with temporary, stand-in characters called survivors.\nThis section provides guidance for using survivors, characters designed for one- to three-session adventures focused on survival rather than saving the day. Using survivors helps create horror experiences focused on the dread inherent to having limited resources and facing impending doom without forcing players to risk their favorite characters."
+        },
+        {
+          "titulo": "Using Survivors",
+          "nivel": 3,
+          "texto_en": "Survivors are premade characters that are simple and easy for players to master, while being customizable enough to fill broad roles in your adventures—whether they be farmers or bored nobles, constables or babysitters. Adventures employing survivors are meant to be asides within broader campaigns or otherwise short experiences."
+        },
+        {
+          "titulo": "Cut Scenes, Dreams, and Memories",
+          "nivel": 4,
+          "texto_en": "Use survivors to provide information to players in the form of a self-contained adventure. Even if it doesn't make sense for a campaign's characters to be present for an event, survivors can provide players with perspectives they wouldn't otherwise have. For example, you might use survivors in the following ways:\n- Survivors serve as the first constables on the scene during a serial killer's crime. Afterward, when the players' other characters get involved in the investigations, the players know the details.\n- Survivors give every player a part to play in one character's ominous nightmares, such as those resulting from encounters with the mind flayers of Bluetspur.\n- Survivors provide players front row seats to important historic events. It's one thing to hear about the massacre at Castle Ravenloft following Strahd von Zarovich's transformation into a vampire, but it's another to play it."
+        },
+        {
+          "titulo": "Terrible Freedom, Delightful Doom",
+          "nivel": 4,
+          "texto_en": "Make sure your players know how long you plan to use survivors and that they'll be playing their usual characters again soon. Also let them know that survivors are designed to engage with terrifying circumstances, but their triumph over such threats is not assured. Players' decisions will certainly impact the survivors' fates, but if it seems like doom is in store, encourage the players to embrace it and make sure their survivors meet unforgettable ends."
+        },
+        {
+          "titulo": "What's Old Is New",
+          "nivel": 4,
+          "texto_en": "Dwindling resources contribute to terrifying situations. When a group runs out of hit points, spells, food, or other vital reserves, tension and dread increase. High-level characters, though, have such resources in spades. By running an adventure using survivors, you can recapture some of the same tension adventurers experience early in their careers, encouraging players to use their wits and make desperate choices powerful characters can avoid."
+        },
+        {
+          "titulo": "Tools for Terror",
+          "nivel": 4,
+          "texto_en": "Survivors allow you to control how players will engage with a horror adventure. The stat blocks in the following section are designed to be easy-to-use characters with a hint of talent but little that makes them remarkable:\nApprentices have a minor talent for magic and tend to be well-read.\nDisciples faithfully adhere to the tenets of their chosen religions and receive spells from the deities they worship.\nSneaks survive by their wits and are often charlatans or petty thieves.\nSquires possess a modicum of martial training and are stalwart companions.\nDetermine how you want to use survivors in your adventure. If it's important to the story, perhaps all the players use the same stat block, representing their shared experience—a group of Sneaks might all be detectives while a band of Disciples might face a terror unleashed upon a monastery. You can also allow players to choose their own survivors, as any survivor might fill a general role like noble, villager, or sailor with a touch of talent. Make use of these ready-made characters in whatever ways suit your adventure best."
+        },
+        {
+          "titulo": "Creating a Survivor",
+          "nivel": 3,
+          "texto_en": "When you plan a session using survivors, determine how you'll use the Apprentice, Disciple, Sneak, and Squire stat blocks that appear in the following section. Once you've determined what survivors to use, take a few moments to individualize them. If the survivors have particular roles in your adventure, provide that information to players along with their survivors' statistics; otherwise, let them come up with their own details. Players can give their survivors names, personalities, and lineages, but these details don't affect the survivors' stat blocks."
+        },
+        {
+          "titulo": "Survivor Stats",
+          "nivel": 4,
+          "texto_en": "Apprentice\nMedium Humanoid\nArmor Class: 10\nHitpoints: 7 (2d8-2)\nSpeed: 30 ft.\nSTR | DEX | CON | INT | WIS | CHA\n8 (-1) | 10 (0) | 9 (-1) | 13 (+1) | 11 (+0) | 12 (+1)\nSaving Throws: Int +3\nSkills: Arcana +3, History +3\nSenses: Passive Perception 10\nLanguages: any one language (usually common)\nProficiency Bonus: +2\nActions\nQuarterstaff: Melee Weapon Attack: +1 to hit, reach 5 ft., one target. Hit: 2 (1d6 - 1) bludgeoning damage, or 3 (1d8 - 1) bludgeoning damage if used with two hands.\nBurning Hands (1st-Level Spell; 2/Day): You shoot forth a 15-foot cone of fire. Each creature in that area must make a DC 11 Dexterity saving throw. A creature takes 10 (3d6) fire damage on a failed save, or half as much damage on a successful one The fire ignites any flammable objects in the area that aren't being worn or carried.\nSpellcasting:. You cast one of the following wizard spells (spell save DC 11), using Intelligence as the spellcasting ability: At will: Minor Illusion, 2/day: Grease\nFire Bolt (Cantrip): Ranged Spell Attack: Ranged Spell Attack: +3 to hit, range 120 ft., one target. Hit: 5 (1d10) fire damage. A flammable object hit by this spell ignites if it isn't being worn or carried.\nSneak\nMedium Humanoid\nArmor Class: 13 (Shield)\nHitpoints: 9 (2d6+2)\nSpeed: 30 ft.\nSTR | DEX | CON | INT | WIS | CHA\n8 (-1) | 13 (+1) | 11 (0) | 12 (+1) | 11 (+0) | 9 (-1)\nSaving Throws: Dex +3\nSkills: Sleight of Hand +3, Stealth +3\nSenses: Passive Perception 11\nLanguages: any one language (usually common)\nProficiency Bonus: +2\nActions\nDagger: Melee or Ranged Weapon Attack: +3 to hit, reach 5 ft. or range 20/60 ft., one target. Hit: 3 (1d4 + 1) piercing damage.\nBonus Actions\nDisengage: You take the Disengage action.\nDisciple\nMedium Humanoid\nArmor Class: 11 (shield)\nHitpoints: 9 (2d8)\nSpeed: 30 ft.\nSTR | DEX | CON | INT | WIS | CHA\n12 (+1) | 9 (-1) | 10 (0) | 11 (0) | 13 (+1) | 9 (-1)\nSaving Throws: Wis +3\nSkills: Arcana +3, History +3\nSenses: Passive Perception 13\nLanguages: any one language (usually common)\nProficiency Bonus: +2\nActions\nMace: Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 4 (1d6 + 1) bludgeoning damage.\nSpellcasting: You cast one the following cleric spells (spell save DC 11), using Wisdom as the spellcasting ability: At will: Guidance, 2/day: Cure Wounds\nSacred Flame (Cantrip). You target one creature you can see within 60 feet of you. The target must succeed on a DC 11 Dexterity saving throw or take 4 (1d8) radiant damage. The target gains no benefit from cover for this saving throw.\nApprentice\nMedium Humanoid\nArmor Class: 12 (shield)\nHitpoints: 11 (2d8+2)\nSpeed: 30 ft.\nSTR | DEX | CON | INT | WIS | CHA\n13 (+1) | 10 (0) | 12 (+1) | 8 (-1) | 11 (+0) | 9 (-1)\nSaving Throws: Str +3\nSkills: Athletics +3\nSenses: Passive Perception 10\nLanguages: any one language (usually common)\nProficiency Bonus: +2\nActions\nLongsword: Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 5 (1d8 + 1) slashing damage, or 6 (1d10 + 1) slashing damage if used with two hands.\nBonus Actions\nShove: While wielding a shield, you try to shove one creature within 5 feet of you."
+        },
+        {
+          "titulo": "Levels",
+          "nivel": 4,
+          "texto_en": "Survivors don't possess classes as detailed in the Player's Handbook. Despite this, you can make a survivor marginally more powerful by increasing its level. The stat blocks present the survivors as they are at 1st level. Rather than gaining experience points, a survivor increases in level whenever it makes sense for your adventure. When a survivor gains a level, it gains the benefits on the Survivor Progression table. A survivor that advances from 1st to 2nd level and from 2nd to 3rd level gains access to the player's choice of Survivor Talents (see the section below)."
+        },
+        {
+          "titulo": "Survivor Progression",
+          "nivel": 5,
+          "texto_en": "Level | Feature\n1st | See the appropriate stat block\n2nd | Survivor Talent\n3rd | Survivor Talent"
+        },
+        {
+          "titulo": "Hit Points",
+          "nivel": 4,
+          "texto_en": "Whenever a survivor gains a level, it gains one Hit Die and its hit point maximum increases. To determine the amount of the increase, roll the Hit Die (the type that appears in the survivor's stat block), and add the survivor's Constitution modifier. It gains a minimum of 1 hit point per level.\nIf a survivor drops to 0 hit points, it falls unconscious and subsequently makes death saving throws just like a normal player character."
+        },
+        {
+          "titulo": "Survivor Talents",
+          "nivel": 3,
+          "texto_en": "At 2nd level and again at 3rd level, a survivor gains their choice of one of the following talents. A survivor can't gain the same talent more than once, unless a talent's description says otherwise. If a talent has a prerequisite, the character must meet it to gain the talent."
+        },
+        {
+          "titulo": "Adrenaline Surge",
+          "nivel": 4,
+          "texto_en": "At the start of your turn, you can choose one creature you can see within 30 feet of you. Until the start of your next turn, you are frightened of that creature and your walking speed is doubled."
+        },
+        {
+          "titulo": "Desperate Scream",
+          "nivel": 4,
+          "texto_en": "Whenever you make a saving throw, you can summon your desire to live into a desperate scream. You gain advantage on the saving throw, and the scream is audible up to 100 feet away. You can scream in this way twice, and you regain all expended uses when you finish a long rest."
+        },
+        {
+          "titulo": "Divine Guidance",
+          "nivel": 4,
+          "texto_en": "Prerequisite: Disciple survivor\nYou learn one 1st-level spell of your choice from the cleric spell list. It must be a spell you don't already know. You can cast the spell once with this talent, and you regain the ability to do so when you finish a long rest.\nYou can select this talent more than once. Each time you do so, you must choose a different spell."
+        },
+        {
+          "titulo": "Magical Talent",
+          "nivel": 4,
+          "texto_en": "Prerequisite: Apprentice survivor\nYou learn one 1st-level spell of your choice from the wizard spell list. It must be a spell you don't already know. You can cast the spell once with this talent, and you regain the ability to do so when you finish a long rest.\nYou can select this talent more than once. Each time you do so, you must choose a different spell."
+        },
+        {
+          "titulo": "Resilience",
+          "nivel": 4,
+          "texto_en": "Choose one ability score. You gain proficiency in saving throws using the chosen ability."
+        },
+        {
+          "titulo": "Sacrificing Shield",
+          "nivel": 4,
+          "texto_en": "Prerequisite: Squire survivor\nWhen a creature you can see makes an attack against a target you can see within 5 feet of you, you can use your reaction to become the target of the attack instead. If you are wielding a shield, you can reduce the damage by 1d10. Once you use this talent, you can't do so again until you finish a short or long rest."
+        },
+        {
+          "titulo": "Skillful",
+          "nivel": 4,
+          "texto_en": "You gain proficiency in two skills of your choice."
+        },
+        {
+          "titulo": "Slip Away",
+          "nivel": 4,
+          "texto_en": "Prerequisite: Sneak survivor\nWhen a creature you can see within 5 feet of you hits you with an attack roll and deals damage to you with the attack, you can use your reaction to give yourself resistance against that damage. You can then move up to half your speed without provoking opportunity attacks. Once you use this talent, you can't do so again until you finish a short or long rest."
+        }
+      ]
+    }
+  ]
+}
