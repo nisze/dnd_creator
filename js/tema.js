@@ -6,7 +6,7 @@
         ['azul', 'Azul-aço'], ['violeta', 'Violeta arcano'], ['ouro', 'Dourado'],
         ['carmesim', 'Carmesim'], ['esmeralda', 'Esmeralda']
     ];
-    let atual = 'azul';
+    let atual = 'ouro';
     try { const s = localStorage.getItem(CHAVE); if (TEMAS.some(t => t[0] === s)) atual = s; } catch (e) { /* sem armazenamento */ }
 
     function aplicar() {
