@@ -1,0 +1,64 @@
+{
+  "idiomas": [
+    {
+      "nome": "Anão",
+      "observacao": null
+    },
+    {
+      "nome": "Élfico",
+      "observacao": null
+    },
+    {
+      "nome": "Goblinóide",
+      "observacao": null
+    },
+    {
+      "nome": "Gnômico",
+      "observacao": null
+    },
+    {
+      "nome": "Gigante",
+      "observacao": null
+    },
+    {
+      "nome": "Halfling",
+      "observacao": null
+    },
+    {
+      "nome": "Orc",
+      "observacao": null
+    },
+    {
+      "nome": "Abissal",
+      "observacao": "Demônios"
+    },
+    {
+      "nome": "Celestial",
+      "observacao": null
+    },
+    {
+      "nome": "Dracônico",
+      "observacao": null
+    },
+    {
+      "nome": "Fala Profunda",
+      "observacao": "Devoradores de mente, beholders"
+    },
+    {
+      "nome": "Infernal",
+      "observacao": "Diabos"
+    },
+    {
+      "nome": "Primordial",
+      "observacao": "Elementais"
+    },
+    {
+      "nome": "Silvestre",
+      "observacao": "Fadas"
+    },
+    {
+      "nome": "Subcomum",
+      "observacao": "Comerciantes do Subterrâneo"
+    }
+  ]
+}

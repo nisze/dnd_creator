@@ -1,0 +1,693 @@
+[
+  {
+    "simbolo": "🛡️",
+    "texto": "Armaduras",
+    "conteudo": [
+      {
+        "simbolo": "ℹ️",
+        "texto": "As armaduras são divididas em categorias baseadas no peso e na mobilidade. A Classe de Armadura (CA) define a sua defesa básica."
+      },
+      {
+        "simbolo": "📋",
+        "texto": "ArmaduraCustoClasse de Armadura (CA)Força MínimaFurtividade"
+      },
+      {
+        "simbolo": "🧥",
+        "texto": "Armaduras Leves",
+        "conteudo": [
+          {
+            "simbolo": "🧶",
+            "Nome": "Armadura Acolchoada",
+            "descrição": "Furtividade: Desvantagem",
+            "preço": "5 po",
+            "bonus_ca": "11 + modificador de Des"
+          },
+          {
+            "simbolo": "🐮",
+            "Nome": "Armadura de Couro",
+            "descrição": "Nenhuma penalidade",
+            "preço": "10 po",
+            "bonus_ca": "11 + modificador de Des"
+          },
+          {
+            "simbolo": "🦏",
+            "Nome": "Armadura Couro Batido",
+            "descrição": "Nenhuma penalidade",
+            "preço": "45 po",
+            "bonus_ca": "12 + modificador de Des"
+          }
+        ]
+      },
+      {
+        "simbolo": "🎽",
+        "texto": "Armaduras Médias",
+        "conteudo": [
+          {
+            "simbolo": "🐻",
+            "Nome": "Gibão de Peles",
+            "descrição": "Nenhuma penalidade",
+            "preço": "10 po",
+            "bonus_ca": "12 + modificador de Des (máx 2)"
+          },
+          {
+            "simbolo": "⛓️",
+            "Nome": "Camisão de Malha",
+            "descrição": "Nenhuma penalidade",
+            "preço": "50 po",
+            "bonus_ca": "13 + modificador de Des (máx 2)"
+          },
+          {
+            "simbolo": "🐟",
+            "Nome": "Brunea",
+            "descrição": "Furtividade: Desvantagem",
+            "preço": "50 po",
+            "bonus_ca": "14 + modificador de Des (máx 2)"
+          },
+          {
+            "simbolo": "🦺",
+            "Nome": "Peitoral de Aço",
+            "descrição": "Nenhuma penalidade",
+            "preço": "400 po",
+            "bonus_ca": "14 + modificador de Des (máx 2)"
+          },
+          {
+            "simbolo": "🦾",
+            "Nome": "Meia Armadura",
+            "descrição": "Furtividade: Desvantagem",
+            "preço": "750 po",
+            "bonus_ca": "15 + modificador de Des (máx 2)"
+          }
+        ]
+      },
+      {
+        "simbolo": "🏰",
+        "texto": "Armaduras Pesadas",
+        "conteudo": [
+          {
+            "simbolo": "⭕",
+            "Nome": "Cota de Anéis",
+            "descrição": "Furtividade: Desvantagem",
+            "preço": "30 po",
+            "bonus_ca": "14"
+          },
+          {
+            "simbolo": "🔗",
+            "Nome": "Cota de Malha",
+            "descrição": "Força Mínima: 13. Furtividade: Desvantagem",
+            "preço": "75 po",
+            "bonus_ca": "16"
+          },
+          {
+            "simbolo": "🎋",
+            "Nome": "Cota de Talas",
+            "descrição": "Força Mínima: 15. Furtividade: Desvantagem",
+            "preço": "200 po",
+            "bonus_ca": "17"
+          },
+          {
+            "simbolo": "🛡️",
+            "Nome": "Placas",
+            "descrição": "Força Mínima: 15. Furtividade: Desvantagem",
+            "preço": "1.500 po",
+            "bonus_ca": "18"
+          }
+        ]
+      },
+      {
+        "simbolo": "🧱",
+        "texto": "Escudo",
+        "conteudo": [
+          {
+            "simbolo": "🛡️",
+            "Nome": "Escudo",
+            "descrição": "Empunhado em uma das mãos para aumentar a defesa.",
+            "preço": "10 po",
+            "bonus_ca": "+2 CA"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "simbolo": "⚔️",
+    "texto": "Armas",
+    "conteudo": [
+      {
+        "simbolo": "ℹ️",
+        "texto": "Armas são categorizadas entre Simples (fáceis de usar por qualquer um) e Marciais (exigem treinamento focado)."
+      },
+      {
+        "simbolo": "🔪",
+        "texto": "Armas Simples",
+        "conteudo": [
+          {
+            "simbolo": "📋",
+            "texto": "ArmaCustoDanoPropriedades Básicas"
+          },
+          {
+            "simbolo": "🤺",
+            "texto": "Corpo a Corpo",
+            "conteudo": [
+              {
+                "simbolo": "🗡️",
+                "Nome": "Adaga",
+                "descrição": "Acuidade, leve, arremesso (distância 6/18m)",
+                "preço": "2 po",
+                "dano": "1d4 perfurante"
+              },
+              {
+                "simbolo": "🥢",
+                "Nome": "Azagaia",
+                "descrição": "Arremesso (distância 9/36m)",
+                "preço": "5 pp",
+                "dano": "1d6 perfurante"
+              },
+              {
+                "simbolo": "🦯",
+                "Nome": "Bordão",
+                "descrição": "Versátil (1d8)",
+                "preço": "2 pp",
+                "dano": "1d6 contundente"
+              },
+              {
+                "simbolo": "🏏",
+                "Nome": "Clava",
+                "descrição": "Leve",
+                "preço": "1 pp",
+                "dano": "1d4 contundente"
+              },
+              {
+                "simbolo": "🌾",
+                "Nome": "Foice",
+                "descrição": "Leve",
+                "preço": "1 po",
+                "dano": "1d4 cortante"
+              },
+              {
+                "simbolo": "🔱",
+                "Nome": "Lança",
+                "descrição": "Arremesso (distância 6/18m), versátil (1d8)",
+                "preço": "1 po",
+                "dano": "1d6 perfurante"
+              },
+              {
+                "simbolo": "🔨",
+                "Nome": "Maça",
+                "descrição": "Arma de impacto simples",
+                "preço": "5 po",
+                "dano": "1d6 contundente"
+              },
+              {
+                "simbolo": "🪓",
+                "Nome": "Machado Manual",
+                "descrição": "Leve, arremesso (distância 6/18m)",
+                "preço": "5 po",
+                "dano": "1d6 cortante"
+              },
+              {
+                "simbolo": "⚒️",
+                "Nome": "Martelo Leve",
+                "descrição": "Leve, arremesso (distância 6/18m)",
+                "preço": "2 po",
+                "dano": "1d4 contundente"
+              },
+              {
+                "simbolo": "🪵",
+                "Nome": "Porrete",
+                "descrição": "Duas mãos",
+                "preço": "2 pp",
+                "dano": "1d8 contundente"
+              }
+            ]
+          },
+          {
+            "simbolo": "🏹",
+            "texto": "À Distância",
+            "conteudo": [
+              {
+                "simbolo": "🏹",
+                "Nome": "Arco Curto",
+                "descrição": "Munição (distância 24/96m), duas mãos",
+                "preço": "25 po",
+                "dano": "1d6 perfurante"
+              },
+              {
+                "simbolo": "🎯",
+                "Nome": "Besta Leve",
+                "descrição": "Munição (distância 24/96m), recarga, duas mãos",
+                "preço": "25 po",
+                "dano": "1d8 perfurante"
+              },
+              {
+                "simbolo": "📌",
+                "Nome": "Dardo",
+                "descrição": "Acuidade, arremesso (distância 6/18m)",
+                "preço": "5 pc",
+                "dano": "1d4 perfurante"
+              },
+              {
+                "simbolo": "🪢",
+                "Nome": "Funda",
+                "descrição": "Munição (distância 9/36m)",
+                "preço": "1 pp",
+                "dano": "1d4 contundente"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "simbolo": "🗡️",
+        "texto": "Armas Marciais",
+        "conteudo": [
+          {
+            "simbolo": "📋",
+            "texto": "ArmaCustoDanoPropriedades Básicas"
+          },
+          {
+            "simbolo": "🤺",
+            "texto": "Corpo a Corpo",
+            "conteudo": [
+              {
+                "simbolo": "🪓",
+                "Nome": "Alabarda",
+                "descrição": "Pesada, alcance, duas mãos",
+                "preço": "20 po",
+                "dano": "1d10 cortante"
+              },
+              {
+                "simbolo": "🪢",
+                "Nome": "Chicote",
+                "descrição": "Acuidade, alcance",
+                "preço": "2 po",
+                "dano": "1d4 cortante"
+              },
+              {
+                "simbolo": "🗡️",
+                "Nome": "Cimitarra",
+                "descrição": "Acuidade, leve",
+                "preço": "25 po",
+                "dano": "1d6 cortante"
+              },
+              {
+                "simbolo": "🗡️",
+                "Nome": "Espada Curta",
+                "descrição": "Acuidade, leve",
+                "preço": "10 po",
+                "dano": "1d6 perfurante"
+              },
+              {
+                "simbolo": "🗡️",
+                "Nome": "Espada Grande",
+                "descrição": "Pesada, duas mãos",
+                "preço": "50 po",
+                "dano": "2d6 cortante"
+              },
+              {
+                "simbolo": "⚔️",
+                "Nome": "Espada Longa",
+                "descrição": "Versátil (1d10)",
+                "preço": "15 po",
+                "dano": "1d8 cortante"
+              },
+              {
+                "simbolo": "🌟",
+                "Nome": "Estrela da Manhã",
+                "descrição": "Arma perfurante simples",
+                "preço": "15 po",
+                "dano": "1d8 perfurante"
+              },
+              {
+                "simbolo": "🗡️",
+                "Nome": "Glaive",
+                "descrição": "Pesada, alcance, duas mãos",
+                "preço": "20 po",
+                "dano": "1d10 cortante"
+              },
+              {
+                "simbolo": "🐎",
+                "Nome": "Lança de Montaria",
+                "descrição": "Alcance, especial",
+                "preço": "10 po",
+                "dano": "1d12 perfurante"
+              },
+              {
+                "simbolo": "🔱",
+                "Nome": "Lança Longa",
+                "descrição": "Pesada, alcance, duas mãos",
+                "preço": "5 po",
+                "dano": "1d10 perfurante"
+              },
+              {
+                "simbolo": "🪓",
+                "Nome": "Machado de Batalha",
+                "descrição": "Versátil (1d10)",
+                "preço": "10 po",
+                "dano": "1d8 cortante"
+              },
+              {
+                "simbolo": "🪓",
+                "Nome": "Machado Grande",
+                "descrição": "Pesada, duas mãos",
+                "preço": "30 po",
+                "dano": "1d12 cortante"
+              },
+              {
+                "simbolo": "🔨",
+                "Nome": "Malho",
+                "descrição": "Pesada, duas mãos",
+                "preço": "10 po",
+                "dano": "2d6 contundente"
+              },
+              {
+                "simbolo": "⛓️",
+                "Nome": "Mangual",
+                "descrição": "Arma com corrente",
+                "preço": "10 po",
+                "dano": "1d8 contundente"
+              },
+              {
+                "simbolo": "⚒️",
+                "Nome": "Martelo de Guerra",
+                "descrição": "Versátil (1d10)",
+                "preço": "15 po",
+                "dano": "1d8 contundente"
+              },
+              {
+                "simbolo": "⛏️",
+                "Nome": "Picareta de Guerra",
+                "descrição": "Usada para perfurar armaduras",
+                "preço": "5 po",
+                "dano": "1d8 perfurante"
+              },
+              {
+                "simbolo": "🤺",
+                "Nome": "Rapieira",
+                "descrição": "Acuidade",
+                "preço": "25 po",
+                "dano": "1d8 perfurante"
+              },
+              {
+                "simbolo": "🔱",
+                "Nome": "Tridente",
+                "descrição": "Arremesso (distância 6/18m), versátil (1d8)",
+                "preço": "5 po",
+                "dano": "1d6 perfurante"
+              }
+            ]
+          },
+          {
+            "simbolo": "🏹",
+            "texto": "À Distância",
+            "conteudo": [
+              {
+                "simbolo": "🏹",
+                "Nome": "Arco Longo",
+                "descrição": "Munição (distância 45/180m), pesada, duas mãos",
+                "preço": "50 po",
+                "dano": "1d8 perfurante"
+              },
+              {
+                "simbolo": "🔫",
+                "Nome": "Besta de Mão",
+                "descrição": "Munição (distância 9/36m), leve, recarga",
+                "preço": "75 po",
+                "dano": "1d6 perfurante"
+              },
+              {
+                "simbolo": "🎯",
+                "Nome": "Besta Pesada",
+                "descrição": "Munição (distância 30/120m), pesada, recarga, duas mãos",
+                "preço": "50 po",
+                "dano": "1d10 perfurante"
+              },
+              {
+                "simbolo": "🕸️",
+                "Nome": "Rede",
+                "descrição": "Especial, arremesso (distância 1,5/4,5m)",
+                "preço": "1 po",
+                "dano": "Nenhum"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "simbolo": "🎒",
+    "texto": "Outros (Equipamentos de Aventura e Ferramentas)",
+    "conteudo": [
+      {
+        "simbolo": "ℹ️",
+        "texto": "Esta seção engloba os itens mundanos essenciais para sobrevivência, exploração e conjuração mágica."
+      },
+      {
+        "simbolo": "🏕️",
+        "texto": "Equipamentos de Sobrevivência e Acampamento",
+        "conteudo": [
+          {
+            "simbolo": "🎒",
+            "Nome": "Mochila",
+            "descrição": "Equipamento para carregar itens",
+            "preço": "2 po"
+          },
+          {
+            "simbolo": "🛌",
+            "Nome": "Saco de Dormir",
+            "descrição": "Equipamento de acampamento",
+            "preço": "1 po"
+          },
+          {
+            "simbolo": "🪢",
+            "Nome": "Corda de Cânhamo (15m)",
+            "descrição": "Corda resistente para diversas utilidades",
+            "preço": "1 po"
+          },
+          {
+            "simbolo": "🧵",
+            "Nome": "Corda de Seda (15m)",
+            "descrição": "Corda leve e forte",
+            "preço": "10 po"
+          },
+          {
+            "simbolo": "🍞",
+            "Nome": "Rações de Viagem (1 dia)",
+            "descrição": "Alimento não perecível para um dia",
+            "preço": "5 pp"
+          },
+          {
+            "simbolo": "💧",
+            "Nome": "Cantil (cheio)",
+            "descrição": "Recipiente de couro para carregar água",
+            "preço": "2 pp"
+          },
+          {
+            "simbolo": "⛺",
+            "Nome": "Tenda (para duas pessoas)",
+            "descrição": "Abrigo portátil de tecido",
+            "preço": "2 po"
+          },
+          {
+            "simbolo": "🪝",
+            "Nome": "Pé de Cabra",
+            "descrição": "Ferramenta para aplicar alavanca",
+            "preço": "2 po"
+          },
+          {
+            "simbolo": "🧗",
+            "Nome": "Píton (pino de escalada)",
+            "descrição": "Pino de metal para fixação em pedras",
+            "preço": "5 pc"
+          }
+        ]
+      },
+      {
+        "simbolo": "🔥",
+        "texto": "Iluminação e Fogo",
+        "conteudo": [
+          {
+            "simbolo": "🔥",
+            "Nome": "Tocha",
+            "descrição": "Fonte de luz básica. Queima por 1 hora.",
+            "preço": "1 pc"
+          },
+          {
+            "simbolo": "🪨",
+            "Nome": "Isqueiro (Pederneira)",
+            "descrição": "Ferramenta para iniciar fogo",
+            "preço": "5 pp"
+          },
+          {
+            "simbolo": "🏮",
+            "Nome": "Lanterna Coberta",
+            "descrição": "Luz direcional que pode ser ajustada",
+            "preço": "5 po"
+          },
+          {
+            "simbolo": "🔦",
+            "Nome": "Lanterna Furta-Fogo",
+            "descrição": "Luz que pode ser coberta para ocultação",
+            "preço": "10 po"
+          },
+          {
+            "simbolo": "🛢️",
+            "Nome": "Óleo (frasco)",
+            "descrição": "Combustível para lanternas",
+            "preço": "1 pp"
+          },
+          {
+            "simbolo": "🕯️",
+            "Nome": "Vela",
+            "descrição": "Fonte de luz fraca",
+            "preço": "1 pc"
+          }
+        ]
+      },
+      {
+        "simbolo": "🛠️",
+        "texto": "Ferramentas e Kits Profissionais",
+        "conteudo": [
+          {
+            "simbolo": "🗝️",
+            "Nome": "Ferramentas de Ladrão",
+            "descrição": "Kit para desarmar armadilhas e abrir fechaduras",
+            "preço": "25 po"
+          },
+          {
+            "simbolo": "⚒️",
+            "Nome": "Ferramentas de Artesão",
+            "descrição": "Ex: Ferreiro, Pedreiro, Costureiro",
+            "preço": "Varia (1 po a 50 po)"
+          },
+          {
+            "simbolo": "🌿",
+            "Nome": "Kit de Herbalismo",
+            "descrição": "Materiais para fazer remédios e poções de cura",
+            "preço": "5 po"
+          },
+          {
+            "simbolo": "⚕️",
+            "Nome": "Kit de Curandeiro",
+            "descrição": "Contém bandagens e ervas para estabilizar criaturas",
+            "preço": "5 po"
+          },
+          {
+            "simbolo": "📜",
+            "Nome": "Kit de Falsificação",
+            "descrição": "Materiais para falsificar documentos e assinaturas",
+            "preço": "15 po"
+          },
+          {
+            "simbolo": "🎭",
+            "Nome": "Kit de Disfarce",
+            "descrição": "Cosméticos, tinturas e pequenos adereços para alterar a aparência",
+            "preço": "25 po"
+          },
+          {
+            "simbolo": "☠️",
+            "Nome": "Kit de Venenos",
+            "descrição": "Frascos e reagentes para extrair e criar venenos",
+            "preço": "50 po"
+          },
+          {
+            "simbolo": "🎸",
+            "Nome": "Instrumento Musical",
+            "descrição": "Vários tipos disponíveis",
+            "preço": "Varia (2 po a 30 po)"
+          }
+        ]
+      },
+      {
+        "simbolo": "🔮",
+        "texto": "Magia e Alquimia",
+        "conteudo": [
+          {
+            "simbolo": "🪄",
+            "Nome": "Foco Arcano",
+            "descrição": "Ex: Cajado, Cristal, Varinha. Usado para conjuração.",
+            "preço": "Varia (10 po a 20 po)"
+          },
+          {
+            "simbolo": "🍃",
+            "Nome": "Foco Druídico",
+            "descrição": "Ex: Ramo de visgo, Totem. Usado para conjuração da natureza.",
+            "preço": "Varia (1 po a 10 po)"
+          },
+          {
+            "simbolo": "✝️",
+            "Nome": "Símbolo Sagrado",
+            "descrição": "Ex: Amuleto, Relicário. Foco de magias divinas.",
+            "preço": "5 po"
+          },
+          {
+            "simbolo": "👝",
+            "Nome": "Bolsa de Componentes",
+            "descrição": "Para guardar materiais necessários para magias",
+            "preço": "25 po"
+          },
+          {
+            "simbolo": "📖",
+            "Nome": "Grimório",
+            "descrição": "Livro com páginas em branco próprio para magos",
+            "preço": "50 po"
+          },
+          {
+            "simbolo": "🧪",
+            "Nome": "Poção de Cura",
+            "descrição": "Bebida mágica que recupera 2d4+2 PV",
+            "preço": "50 po"
+          },
+          {
+            "simbolo": "🔥",
+            "Nome": "Fogo Alquímico (frasco)",
+            "descrição": "Líquido viscoso que incendeia ao contato com o ar",
+            "preço": "50 po"
+          },
+          {
+            "simbolo": "⚗️",
+            "Nome": "Ácido (frasco)",
+            "descrição": "Líquido corrosivo em recipiente seguro",
+            "preço": "25 po"
+          }
+        ]
+      },
+      {
+        "simbolo": "📦",
+        "texto": "Armazenamento e Recipientes",
+        "conteudo": [
+          {
+            "simbolo": "👛",
+            "Nome": "Algibeira",
+            "descrição": "Bolsa pequena presa no cinto",
+            "preço": "5 pp"
+          },
+          {
+            "simbolo": "🍾",
+            "Nome": "Frasco (vidro)",
+            "descrição": "Pequeno recipiente para líquidos",
+            "preço": "2 po"
+          },
+          {
+            "simbolo": "🛍️",
+            "Nome": "Saco",
+            "descrição": "Recipiente rústico de pano",
+            "preço": "1 pc"
+          },
+          {
+            "simbolo": "🧰",
+            "Nome": "Baú",
+            "descrição": "Caixa resistente de madeira",
+            "preço": "5 po"
+          },
+          {
+            "simbolo": "🛢️",
+            "Nome": "Barril",
+            "descrição": "Usado para transporte de líquidos a granel",
+            "preço": "2 po"
+          }
+        ]
+      }
+    ]
+  }
+]
