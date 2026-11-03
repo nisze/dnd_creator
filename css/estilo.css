@@ -612,3 +612,19 @@ html[lang="en"] .cartao.lendo::after { content: "Reading"; }
 }
 :root[data-tema] .inicio-caixa h2 { text-shadow: none; }
 @media (max-width: 640px) { #topo { position: relative; z-index: 30; } }
+
+/* Consultar itens: grupos que abrem e fecham e cartões com imagem e descrição */
+.grupo-itens { margin: .6rem 0; border: 1px solid var(--borda); border-radius: 8px; background: var(--painel); }
+.grupo-itens > summary { padding: .6rem .9rem; font: 700 1.05rem Georgia, 'Times New Roman', serif; color: var(--ouro-claro); cursor: pointer; }
+.grupo-itens[open] > summary { border-bottom: 1px solid var(--borda); }
+.item-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); gap: .8rem; padding: .8rem; }
+.item-card { display: flex; flex-direction: column; gap: .35rem; padding: .7rem; background: var(--painel2); border: 1px solid var(--borda); border-radius: 8px; cursor: pointer; min-width: 0; }
+.item-card:hover { border-color: var(--ouro); }
+.item-img { display: grid; place-items: center; height: 6.5rem; overflow: hidden; border-radius: 6px; background: radial-gradient(circle at 50% 35%, var(--painel), var(--fundo2)); border: 1px solid rgba(var(--ouro-rgb), .35); }
+.item-img img { width: 5rem; height: 5rem; max-width: 100%; max-height: 100%; object-fit: contain; }
+.item-img svg { width: 3.2rem; height: 3.2rem; color: var(--ouro-claro); opacity: .75; }
+.item-nome { margin: .2rem 0 0; font-size: 1rem; overflow-wrap: anywhere; }
+.item-livro, .item-tags { margin: 0; font-size: .78rem; }
+.item-desc { font-size: .85rem; color: var(--texto2); display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 5; line-clamp: 5; overflow: hidden; }
+.item-card.aberto .item-desc { display: block; -webkit-line-clamp: unset; line-clamp: unset; overflow: visible; }
+@media (max-width: 700px) { .item-cards { grid-template-columns: minmax(0, 1fr); } }

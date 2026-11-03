@@ -45,13 +45,21 @@ function conjuracoesDaFicha(calc) {
     });
 }
 function conjuracaoDaFicha(calc) { return conjuracoesDaFicha(calc)[0] || null; }
+// Dano da magia (campo `dano` de magias.json, ex.: "8d6 fire"), no idioma atual.
+const _TIPO_DANO_MAGIA_PT = { acid: 'ácido', bludgeoning: 'contundente', cold: 'frio', fire: 'fogo', force: 'energético', lightning: 'elétrico', necrotic: 'necrótico', piercing: 'perfurante', poison: 'veneno', psychic: 'psíquico', radiant: 'radiante', slashing: 'cortante', thunder: 'trovejante', or: 'ou' };
+function rotuloDanoMagia(m) {
+    if (!m || !m.dano || !m.dano.length) return [];
+    const en = typeof Idioma !== 'undefined' && Idioma.atual === 'en';
+    const lista = m.dano.map(d => en ? d : d.replace(/[a-z]+/g, w => _TIPO_DANO_MAGIA_PT[w] || w));
+    return [(en ? 'Damage ' : 'Dano ') + lista.join(' / ')];
+}
 // Magias do personagem para a ficha: { nome, nivel (0 = truque), origem, preparada, troca, resumo }.
 // `troca`: magia que muda a cada descanso longo (grimório e preparadas); na ficha impressa a bolinha fica vazia para marcar a lápis.
 function magiasDaFicha() {
     const out = [], vistos = new Set(), multi = todasClasses().length > 1;
     const add = (nome, origem, preparada, troca) => {
         const m = magiaPorNome(nome); const k = String(nome).toLowerCase(); if (vistos.has(k)) { if (preparada) { const e = out.find(x => x.chave === k); if (e) { e.preparada = true; if (!troca) e.troca = false; } } return; } vistos.add(k);
-        out.push({ chave: k, nome: nome, exibir: m ? nomeMagia(m) : nome, nivel: m ? m.nivel : 0, origem, preparada: !!preparada, troca: !!troca, resumo: m ? resumoMagia(m).join(' · ') : '' });
+        out.push({ chave: k, nome: nome, exibir: m ? nomeMagia(m) : nome, nivel: m ? m.nivel : 0, origem, preparada: !!preparada, troca: !!troca, resumo: m ? resumoMagia(m).concat(rotuloDanoMagia(m)).join(' · ') : '' });
     };
     todasClasses().forEach(cl => soClasse(cl.idx, () => {
         const conj = semMagias(conjuracaoAtual); if (!conj || !conj.habilidade) return;

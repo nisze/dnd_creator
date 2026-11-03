@@ -69,7 +69,7 @@ function _htmlPagina1(calc) {
                 <div class="f-ca"><img src="img/ficha/escudo.png" alt=""><img class="f-ca-miolo" src="img/ficha/escudo_miolo.png" alt=""><b>${calc.caFinal}</b><small>CA</small></div>
                 <div class="f-plaq esq"><img src="img/ficha/retangulo_medio_borda.png" alt=""><span class="f-plaq-txt"><b>${_t(calc.deslBase)} m</b><small>Deslocamento</small></span></div>
                 <div class="f-plaq dir"><img src="img/ficha/retangulo_medio_borda.png" alt=""><span class="f-plaq-txt"><b>${formatMod(calc.iniciativa)}</b><small>Iniciativa</small></span></div>
-                <p class="f-legenda">Círculo grande: valor e modificador.<br>Bolinha: salvaguarda (escura = proficiente).</p>
+
             </div>
         </div>
     </div>
@@ -288,8 +288,10 @@ function _htmlPainelFicha(aba) {
         <h4>Moedas</h4><div class="aj-linha" id="f-aj-moedas">${moedas}</div>
         <h4>Loja</h4><div class="aj-linha"><button type="button" onclick="UI.fichaLoja()">Abrir loja</button></div>
         <h4>Adicionar item pessoal</h4>
-        <div class="aj-linha"><label class="aj-campo">Nome<input type="text" id="novo-item-nome" maxlength="80" placeholder="Chaveiro da minha irmã"></label><label class="aj-campo">Qtd<input type="number" id="novo-item-qtd" min="1" value="1"></label><label class="aj-campo">Peso (kg)<input type="number" id="novo-item-peso" min="0" step="0.1" value="0"></label><label class="aj-campo larga">Observação (opcional)<input type="text" id="novo-item-desc" maxlength="120"></label><button type="button" class="mini" onclick="UI.fitemAdd()">Adicionar</button></div>`;
-    if (aba === 'historico') return `<h4>Histórico de níveis</h4><div id="f-historico">${htmlHistoricoNiveis()}</div>`;
+        <div class="aj-linha"><label class="aj-campo">Nome<input type="text" id="novo-item-nome" maxlength="80" placeholder="Chaveiro da minha irmã"></label><label class="aj-campo">Qtd<input type="number" id="novo-item-qtd" min="1" value="1"></label><label class="aj-campo">Peso (kg)<input type="number" id="novo-item-peso" min="0" step="0.1" value="0"></label><label class="aj-campo larga">Observação (opcional)<input type="text" id="novo-item-desc" maxlength="120"></label><button type="button" class="mini" onclick="UI.fitemAdd()">Adicionar</button></div>`;
+
+    if (aba === 'historico') return `<h4>Histórico de níveis</h4><div id="f-historico">${htmlHistoricoNiveis()}</div>`;
+
     return `<p class="meta">Ajuste antes de imprimir; a ficha abaixo é atualizada na hora.</p>
         <h4>Cabeçalho</h4><div class="aj-linha">${campo('jogador', 'Jogador')}${selTend}${campo('xp', 'Pontos de experiência')}</div><p class="meta" id="f-xp-dica">${_t(htmlDicaXP())}</p>
         <h4>Retrato</h4><div class="aj-linha aj-retrato">${charState.retrato ? `<img src="${charState.retrato}" alt="Retrato atual">` : '<span class="meta">Sem retrato.</span>'}<div class="aj-ret-col"><label class="aj-campo">${charState.retrato ? 'Substituir foto' : 'Enviar foto'}<input type="file" accept="image/*" onchange="UI.fretrato(this)"></label>${charState.retrato ? `<div class="aj-linha"><button type="button" class="mini" onclick="UI.fretratoEditar()">Reposicionar</button><button type="button" class="sec mini" onclick="UI.fretratoRemover()">Remover foto</button></div>` : ''}<small class="meta">Dica: usar imagem sem fundo (PNG) também fica bom.</small></div></div><div id="f-ret-ed"></div>

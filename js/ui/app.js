@@ -18,7 +18,7 @@ async function carregarMagicos() {
     if (db.magicos) return;
     try {
         let ptI = {}; try { ptI = await carregarJSON('dados/pt/itens_magicos.json'); } catch (e) { /* sem tradução: mostra o inglês */ }
-        db.magicos = (await carregarJSON('dados/itens_magicos.json')).map(m => { const p = ptI[m.id]; return { id: 'magico-' + m.id, cat: 'magico', nome: p ? p.nome : m.nome, nome_en: m.nome, custo_po: null, custo_txt: 'concedido pelo mestre', peso_lb: null, grupo: m.tipo || 'Item mágico', grupo_pt: p ? p.grupo : null, ua: m.ua, fonte: m.fonte, sint: !!m.requer_sintonizacao, desc_en: [m.raridade, m.requer_sintonizacao ? 'requires attunement' + (m.sintonizacao_por_en ? ' by ' + m.sintonizacao_por_en : '') : '', m.fonte].filter(Boolean).join(' | ') + (m.descricao_en ? ' | ' + m.descricao_en : ''), desc_pt: p ? [p.linha, m.fonte].filter(Boolean).join(' | ') + (p.resumo ? ' | ' + p.resumo : '') : null }; });
+        db.magicos = (await carregarJSON('dados/itens_magicos.json')).map(m => { const p = ptI[m.id]; return { id: 'magico-' + m.id, cat: 'magico', nome: p ? p.nome : m.nome, nome_en: m.nome, custo_po: null, custo_txt: 'concedido pelo mestre', peso_lb: null, grupo: m.tipo || 'Item mágico', grupo_pt: p ? p.grupo : null, ua: m.ua, fonte: m.fonte, raridade: m.raridade, texto_en: m.descricao_en || '', texto_pt: p && p.resumo ? p.resumo : null, sint: !!m.requer_sintonizacao, desc_en: [m.raridade, m.requer_sintonizacao ? 'requires attunement' + (m.sintonizacao_por_en ? ' by ' + m.sintonizacao_por_en : '') : '', m.fonte].filter(Boolean).join(' | ') + (m.descricao_en ? ' | ' + m.descricao_en : ''), desc_pt: p ? [p.linha, m.fonte].filter(Boolean).join(' | ') + (p.resumo ? ' | ' + p.resumo : '') : null }; });
     }
     catch (e) { db.magicos = []; avisar('Itens mágicos indisponíveis: ' + e.message, true); }
 }
@@ -187,7 +187,7 @@ function renderTudo() {
     renderTopo(); renderAvisosGlobais(); renderEtapas();
     const app = porId('app'), info = porId('painel-info');
     if (ui.tela === 'criacao') { app.classList.remove('cheio'); info.hidden = false; renderInfo(); renderOpcoes(); }
-    else { app.classList.add('cheio'); info.hidden = true; if (ui.tela === 'subir') redesenharEscolhas('painel-opcoes', htmlTelaSubir); else porId('painel-opcoes').innerHTML = ui.tela === 'ficha' ? htmlTelaFicha() : ui.tela === 'inicio' ? htmlTelaInicio() : ui.tela === 'consulta' ? htmlTelaConsulta() : ui.tela === 'consulta-talentos' ? htmlTelaConsultaTalentos() : htmlTelaPersonagens(); }
+    else { app.classList.add('cheio'); info.hidden = true; if (ui.tela === 'subir') redesenharEscolhas('painel-opcoes', htmlTelaSubir); else porId('painel-opcoes').innerHTML = ui.tela === 'ficha' ? htmlTelaFicha() : ui.tela === 'inicio' ? htmlTelaInicio() : ui.tela === 'consulta' ? htmlTelaConsulta() : ui.tela === 'consulta-talentos' ? htmlTelaConsultaTalentos() : ui.tela === 'consulta-itens' ? htmlTelaConsultaItens() : htmlTelaPersonagens(); }
     app.classList.toggle('inicio-tela', ui.tela === 'inicio');
     const etapaJanela = ui.tela === 'criacao' && ['raca', 'classe', 'subclasse', 'antecedente'].includes(ETAPAS[ui.etapa].id);
     app.classList.toggle('janela-movel', etapaJanela);
@@ -472,6 +472,7 @@ window.addEventListener('DOMContentLoaded', () => {
     porId('btn-personagens').addEventListener('click', () => UI.telaPersonagens());
     porId('btn-consulta').addEventListener('click', () => UI.telaConsulta());
     porId('btn-consulta-talentos').addEventListener('click', () => UI.telaConsultaTalentos());
+    porId('btn-consulta-itens').addEventListener('click', () => UI.telaConsultaItens());
     porId('btn-novo').addEventListener('click', () => UI.novo());
     document.querySelector('.marca').addEventListener('click', () => UI.inicio());
     const menu = porId('menu-topo'), btnMenu = porId('btn-menu');

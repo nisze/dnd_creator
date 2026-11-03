@@ -18,7 +18,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "1d6 acid"
+    ]
   },
   {
     "id": "blade-ward",
@@ -63,7 +66,10 @@
     ],
     "listas_outras": [],
     "fonte": "Tasha's Cauldron of Everything",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "1d8 thunder"
+    ]
   },
   {
     "id": "chill-touch",
@@ -84,7 +90,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "1d8 necrotic"
+    ]
   },
   {
     "id": "control-flames",
@@ -128,7 +137,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Xanathar's Guide to Everything",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "1d8 fire"
+    ]
   },
   {
     "id": "dancing-lights",
@@ -188,7 +200,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "1d10 force"
+    ]
   },
   {
     "id": "encode-thoughts",
@@ -226,7 +241,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "1d10 fire"
+    ]
   },
   {
     "id": "friends",
@@ -271,7 +289,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Xanathar's Guide to Everything",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "1d6 cold"
+    ]
   },
   {
     "id": "green-flame-blade",
@@ -358,6 +379,9 @@
     "ua": true,
     "classes_pela_lista_da_wiki": [
       "Cleric"
+    ],
+    "dano": [
+      "1d6 radiant"
     ]
   },
   {
@@ -380,7 +404,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Xanathar's Guide to Everything",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "1d6 poison"
+    ]
   },
   {
     "id": "light",
@@ -426,7 +453,10 @@
     ],
     "listas_outras": [],
     "fonte": "Tasha's Cauldron of Everything",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "1d8 lightning"
+    ]
   },
   {
     "id": "mage-hand",
@@ -470,7 +500,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Xanathar's Guide to Everything/Elemental Evil Player's Companion",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "1d6"
+    ]
   },
   {
     "id": "mending",
@@ -537,7 +570,10 @@
     ],
     "listas_outras": [],
     "fonte": "Tasha's Cauldron of Everything",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "1d6 psychic"
+    ]
   },
   {
     "id": "minor-illusion",
@@ -624,7 +660,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "1d12 poison"
+    ]
   },
   {
     "id": "prestidigitation",
@@ -666,7 +705,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Xanathar's Guide to Everything",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "1d10 acid"
+    ]
   },
   {
     "id": "produce-flame",
@@ -685,7 +727,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "1d8 fire"
+    ]
   },
   {
     "id": "ray-of-frost",
@@ -706,7 +751,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "1d8 cold"
+    ]
   },
   {
     "id": "resistance",
@@ -746,7 +794,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "1d8 radiant"
+    ]
   },
   {
     "id": "sapping-sting",
@@ -770,6 +821,9 @@
     "ua": false,
     "classes_pela_lista_da_wiki": [
       "Wizard"
+    ],
+    "dano": [
+      "1d4 necrotic"
     ]
   },
   {
@@ -831,7 +885,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "1d8 lightning"
+    ]
   },
   {
     "id": "spare-the-dying",
@@ -874,7 +931,10 @@
     ],
     "listas_outras": [],
     "fonte": "Tasha's Cauldron of Everything",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "1d6 force"
+    ]
   },
   {
     "id": "thaumaturgy",
@@ -913,7 +973,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "1d6 piercing"
+    ]
   },
   {
     "id": "thunderclap",
@@ -937,7 +1000,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Xanathar's Guide to Everything",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "1d6 thunder"
+    ]
   },
   {
     "id": "toll-the-dead",
@@ -958,7 +1024,11 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Xanathar's Guide to Everything",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "1d8 necrotic",
+      "1d12 necrotic"
+    ]
   },
   {
     "id": "true-strike",
@@ -999,7 +1069,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "1d4 psychic"
+    ]
   },
   {
     "id": "virtue",
@@ -1037,7 +1110,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Xanathar's Guide to Everything",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "1d6 radiant"
+    ]
   },
   {
     "id": "absorb-elements",
@@ -1060,7 +1136,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Xanathar's Guide to Everything",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "+1d6"
+    ]
   },
   {
     "id": "acid-stream",
@@ -1080,7 +1159,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Unearthed Arcana 70 - Spells and Magic Tattoos",
-    "ua": true
+    "ua": true,
+    "dano": [
+      "3d4 acid"
+    ]
   },
   {
     "id": "alarm",
@@ -1141,7 +1223,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Unearthed Arcana 60 - The Artificer Returns",
-    "ua": true
+    "ua": true,
+    "dano": [
+      "+1d6"
+    ]
   },
   {
     "id": "armor-of-agathys",
@@ -1179,7 +1264,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "2d6 necrotic"
+    ]
   },
   {
     "id": "bane",
@@ -1259,7 +1347,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "3d6 fire"
+    ]
   },
   {
     "id": "catapult",
@@ -1280,7 +1371,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Xanathar's Guide to Everything",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "3d8 bludgeoning"
+    ]
   },
   {
     "id": "cause-fear",
@@ -1339,7 +1433,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Xanathar's Guide to Everything",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "2d8+1d6"
+    ]
   },
   {
     "id": "charm-person",
@@ -1382,7 +1479,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "3d8"
+    ]
   },
   {
     "id": "color-spray",
@@ -1620,7 +1720,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "3d6 psychic"
+    ]
   },
   {
     "id": "distort-value",
@@ -1661,7 +1764,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "1d4 radiant"
+    ]
   },
   {
     "id": "earth-tremor",
@@ -1683,7 +1789,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Xanathar's Guide to Everything/Elemental Evil Player's Companion",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "1d6 bludgeoning"
+    ]
   },
   {
     "id": "ensnaring-strike",
@@ -1702,7 +1811,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "1d6 piercing"
+    ]
   },
   {
     "id": "entangle",
@@ -1869,7 +1981,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Icewind Dale - Rime of the Frostmaiden",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "2d8 cold"
+    ]
   },
   {
     "id": "gift-of-alacrity",
@@ -1954,7 +2069,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "4d6 radiant"
+    ]
   },
   {
     "id": "guiding-hand-ua",
@@ -1995,7 +2113,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "1d10 piercing"
+    ]
   },
   {
     "id": "healing-elixir-ua",
@@ -2055,7 +2176,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "2d10 fire"
+    ]
   },
   {
     "id": "heroism",
@@ -2094,7 +2218,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "1d6 necrotic"
+    ]
   },
   {
     "id": "hunters-mark",
@@ -2113,7 +2240,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "+1d6"
+    ]
   },
   {
     "id": "ice-knife",
@@ -2134,7 +2264,11 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Xanathar's Guide to Everything",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "1d10 piercing",
+      "2d6 cold"
+    ]
   },
   {
     "id": "id-insinuation",
@@ -2155,7 +2289,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Unearthed Arcana 66 - Fighter, Rogue, and Wizard",
-    "ua": true
+    "ua": true,
+    "dano": [
+      "1d12 psychic"
+    ]
   },
   {
     "id": "identify",
@@ -2237,7 +2374,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "3d10 necrotic"
+    ]
   },
   {
     "id": "jims-magic-missile",
@@ -2256,7 +2396,11 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Acquisitions Inc.",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "2d4 force",
+      "5d4 force"
+    ]
   },
   {
     "id": "jump",
@@ -2342,7 +2486,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "1d4+1 force"
+    ]
   },
   {
     "id": "magnify-gravity",
@@ -2366,6 +2513,9 @@
     "ua": false,
     "classes_pela_lista_da_wiki": [
       "Wizard"
+    ],
+    "dano": [
+      "2d8 force"
     ]
   },
   {
@@ -2453,7 +2603,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "2d8 poison"
+    ]
   },
   {
     "id": "remote-access",
@@ -2515,7 +2668,10 @@
     ],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "1d6 fire"
+    ]
   },
   {
     "id": "sense-emotion",
@@ -2726,7 +2882,10 @@
     ],
     "listas_outras": [],
     "fonte": "Tasha's Cauldron of Everything",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "2d4 acid"
+    ]
   },
   {
     "id": "tashas-hideous-laughter",
@@ -2784,7 +2943,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "2d6 thunder"
+    ]
   },
   {
     "id": "thunderwave",
@@ -2806,7 +2968,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "2d8 thunder"
+    ]
   },
   {
     "id": "unearthly-chorus",
@@ -2887,7 +3052,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "1d12 lightning"
+    ]
   },
   {
     "id": "wrathful-smite",
@@ -2906,7 +3074,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "1d6 psychic"
+    ]
   },
   {
     "id": "zephyr-strike",
@@ -2925,7 +3096,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Xanathar's Guide to Everything",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "1d8 force"
+    ]
   },
   {
     "id": "aganazzars-scorcher",
@@ -2945,7 +3119,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Xanathar's Guide to Everything",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "3d8 fire"
+    ]
   },
   {
     "id": "aid",
@@ -3221,7 +3398,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "2d6 radiant"
+    ]
   },
   {
     "id": "calm-emotions",
@@ -3263,7 +3443,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "4d4 slashing"
+    ]
   },
   {
     "id": "continual-flame",
@@ -3305,7 +3488,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "1d6 piercing"
+    ]
   },
   {
     "id": "crown-of-madness",
@@ -3433,7 +3619,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Xanathar's Guide to Everything",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "3d6"
+    ]
   },
   {
     "id": "dust-devil",
@@ -3454,7 +3643,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Xanathar's Guide to Everything",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "1d8 bludgeoning"
+    ]
   },
   {
     "id": "earthbind",
@@ -3526,7 +3718,10 @@
     ],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "+1d4"
+    ]
   },
   {
     "id": "enthrall",
@@ -3629,7 +3824,10 @@
     ],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "3d6 fire"
+    ]
   },
   {
     "id": "flaming-sphere",
@@ -3651,7 +3849,10 @@
     ],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "2d6 fire"
+    ]
   },
   {
     "id": "flock-of-familiars",
@@ -3801,7 +4002,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "2d8 fire"
+    ]
   },
   {
     "id": "hold-person",
@@ -3845,7 +4049,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Unearthed Arcana 78 - Draconic Options",
-    "ua": true
+    "ua": true,
+    "dano": [
+      "3d8 cold"
+    ]
   },
   {
     "id": "immovable-object",
@@ -3933,7 +4140,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Strixhaven: A Curriculum of Chaos",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "1d8 force"
+    ]
   },
   {
     "id": "knock",
@@ -4109,7 +4319,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Xanathar's Guide to Everything",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "2d6 bludgeoning"
+    ]
   },
   {
     "id": "melfs-acid-arrow",
@@ -4128,7 +4341,11 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "4d4 acid",
+      "2d4 acid"
+    ]
   },
   {
     "id": "mental-barrier",
@@ -4170,7 +4387,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Xanathar's Guide to Everything",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "3d8 psychic"
+    ]
   },
   {
     "id": "mind-thrust",
@@ -4191,7 +4411,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Unearthed Arcana 71 - Psionic Options Revisited",
-    "ua": true
+    "ua": true,
+    "dano": [
+      "3d6 psychic"
+    ]
   },
   {
     "id": "mirror-image",
@@ -4254,7 +4477,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "2d10 radiant"
+    ]
   },
   {
     "id": "nathairs-mischief",
@@ -4356,7 +4582,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "1d6 psychic"
+    ]
   },
   {
     "id": "prayer-of-healing",
@@ -4462,7 +4691,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Fizban's Treasury of Dragons",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "3d8 cold"
+    ]
   },
   {
     "id": "rope-trick",
@@ -4502,7 +4734,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "2d6 fire"
+    ]
   },
   {
     "id": "see-invisibility",
@@ -4545,7 +4780,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Xanathar's Guide to Everything",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "2d8 psychic"
+    ]
   },
   {
     "id": "shatter",
@@ -4567,7 +4805,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "3d8 thunder"
+    ]
   },
   {
     "id": "silence",
@@ -4630,7 +4871,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Xanathar's Guide to Everything",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "3d6 cold"
+    ]
   },
   {
     "id": "spider-climb",
@@ -4672,7 +4916,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "2d4 piercing"
+    ]
   },
   {
     "id": "spiritual-weapon",
@@ -4691,7 +4938,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "1d8"
+    ]
   },
   {
     "id": "spray-of-cards-ua",
@@ -4713,7 +4963,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Unearthed Arcana 85 - Wonders of the Multiverse",
-    "ua": true
+    "ua": true,
+    "dano": [
+      "2d10 force"
+    ]
   },
   {
     "id": "spray-of-cards",
@@ -4735,7 +4988,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "The Book of Many Things",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "2d10 force"
+    ]
   },
   {
     "id": "suggestion",
@@ -4797,7 +5053,10 @@
     ],
     "listas_outras": [],
     "fonte": "Tasha's Cauldron of Everything",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "3d6 psychic"
+    ]
   },
   {
     "id": "thought-shield",
@@ -4924,7 +5183,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "2d4 fire"
+    ]
   },
   {
     "id": "wither-and-bloom",
@@ -4945,7 +5207,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Strixhaven: A Curriculum of Chaos",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "2d6 necrotic"
+    ]
   },
   {
     "id": "wristpocket",
@@ -5032,7 +5297,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "The Book of Many Things",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "4d4 psychic"
+    ]
   },
   {
     "id": "antagonize-ua",
@@ -5054,7 +5322,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Unearthed Arcana 85 - Wonders of the Multiverse",
-    "ua": true
+    "ua": true,
+    "dano": [
+      "4d4 psychic"
+    ]
   },
   {
     "id": "ashardalons-stride",
@@ -5076,7 +5347,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Fizban's Treasury of Dragons",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "1d6 fire"
+    ]
   },
   {
     "id": "aura-of-vitality",
@@ -5138,7 +5412,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "1d8 necrotic"
+    ]
   },
   {
     "id": "blinding-smite",
@@ -5157,7 +5434,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "3d8 radiant"
+    ]
   },
   {
     "id": "blink",
@@ -5197,7 +5477,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "3d10 lightning"
+    ]
   },
   {
     "id": "catnap",
@@ -5280,7 +5563,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "3d8"
+    ]
   },
   {
     "id": "conjure-lesser-demon",
@@ -5361,7 +5647,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "1d4 radiant"
+    ]
   },
   {
     "id": "daylight",
@@ -5433,7 +5722,10 @@
     ],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "+1d4"
+    ]
   },
   {
     "id": "enemies-abound",
@@ -5476,7 +5768,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Xanathar's Guide to Everything/Elemental Evil Player's Companion",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "3d12 bludgeoning"
+    ]
   },
   {
     "id": "fast-friends",
@@ -5566,7 +5861,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "8d6 fire"
+    ]
   },
   {
     "id": "flame-arrows",
@@ -5589,7 +5887,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Xanathar's Guide to Everything",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "1d6 fire"
+    ]
   },
   {
     "id": "flame-stride",
@@ -5611,7 +5912,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Unearthed Arcana 78 - Draconic Options",
-    "ua": true
+    "ua": true,
+    "dano": [
+      "1d6 fire"
+    ]
   },
   {
     "id": "fly",
@@ -5737,7 +6041,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Unearthed Arcana 7 - Modern Magic",
-    "ua": true
+    "ua": true,
+    "dano": [
+      "6d6 lightning"
+    ]
   },
   {
     "id": "house-of-cards-ua",
@@ -5778,7 +6085,11 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "2d6 cold",
+      "2d6 acid"
+    ]
   },
   {
     "id": "hypnotic-pattern",
@@ -5917,6 +6228,9 @@
     "classes_pela_lista_da_wiki": [
       "Cleric",
       "Wizard"
+    ],
+    "dano": [
+      "4d8 necrotic"
     ]
   },
   {
@@ -5936,7 +6250,11 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "4d8 lightning",
+      "2d8 lightning"
+    ]
   },
   {
     "id": "lightning-bolt",
@@ -5956,7 +6274,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "8d6 lightning"
+    ]
   },
   {
     "id": "magic-circle",
@@ -6043,7 +6364,10 @@
     ],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "6d6 bludgeoning"
+    ]
   },
   {
     "id": "melfs-minute-meteors",
@@ -6063,7 +6387,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Xanathar's Guide to Everything",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "2d6 fire"
+    ]
   },
   {
     "id": "motivational-speech",
@@ -6214,7 +6541,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Unearthed Arcana 66 - Fighter, Rogue, and Wizard",
-    "ua": true
+    "ua": true,
+    "dano": [
+      "5d8 force"
+    ]
   },
   {
     "id": "pulse-wave",
@@ -6233,7 +6563,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Explorer's Guide to Wildemount",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "6d6 force"
+    ]
   },
   {
     "id": "remove-curse",
@@ -6405,7 +6738,11 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "3d8 radiant",
+      "3d8 necrotic"
+    ]
   },
   {
     "id": "spirit-shroud",
@@ -6427,7 +6764,10 @@
     ],
     "listas_outras": [],
     "fonte": "Tasha's Cauldron of Everything",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "+1d8"
+    ]
   },
   {
     "id": "stinking-cloud",
@@ -6572,7 +6912,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Xanathar's Guide to Everything",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "3d10 thunder"
+    ]
   },
   {
     "id": "tidal-wave",
@@ -6593,7 +6936,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Xanathar's Guide to Everything",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "4d8 bludgeoning"
+    ]
   },
   {
     "id": "tiny-servant",
@@ -6658,7 +7004,10 @@
     ],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "3d6 necrotic"
+    ]
   },
   {
     "id": "wall-of-sand",
@@ -6764,7 +7113,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "3d8 bludgeoning"
+    ]
   },
   {
     "id": "arcane-eye",
@@ -6871,7 +7223,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "8d8 necrotic"
+    ]
   },
   {
     "id": "charm-monster",
@@ -7057,7 +7412,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "2d8 bludgeoning"
+    ]
   },
   {
     "id": "death-ward",
@@ -7099,7 +7457,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "4d6 force"
+    ]
   },
   {
     "id": "divination",
@@ -7187,7 +7548,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Xanathar's Guide to Everything",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "+2d6"
+    ]
   },
   {
     "id": "evards-black-tentacles",
@@ -7206,7 +7570,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "3d6 bludgeoning"
+    ]
   },
   {
     "id": "fabricate",
@@ -7267,7 +7634,11 @@
     ],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "2d8 fire",
+      "2d8 cold"
+    ]
   },
   {
     "id": "freedom-of-movement",
@@ -7389,7 +7760,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Explorer's Guide to Wildemount",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "5d10 force"
+    ]
   },
   {
     "id": "greater-invisibility",
@@ -7449,7 +7823,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Xanathar's Guide to Everything",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "1d6 force"
+    ]
   },
   {
     "id": "hallucinatory-terrain",
@@ -7492,7 +7869,11 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "2d8 bludgeoning",
+      "4d6 cold"
+    ]
   },
   {
     "id": "leomunds-secret-chest",
@@ -7556,7 +7937,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "4d8 piercing"
+    ]
   },
   {
     "id": "mordenkainens-private-sanctum",
@@ -7617,7 +8001,10 @@
     ],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "4d10 psychic"
+    ]
   },
   {
     "id": "polymorph",
@@ -7661,7 +8048,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Fizban's Treasury of Dragons",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "7d6 psychic"
+    ]
   },
   {
     "id": "raulothims-psychic-lance-ua",
@@ -7683,7 +8073,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Unearthed Arcana 78 - Draconic Options",
-    "ua": true
+    "ua": true,
+    "dano": [
+      "10d6 psychic"
+    ]
   },
   {
     "id": "shadow-of-moil",
@@ -7702,7 +8095,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Xanathar's Guide to Everything",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "2d8 necrotic"
+    ]
   },
   {
     "id": "sickening-radiance",
@@ -7723,7 +8119,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Xanathar's Guide to Everything",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "4d10 radiant"
+    ]
   },
   {
     "id": "spirit-of-death-ua",
@@ -7784,7 +8183,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "4d6 psychic"
+    ]
   },
   {
     "id": "stone-shape",
@@ -7849,7 +8251,11 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Xanathar's Guide to Everything",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "2d6 bludgeoning",
+      "4d6 lightning"
+    ]
   },
   {
     "id": "summon-aberration",
@@ -7994,7 +8400,11 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Xanathar's Guide to Everything",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "10d4 acid",
+      "5d4 acid"
+    ]
   },
   {
     "id": "wall-of-fire",
@@ -8015,7 +8425,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "5d8 fire"
+    ]
   },
   {
     "id": "watery-sphere",
@@ -8116,7 +8529,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "5d10 force"
+    ]
   },
   {
     "id": "bigbys-hand",
@@ -8138,7 +8554,10 @@
     ],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "4d8 force"
+    ]
   },
   {
     "id": "circle-of-power",
@@ -8177,7 +8596,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "5d8 poison"
+    ]
   },
   {
     "id": "commune",
@@ -8259,7 +8681,10 @@
     ],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "8d8 cold"
+    ]
   },
   {
     "id": "conjure-elemental",
@@ -8298,7 +8723,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "8d8"
+    ]
   },
   {
     "id": "conjure-vrock",
@@ -8338,7 +8766,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "6d6 psychic"
+    ]
   },
   {
     "id": "contagion",
@@ -8460,7 +8891,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Xanathar's Guide to Everything",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "4d10 radiant"
+    ]
   },
   {
     "id": "destructive-wave",
@@ -8479,7 +8913,11 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "5d6 thunder",
+      "5d6 radiant or necrotic"
+    ]
   },
   {
     "id": "dispel-evil-and-good",
@@ -8541,7 +8979,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "3d6 psychic"
+    ]
   },
   {
     "id": "enervation",
@@ -8562,7 +9003,11 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Xanathar's Guide to Everything",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "2d8 necrotic",
+      "4d8 necrotic"
+    ]
   },
   {
     "id": "far-step",
@@ -8602,7 +9047,11 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "4d6 fire",
+      "4d6 radiant"
+    ]
   },
   {
     "id": "geas",
@@ -8625,7 +9074,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "5d10 psychic"
+    ]
   },
   {
     "id": "greater-restoration",
@@ -8710,7 +9162,11 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Xanathar's Guide to Everything",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "2d8 radiant",
+      "4d8 radiant"
+    ]
   },
   {
     "id": "immolation",
@@ -8730,7 +9186,11 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Xanathar's Guide to Everything",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "8d6 fire",
+      "4d6 fire"
+    ]
   },
   {
     "id": "infernal-calling",
@@ -8771,7 +9231,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "4d10 piercing"
+    ]
   },
   {
     "id": "legend-lore",
@@ -8811,7 +9274,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Xanathar's Guide to Everything",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "6d6 bludgeoning"
+    ]
   },
   {
     "id": "mass-cure-wounds",
@@ -8894,7 +9360,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Xanathar's Guide to Everything",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "5d12 necrotic"
+    ]
   },
   {
     "id": "passwall",
@@ -9105,7 +9574,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Xanathar's Guide to Everything",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "6d10 force"
+    ]
   },
   {
     "id": "summon-celestial",
@@ -9208,7 +9680,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Xanathar's Guide to Everything",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "8d6 psychic"
+    ]
   },
   {
     "id": "telekinesis",
@@ -9291,7 +9766,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Xanathar's Guide to Everything",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "4d8 bludgeoning"
+    ]
   },
   {
     "id": "tree-stride",
@@ -9351,7 +9829,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Xanathar's Guide to Everything",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "4d8 radiant"
+    ]
   },
   {
     "id": "wall-of-stone",
@@ -9393,7 +9874,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Xanathar's Guide to Everything",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "4d6 slashing"
+    ]
   },
   {
     "id": "arcane-gate",
@@ -9433,7 +9917,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "6d10 slashing"
+    ]
   },
   {
     "id": "bones-of-the-earth",
@@ -9452,7 +9939,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Xanathar's Guide to Everything",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "6d6 bludgeoning"
+    ]
   },
   {
     "id": "chain-lightning",
@@ -9472,7 +9962,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "10d8 lightning"
+    ]
   },
   {
     "id": "circle-of-death",
@@ -9493,7 +9986,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "8d6 necrotic"
+    ]
   },
   {
     "id": "conjure-fey",
@@ -9551,7 +10047,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Xanathar's Guide to Everything",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "2d4 piercing"
+    ]
   },
   {
     "id": "create-undead",
@@ -9592,7 +10091,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "10d6+40 force"
+    ]
   },
   {
     "id": "drawmijs-instant-summons",
@@ -9755,7 +10257,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "5d10 radiant or necrotic"
+    ]
   },
   {
     "id": "globe-of-invulnerability",
@@ -9794,7 +10299,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Explorer's Guide to Wildemount",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "8d8 force"
+    ]
   },
   {
     "id": "guards-and-wards",
@@ -9833,7 +10341,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "14d6 necrotic"
+    ]
   },
   {
     "id": "heal",
@@ -9897,7 +10408,11 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Xanathar's Guide to Everything",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "1d10 fire",
+      "4d8 fire"
+    ]
   },
   {
     "id": "investiture-of-ice",
@@ -9919,7 +10434,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Xanathar's Guide to Everything",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "4d6 cold"
+    ]
   },
   {
     "id": "investiture-of-stone",
@@ -9963,7 +10481,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Xanathar's Guide to Everything",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "2d10 bludgeoning"
+    ]
   },
   {
     "id": "magic-jar",
@@ -10025,7 +10546,11 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Xanathar's Guide to Everything",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "5d10 psychic",
+      "10d10 psychic"
+    ]
   },
   {
     "id": "move-earth",
@@ -10089,7 +10614,10 @@
     ],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "10d6 cold"
+    ]
   },
   {
     "id": "ottos-irresistible-dance",
@@ -10188,7 +10716,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Unearthed Arcana 66 - Fighter, Rogue, and Wizard",
-    "ua": true
+    "ua": true,
+    "dano": [
+      "12d6 psychic"
+    ]
   },
   {
     "id": "scatter",
@@ -10272,7 +10803,10 @@
     ],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "6d8 radiant"
+    ]
   },
   {
     "id": "tashas-otherworldly-guise",
@@ -10312,7 +10846,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Xanathar's Guide to Everything",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "2d12 force"
+    ]
   },
   {
     "id": "transport-via-plants",
@@ -10373,7 +10910,11 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "10d6 cold",
+      "5d6 cold"
+    ]
   },
   {
     "id": "wall-of-thorns",
@@ -10392,7 +10933,11 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "7d8 piercing",
+      "7d8 slashing"
+    ]
   },
   {
     "id": "wind-walk",
@@ -10509,7 +11054,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Xanathar's Guide to Everything",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "4d12 radiant"
+    ]
   },
   {
     "id": "delayed-blast-fireball",
@@ -10529,7 +11077,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "12d6"
+    ]
   },
   {
     "id": "divine-word",
@@ -10569,7 +11120,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Fizban's Treasury of Dragons",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "6d8 force"
+    ]
   },
   {
     "id": "draconic-transformation-ua",
@@ -10590,7 +11144,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Unearthed Arcana 78 - Draconic Options",
-    "ua": true
+    "ua": true,
+    "dano": [
+      "3d8 force"
+    ]
   },
   {
     "id": "dream-of-the-blue-veil",
@@ -10656,7 +11213,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "7d8+30 necrotic"
+    ]
   },
   {
     "id": "fire-storm",
@@ -10677,7 +11237,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "7d10 fire"
+    ]
   },
   {
     "id": "forcecage",
@@ -10759,7 +11322,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "3d10 force"
+    ]
   },
   {
     "id": "plane-shift",
@@ -10824,7 +11390,12 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "10d6 fire",
+      "10d6 acid",
+      "10d6 lightning"
+    ]
   },
   {
     "id": "project-image",
@@ -10967,7 +11538,10 @@
     ],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "10d10 necrotic"
+    ]
   },
   {
     "id": "teleport",
@@ -10988,7 +11562,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "3d10 force"
+    ]
   },
   {
     "id": "temple-of-the-gods",
@@ -11046,7 +11623,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Xanathar's Guide to Everything",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "10d6 bludgeoning"
+    ]
   },
   {
     "id": "abi-dalzims-horrid-wilting",
@@ -11066,7 +11646,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Xanathar's Guide to Everything",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "12d8 necrotic"
+    ]
   },
   {
     "id": "animal-shapes",
@@ -11186,7 +11769,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Explorer's Guide to Wildemount",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "8d10 force"
+    ]
   },
   {
     "id": "demiplane",
@@ -11251,7 +11837,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "5d6 bludgeoning"
+    ]
   },
   {
     "id": "feeblemind",
@@ -11273,7 +11862,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "4d6 psychic"
+    ]
   },
   {
     "id": "glibness",
@@ -11331,7 +11923,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Xanathar's Guide to Everything",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "7d6"
+    ]
   },
   {
     "id": "incendiary-cloud",
@@ -11353,7 +11948,10 @@
     ],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "10d8 fire"
+    ]
   },
   {
     "id": "maddening-darkness",
@@ -11373,7 +11971,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Xanathar's Guide to Everything",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "8d8 psychic"
+    ]
   },
   {
     "id": "maze",
@@ -11472,7 +12073,12 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Explorer's Guide to Wildemount",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "6d12 psychic",
+      "8d12 force",
+      "10d12 force"
+    ]
   },
   {
     "id": "sunburst",
@@ -11495,7 +12101,10 @@
     ],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "12d6 radiant"
+    ]
   },
   {
     "id": "telepathy",
@@ -11533,7 +12142,11 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "6d10 bludgeoning",
+      "5d10 bludgeoning"
+    ]
   },
   {
     "id": "astral-projection",
@@ -11575,7 +12188,12 @@
     ],
     "listas_outras": [],
     "fonte": "Tasha's Cauldron of Everything",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "4d12 force",
+      "8d12 force",
+      "12d12 force"
+    ]
   },
   {
     "id": "foresight",
@@ -11719,7 +12337,11 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "20d6 fire",
+      "20d6 bludgeoning"
+    ]
   },
   {
     "id": "power-word-heal",
@@ -11783,7 +12405,12 @@
     ],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "10d6 fire",
+      "10d6 acid",
+      "10d6 lightning"
+    ]
   },
   {
     "id": "psychic-scream",
@@ -11805,7 +12432,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Xanathar's Guide to Everything",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "14d6 psychic"
+    ]
   },
   {
     "id": "ravenous-void",
@@ -11824,7 +12454,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Explorer's Guide to Wildemount",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "5d10 force"
+    ]
   },
   {
     "id": "shapechange",
@@ -11863,7 +12496,12 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "2d6 thunder",
+      "1d6 acid",
+      "10d6 lightning"
+    ]
   },
   {
     "id": "time-ravage",
@@ -11882,7 +12520,10 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Explorer's Guide to Wildemount",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "10d12 necrotic"
+    ]
   },
   {
     "id": "time-stop",
@@ -11964,7 +12605,10 @@
     ],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "4d10 psychic"
+    ]
   },
   {
     "id": "wish",
@@ -11984,6 +12628,9 @@
     "classes_opcionais_tasha": [],
     "listas_outras": [],
     "fonte": "Player's Handbook",
-    "ua": false
+    "ua": false,
+    "dano": [
+      "1d10 necrotic"
+    ]
   }
 ]

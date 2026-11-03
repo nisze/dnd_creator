@@ -66,7 +66,7 @@
         'Zoom': 'Zoom', 'Aplicar': 'Apply',
         // folha impressa
         'Classe e nível': 'Class and level', 'Inspiração': 'Inspiration', 'Bônus de proficiência': 'Proficiency bonus', 'Perícias': 'Skills',
-        'Círculo grande: valor e modificador.': 'Large circle: score and modifier.', 'Bolinha: salvaguarda (escura = proficiente).': 'Dot: saving throw (dark = proficient).',
+       
         'FOR': 'STR', 'SAB': 'WIS', 'CAR': 'CHA', 'For': 'Str', 'Des': 'Dex', 'Sab': 'Wis', 'Car': 'Cha',
         'Ataques e conjuração': 'Attacks and spellcasting', 'Dano / tipo': 'Damage / type', 'Notas dos ataques': 'Attack notes',
         'Sem propriedades especiais.': 'No special properties.', 'sem proficiência': 'not proficient',
@@ -300,3 +300,5 @@
 Idioma.adicionar({ '(leve)': '(light)', '(m\u00e9dia)': '(medium)', '(pesada)': '(heavy)' });
 Idioma.adicionar({ 'Geral': 'General', 'Abrir loja': 'Open shop', 'Ajuste antes de imprimir; a ficha ao lado \u00e9 atualizada na hora.': 'Adjust before printing; the sheet beside it updates instantly.', 'O que for gasto em jogo (ra\u00e7\u00e3o, flechas, po\u00e7\u00f5es, ouro) se ajusta aqui; a ficha \u00e9 atualizada na hora. Itens com quantidade 0 n\u00e3o saem na impress\u00e3o.': 'What is spent in play (rations, arrows, potions, gold) is adjusted here; the sheet updates instantly. Items with quantity 0 are not printed.' });
 Idioma.adicionar({ 'Defesas': 'Defenses', 'Hist\u00f3rico': 'History', 'Notas': 'Notes', 'Defesas extras': 'Extra defenses', 'Ajuste antes de imprimir; a ficha abaixo \u00e9 atualizada na hora.': 'Adjust before printing; the sheet below updates instantly.', 'Resist\u00eancias, imunidades ou vantagens que o app n\u00e3o detectou aparecem no quadro Defesas da ficha.': 'Resistances, immunities or advantages the app did not detect appear in the sheet Defenses box.' });
+Idioma.adicionar({ 'Consultar itens': 'Browse items', 'Buscar item por nome ou texto...': 'Search item by name or text...', 'Buscar item': 'Search item', 'Todas as categorias': 'All categories', 'Item m\u00e1gico': 'Magic item', 'Todas as raridades': 'All rarities', 'Categoria': 'Category', 'Raridade': 'Rarity', 'Requer sintoniza\u00e7\u00e3o': 'Requires attunement', 'Nenhum item encontrado. Livros desligados em Fontes de conte\u00fado escondem seus itens.': 'No items found. Books turned off in Content sources hide their items.', 'Item sem descri\u00e7\u00e3o.': 'No description.' });
+Idioma.adicionar({ 'Itens': 'Items', 'Itens m\u00e1gicos': 'Magic items' });
