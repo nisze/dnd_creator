@@ -3,7 +3,7 @@ function talentoComEscolhas(t) {
     const c = JSON.parse(JSON.stringify(t));
     (c.conteudo || []).forEach(n => {
         const d = n['descrição'] || '';
-        if (!/^Aumento/i.test(n.nome || '') || !/Aument[ea]/i.test(d) || /deslocamento/i.test((n.nome || '') + d)) return;
+        if (!(/^Aumento/i.test(n.nome || '') || (n.simbolo === '📈' && /^Aument[ea] (o|a|um|uma) /i.test(d))) || !/Aument[ea]/i.test(d) || /deslocamento/i.test((n.nome || '') + d)) return;
         const attrs = /(uma habilidade|um atributo|valor de um )/i.test(d) ? Object.keys(ATTR_STEMS) : atributosCitados(d);
         if (attrs.length === 1) n.bonus_atributo = ATTR_MAP_KEY[attrs[0]];
         else if (attrs.length > 1) { n.escolha = 1; n.conteudo = attrs.map(a => ({ nome: a })); }
