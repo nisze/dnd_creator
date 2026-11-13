@@ -2504,7 +2504,71 @@
                     "nome_ingles": "Bonus Proficiencies",
                     "nivel": 3,
                     "descrição": "Quando você entra para o Colégio do Conhecimento no 3º nível, ganha proficiência em três perícias à sua escolha.",
-                    "descricao_en": "When you join the College of Lore at 3rd level, you gain proficiency with three skills of your choice."
+                    "descricao_en": "When you join the College of Lore at 3rd level, you gain proficiency with three skills of your choice.",
+                    "conteudo": [
+                      {
+                        "simbolo": "🎯",
+                        "nome": "Perícia (Proficiências Adicionais)",
+                        "escolha": 3,
+                        "descrição": "Escolha 3 perícia(s). Uma perícia que você já tem não pode ser escolhida de novo.",
+                        "conteudo": [
+                          {
+                            "nome": "Acrobacia"
+                          },
+                          {
+                            "nome": "Lidar com Animais"
+                          },
+                          {
+                            "nome": "Arcanismo"
+                          },
+                          {
+                            "nome": "Atletismo"
+                          },
+                          {
+                            "nome": "Enganação"
+                          },
+                          {
+                            "nome": "História"
+                          },
+                          {
+                            "nome": "Intuição"
+                          },
+                          {
+                            "nome": "Intimidação"
+                          },
+                          {
+                            "nome": "Investigação"
+                          },
+                          {
+                            "nome": "Medicina"
+                          },
+                          {
+                            "nome": "Natureza"
+                          },
+                          {
+                            "nome": "Percepção"
+                          },
+                          {
+                            "nome": "Atuação"
+                          },
+                          {
+                            "nome": "Persuasão"
+                          },
+                          {
+                            "nome": "Prestidigitação"
+                          },
+                          {
+                            "nome": "Furtividade"
+                          },
+                          {
+                            "nome": "Sobrevivência"
+                          },
+                          {
+                            "nome": "Religião"
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "simbolo": "📌",
@@ -5121,7 +5185,11 @@
                 "nome_ingles": "Beguiling Influence",
                 "descrição": "Você ganha proficiência nas perícias Enganação e Persuasão.",
                 "resumo": "Proficiência em Enganação e Persuasão.",
-                "descricao_en": "You gain proficiency in the Deception and Persuasion skills."
+                "descricao_en": "You gain proficiency in the Deception and Persuasion skills.",
+                "pericias_fixas": [
+                  "Enganação",
+                  "Persuasão"
+                ]
               },
               {
                 "simbolo": "🔹",
@@ -5741,7 +5809,11 @@
                 "prerequisito": {
                   "patrono": "Great Old One"
                 },
-                "prerequisito_en": "The Great Old One patron"
+                "prerequisito_en": "The Great Old One patron",
+                "pericias_fixas": [
+                  "Enganação",
+                  "Furtividade"
+                ]
               },
               {
                 "simbolo": "🔹",
@@ -7444,7 +7516,23 @@
                     "nome_ingles": "Bonus Proficiencies",
                     "nivel": 1,
                     "descrição": "Quando escolher este domínio no 1º nível, você ganha proficiência com armaduras pesadas. Você também ganha proficiência na perícia Intimidação ou Persuasão (à sua escolha).",
-                    "descricao_en": "When you choose this domain at 1st level, you gain proficiency with heavy armor. You also gain proficiency in the Intimidation or Persuasion skill (your choice)."
+                    "descricao_en": "When you choose this domain at 1st level, you gain proficiency with heavy armor. You also gain proficiency in the Intimidation or Persuasion skill (your choice).",
+                    "conteudo": [
+                      {
+                        "simbolo": "🎯",
+                        "nome": "Perícia (Proficiências Adicionais)",
+                        "escolha": 1,
+                        "descrição": "Escolha 1 perícia(s). Uma perícia que você já tem não pode ser escolhida de novo.",
+                        "conteudo": [
+                          {
+                            "nome": "Intimidação"
+                          },
+                          {
+                            "nome": "Persuasão"
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "simbolo": "📌",
@@ -7543,7 +7631,26 @@
                     "nome_ingles": "Implement of Peace",
                     "nivel": 1,
                     "descrição": "Quando escolher este domínio no 1º nível, você ganha proficiência na perícia Intuição, Atuação ou Persuasão (à sua escolha).",
-                    "descricao_en": "When you choose this domain at 1st level, you gain proficiency in the Insight, Performance, or Persuasion skill (your choice)."
+                    "descricao_en": "When you choose this domain at 1st level, you gain proficiency in the Insight, Performance, or Persuasion skill (your choice).",
+                    "conteudo": [
+                      {
+                        "simbolo": "🎯",
+                        "nome": "Perícia (Instrumento da Paz)",
+                        "escolha": 1,
+                        "descrição": "Escolha 1 perícia(s). Uma perícia que você já tem não pode ser escolhida de novo.",
+                        "conteudo": [
+                          {
+                            "nome": "Intuição"
+                          },
+                          {
+                            "nome": "Atuação"
+                          },
+                          {
+                            "nome": "Persuasão"
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "simbolo": "📌",
@@ -12901,7 +13008,23 @@
                     "nome_ingles": "Arcane Archer Lore",
                     "nivel": 3,
                     "descrição": "No 3º nível, você aprende teoria mágica ou alguns dos segredos da natureza — típico de praticantes desta tradição marcial élfica. Você escolhe ganhar proficiência na perícia Arcanismo ou Natureza, e escolhe aprender o truque prestidigitação ou arte druídica.",
-                    "descricao_en": "At 3rd level, you learn magical theory or some of the secrets of nature – typical for practitioners of of this elven martial tradition. You choose to gain proficiency in either the Arcana or the Nature skill, and you choose to learn either the Prestidigitation or Druidcraft cantrip."
+                    "descricao_en": "At 3rd level, you learn magical theory or some of the secrets of nature – typical for practitioners of of this elven martial tradition. You choose to gain proficiency in either the Arcana or the Nature skill, and you choose to learn either the Prestidigitation or Druidcraft cantrip.",
+                    "conteudo": [
+                      {
+                        "simbolo": "🎯",
+                        "nome": "Perícia (Saber do Arqueiro Arcano)",
+                        "escolha": 1,
+                        "descrição": "Escolha 1 perícia(s). Uma perícia que você já tem não pode ser escolhida de novo.",
+                        "conteudo": [
+                          {
+                            "nome": "Arcanismo"
+                          },
+                          {
+                            "nome": "Natureza"
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "simbolo": "📌",
@@ -13683,7 +13806,23 @@
                     "nome_ingles": "Arcane Archer's Lore",
                     "nivel": 3,
                     "descrição": "No 3º nível, você aprende teoria mágica ou alguns dos segredos da natureza — típico de praticantes desta tradição marcial élfica. Você ganha proficiência na perícia Arcanismo ou Natureza.",
-                    "descricao_en": "At 3rd level, you learn magical theory or some of the secrets of nature—typical for practitioners of this elven martial tradition. You gain proficiency in either the Arcana or the Nature skill."
+                    "descricao_en": "At 3rd level, you learn magical theory or some of the secrets of nature—typical for practitioners of this elven martial tradition. You gain proficiency in either the Arcana or the Nature skill.",
+                    "conteudo": [
+                      {
+                        "simbolo": "🎯",
+                        "nome": "Perícia (Saber do Arqueiro Arcano)",
+                        "escolha": 1,
+                        "descrição": "Escolha 1 perícia(s). Uma perícia que você já tem não pode ser escolhida de novo.",
+                        "conteudo": [
+                          {
+                            "nome": "Arcanismo"
+                          },
+                          {
+                            "nome": "Natureza"
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "simbolo": "📌",
@@ -14812,7 +14951,26 @@
                     "nome_ingles": "Careful Eyes",
                     "nivel": 7,
                     "descrição": "A partir do 7º nível, você se destaca em identificar inimigos escondidos e outras ameaças. Você pode realizar a ação de Procurar como ação bônus.\nVocê também ganha proficiência na perícia Percepção, Investigação ou Sobrevivência (escolha uma).",
-                    "descricao_en": "Starting at 7th level, you excel at picking out hidden enemies and other threats. You can take the Search action as a bonus action.\nYou also gain proficiency in the Perception, Investigation, or Survival skill (choose one)."
+                    "descricao_en": "Starting at 7th level, you excel at picking out hidden enemies and other threats. You can take the Search action as a bonus action.\nYou also gain proficiency in the Perception, Investigation, or Survival skill (choose one).",
+                    "conteudo": [
+                      {
+                        "simbolo": "🎯",
+                        "nome": "Perícia (Olhos Cuidadosos)",
+                        "escolha": 1,
+                        "descrição": "Escolha 1 perícia(s). Uma perícia que você já tem não pode ser escolhida de novo.",
+                        "conteudo": [
+                          {
+                            "nome": "Percepção"
+                          },
+                          {
+                            "nome": "Investigação"
+                          },
+                          {
+                            "nome": "Sobrevivência"
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "simbolo": "📌",
@@ -15864,7 +16022,11 @@
                     "nome_ingles": "Survivalist",
                     "nivel": 3,
                     "descrição": "Quando você escolhe este arquétipo no 3º nível, você ganha proficiência nas perícias Natureza e Sobrevivência, se ainda não as tiver. Seu bônus de proficiência é dobrado em qualquer teste de habilidade que fizer que use qualquer uma dessas proficiências.",
-                    "descricao_en": "When you choose this archetype at 3rd level, you gain proficiency in the Nature and Survival skills if you don't already have it. Your proficiency bonus is doubled for any ability check you make that uses either of those proficiencies."
+                    "descricao_en": "When you choose this archetype at 3rd level, you gain proficiency in the Nature and Survival skills if you don't already have it. Your proficiency bonus is doubled for any ability check you make that uses either of those proficiencies.",
+                    "pericias_fixas": [
+                      "Natureza",
+                      "Sobrevivência"
+                    ]
                   },
                   {
                     "simbolo": "📌",
@@ -19121,7 +19283,11 @@
                     "nome_ingles": "Implements of Mercy",
                     "nivel": 3,
                     "descrição": "Quando você escolhe esta tradição no 3º nível, você ganha proficiência nas perícias Intuição e Medicina, e ganha proficiência com o kit de herbalismo.\nVocê também ganha uma máscara especial, que costuma usar ao empregar as características desta subclasse. Você determina sua aparência, ou a gera aleatoriamente rolando na tabela Máscara Misericordiosa.\nMáscara Misericordiosa | \nd6 | Aparência da Máscara\n1 | Corvo\n2 | Branca e lisa\n3 | Semblante chorando\n4 | Semblante rindo\n5 | Caveira\n6 | Borboleta",
-                    "descricao_en": "When you choose this tradition at 3rd level, you gain proficiency in the Insight and Medicine skills, and you gain proficiency with the herbalism kit.\nYou also gain a special mask, which you often wear when using the features of this subclass. You determine its appearance, or generate it randomly by rolling on the Merciful Mask table.\nMerciful Mask | \nd6 | Mask Appearance\n1 | Raven\n2 | Blank and white\n3 | Crying visage\n4 | Laughing visage\n5 | Skull\n6 | Butterfly"
+                    "descricao_en": "When you choose this tradition at 3rd level, you gain proficiency in the Insight and Medicine skills, and you gain proficiency with the herbalism kit.\nYou also gain a special mask, which you often wear when using the features of this subclass. You determine its appearance, or generate it randomly by rolling on the Merciful Mask table.\nMerciful Mask | \nd6 | Mask Appearance\n1 | Raven\n2 | Blank and white\n3 | Crying visage\n4 | Laughing visage\n5 | Skull\n6 | Butterfly",
+                    "pericias_fixas": [
+                      "Intuição",
+                      "Medicina"
+                    ]
                   },
                   {
                     "simbolo": "📌",
@@ -19443,7 +19609,23 @@
                     "nome_ingles": "Implements of Mercy",
                     "nivel": 3,
                     "descrição": "No 3º nível, você ganha proficiência na perícia Intuição ou Medicina (à sua escolha), e ganha proficiência com o kit de herbalismo e o kit de envenenador.",
-                    "descricao_en": "At 3rd level, you gain proficiency in the Insight or Medicine skill (your choice), and you gain proficiency with the herbalism kit and the poisoner’s kit."
+                    "descricao_en": "At 3rd level, you gain proficiency in the Insight or Medicine skill (your choice), and you gain proficiency with the herbalism kit and the poisoner’s kit.",
+                    "conteudo": [
+                      {
+                        "simbolo": "🎯",
+                        "nome": "Perícia (Implementos de Misericórdia)",
+                        "escolha": 1,
+                        "descrição": "Escolha 1 perícia(s). Uma perícia que você já tem não pode ser escolhida de novo.",
+                        "conteudo": [
+                          {
+                            "nome": "Intuição"
+                          },
+                          {
+                            "nome": "Medicina"
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "simbolo": "📌",
