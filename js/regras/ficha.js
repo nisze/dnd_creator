@@ -118,6 +118,33 @@ function recursosDaFicha(calc) {
 }
 
 // ---------- Características, perícias, salvaguardas e sentidos ----------
+// A ficha é de consulta rápida: características de classe usam o resumo de dados/ficha-resumos.json ou, sem ele, as primeiras frases do texto original.
+const FICHA_MAX = 420;
+const _chaveResumo = (n) => String(n.nome_ingles || ((String(n.nome || n.Nome || '').match(/\(([^)]+)\)\s*$/) || [])[1]) || n.nome || n.Nome || '').toLowerCase().trim();
+// Conjuração já tem espaço próprio na ficha (CD, ataque, espaços); a tabela de subclasses ("Arquétipo | Fonte") é só a lista de escolha.
+const _SEM_FICHA = /^(spellcasting|spellcasting focus|pact magic)$/;
+function _ocultarNaFicha(n, texto) {
+    const ing = String(n.nome_ingles || '').toLowerCase().trim();
+    if (_SEM_FICHA.test(ing) || /^(Conjuração|Conjuração Mágica|Foco de Conjuração|Magia de Pacto)(\s*\(.*\))?$/i.test(String(n.nome || n.Nome || '').trim())) return true;
+    return /^[^|\n]+\|\s*(Fonte|Source)\s*$/m.test(texto);
+}
+function _cortarEmFrases(texto, max) {
+    // Fica com o parágrafo de abertura: para antes da primeira lista e ignora títulos de tabela soltos.
+    const linhas = String(texto).split('\n').map(l => l.trim()).filter(l => l && !l.startsWith('#') && !l.includes('|') && (l.length >= 50 || /[.!?:]$|^-/.test(l)));
+    const i = linhas.findIndex(l => l.startsWith('-')), corpo = i > 0 ? linhas.slice(0, i) : linhas;
+    const plano = corpo.join(' ').replace(/:$/, '.');
+    const frases = plano.match(/[^.!?]+(?:[.!?]+(?=\s|$)|$)/g) || [plano];
+    let out = '';
+    for (const f of frases) { if (out && (out + f).length > max) break; out += f; }
+    out = out.trim();
+    if (out.length <= max) return out;
+    return out.slice(0, out.lastIndexOf(' ', max)).replace(/[,;:\s]+$/, '') + '…';
+}
+function textoDaFicha(n, texto, classeId) {
+    const r = db.fichaResumos && db.fichaResumos[classeId] && db.fichaResumos[classeId][_chaveResumo(n)];
+    if (r) return r[0];
+    return texto.length > FICHA_MAX ? _cortarEmFrases(texto, FICHA_MAX) : texto;
+}
 // Características com texto vindas de raça, classe e antecedente (as escolhidas entram pelo próprio nome e pelas características que trazem).
 function caracteristicasDaFicha() {
     const ignorar = /^(Dado de Vida|Testes? de Resist|Idiomas?|Deslocamento|Tamanho|Aumento (no|de) |Profici[eê]ncias?$|Equipamento|Idade|Alinhamento|Pontos de Vida|Perícias?$)/i;
@@ -127,19 +154,21 @@ function caracteristicasDaFicha() {
         // Com mais de uma classe cada característica leva o nome da classe de origem.
         const subDe = (idx) => soClasse(idx, () => semMagias(() => { const r = escolhasResolvidas('classe').find(({ c }) => c.node.nivel_escolha !== undefined); const s = r && r.res.selecionados[0]; return s && s.node ? { nome: s.nome || nomeDe(s.node), node: s.node } : null; }));
         const grupos = cat === 'classe' && todasClasses().length > 1
-            ? todasClasses().map(cl => ({ rot: nomeCurtoDaClasse(cl.classe), nos: soClasse(cl.idx, () => nodesAtivos('classe')), nivelClasse: cl.nivel, subNode: subDe(cl.idx) }))
-            : [{ rot: rotulo[cat], nos: nodesAtivos(cat), nivelClasse: cat === 'classe' ? (todasClasses()[0] || {}).nivel || null : null, subNode: cat === 'classe' ? subDe(0) : null }];
-        grupos.forEach(({ rot, nos, nivelClasse, subNode }) => {
+            ? todasClasses().map(cl => ({ rot: nomeCurtoDaClasse(cl.classe), nos: soClasse(cl.idx, () => nodesAtivos('classe')), nivelClasse: cl.nivel, subNode: subDe(cl.idx), classeId: cl.classe.id }))
+            : [{ rot: rotulo[cat], nos: nodesAtivos(cat), nivelClasse: cat === 'classe' ? (todasClasses()[0] || {}).nivel || null : null, subNode: cat === 'classe' ? subDe(0) : null, classeId: cat === 'classe' ? charState.classe.id : null }];
+        grupos.forEach(({ rot, nos, nivelClasse, subNode, classeId }) => {
             // Características da subclasse escolhida ficam num grupo próprio; o texto genérico "escolha um arquétipo" (lista de opções) sai.
             const daSub = new Set(), coletar = (x) => { if (Array.isArray(x)) return x.forEach(coletar); if (!x || typeof x !== 'object') return; daSub.add(x); coletar(x.conteudo); };
             if (subNode) coletar(subNode.node.conteudo);
             nos.forEach(n => {
-                const nome = String(n.nome || n.Nome || '').trim(), texto = String(n['descrição'] || n['Descrição'] || n.descricao || '').trim();
-                if (!nome || !texto || /^(n[aã]o|nenhum[a]?)\.?$/i.test(texto) || ehNoDeNivel(n) || ignorar.test(nome) || (cat === 'antecedente' && /^Profici[eê]ncias? /i.test(texto))) return;
-                if (subNode && /\|\s*(Source|Fonte)\s*(\n|$)/i.test(texto)) return;
+                const nome = String(n.nome || n.Nome || '').trim(), completo = String(n['descrição'] || n['Descrição'] || n.descricao || '').trim();
+                if (!nome || !completo || /^(n[aã]o|nenhum[a]?)\.?$/i.test(completo) || ehNoDeNivel(n) || ignorar.test(nome) || (cat === 'antecedente' && /^Profici[eê]ncias? /i.test(completo))) return;
+                if (subNode && /\|\s*(Source|Fonte)\s*(\n|$)/i.test(completo)) return;
+                if (cat === 'classe' && _ocultarNaFicha(n, completo)) return;
                 const sub = daSub.has(n) ? subNode.nome : '';
                 const k = rot + '|' + sub + '|' + nome; if (vistos.has(k)) return; vistos.add(k);
-                out.push({ fonte: rot, nome, texto, nivel: n.nivel || null, sub, nivelClasse });
+                const texto = cat === 'classe' ? textoDaFicha(n, completo, classeId) : completo;
+                out.push({ fonte: rot, nome, texto, completo, nivel: n.nivel || null, sub, nivelClasse });
             });
         });
     });
@@ -172,7 +201,7 @@ function acoesDaFicha(calc) {
     const rec = recursosDaFicha(calc);
     return caracteristicasDaFicha().map(c => {
         let tipo = null, pos = Infinity;
-        _TIPOS_ACAO.forEach(([t, re]) => { const m = re.exec(c.texto || ''); if (m && m.index < pos) { pos = m.index; tipo = t; } });
+        _TIPOS_ACAO.forEach(([t, re]) => { const m = re.exec(c.completo || c.texto || ''); if (m && m.index < pos) { pos = m.index; tipo = t; } });
         if (!tipo) return null;
         const r = rec.find(x => { const a = norm(x.nome), b = norm(c.nome); return a === b || a.includes(b) || b.includes(a); });
         const uso = r ? (r.ilimitado ? '' : `${r.max}x/${r.recarga === 'curto' ? 'desc. curto' : 'desc. longo'}`) : '';

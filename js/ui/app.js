@@ -32,6 +32,10 @@ async function iniciar() {
         db.equipPt = equipPt;
         loja.forEach(i => { const p = lojaPt[i.id]; if (!p) return; if (p.nome) i.nome = p.nome; if (p.desc) i.desc_pt = p.desc; });
         Idioma.adicionarNos(classes); Idioma.adicionarNos(talentos);
+        try {
+            db.fichaResumos = await carregarJSON('dados/ficha-resumos.json');
+            Object.keys(db.fichaResumos).forEach(id => Object.values(db.fichaResumos[id]).forEach(p => { if (Array.isArray(p) && p[1]) Idioma.adicionar({ [p[0]]: p[1] }); }));
+        } catch (e) { db.fichaResumos = {}; /* sem resumos: a ficha corta o texto original */ }
         ICONES = icones;
         const ordemRacas = ['Humano', 'Anão', 'Elfo'];
         db.racas.sort((a, b) => { let ia = ordemRacas.findIndex(r => nomeDe(a).includes(r)), ib = ordemRacas.findIndex(r => nomeDe(b).includes(r)); if (ia < 0) ia = 999; if (ib < 0) ib = 999; return ia !== ib ? ia - ib : nomeDe(a).localeCompare(nomeDe(b)); });
