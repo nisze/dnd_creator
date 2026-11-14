@@ -254,19 +254,30 @@ const _botoesQtd = (i) => { const id = _t(i.id); return `<button type="button" c
 function _htmlLinhaItem(i, extras) {
     const id = _t(i.id), b = i.bonus_magico || 0, aberto = String(ui.fichaEditaItem) === String(i.id);
     const base = i.apelido ? ` <small class="meta">(${_t(nomeBaseItem(i))})</small>` : '';
-    return `<div class="aj-bloco"><div class="aj-item ${i.qtd > 0 ? '' : 'zerado'}"><span>${_t(nomeItem(i))}${b ? ` <b class="aj-bonus">+${b}</b>` : ''}${base}${i.cat === 'personalizado' ? ' <em>(item pessoal)</em>' : ''}</span>${extras || ''}<button type="button" class="sec mini" onclick="UI.fitemEditar('${id}')" aria-expanded="${aberto}">Editar</button>${i.cat === 'personalizado' ? `<button type="button" class="sec mini" onclick="UI.fitemRemover('${id}')" aria-label="Remover item">Remover</button>` : ''}${_botoesQtd(i)}</div>${aberto ? _htmlEditorItem(i) : ''}</div>`;
+    return `<div class="aj-bloco"><div class="aj-item ${i.qtd > 0 ? '' : 'zerado'}"><span>${_t(nomeItem(i))}${b ? ` <b class="aj-bonus">+${b}</b>` : ''}${base}${i.cat === 'personalizado' ? ' <em>(item pessoal)</em>' : ''}</span>${extras || ''}<button type="button" class="sec mini" onclick="UI.fitemEditar('${id}')" aria-expanded="${aberto}">Editar</button>${i.cat === 'personalizado' || i.cat === 'magico' ? `<button type="button" class="sec mini" onclick="UI.fitemRemover('${id}')" aria-label="Remover item">Remover</button>` : ''}${_botoesQtd(i)}</div>${aberto ? _htmlEditorItem(i) : ''}</div>`;
 }
 function _htmlAjusteItens() {
-    const itens = charState.inventario;
+    const itens = charState.inventario.filter(i => i.cat !== 'magico');
     if (!itens.length) return '<p class="meta">Sem itens no inventário.</p>';
     return itens.map(i => _htmlLinhaItem(i)).join('');
+}
+function _htmlAjusteMagicos() {
+    const itens = charState.inventario.filter(i => i.cat === 'magico');
+    if (!itens.length) return '<p class="meta">Nenhum item mágico.</p>';
+    return itens.map(i => {
+        const id = _t(i.id);
+        const variante = i.efeito && i.efeito.variantes ? `<select onchange="UI.fvariante('${id}', this.value)" aria-label="Variante">${i.efeito.variantes.map((v, k) => `<option value="${k}"${(i.variante || 0) === k ? ' selected' : ''}>${_t(v.nome)}</option>`).join('')}</select>` : '';
+        const sint = i.sint ? `<label class="aj-opcao"><input type="checkbox" ${i.sintonizado ? 'checked' : ''} onchange="UI.fsintonia('${id}')"> sintonizado</label>` : '';
+        return _htmlLinhaItem(i, variante + sint);
+    }).join('') + `<p class="meta">Sintonizados: ${totalSintonizados()}/${MAX_SINTONIAS}</p>`;
 }
 
 const _ICO_ABA = {
     geral: _svgp('<path d="M3 11l9-7 9 7M5 10v10h14V10"/>'), inventario: _svgp('<path d="M6 8h12l1 12H5zM9 8V6a3 3 0 0 1 6 0v2"/>'),
+    magicos: _svgp('<path d="M12 3l2.4 5.6 6.1.5-4.6 4 1.4 6-5.3-3.2-5.3 3.2 1.4-6-4.6-4 6.1-.5z"/>'),
     historico: _svgp('<path d="M4 5h6v6H4zM14 5h6v6h-6zM4 15h6v4H4zM14 15h6v4h-6z"/>')
 };
-const _ABAS_FICHA = [['geral', 'Geral'], ['inventario', 'Inventário'], ['historico', 'Histórico de níveis']];
+const _ABAS_FICHA = [['geral', 'Geral'], ['inventario', 'Inventário'], ['magicos', 'Itens mágicos'], ['historico', 'Histórico de níveis']];
 
 // Cartão do personagem (como em "Meus personagens"), barra de XP, ações e seções; fica acima da ficha.
 function _htmlLateralFicha() {
@@ -302,6 +313,9 @@ function _htmlPainelFicha(aba) {
         <h4>Adicionar item pessoal</h4>
         <div class="aj-linha"><label class="aj-campo">Nome<input type="text" id="novo-item-nome" maxlength="80" placeholder="Chaveiro da minha irmã"></label><label class="aj-campo">Qtd<input type="number" id="novo-item-qtd" min="1" value="1"></label><label class="aj-campo">Peso (kg)<input type="number" id="novo-item-peso" min="0" step="0.1" value="0"></label><label class="aj-campo larga">Observação (opcional)<input type="text" id="novo-item-desc" maxlength="120"></label><button type="button" class="mini" onclick="UI.fitemAdd()">Adicionar</button></div>`;
 
+    if (aba === 'magicos') return `<p class="meta">Itens mágicos do personagem. Os que exigem sintonização contam no máximo de ${MAX_SINTONIAS}; a ficha é atualizada na hora.</p>
+        <h4>Itens mágicos</h4><div id="f-aj-magicos">${_htmlAjusteMagicos()}</div>
+        <div class="aj-linha"><button type="button" onclick="UI.fichaMagicos()">Adicionar item mágico</button></div>`;
     if (aba === 'historico') return `<h4>Histórico de níveis</h4><div id="f-historico">${htmlHistoricoNiveis()}</div>`;
 
     return `<p class="meta">Ajuste antes de imprimir; a ficha abaixo é atualizada na hora.</p>
@@ -334,6 +348,7 @@ function _persistirFicha() {
     const r = salvarPersonagem((charState.nomePersonagem || '').trim(), ui.idSalvo);
     if (r.erro) avisar(r.erro, true); else ui.idSalvo = r.id;
     const aj = porId('f-aj-itens'); if (aj) aj.innerHTML = _htmlAjusteItens();
+    const ajm = porId('f-aj-magicos'); if (ajm) ajm.innerHTML = _htmlAjusteMagicos();
     const lat = porId('ficha-lateral'); if (lat) lat.innerHTML = _htmlLateralFicha();
     const dica = porId('f-xp-dica'); if (dica) dica.textContent = htmlDicaXP();
     porId('ficha-previa').innerHTML = htmlPaginasFicha();
@@ -342,6 +357,7 @@ function _persistirFicha() {
 let _tmrFicha = null;
 // Loja aberta a partir da ficha: janela com a loja inteira; as compras saem das moedas da ficha.
 const _htmlTopoLojaFicha = () => { const m = garantirFolha().moedas; return `<h3 style="margin:0 0 .6rem">Loja <span class="saldo" id="loja-ficha-moedas">${Object.keys(NOME_MOEDA).filter(k => m[k]).map(k => m[k] + ' ' + NOME_MOEDA[k]).join(' / ') || 'sem moedas'}</span></h3>`; };
+const _htmlTopoMagicosFicha = () => '<h3 style="margin:0 0 .6rem">Itens mágicos <small class="meta">(concedidos pelo mestre, sem preço)</small></h3>';
 function _renderLojaFicha() {
     if (typeof document === 'undefined' || !document.body || !document.body.appendChild) return;
     let el = porId('loja-ficha');
@@ -350,7 +366,7 @@ function _renderLojaFicha() {
         el.innerHTML = '<div class="janela janela-larga"><div class="janela-corpo" id="loja-ficha-corpo"></div><div class="janela-rodape"><button type="button" class="sec" onclick="UI.fichaLojaFechar()">Fechar</button></div></div>';
         document.body.appendChild(el); if (document.body.classList) document.body.classList.add('janela-aberta');
     }
-    porId('loja-ficha-corpo').innerHTML = _htmlTopoLojaFicha() + htmlLoja();
+    porId('loja-ficha-corpo').innerHTML = ui.fichaModo === 'magicos' ? _htmlTopoMagicosFicha() + htmlMagicos() : _htmlTopoLojaFicha() + htmlLoja();
 }
 if (typeof document !== 'undefined' && document.addEventListener) document.addEventListener('keydown', e => { if (e.key === 'Escape' && ui.lojaFicha) UI.fichaLojaFechar(); });
 // Editor do retrato: a foto é arrastada e ampliada dentro de um círculo; ao aplicar, guarda-se só o quadrado recortado (RET_SAIDA px).
@@ -404,9 +420,16 @@ function _retAbrir(img, pos, orig) {
     _retDesenhar(); el.scrollIntoView({ block: 'nearest' });
 }
 Object.assign(UI, {
-    fichaLoja() { ui.lojaFicha = true; if (!ui.loja.cat) ui.loja.cat = 'arma'; _renderLojaFicha(); },
+    fichaLoja() { ui.lojaFicha = true; ui.fichaModo = 'loja'; if (!ui.loja.cat) ui.loja.cat = 'arma'; _renderLojaFicha(); },
+    fichaMagicos() { ui.lojaFicha = true; ui.fichaModo = 'magicos'; _renderLojaFicha(); },
     fichaLojaFechar() { ui.lojaFicha = false; const el = porId('loja-ficha'); if (el && el.remove) el.remove(); if (typeof document !== 'undefined' && document.body && document.body.classList) document.body.classList.remove('janela-aberta'); },
     fichaLojaComprar(id) {
+        if (String(id).startsWith('magico-')) {
+            const m = (db.magicos || []).find(x => x.id === id); if (!m) return;
+            const ja = !m.sint && charState.inventario.find(i => i.ref === m.id && i.origem === 'ficha');
+            if (ja) ja.qtd++; else charState.inventario.push(itemDeLoja(m, { origem: 'ficha', ...(m.ua ? { ua: true } : {}) }));
+            avisar(`${nomeItem(m)} adicionado aos itens mágicos.`); _persistirFicha(); return;
+        }
         const l = lojaPorId(id); if (!l) return; const e = compraNaFicha(l); if (e) return avisar(e, true);
         _persistirFicha();
         const f = garantirFolha(), mo = porId('f-aj-moedas'); if (mo) mo.innerHTML = Object.keys(NOME_MOEDA).map(k => `<label class="aj-campo">${NOME_MOEDA[k]}<input type="number" min="0" value="${f.moedas[k] || 0}" onchange="UI.fmoeda('${k}', this.value)"></label>`).join('');
@@ -425,7 +448,7 @@ Object.assign(UI, {
         charState.inventario.push({ id: novoIdInv(), ref: null, cat: 'personalizado', nome, nome_en: '', qtd, custo: 0, peso_lb: +(kg / 0.45359237).toFixed(3), mec: null, desc: (porId('novo-item-desc').value || '').trim(), origem: 'personalizado' });
         _persistirFicha(); ['novo-item-nome', 'novo-item-desc'].forEach(id => { porId(id).value = ''; });
     },
-    fitemRemover(id) { const k = charState.inventario.findIndex(x => String(x.id) === String(id) && x.cat === 'personalizado'); if (k < 0) return; charState.inventario.splice(k, 1); _persistirFicha(); },
+    fitemRemover(id) { const k = charState.inventario.findIndex(x => String(x.id) === String(id) && (x.cat === 'personalizado' || x.cat === 'magico')); if (k < 0) return; charState.inventario.splice(k, 1); _persistirFicha(); },
     fitemEditar(id) { ui.fichaEditaItem = id == null ? null : String(id); _persistirFicha(); },
     fitemSalvar(id) {
         const i = charState.inventario.find(x => String(x.id) === String(id)); if (!i) return;
@@ -435,6 +458,12 @@ Object.assign(UI, {
         if (bonus && _podeMelhorar(i)) i.bonus_magico = parseInt(bonus.value, 10) || 0;
         ui.fichaEditaItem = null; _persistirFicha();
     },
+    fsintonia(id) {
+        const i = charState.inventario.find(x => String(x.id) === String(id)); if (!i || !i.sint) return;
+        if (!i.sintonizado && totalSintonizados() >= MAX_SINTONIAS) { _persistirFicha(); return avisar(`Você só pode estar sintonizado a ${MAX_SINTONIAS} itens mágicos ao mesmo tempo.`, true); }
+        i.sintonizado = !i.sintonizado; _persistirFicha();
+    },
+    fvariante(id, v) { const i = charState.inventario.find(x => String(x.id) === String(id)); if (i) { i.variante = parseInt(v, 10) || 0; _persistirFicha(); } },
     fretrato(input) {
         const f = input.files && input.files[0]; if (!f) return; const rd = new FileReader();
         rd.onload = () => { const img = new Image(); img.onload = () => { input.value = ''; _retAbrir(img); }; img.onerror = () => avisar('Não foi possível ler a imagem.', true); img.src = rd.result; };
