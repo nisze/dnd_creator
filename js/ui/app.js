@@ -346,6 +346,13 @@ const UI = {
         const erro = validarRegrasSelecao(c, sels); if (erro) { aposMudanca(); return avisar(erro, true); }
         registrarSelecao(cat, c, sels); aposMudanca();
     },
+    // Remove uma escolha já feita (o "x" que aparece ao passar o mouse sobre a etiqueta verde).
+    removerSelecao(cat, id, k) {
+        const c = acharEscolha(cat, id); if (!c) return;
+        const sels = selecaoDe(cat, id).slice(); if (!sels[k]) return; sels.splice(k, 1);
+        registrarSelecao(cat, c, sels); if (c.escolhaVal === 'ASI') delete ui.asi[id];
+        aposMudanca();
+    },
     // Justificativa digitada de uma perícia do antecedente personalizado (não redesenha para não perder o foco do campo).
     justificar(cat, id, k, v) {
         const s = selecaoDe(cat, id)[k]; if (!s) return;
