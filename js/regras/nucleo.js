@@ -132,7 +132,9 @@ const ATTR_NAMES = ["Força", "Destreza", "Constituição", "Inteligência", "Sa
 const ATTR_MAP_KEY = { "Força": "For", "Destreza": "Des", "Constituição": "Con", "Inteligência": "Int", "Sabedoria": "Sab", "Carisma": "Car" };
 
 const fmtPO = (n) => (Math.round(n * 100) / 100).toLocaleString('pt-BR') + ' PO';
-const nomeItem = (i) => (!i.nome_en || i.nome === i.nome_en) ? i.nome : (typeof Idioma !== 'undefined' && Idioma.atual === 'en') ? i.nome_en : `${i.nome} (${i.nome_en})`;
+const nomeBaseItem = (i) => (!i.nome_en || i.nome === i.nome_en) ? i.nome : (typeof Idioma !== 'undefined' && Idioma.atual === 'en') ? i.nome_en : `${i.nome} (${i.nome_en})`;
+// Nome dado pelo jogador (ex.: "Arco de Van Cleef") tem prioridade sobre o nome de tabela.
+const nomeItem = (i) => i.apelido || nomeBaseItem(i);
 const novoIdInv = () => Date.now() + Math.random();
 const semPlural = (s) => semAcento(s).replace(/[^a-z\s]/g, ' ').split(/\s+/).map(w => w.replace(/s$/, '')).filter(Boolean).join(' ');
 function getMod(val) { return Math.floor((val - 10) / 2); }

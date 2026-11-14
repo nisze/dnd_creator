@@ -121,7 +121,7 @@ function _htmlPaginaMagiasRecursos(calc) {
 
 function _htmlPaginaEquipamento(calc) {
     const f = garantirFolha(), carga = cargaDaFicha(calc), itens = charState.inventario.filter(i => (i.qtd || 0) > 0);
-    const linhas = itens.map(i => { const kg = (parseFloat(i.peso_lb) || 0) * i.qtd; return `<li><span class="f-qtd">${i.qtd}</span><b>${_t(i.nome)}${i.bonus_magico ? ' +' + i.bonus_magico : ''}${i.sint ? (i.sintonizado ? ' (sintonizado)' : ' (requer sintonização)') : ''}${i.cat === 'personalizado' && i.desc ? ` <small>${_t(i.desc)}</small>` : ''}</b>${tagArmadura(i)}<small>${kg ? emKg(kg).toString().replace('.', ',') + ' kg' : ''}</small></li>`; }).join('');
+    const linhas = itens.map(i => { const kg = (parseFloat(i.peso_lb) || 0) * i.qtd; return `<li><span class="f-qtd">${i.qtd}</span><b>${_t(i.apelido || i.nome)}${i.bonus_magico ? ' +' + i.bonus_magico : ''}${i.sint ? (i.sintonizado ? ' (sintonizado)' : ' (requer sintonização)') : ''}${(i.cat === 'personalizado' ? i.desc : i.obs) ? ` <small>${_t(i.cat === 'personalizado' ? i.desc : i.obs)}</small>` : ''}</b>${tagArmadura(i)}<small>${kg ? emKg(kg).toString().replace('.', ',') + ' kg' : ''}</small></li>`; }).join('');
     const pe = proficienciasEquipDaFicha();
     const moedas = Object.keys(NOME_MOEDA).map(k => `<div class="f-moeda"><b>${f.moedas[k] || '&nbsp;'}</b><small>${NOME_MOEDA[k]}</small></div>`).join('');
     const texto = (rot, k) => `<div class="f-caixa f-texto" data-k="${k}" data-rot="${_t(rot)}">${_tit(rot)}<p>${_multi(f[k])}</p></div>`;
@@ -244,10 +244,22 @@ function htmlPaginasFicha() {
     return _htmlPagina1(calc) + _htmlPaginaMagiasRecursos(calc) + _htmlPaginaEquipamento(calc) + _htmlPaginaCaracteristicas() + _htmlPaginaTalentos();
 }
 
+// Armas, armaduras e escudos comuns podem ter bônus mágico +1 a +3 (no editor do item).
+const _podeMelhorar = (i) => !!(i.mec && (i.mec.categoria || i.mec.tipo)) && i.cat !== 'magico';
+function _htmlEditorItem(i) {
+    const id = _t(i.id), pessoal = i.cat === 'personalizado';
+    return `<div class="aj-editor"><div class="aj-linha"><label class="aj-campo larga">Nome do item<input type="text" id="ei-nome" maxlength="80" value="${_t(i.apelido || '')}" placeholder="${_t(nomeBaseItem(i))}"></label>${_podeMelhorar(i) ? `<label class="aj-campo">Bônus mágico<select id="ei-bonus">${[0, 1, 2, 3].map(n => `<option value="${n}" ${(i.bonus_magico || 0) === n ? 'selected' : ''}>${n ? '+' + n : 'nenhum'}</option>`).join('')}</select></label>` : ''}<label class="aj-campo larga">Observação (opcional)<input type="text" id="ei-obs" maxlength="120" value="${_t(pessoal ? i.desc : i.obs)}"></label></div><div class="aj-linha"><button type="button" class="mini" onclick="UI.fitemSalvar('${id}')">Salvar</button><button type="button" class="sec mini" onclick="UI.fitemEditar(null)">Cancelar</button></div></div>`;
+}
+const _botoesQtd = (i) => { const id = _t(i.id); return `<button type="button" class="sec mini" onclick="UI.fqtd('${id}', -1)" aria-label="Diminuir">-</button><input type="number" min="0" value="${i.qtd || 0}" onchange="UI.fqtdSet('${id}', this.value)" aria-label="Quantidade"><button type="button" class="sec mini" onclick="UI.fqtd('${id}', 1)" aria-label="Aumentar">+</button>`; };
+function _htmlLinhaItem(i, extras) {
+    const id = _t(i.id), b = i.bonus_magico || 0, aberto = String(ui.fichaEditaItem) === String(i.id);
+    const base = i.apelido ? ` <small class="meta">(${_t(nomeBaseItem(i))})</small>` : '';
+    return `<div class="aj-bloco"><div class="aj-item ${i.qtd > 0 ? '' : 'zerado'}"><span>${_t(nomeItem(i))}${b ? ` <b class="aj-bonus">+${b}</b>` : ''}${base}${i.cat === 'personalizado' ? ' <em>(item pessoal)</em>' : ''}</span>${extras || ''}<button type="button" class="sec mini" onclick="UI.fitemEditar('${id}')" aria-expanded="${aberto}">Editar</button>${i.cat === 'personalizado' ? `<button type="button" class="sec mini" onclick="UI.fitemRemover('${id}')" aria-label="Remover item">Remover</button>` : ''}${_botoesQtd(i)}</div>${aberto ? _htmlEditorItem(i) : ''}</div>`;
+}
 function _htmlAjusteItens() {
     const itens = charState.inventario;
     if (!itens.length) return '<p class="meta">Sem itens no inventário.</p>';
-    return itens.map(i => `<div class="aj-item ${i.qtd > 0 ? '' : 'zerado'}"><span>${_t(nomeItem(i))}${i.cat === 'personalizado' ? ' <em>(item pessoal)</em>' : ''}</span>${i.cat === 'personalizado' ? `<button type="button" class="sec mini" onclick="UI.fitemRemover('${_t(i.id)}')" aria-label="Remover item">Remover</button>` : ''}<button type="button" class="sec mini" onclick="UI.fqtd('${_t(i.id)}', -1)" aria-label="Diminuir">-</button><input type="number" min="0" value="${i.qtd || 0}" onchange="UI.fqtdSet('${_t(i.id)}', this.value)" aria-label="Quantidade"><button type="button" class="sec mini" onclick="UI.fqtd('${_t(i.id)}', 1)" aria-label="Aumentar">+</button></div>`).join('');
+    return itens.map(i => _htmlLinhaItem(i)).join('');
 }
 
 const _ICO_ABA = {
@@ -414,6 +426,15 @@ Object.assign(UI, {
         _persistirFicha(); ['novo-item-nome', 'novo-item-desc'].forEach(id => { porId(id).value = ''; });
     },
     fitemRemover(id) { const k = charState.inventario.findIndex(x => String(x.id) === String(id) && x.cat === 'personalizado'); if (k < 0) return; charState.inventario.splice(k, 1); _persistirFicha(); },
+    fitemEditar(id) { ui.fichaEditaItem = id == null ? null : String(id); _persistirFicha(); },
+    fitemSalvar(id) {
+        const i = charState.inventario.find(x => String(x.id) === String(id)); if (!i) return;
+        const nome = (porId('ei-nome').value || '').trim().slice(0, 80), obs = (porId('ei-obs').value || '').trim().slice(0, 120), bonus = porId('ei-bonus');
+        if (nome && nome !== i.nome) i.apelido = nome; else delete i.apelido;
+        if (i.cat === 'personalizado') i.desc = obs; else if (obs) i.obs = obs; else delete i.obs;
+        if (bonus && _podeMelhorar(i)) i.bonus_magico = parseInt(bonus.value, 10) || 0;
+        ui.fichaEditaItem = null; _persistirFicha();
+    },
     fretrato(input) {
         const f = input.files && input.files[0]; if (!f) return; const rd = new FileReader();
         rd.onload = () => { const img = new Image(); img.onload = () => { input.value = ''; _retAbrir(img); }; img.onerror = () => avisar('Não foi possível ler a imagem.', true); img.src = rd.result; };

@@ -123,7 +123,7 @@ function calcularPersonagem() {
         if (!prof) avisosEquip.push(`${nomeItem(i)}: sem proficiência (sem bônus de proficiência no ataque).`);
         let dano = m.dano ? `${m.dano}${danoMod ? formatMod(danoMod) : ''} ${({ cortante: 'cort.', perfurante: 'perf.', contundente: 'cont.' })[m.tipo_dano] || m.tipo_dano || ''}${m.versatil ? ' (' + m.versatil + ')' : ''}`.trim() : (m.dano_en || '-');
         if (m.arremesso && m.dano && estilos.has('thrown weapon fighting')) dano += ` (arremessada: ${m.dano}${formatMod(danoMod + 2)})`;
-        return { nome: i.nome + (bonusMag ? ' +' + bonusMag : ''), bonus: mod + bonusMag + bonusEstilo + bonusCQS + (prof ? profBonus : 0), dano, props: m.propriedades || [], semProf: !prof };
+        return { nome: (i.apelido || i.nome) + (bonusMag ? ' +' + bonusMag : ''), bonus: mod + bonusMag + bonusEstilo + bonusCQS + (prof ? profBonus : 0), dano, props: m.propriedades || [], semProf: !prof };
     });
     { const luta = estilos.has('unarmed fighting'); ataques.push({ nome: 'Ataque desarmado', bonus: mods.For + profBonus, dano: luta ? `1d6${formatMod(mods.For)} cont. (1d8 sem armas/escudo)` : `${Math.max(1, 1 + mods.For)} cont.` }); }
 

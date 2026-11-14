@@ -74,6 +74,11 @@
 .aj-item span { flex: 1; }
 .aj-item input { width: 4.5rem; text-align: center; }
 .aj-item.zerado span { text-decoration: line-through; opacity: .55; }
+.aj-item { flex-wrap: wrap; }
+.aj-item .aj-bonus { color: var(--ouro-claro); }
+.aj-bloco { border-bottom: 1px solid var(--borda); }
+.aj-bloco > .aj-item { border-bottom: 0; }
+.aj-editor { display: grid; gap: .5rem; padding: .5rem .6rem .7rem; margin: 0 0 .4rem; border-left: 3px solid var(--ouro); background: rgba(var(--ouro-rgb), .06); }
 .aj-retrato { align-items: center; }
 .aj-ret-col { display: grid; gap: .5rem; justify-items: start; }
 .aj-retrato img { height: 7rem; width: auto; border-radius: .4rem; border: 1px solid var(--borda); }
