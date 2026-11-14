@@ -128,7 +128,6 @@ function htmlEquipamento() {
     }
     equipInicialAplicar();
     h += '</div>' + `<div class="bloco" id="inv-area">${htmlInventario()}</div>`
-        + '<p class="meta">Loja disponível na etapa da ficha.</p>'
-        + `<details class="bloco" ${ui.aberto.magicos ? 'open' : ''} ontoggle="UI.magicosAbrir(this.open)"><summary><b>Itens mágicos concedidos pelo mestre</b> <small class="meta">(não têm preço)</small></summary>${ui.aberto.magicos ? htmlMagicos() : '<p class="meta">Abra para buscar itens.</p>'}</details>`;
+        + '<p class="meta">Loja disponível na etapa da ficha.</p>';
     return h;
 }

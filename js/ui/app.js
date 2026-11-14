@@ -484,7 +484,6 @@ const UI = {
     lojaAbrir(aberta) { if (ui.aberto.loja === aberta) return; ui.aberto.loja = aberta; UI.redesenharEquip(); },
     lojaBuscar(v) { ui.loja.q = v; porId('loja-resultados').innerHTML = htmlLojaResultados(); },
     async lojaCategoria(v) { ui.loja.cat = v; if (ui.lojaFicha) _renderLojaFicha(); else UI.redesenharEquip(); },
-    magicosAbrir(aberta) { if (ui.aberto.magicos === aberta) return; ui.aberto.magicos = aberta; UI.redesenharEquip(); },
     magicoBuscar(v) { ui.magicosQ = v; porId('magicos-resultados').innerHTML = htmlMagicosResultados(); },
     lojaComprar(id) { if (ui.lojaFicha) return UI.fichaLojaComprar(id); const l = id.startsWith('magico-') ? (db.magicos || []).find(m => m.id === id) : lojaPorId(id); if (!l) return; const e = inventarioAdicionar(l); if (e) return avisar(e, true); UI.redesenharEquip(); }
 };
