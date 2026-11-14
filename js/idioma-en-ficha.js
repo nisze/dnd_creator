@@ -291,6 +291,7 @@
     Idioma.padrao(/^(.+) \(cópia\)$/, '$1 (copy)');
     Idioma.padrao(/^(?:## )?(Astuto|Andarilho|Incansável) \((\d+)º Nível\)$/, (m, n, l) => ({ 'Astuto': 'Canny', 'Andarilho': 'Roving', 'Incansável': 'Tireless' }[n]) + ' (Level ' + l + ')');
     Idioma.padrao(/^Mais (\d+) itens: refine a busca\.$/, '$1 more items: refine the search.');
+    Idioma.padrao(/^\+1 em (dois|\d+) valores de habilidade diferentes, à sua escolha\.$/, (m, n) => '+1 to ' + (n === 'dois' ? 'two' : n) + ' different ability scores of your choice.');
     Idioma.padrao(/^(\d+) resultados?\(s\)$/, '$1 result(s)');
     Idioma.padrao(/^não foi possível ler "(.+)" \((.*)\)$/, 'could not read "$1" ($2)');
     Idioma.padrao(/^"(.+)" não encontrado \(HTTP (\d+)\)$/, '"$1" not found (HTTP $2)');

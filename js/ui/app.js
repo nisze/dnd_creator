@@ -353,6 +353,18 @@ const UI = {
         registrarSelecao(cat, c, sels); if (c.escolhaVal === 'ASI') delete ui.asi[id];
         aposMudanca();
     },
+    // Bloco único de "+1 em N atributos diferentes": cada clique preenche a próxima escolha livre (ou desfaz a do atributo marcado).
+    marcarAumento(cat, ids, nome) {
+        const itens = String(ids).split(',').map(id => acharEscolha(cat, id)).filter(Boolean);
+        const atual = itens.find(c => (selecaoDe(cat, c.id)[0] || {}).nome === nome);
+        if (atual) registrarSelecao(cat, atual, []);
+        else {
+            const livre = itens.find(c => !selecaoDe(cat, c.id).length); if (!livre) return;
+            const o = opcoesDaEscolha(cat, livre, livre.id).opcoes.find(x => x.nome === nome); if (!o) return;
+            registrarSelecao(cat, livre, [o]);
+        }
+        aposMudanca();
+    },
     // Justificativa digitada de uma perícia do antecedente personalizado (não redesenha para não perder o foco do campo).
     justificar(cat, id, k, v) {
         const s = selecaoDe(cat, id)[k]; if (!s) return;

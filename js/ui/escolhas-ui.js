@@ -153,6 +153,31 @@ function htmlOpcoesTasha(filtro) {
     return `<section class="bloco tasha-troca"><h3>Tasha: escolha qual versão usar</h3><p class="desc">O Tasha oferece versões alternativas de algumas características. Elas não substituem as do Livro do Jogador: você decide qual vale para este personagem.</p>${l.map(par).join('')}</section>`;
 }
 
+// Aumentos de +1 irmãos (humano variante, meio-elfo, "+1 em três atributos") são um de cada: ficam num bloco só. O +2 e o +1 seguinte continuam separados.
+const _baseCaminho = (c) => c.path.slice(0, c.path.lastIndexOf(' > '));
+const ehAumentoMais1 = (c) => c.escolhaVal === 'Atributo' && /^\s*\+1\b/.test(descDe(c.node));
+function agruparAumentos(lista) {
+    const out = [];
+    lista.forEach(c => {
+        if (!ehAumentoMais1(c)) { out.push({ c }); return; }
+        const g = out.find(x => x.itens && _baseCaminho(x.itens[0]) === _baseCaminho(c));
+        if (g) g.itens.push(c); else out.push({ itens: [c] });
+    });
+    return out.map(x => (x.itens && x.itens.length === 1) ? { c: x.itens[0] } : x);
+}
+function htmlGrupoAumentos(cat, itens) {
+    const n = itens.length, ids = itens.map(c => esc(c.id)).join(',');
+    const sels = itens.map(c => selecaoDe(cat, c.id)[0]).filter(Boolean), nomes = new Set(sels.map(s => s.nome));
+    const disp = new Set(); itens.forEach(c => opcoesDaEscolha(cat, c, c.id).opcoes.forEach(o => disp.add(o.nome)));
+    const completo = sels.length >= n;
+    const linhas = ATTR_NAMES.map(nome => {
+        const k = ATTR_MAP_KEY[nome], ck = nomes.has(nome), bloq = !ck && (completo || !disp.has(nome));
+        return `<label class="opcao${ck ? ' marcada' : ''}${bloq ? ' bloq' : ''}"><input type="checkbox" ${ck ? 'checked' : ''} ${bloq ? 'disabled' : ''} onclick="UI.marcarAumento('${cat}','${ids}','${esc(nome)}')">${htmlIcone(caminhoAtributo(k), nome, true)}<div class="corpo"><div class="titulo">${esc(nome)}${ck ? '<span class="tag fonte">+1</span>' : ''}</div></div></label>`;
+    }).join('');
+    const desc = `+1 em ${n === 2 ? 'dois' : n} valores de habilidade diferentes, à sua escolha.`;
+    return `<section class="bloco" id="bloco-${esc(itens[0].id)}"><h3>${esc(nomeDe(itens[0].node) || 'Aumento no Valor de Habilidade')}<span class="estado ${completo ? 'ok' : ''}">${sels.length}/${n}</span></h3><div class="desc">${esc(desc)}</div><div class="opcoes">${linhas}</div>${sels.length ? `<div class="resumo-lista">${sels.map(s => `<span class="rem">${esc(s.nome)}<button type="button" class="x" onclick="UI.marcarAumento('${cat}','${ids}','${esc(s.nome)}')" aria-label="Remover" title="Remover">&times;</button></span>`).join('')}</div>` : ''}</section>`;
+}
+
 // Todas as escolhas ativas de uma categoria (com filtro opcional).
 function htmlEscolhasDe(cat, filtro, vazio) {
     if (!charState[cat]) return '';
@@ -160,7 +185,7 @@ function htmlEscolhasDe(cat, filtro, vazio) {
     const l = getActiveChoices(charState[cat], nomeDe(charState[cat]), cat).filter(c => (!filtro || filtro(c)) && !(ehGrupoOutrasFontes(c.node) && !selecaoDe(cat, c.id).length && !opcoesDaEscolha(cat, c, c.id).opcoes.length));
     const nome = cat === 'antecedente' && charState.antecedente.personalizado
         ? `<label class="justificativa nome-antecedente"><span><b>Nome do seu antecedente</b> <small>(opcional)</small></span><input type="text" maxlength="60" value="${esc(nomeAntecedentePersonalizado())}" placeholder="Ex.: Sacerdote Corrompido" oninput="UI.nomeAntecedente(this.value)"></label>` : '';
-    return nome + (l.length ? l.map(c => htmlEscolha(cat, c)).join('') : `<p class="vazio">${esc(vazio || 'Nenhuma escolha adicional.')}</p>`);
+    return nome + (l.length ? agruparAumentos(l).map(g => g.itens ? htmlGrupoAumentos(cat, g.itens) : htmlEscolha(cat, g.c)).join('') : `<p class="vazio">${esc(vazio || 'Nenhuma escolha adicional.')}</p>`);
 }
 
 // O botão "mais" só aparece quando o texto realmente está cortado (itens ocultos são medidos quando o grupo abre).
