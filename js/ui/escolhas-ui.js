@@ -53,12 +53,13 @@ function htmlOpcoes(cat, c, opcoes, busca) {
     if (!linhas.length) return '<p class="vazio">Nenhuma opção encontrada.</p>';
     const marcada = (o) => sels.some(s => mesmaOpcao(o, s));
     if (c.node.magias || ehEscolhaDeMagia(c)) {
+        // Uma aba por círculo (truques, 1º, 2º...), como guias do navegador.
         const grupos = {}; linhas.forEach(x => { const n = x.o.magia ? x.o.magia.nivel : 0; (grupos[n] = grupos[n] || []).push(x); });
-        return Object.keys(grupos).map(Number).sort((a, b) => a - b).map((n, k) => {
-            const chave = `g-${c.id}-${n}`; const nSel = grupos[n].filter(x => marcada(x.o)).length;
-            const aberto = ui.aberto[chave] !== undefined ? ui.aberto[chave] : (k === 0 || nSel > 0 || !!q);
-            return `<details class="grupo" ${aberto ? 'open' : ''} ontoggle="ui.aberto['${chave}'] = this.open; ajustarMais(this)"><summary class="grupo-titulo">${n === 0 ? 'Truques' : n + 'º círculo'} <span class="contagem">(${grupos[n].length}${nSel ? ', ' + nSel + ' escolhida' + (nSel > 1 ? 's' : '') : ''})</span></summary>${grupos[n].map(x => linhaOpcao(cat, c, x.o, x.i, marcada(x.o), limite)).join('')}</details>`;
-        }).join('');
+        const niveis = Object.keys(grupos).map(Number).sort((a, b) => a - b);
+        const guardada = (ui.abasMagia || {})[c.id], ativo = niveis.includes(guardada) ? guardada : niveis[0];
+        const rotulo = (n) => n === 0 ? 'Truques' : n + 'º círculo';
+        const abas = `<div class="abas-loja abas-magia" role="tablist">${niveis.map(n => { const nSel = grupos[n].filter(x => marcada(x.o)).length; return `<button type="button" role="tab" aria-selected="${n === ativo}" class="${n === ativo ? 'ativo' : ''}" onclick="UI.abaMagia('${esc(c.id)}', ${n})">${rotulo(n)} <span class="contagem">(${nSel ? nSel + '/' : ''}${grupos[n].length})</span></button>`; }).join('')}</div>`;
+        return abas + `<div role="tabpanel">${grupos[ativo].map(x => linhaOpcao(cat, c, x.o, x.i, marcada(x.o), limite)).join('')}</div>`;
     }
     let h = '', ultimo = null;
     if (!linhas.some(x => x.o.grupo)) linhas.sort((a, b) => (a.o.bloqueado ? 1 : 0) - (b.o.bloqueado ? 1 : 0));

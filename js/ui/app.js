@@ -1,6 +1,6 @@
 // Aplicação: estado da interface, navegação entre etapas, telas (criação, lista de personagens, ficha) e eventos.
 const ETAPAS = [{ id: 'raca', nome: 'Raça' }, { id: 'classe', nome: 'Classe' }, { id: 'subclasse', nome: 'Subclasse' }, { id: 'antecedente', nome: 'Antecedente' }, { id: 'atributos', nome: 'Atributos' }, { id: 'escolhas', nome: 'Escolhas e equipamento' }, { id: 'revisao', nome: 'Nome e revisão' }];
-const ui = { tela: 'criacao', etapa: 0, maxEtapa: 0, buscaLivro: '', foco: {}, focoTalento: {}, busca: {}, aberto: {}, asi: {}, asiModo: {}, metodo: 'compra', rolagens: [], pad: {}, padIdx: {}, loja: { q: '', cat: '' }, confirmar: null, msgs: [], subLista: [], idSalvo: null };
+const ui = { tela: 'criacao', etapa: 0, maxEtapa: 0, buscaLivro: '', foco: {}, focoTalento: {}, busca: {}, abasMagia: {}, aberto: {}, asi: {}, asiModo: {}, metodo: 'compra', rolagens: [], pad: {}, padIdx: {}, loja: { q: '', cat: '' }, confirmar: null, msgs: [], subLista: [], idSalvo: null };
 
 const TEXTO_INTERRUPTORES = {
     ua: ['Unearthed Arcana (UA)', 'Material de teste (playtest) publicado pela Wizards of the Coast para a comunidade experimentar. Não faz parte dos livros oficiais, pode mudar ou ser descartado, e a aceitação depende do mestre. Ligado, raças, classes, subclasses, talentos, magias e itens UA aparecem marcados com UA.'],
@@ -54,7 +54,7 @@ let _toastTimer = null;
 function avisar(texto, erro) { const t = porId('toast'); t.textContent = semEmoji(texto); t.className = erro ? 'erro' : ''; t.style.display = 'block'; clearTimeout(_toastTimer); _toastTimer = setTimeout(() => { t.style.display = 'none'; }, erro ? 6000 : 3000); }
 function novoPersonagem() {
     Object.assign(charState, { nivel: 1, outras: [], raca: null, classe: null, antecedente: null, inventario: [], retrato: null, retratoOrig: null, retratoPos: null, atributosBase: { For: 8, Des: 8, Con: 8, Int: 8, Sab: 8, Car: 8 }, bonusRacial: {}, tashaUsa: {}, origemPersonalizada: false, justificativas: {}, escolhas: { raca: {}, classe: {}, antecedente: {} }, pvNiveis: [], pvAtual: null, pvTemp: 0, folha: novaFolha(), historico: [], nomePersonagem: '', idSalvo: null, equipInicial: { modo: 'equipamento', escolhas: {}, ouro: null, classeId: null, antecedenteNome: null } });
-    Object.assign(ui, { tela: 'criacao', etapa: 0, maxEtapa: 0, foco: {}, busca: {}, aberto: {}, asi: {}, asiModo: {}, metodo: 'compra', rolagens: [], pad: {}, padIdx: {}, loja: { q: '', cat: '' }, confirmar: null, msgs: [], idSalvo: null });
+    Object.assign(ui, { tela: 'criacao', etapa: 0, maxEtapa: 0, foco: {}, busca: {}, abasMagia: {}, aberto: {}, asi: {}, asiModo: {}, metodo: 'compra', rolagens: [], pad: {}, padIdx: {}, loja: { q: '', cat: '' }, confirmar: null, msgs: [], idSalvo: null });
 }
 // Descobre qual método de atributos explica os valores já definidos (ao abrir um personagem salvo).
 function inferirMetodo() {
@@ -368,6 +368,7 @@ const UI = {
             return;
         }
     },
+    abaMagia(id, n) { (ui.abasMagia = ui.abasMagia || {})[id] = n; UI.buscar(id, ui.busca[id] || ''); },
     alternarTexto(btn, ev) { ev.preventDefault(); ev.stopPropagation(); const t = btn.previousElementSibling; t.classList.toggle('curto'); btn.textContent = t.classList.contains('curto') ? 'mais' : 'menos'; },
     async verMagia(id, btn, ev) {
         ev.preventDefault(); ev.stopPropagation(); const box = porId('magia-' + id);
