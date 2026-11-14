@@ -83,12 +83,8 @@ function escolhasMagia(raiz) {
         const escolas = ESCOLAS_SUBCLASSE[conj.subId];
         add('conhecidas', 'Magias conhecidas', conj.conhecidas, { lista: conj.lista, min: 1, max, extra, ...listasExtra, ...(escolas ? { escolas, livres: escolasLivres(nivelAtual()) } : {}) }, escolas ? `Todas devem ser de ${escolas.map(e => ESCOLA_PT[e]).join(' ou ')}, exceto até ${escolasLivres(nivelAtual())} de qualquer escola (as aprendidas nos níveis 3, 8, 14 e 20).` : '');
     }
-    if (conj.grimorio) {
-        add('grimorio', 'Grimório', conj.grimorio, { lista: conj.lista, min: 1, max }, 'Magias copiadas para o grimório.');
-        add('preparadas', 'Magias preparadas', qtdPreparadas(conj, atributos), { origem: 'grimorio' }, 'Escolhidas entre as magias do grimório.');
-    } else if (conj.preparacao === 'preparadas' && conj.preparadas) {
-        add('preparadas', 'Magias preparadas', qtdPreparadas(conj, atributos), { lista: conj.lista, min: 1, max, excluirIds: sub.auto }, 'Já preparadas pela subclasse: ' + (sub.auto.map(i => nomeMagia(magiaPorId(i)) || i).join(', ') || 'nenhuma') + '.');
-    }
+    // As magias preparadas do dia (grimório, clérigo, druida, paladino) não são escolhidas aqui: o jogador as marca na ficha.
+    if (conj.grimorio) add('grimorio', 'Grimório', conj.grimorio, { lista: conj.lista, min: 1, max }, 'Magias copiadas para o grimório. As magias preparadas do dia são marcadas na ficha.');
     if (conj.lista === 'Warlock' && conj.origem === 'classe') Object.entries(ARCANUM).forEach(([lv, nv]) => { if (nivelAtual() >= nv) add('arcana-' + lv, `Arcana Mística (${lv}º círculo)`, 1, { lista: 'Warlock', min: +lv, max: +lv }, 'Uma vez por descanso longo, sem gastar espaço.'); });
     if (conj.lista === 'Bard' && conj.origem === 'classe') {
         const n = nivelAtual(); const q = (n >= 18 ? 6 : n >= 14 ? 4 : n >= 10 ? 2 : 0) + (conj.subId === 'bard__lore' && n >= 6 ? 2 : 0);

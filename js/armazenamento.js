@@ -103,7 +103,8 @@ function restaurarEstado(e) {
         });
         if (!progresso) break;
     }
-    Object.entries(pendentes).forEach(([chave, sel]) => perdas.push('Escolha não restaurada (' + chave.split(':')[0] + '): ' + sel.map(r => r.nome).join(', ')));
+    // As magias preparadas não são mais escolhidas na criação (são marcadas na ficha): personagens antigos trazem essa escolha, que é descartada em silêncio.
+    Object.entries(pendentes).forEach(([chave, sel]) => { if (/:MAGIA-preparadas$/.test(chave)) return; perdas.push('Escolha não restaurada (' + chave.split(':')[0] + '): ' + sel.map(r => r.nome).join(', ')); });
     return { ok: !!(raca && classe && ant), perdas };
 }
 

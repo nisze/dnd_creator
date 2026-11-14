@@ -273,7 +273,8 @@
         'Não foi possível ler a imagem.': 'Could not read the image.', 'Não foi possível abrir a foto.': 'Could not open the photo.', 'nenhum': 'none', 'nenhuma': 'none',
         'O que a multiclasse concede': 'What multiclassing grants',
         'abra pelo servidor local (o navegador bloqueia a leitura dos arquivos de dados ao abrir direto). No terminal, na pasta do projeto: node tools/serve.js  e depois http://127.0.0.1:5500/':
-            'open it through the local server (the browser blocks reading the data files when opened directly). In a terminal, in the project folder: node tools/serve.js  and then http://127.0.0.1:5500/','Gigante de Pedra/Gelo': 'Stone/Frost Giant', 'Gigante de Fogo': 'Fire Giant', 'Gigante das Nuvens': 'Cloud Giant', 'Gigante da Tempestade': 'Storm Giant'
+            'open it through the local server (the browser blocks reading the data files when opened directly). In a terminal, in the project folder: node tools/serve.js  and then http://127.0.0.1:5500/','Gigante de Pedra/Gelo': 'Stone/Frost Giant', 'Gigante de Fogo': 'Fire Giant', 'Gigante das Nuvens': 'Cloud Giant', 'Gigante da Tempestade': 'Storm Giant',
+        'Magias copiadas para o grimório. As magias preparadas do dia são marcadas na ficha.': "Spells copied into the spellbook. The day's prepared spells are marked on the sheet."
     });
     Idioma.padrao(/^Pontos insuficientes: custaria (\d+) de (\d+)\.$/, 'Not enough points: it would cost $1 of $2.');
     Idioma.padrao(/^Substitui da raça base: (.+)\.$/, (m, l) => 'Replaces from the base race: ' + T(l) + '.');
