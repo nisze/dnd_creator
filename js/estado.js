@@ -6,7 +6,7 @@ const db = { racas: [], classes: [], antecedentes: [], idiomas: [], talentos: []
 // Dados que só existem na ficha impressa (a ficha é de papel, o jogo é no lápis): moedas, textos de personalidade/história e campos do cabeçalho.
 const novaFolha = () => ({
     moedas: { pc: 0, pp: 0, pe: 0, po: 0, pl: 0 }, ouroAutoPC: null,
-    alinhamento: '', jogador: '', xp: '', aparencia: '', personalidade: '', ideais: '', vinculos: '', defeitos: '', historia: '', aliados: '', notas: '', defesas: '', historiaAuto: '', historiaEditada: false
+    alinhamento: '', jogador: '', xp: '', aparencia: '', personalidade: '', ideais: '', vinculos: '', defeitos: '', historia: '', aliados: '', notas: '', defesas: '', historiaAuto: '', historiaEditada: false, tabelas: {}
 });
 const charState = {
     nivel: 1, outras: [], tasha: false, tashaUsa: {}, origemPersonalizada: false, justificativas: {},

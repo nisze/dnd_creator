@@ -239,9 +239,26 @@ function _htmlPaginaTalentos() {
 </section>`;
 }
 
+// Tabelas de rolagem marcadas pelo jogador: ficam em páginas depois das características (as pequenas dividem a página; a de d100 ocupa uma inteira).
+function _htmlPaginasTabelas() {
+    const marcadas = garantirFolha().tabelas || {}, sel = tabelasDaFicha().filter(t => marcadas[t.chave]); if (!sel.length) return '';
+    const linhasDe = (t) => 3 + t.itens.reduce((s, i) => s + Math.ceil((String(i.efeito).length + 8) / 62), 0);
+    const paginas = []; let atual = [], total = 0;
+    sel.forEach(t => { const n = linhasDe(t); if (atual.length && total + n > 150) { paginas.push(atual); atual = []; total = 0; } atual.push(t); total += n; });
+    if (atual.length) paginas.push(atual);
+    const en = typeof Idioma !== 'undefined' && Idioma.atual === 'en';
+    return paginas.map((pg, k) => `<section class="folha livre f-tab-pg" data-de="tabelas"><h2 class="f-h2">${_t(sel.length === 1 ? sel[0].titulo : (en ? 'Tables' : 'Tabelas'))}${k ? ' (' + (en ? 'continued' : 'continuação') + ')' : ''}</h2><div class="f-tabelas">${pg.map(t => `<div class="f-tabela${t.itens.length > 14 ? '' : ' junta'}"><h4>${_t(t.titulo)} <small>${_t(t.dado)}</small></h4><ul class="f-d100">${t.itens.map(i => `<li><b>${_t(i.d)}</b><span>${_t(i.efeito)}</span></li>`).join('')}</ul></div>`).join('')}</div></section>`).join('');
+}
+// Pergunta no fim da tela (fora da folha, não sai na impressão): cada tabela de rolagem das características do personagem entra na ficha só se for marcada.
+function _htmlOpcoesFinaisFicha() {
+    const ts = tabelasDaFicha(); if (!ts.length) return '';
+    const marcadas = garantirFolha().tabelas || {}, en = typeof Idioma !== 'undefined' && Idioma.atual === 'en';
+    return `<div id="ficha-opcoes" class="ficha-opcoes sem-impressao"><b>${en ? 'Tables from your features' : 'Tabelas das suas características'}</b>${ts.map((t, i) => `<label class="aj-opcao"><input type="checkbox" ${marcadas[t.chave] ? 'checked' : ''} onchange="UI.ftabela(${i}, this.checked)"> ${en ? `Include the "${_t(t.titulo)}" table (${_t(t.dado)}, ${t.itens.length} rows) on the sheet, after the features` : `Incluir a tabela "${_t(t.titulo)}" (${_t(t.dado)}, ${t.itens.length} linhas) na ficha, depois das características`}</label>`).join('')}</div>`;
+}
+
 function htmlPaginasFicha() {
     const calc = calcularPersonagem();
-    return _htmlPagina1(calc) + _htmlPaginaMagiasRecursos(calc) + _htmlPaginaEquipamento(calc) + _htmlPaginaCaracteristicas() + _htmlPaginaTalentos();
+    return _htmlPagina1(calc) + _htmlPaginaMagiasRecursos(calc) + _htmlPaginaEquipamento(calc) + _htmlPaginaCaracteristicas() + _htmlPaginasTabelas() + _htmlPaginaTalentos();
 }
 
 // Armas, armaduras e escudos comuns podem ter bônus mágico +1 a +3 (no editor do item).
@@ -340,7 +357,7 @@ function htmlTelaFicha() {
         <aside id="ficha-lateral" class="ficha-lateral">${_htmlLateralFicha()}</aside>
         <div id="ficha-janela" class="ficha-janela${ui.fichaJanela ? ' aberta' : ''}" role="dialog" aria-label="Ajustes da ficha">${_htmlJanelaFicha()}</div>
     </div>
-    <div class="ficha-centro"><div id="ficha-previa" class="${ui.fichaSemFundo ? 'sem-fundo' : ''}">${htmlPaginasFicha()}</div></div>
+    <div class="ficha-centro"><div id="ficha-previa" class="${ui.fichaSemFundo ? 'sem-fundo' : ''}">${htmlPaginasFicha()}</div>${_htmlOpcoesFinaisFicha()}</div>
 </div>`;
 }
 
@@ -439,6 +456,7 @@ Object.assign(UI, {
     fqtd(id, d) { const i = charState.inventario.find(x => String(x.id) === String(id)); if (!i) return; i.qtd = Math.max(0, (i.qtd || 0) + d); _persistirFicha(); },
     fqtdSet(id, v) { const i = charState.inventario.find(x => String(x.id) === String(id)); if (!i) return; i.qtd = Math.max(0, Math.floor(Number(v)) || 0); _persistirFicha(); },
     fmoeda(k, v) { const f = garantirFolha(); if (!(k in f.moedas)) return; f.moedas[k] = Math.max(0, Math.floor(Number(v)) || 0); _persistirFicha(); },
+    ftabela(i, on) { const t = tabelasDaFicha()[i]; if (!t) return; const f = garantirFolha(); f.tabelas = f.tabelas || {}; if (on) f.tabelas[t.chave] = true; else delete f.tabelas[t.chave]; _persistirFicha(); },
     fcampo(k, v) { const f = garantirFolha(); if (!(k in f)) return; f[k] = String(v); if (k === 'historia') f.historiaEditada = true; _persistirFicha(); },
     // Digitando: a caixa cresce com o texto e a ficha se atualiza logo depois de parar de digitar.
     fcampoVivo(k, el) { el.style.height = 'auto'; el.style.height = el.scrollHeight + 'px'; clearTimeout(_tmrFicha); _tmrFicha = setTimeout(() => UI.fcampo(k, el.value), 350); },

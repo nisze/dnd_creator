@@ -279,6 +279,15 @@
 .f-cols .sub-tit { display: block; margin: 1mm 0 .2mm; color: var(--marrom); font-weight: bold; }
 .f-cols .sub-item { display: block; padding-left: 2mm; }
 .f-cols .nivel-tag { font-size: 6pt; color: inherit; opacity: .75; }
+.f-tabelas { columns: 2; column-gap: 6mm; }
+.f-tabela { margin-bottom: 3mm; }
+.f-tabela.junta { break-inside: avoid; }
+.f-tabela h4 { margin: 0 0 .5mm; font-family: Georgia, serif; font-size: 9pt; color: var(--marrom); border-bottom: .2mm solid var(--ouro-f); }
+.f-tabela h4 small { font-family: 'Palatino Linotype', Georgia, serif; font-size: 6.5pt; font-weight: normal; }
+.f-d100 { list-style: none; margin: 0; padding: 0; font-size: 7.5pt; }
+.f-d100 li { display: flex; gap: 2mm; break-inside: avoid; margin-bottom: 1mm; }
+.f-d100 b { flex: 0 0 9mm; color: var(--marrom); font-family: Georgia, serif; }
+.ficha-opcoes { max-width: 210mm; margin: .6rem auto 1.2rem; padding: .6rem .9rem; border: 1px solid var(--borda); border-radius: 6px; background: var(--painel2); display: grid; gap: .4rem; }
 
 @media print {
     @page { size: A4; margin: 0; }

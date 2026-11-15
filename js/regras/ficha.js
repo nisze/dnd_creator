@@ -190,6 +190,49 @@ function caracteristicasDaFicha() {
     })));
     return out;
 }
+// Tabelas de rolagem (d6, d8, d100...) que vêm no texto das características ativas e da subclasse escolhida: [{ chave, titulo, dado, itens: [{ d, efeito }] }].
+// A ficha corta esses textos; a tabela só entra nela se o jogador marcar (ver _htmlOpcoesFinaisFicha).
+function _tabelasDoTexto(txt) {
+    const linhas = String(txt || '').split('\n').map(l => l.trim()), out = [];
+    for (let i = 0; i < linhas.length; i++) {
+        const cab = /^(d\d+)\s*\|/i.exec(linhas[i]); if (!cab) continue;
+        const heads = linhas[i].split('|').map(x => x.trim()), pares = heads.length >= 4 && heads.every((h, k) => k % 2 ? !/^d\d+$/i.test(h) : /^d\d+$/i.test(h));
+        const itens = []; let k = i + 1;
+        for (; k < linhas.length; k++) {
+            const c = linhas[k].split('|').map(x => x.trim()); if (!/^\d+(-\d+)?$/.test(c[0])) break;
+            if (pares) { for (let j = 0; j + 1 < c.length; j += 2) if (/^\d+(-\d+)?$/.test(c[j])) itens.push({ d: c[j], efeito: c[j + 1] }); }
+            else itens.push({ d: c[0], efeito: c.slice(1).filter(Boolean).join(' \u00b7 ') });
+        }
+        if (itens.length < 2) continue;
+        const ant = linhas[i - 1] || '';
+        out.push({ titulo: ant && !ant.includes('|') && ant.length < 80 && !/[.!?:]$/.test(ant) ? ant : '', dado: cab[1].toLowerCase(), itens: itens.sort((a, b) => parseInt(a.d, 10) - parseInt(b.d, 10)) });
+        i = k - 1;
+    }
+    return out;
+}
+function tabelasDaFicha() {
+    const en = typeof Idioma !== 'undefined' && Idioma.atual === 'en';
+    const txt = (n) => en ? n.descricao_en : (n['descri\u00e7\u00e3o'] || n['Descri\u00e7\u00e3o'] || n.descricao);
+    const norm = (s) => semAcento(String(s || '')).toLowerCase().replace(/\s*\([^)]*\)\s*/g, ' ').replace(/\s+/g, ' ').trim();
+    const out = [], vistos = new Set();
+    const nomeEn = (n) => n.nome_ingles || n.nome || n.Nome || '';
+    const juntar = (cl, n, todas, ativosNomes) => _tabelasDoTexto(txt(n)).forEach((t, k) => {
+        const rotulo = t.titulo || (en ? (n.nome_ingles || n.nome || '') : String(n.nome || n.Nome || '').replace(/\s*\([^)]*\)\s*$/, ''));
+        // Tabela de um n\u00edvel mais alto que o personagem s\u00f3 entra se o t\u00edtulo dela \u00e9 o nome de uma caracter\u00edstica que ele j\u00e1 tem (ex.: Surto de Magia Selvagem).
+        if (!todas && !ativosNomes.has(norm(rotulo))) return;
+        const sig = rotulo + '|' + t.itens.length + '|' + t.itens[0].efeito.slice(0, 40); if (vistos.has(sig)) return; vistos.add(sig);
+        out.push({ chave: cl.classe.id + '|' + nomeEn(n) + '|' + k, titulo: rotulo, dado: t.dado, itens: t.itens });
+    });
+    todasClasses().forEach(cl => {
+        const ativos = soClasse(cl.idx, () => nodesAtivos('classe'));
+        const nomesAtivos = new Set(); ativos.forEach(n => { nomesAtivos.add(norm(n.nome || n.Nome)); if (n.nome_ingles) nomesAtivos.add(norm(n.nome_ingles)); });
+        ativos.forEach(n => juntar(cl, n, true, nomesAtivos));
+        const sub = soClasse(cl.idx, () => semMagias(() => { const r = escolhasResolvidas('classe').find(({ c }) => c.node.nivel_escolha !== undefined); const s = r && r.res.selecionados[0]; return s && s.node ? s.node : null; }));
+        const todos = (x) => { if (Array.isArray(x)) return x.forEach(todos); if (!x || typeof x !== 'object') return; juntar(cl, x, false, nomesAtivos); todos(x.conteudo); };
+        if (sub) todos(sub.conteudo);
+    });
+    return out;
+}
 // Ações da página 1: características que dizem usar uma ação, ação bônus ou reação. Heurística por texto: vale a primeira menção; usos por descanso vêm de recursosDaFicha().
 const _TIPOS_ACAO = [
     ['bonus', /a[çc][ãa]o (adicional|b[ôo]nus)/i],
