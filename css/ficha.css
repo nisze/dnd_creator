@@ -304,6 +304,9 @@
     .sem-fundo .folha { background: #fff; }
 }
 @media (max-width: 900px) { #ficha-previa .folha { margin-left: 0; } }
+#ficha-previa.reduzida { transform-origin: top left; overflow: visible; padding-bottom: 0; }
+.ficha-centro { overflow-x: clip; }
+@media print { #ficha-previa.reduzida { transform: none !important; width: 210mm !important; margin-bottom: 0 !important; } }
 
 /* editor do retrato (ajustes da ficha) */
 .ret-ed { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; margin-top: .7rem; padding: .7rem; background: var(--painel2); border: 1px solid var(--borda); border-radius: 6px; }

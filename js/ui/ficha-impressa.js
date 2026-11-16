@@ -144,9 +144,26 @@ function _htmlPaginaEquipamento(calc) {
 </section>`;
 }
 
+// Celular: a folha A4 (210 mm) é reduzida para caber na largura da tela; a altura é compensada e a impressão não é afetada.
+let _obsEscalaFicha = null, _obsEscalaAlvo = null;
+if (typeof window !== 'undefined') window.addEventListener('resize', () => { if (porId('ficha-previa')) ajustarEscalaFicha(); });
+function ajustarEscalaFicha() {
+    const prev = porId('ficha-previa'); if (!prev || !prev.parentElement) return;
+    if (_obsEscalaAlvo !== prev && typeof ResizeObserver !== 'undefined') {
+        if (_obsEscalaFicha) _obsEscalaFicha.disconnect(); else _obsEscalaFicha = new ResizeObserver(() => ajustarEscalaFicha());
+        _obsEscalaFicha.observe(prev); _obsEscalaFicha.observe(prev.parentElement); _obsEscalaAlvo = prev;
+    }
+    const larguraA4 = 210 / 25.4 * 96, disp = prev.parentElement.clientWidth;
+    const s = window.matchMedia('(max-width: 800px)').matches && disp > 0 ? Math.min(1, disp / larguraA4) : 1;
+    if (s >= 1) { prev.classList.remove('reduzida'); ['width', 'transform', 'margin-bottom'].forEach(p => prev.style.removeProperty(p)); return; }
+    prev.classList.add('reduzida'); prev.style.width = larguraA4 + 'px'; prev.style.transform = `scale(${s})`;
+    prev.style.marginBottom = -(prev.offsetHeight * (1 - s)) + 'px';
+}
+
 // As caixas de texto têm tamanho fixo na página: a letra encolhe até caber e, se mesmo assim não couber, o texto inteiro vai para uma página de continuação.
 function ajustarTextosFicha() {
     const prev = porId('ficha-previa'); if (!prev || !prev.querySelectorAll) return;
+    ajustarEscalaFicha();
     paginarCaracteristicas();
     ajustarListasPagina1();
     const velha = prev.querySelector('.f-cont'); if (velha) velha.remove();
