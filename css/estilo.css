@@ -238,7 +238,7 @@ body:has(#app.inicio-tela) #etapas, body:has(#app.inicio-tela) #rodape { display
 /* Janela de detalhes e escolhas (celular) */
 .janela-fundo { position: fixed; inset: 0; z-index: 80; background: rgba(0, 0, 0, .7); display: flex; align-items: center; justify-content: center; padding: .6rem; }
 .janela { width: min(100%, 640px); max-height: 100%; display: flex; flex-direction: column; background: var(--painel); border: 1px solid var(--ouro); border-radius: 10px; overflow: hidden; }
-.janela.janela-larga { width: min(100%, 1000px); height: 100%; }
+.janela.janela-larga { width: min(100%, 1000px); height: min(100%, 38rem); }
 .janela-corpo { flex: 1; overflow-y: auto; padding: 1rem; }
 .janela .ilustracao { max-height: 170px; }
 .janela-rodape { display: flex; flex-wrap: wrap; justify-content: flex-end; align-items: center; gap: .5rem; padding: .7rem 1rem; border-top: 1px solid var(--borda); background: var(--painel2); }
