@@ -272,7 +272,7 @@ const _botoesQtd = (i) => { const id = _t(i.id); return `<button type="button" c
 function _htmlLinhaItem(i, extras) {
     const id = _t(i.id), b = i.bonus_magico || 0, aberto = String(ui.fichaEditaItem) === String(i.id);
     const base = i.apelido ? ` <small class="meta">(${_t(nomeBaseItem(i))})</small>` : '';
-    return `<div class="aj-bloco"><div class="aj-item ${i.qtd > 0 ? '' : 'zerado'}"><span>${_t(nomeItem(i))}${b ? ` <b class="aj-bonus">+${b}</b>` : ''}${base}${i.cat === 'personalizado' ? ' <em>(item pessoal)</em>' : ''}</span>${extras || ''}<button type="button" class="sec mini" onclick="UI.fitemEditar('${id}')" aria-expanded="${aberto}">Editar</button>${i.cat === 'personalizado' || i.cat === 'magico' ? `<button type="button" class="sec mini" onclick="UI.fitemRemover('${id}')" aria-label="Remover item">Remover</button>` : ''}${_botoesQtd(i)}</div>${aberto ? _htmlEditorItem(i) : ''}</div>`;
+    return `<div class="aj-bloco"><div class="aj-item ${i.qtd > 0 ? '' : 'zerado'}"><span>${_t(nomeItem(i))}${b ? ` <b class="aj-bonus">+${b}</b>` : ''}${base}${i.cat === 'personalizado' ? ' <em>(item pessoal)</em>' : ''}</span>${extras || ''}<button type="button" class="sec mini" onclick="UI.fitemEditar('${id}')" aria-expanded="${aberto}">Editar</button>${String(ui.fichaRemoveItem) === String(i.id) ? `<span class="msg">Remover este item? <button type="button" class="perigo mini" onclick="UI.fitemRemover('${id}', true)">Sim</button> <button type="button" class="sec mini" onclick="UI.fitemRemover(null)">Não</button></span>` : `<button type="button" class="sec mini" onclick="UI.fitemRemover('${id}')" aria-label="Remover item">Remover</button>`}${_botoesQtd(i)}</div>${aberto ? _htmlEditorItem(i) : ''}</div>`;
 }
 function _htmlAjusteItens() {
     const itens = charState.inventario.filter(i => i.cat !== 'magico');
@@ -505,7 +505,12 @@ Object.assign(UI, {
         charState.inventario.push({ id: novoIdInv(), ref: null, cat: 'personalizado', nome, nome_en: '', qtd, custo: 0, peso_lb: +(kg / 0.45359237).toFixed(3), mec: null, desc: (porId('novo-item-desc').value || '').trim(), origem: 'personalizado' });
         _persistirFicha(); ['novo-item-nome', 'novo-item-desc'].forEach(id => { porId(id).value = ''; });
     },
-    fitemRemover(id) { const k = charState.inventario.findIndex(x => String(x.id) === String(id) && (x.cat === 'personalizado' || x.cat === 'magico')); if (k < 0) return; charState.inventario.splice(k, 1); _persistirFicha(); },
+    fitemRemover(id, confirmado) {
+        if (!confirmado) { ui.fichaRemoveItem = id == null ? null : String(id); _persistirFicha(); return; }
+        const k = charState.inventario.findIndex(x => String(x.id) === String(id)); ui.fichaRemoveItem = null;
+        if (k >= 0) { if (String(ui.fichaEditaItem) === String(id)) ui.fichaEditaItem = null; charState.inventario.splice(k, 1); }
+        _persistirFicha();
+    },
     fitemEditar(id) { ui.fichaEditaItem = id == null ? null : String(id); _persistirFicha(); },
     fitemSalvar(id) {
         const i = charState.inventario.find(x => String(x.id) === String(id)); if (!i) return;

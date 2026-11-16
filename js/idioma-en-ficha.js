@@ -57,7 +57,7 @@
         'Caótico e Neutro': 'Chaotic Neutral', 'Leal e Mau': 'Lawful Evil', 'Neutro e Mau': 'Neutral Evil', 'Caótico e Mau': 'Chaotic Evil',
         'Enviar foto': 'Upload photo', 'Substituir foto': 'Replace photo', 'Reposicionar': 'Reposition', 'Reposicionar foto': 'Reposition photo', 'Remover foto': 'Remove photo', 'Retrato atual': 'Current portrait', 'Dica: usar imagem sem fundo (PNG) também fica bom.': 'Tip: an image with a transparent background (PNG) also works well.',
         'Nome': 'Name', 'Qtd': 'Qty', 'Peso (kg)': 'Weight (kg)', 'Observação (opcional)': 'Note (optional)', 'Adicionar': 'Add', 'Remover': 'Remove',
-        'Chaveiro da minha irmã': 'My sister\u2019s keychain', 'Remover item': 'Remove item', 'Quantidade': 'Quantity', '(item pessoal)': '(personal item)',
+        'Chaveiro da minha irmã': 'My sister\u2019s keychain', 'Remover item': 'Remove item', 'Remover este item?': 'Remove this item?', 'Sim': 'Yes', 'Não': 'No', 'Quantidade': 'Quantity', '(item pessoal)': '(personal item)',
         'Resistências, imunidades ou vantagens que o app não detectou (aparecem no quadro Defesas)': 'Resistances, immunities or advantages the app did not detect (shown in the Defenses box)',
         'Traços de personalidade': 'Personality traits', 'Ideais': 'Ideals', 'Vínculos': 'Bonds', 'Defeitos': 'Flaws', 'Aparência': 'Appearance',
         'Aliados e organizações': 'Allies and organizations', 'Anotações': 'Notes', 'História do personagem': 'Character story',
