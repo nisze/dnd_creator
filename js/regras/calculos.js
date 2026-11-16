@@ -33,7 +33,7 @@ function calcularPV(modCon, nivel, ativos) {
 
 // Classe de Armadura com a origem de cada parte. `bonus` lista só o que vem além do cálculo base.
 function calcularCA(mods, ctx) {
-    const { ativos, estilos, corpo, temEscudo, bonusEscudo, nomeClasse } = ctx;
+    const { ativos, estilos, corpo, temEscudo, escudoSolto, bonusEscudo, nomeClasse } = ctx;
     let base = 10 + mods.Des, metodo = 'Sem armadura: 10 + Des';
     // Defesa sem Armadura (Bárbaro ou Monge; em multiclasse vale a melhor, nunca somam).
     if (nomeClasse.includes('Bárbaro')) { base = 10 + mods.Des + mods.Con; metodo = 'Defesa sem Armadura do Bárbaro: 10 + Des + Con'; }
@@ -49,7 +49,7 @@ function calcularCA(mods, ctx) {
     if (corpo && estilos.has('defense')) soma('Estilo de Luta: Defesa', 1);
     const marinheiro = estilos.has('mariner') && !(corpo && corpo.inv.mec.tipo === 'pesada') && !temEscudo;
     if (marinheiro) soma('Estilo de Luta: Marinheiro', 1);
-    return { base, metodo, bonus, final, marinheiro, comArmadura: !!corpo, comEscudo: !!temEscudo };
+    return { base, metodo, bonus, final, marinheiro, comArmadura: !!corpo, comEscudo: !!temEscudo, escudoExtra: escudoSolto ? { valor: escudoSolto.valor, final: final + escudoSolto.valor, armas: escudoSolto.armas } : null };
 }
 
 // Deslocamento em pés, com a origem de cada alteração.
@@ -110,7 +110,12 @@ function calcularPersonagem() {
     if (totalSintonizados() > MAX_SINTONIAS) avisosEquip.push(`Sintonia: ${totalSintonizados()} itens sintonizados (máximo ${MAX_SINTONIAS}).`);
     charState.inventario.filter(i => i.sint && !i.sintonizado && i.efeito).forEach(i => avisosEquip.push(`${nomeItem(i)}: exige sintonização (marque "sintonizado" no inventário) para valer na ficha.`));
     const estilos = new Set(escolhasResolvidas('classe').flatMap(({ res }) => res.selecionados.map(s => semAcento((s.node || s).nome_ingles || ''))));
-    const ctx = { ativos, estilos, corpo, temEscudo, bonusEscudo, nomeClasse };
+    // Escudo e arma empunhada com as duas mãos não se usam juntos (duas mãos, ou versátil, que o jogador pode empunhar com as duas): o escudo só dá o bônus se ele largar a arma ou usar só uma mão.
+    const en = typeof Idioma !== 'undefined' && Idioma.atual === 'en';
+    const duasMaos = charState.inventario.filter(i => (i.qtd || 0) > 0 && i.mec && i.mec.categoria && (i.mec.duas_maos || i.mec.versatil));
+    const escudoSolto = temEscudo && duasMaos.length ? { valor: 2 + bonusEscudo, armas: duasMaos.map(i => nomeItem(i) + (i.mec.duas_maos ? '' : ` (${en ? 'versatile' : 'versátil'})`)) } : null;
+    if (escudoSolto) avisosEquip.push(`Escudo: não vale junto de ${escudoSolto.armas.join(', ')} empunhada com as duas mãos. A CA mostrada não conta o escudo: ele dá +${escudoSolto.valor} se for empunhado sem usar a arma com as duas mãos.`);
+    const ctx = { ativos, estilos, corpo, temEscudo: temEscudo && !escudoSolto, escudoSolto, bonusEscudo, nomeClasse };
     const ca = calcularCA(mods, ctx);
 
     const ataques = charState.inventario.filter(i => i.mec && i.mec.categoria).map(i => {

@@ -294,6 +294,8 @@
     Idioma.padrao(/^(?:## )?(Astuto|Andarilho|Incansável) \((\d+)º Nível\)$/, (m, n, l) => ({ 'Astuto': 'Canny', 'Andarilho': 'Roving', 'Incansável': 'Tireless' }[n]) + ' (Level ' + l + ')');
     Idioma.padrao(/^Mais (\d+) itens: refine a busca\.$/, '$1 more items: refine the search.');
     Idioma.padrao(/^Sintonizados: (\d+)\/(\d+)$/, 'Attuned: $1/$2');
+    Idioma.padrao(/^\+(\d+) com escudo$/, '+$1 with shield');
+    Idioma.padrao(/^Escudo: não vale junto de (.+) empunhada com as duas mãos\. A CA mostrada não conta o escudo: ele dá \+(\d+) se for empunhado sem usar a arma com as duas mãos\.$/, (m, a, v) => 'Shield: does not apply together with ' + a + ' held in both hands. The AC shown does not count the shield: it gives +' + v + ' if wielded without using the weapon in both hands.');
     Idioma.padrao(/^\(com o escudo, sem empunhar a arma com as duas mãos: (\d+)\)$/, '(with the shield, without holding the weapon in both hands: $1)');
     Idioma.padrao(/^Itens mágicos do personagem\. Os que exigem sintonização contam no máximo de (\d+); a ficha é atualizada na hora\.$/, 'The character\'s magic items. Those that require attunement count toward the maximum of $1; the sheet updates immediately.');
     Idioma.padrao(/^(.+) adicionado aos itens mágicos\.$/, '$1 added to magic items.');

@@ -163,6 +163,7 @@
 .f-ca > .f-ca-miolo { filter: none; }
 .f-ca b { position: relative; font-family: Georgia, serif; font-size: calc(22pt * var(--e, 1)); line-height: 1; }
 .f-ca small { position: relative; font-size: calc(9pt * var(--e, 1)); font-weight: 700; letter-spacing: .4mm; color: var(--marrom); }
+.f-ca .f-ca-esc { position: absolute; left: 50%; bottom: -2.5mm; transform: translateX(-50%); z-index: 5; white-space: nowrap; font: normal 700 6.5pt Georgia, serif; color: var(--marrom); background: rgba(255, 250, 235, .9); border: .2mm solid var(--marrom); border-radius: 1mm; padding: 0 1.2mm; }
 .f-plaq { --e: 1; position: absolute; top: 111.8mm; width: 32mm; aspect-ratio: 545 / 320; z-index: 4; }
 .f-plaq.esq { left: 93.3mm; }
 .f-plaq.dir { left: 7.4mm; }

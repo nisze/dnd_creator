@@ -66,7 +66,7 @@ function _htmlPagina1(calc) {
             <div class="f-heroi"><img class="f-sigilo" src="img/ficha/sigilo.png" alt="">
                 <div class="f-aro"><div class="f-foto${charState.retrato && charState.retrato.startsWith('data:image/png') ? ' recorte' : ''}">${charState.retrato ? `<img src="${charState.retrato}" alt="">` : '<span>Retrato</span>'}</div><button type="button" class="f-foto-ed sem-impressao" onclick="UI.fretratoEditar()">${charState.retrato ? 'Reposicionar foto' : 'Enviar foto'}</button></div>
                 ${orbes}
-                <div class="f-ca"><img src="img/ficha/escudo.png" alt=""><img class="f-ca-miolo" src="img/ficha/escudo_miolo.png" alt=""><b>${calc.caFinal}</b><small>CA</small></div>
+                <div class="f-ca"><img src="img/ficha/escudo.png" alt=""><img class="f-ca-miolo" src="img/ficha/escudo_miolo.png" alt=""><b>${calc.caFinal}</b><small>CA</small>${calc.ca.escudoExtra ? `<em class="f-ca-esc">+${calc.ca.escudoExtra.valor} com escudo</em>` : ''}</div>
                 <div class="f-plaq esq"><img src="img/ficha/retangulo_medio_borda.png" alt=""><span class="f-plaq-txt"><b>${_t(calc.deslBase)} m</b><small>Deslocamento</small></span></div>
                 <div class="f-plaq dir"><img src="img/ficha/retangulo_medio_borda.png" alt=""><span class="f-plaq-txt"><b>${formatMod(calc.iniciativa)}</b><small>Iniciativa</small></span></div>
 
