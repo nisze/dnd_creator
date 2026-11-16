@@ -483,7 +483,10 @@ const UI = {
     invBonus(id, v) { const i = charState.inventario.find(x => x.id === id); if (i) { i.bonus_magico = parseInt(v, 10) || 0; UI.redesenharEquip(); } },
     lojaAbrir(aberta) { if (ui.aberto.loja === aberta) return; ui.aberto.loja = aberta; UI.redesenharEquip(); },
     lojaBuscar(v) { ui.loja.q = v; porId('loja-resultados').innerHTML = htmlLojaResultados(); },
-    async lojaCategoria(v) { ui.loja.cat = v; if (ui.lojaFicha) _renderLojaFicha(); else UI.redesenharEquip(); },
+    lojaCategoria(v) {
+        ui.loja.cat = ui.loja.cat === v ? '' : v; porId('loja-resultados').innerHTML = htmlLojaResultados();
+        const cab = document.querySelector('.loja-cat.aberta .loja-cat-cab'); if (cab) cab.scrollIntoView({ block: 'nearest' });
+    },
     magicoBuscar(v) { ui.magicosQ = v; porId('magicos-resultados').innerHTML = htmlMagicosResultados(); },
     lojaComprar(id) { if (ui.lojaFicha) return ui.fichaModo === 'magicos' ? UI.fichaLojaComprar(id) : UI.carrinhoAdd(id); const l = id.startsWith('magico-') ? (db.magicos || []).find(m => m.id === id) : lojaPorId(id); if (!l) return; const e = inventarioAdicionar(l); if (e) return avisar(e, true); UI.redesenharEquip(); }
 };

@@ -472,7 +472,7 @@ function _retAbrir(img, pos, orig) {
     _retDesenhar(); el.scrollIntoView({ block: 'nearest' });
 }
 Object.assign(UI, {
-    fichaLoja() { ui.lojaFicha = true; ui.fichaModo = 'loja'; if (ui.carrinhoDe !== ui.idSalvo) { ui.carrinho = []; ui.carrinhoDe = ui.idSalvo; } if (!ui.loja.cat) ui.loja.cat = 'arma'; _renderLojaFicha(); },
+    fichaLoja() { ui.lojaFicha = true; ui.fichaModo = 'loja'; if (ui.carrinhoDe !== ui.idSalvo) { ui.carrinho = []; ui.carrinhoDe = ui.idSalvo; } _renderLojaFicha(); },
     fichaMagicos() { ui.lojaFicha = true; ui.fichaModo = 'magicos'; _renderLojaFicha(); },
     fichaLojaFechar() { ui.lojaFicha = false; const el = porId('loja-ficha'); if (el && el.remove) el.remove(); if (typeof document !== 'undefined' && document.body && document.body.classList) document.body.classList.remove('janela-aberta'); },
     fichaLojaComprar(id) {

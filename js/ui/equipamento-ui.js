@@ -33,10 +33,8 @@ function htmlLinhaLoja(i, s, colunas) {
         : `<button type="button" class="sec mini" ${caro ? 'disabled title="Saldo insuficiente"' : ''} onclick="UI.lojaComprar('${esc(i.id)}')">${ui.lojaFicha ? 'Adicionar' : 'Comprar'}</button>`;
     return `<tr class="${semPreco ? 'sem-preco' : ''}"><td class="c-nome"><b>${esc(nomeItem(i))}</b>${etiquetas(i)}${noCarrinho ? ` <span class="tag fonte">no carrinho: ${noCarrinho}</span>` : ''}</td><td${rot(1)}>${semPreco ? '-' : esc(fmtMoeda(i.custo_po))}</td>${celulasLoja(i).map((c, k) => `<td${rot(k + 2)}>${esc(c)}</td>`).join('')}<td class="c-acao">${botao}</td></tr>`;
 }
-function htmlLojaResultados() {
-    const q = normaliza(ui.loja.q), cat = ui.loja.cat || 'arma';
-    const lista = db.loja.filter(i => (cat === 'todas' || i.cat === cat) && permitido(i) && (!q || normaliza(i.nome + ' ' + i.nome_en).includes(q)));
-    if (!lista.length) return '<p class="vazio">Nada encontrado.</p>';
+// Itens agrupados por tipo (Armas simples, Armas marciais...), cada grupo numa tabela.
+function htmlGruposLoja(lista) {
     const s = ui.lojaFicha ? moedasEmPC(garantirFolha().moedas) / 100 : saldo(), secoes = new Map();
     lista.forEach(i => { const chave = i.cat + '|' + grupoLoja(i); if (!secoes.has(chave)) secoes.set(chave, []); secoes.get(chave).push(i); });
     return [...secoes.entries()].map(([chave, itens]) => {
@@ -44,10 +42,21 @@ function htmlLojaResultados() {
         return `<h4 class="loja-grupo">${esc(chave.split('|')[1])} <small class="meta">(${itens.length})</small></h4><div class="tabela-rolagem"><table class="loja-tabela"><thead><tr>${colunas.map(c => `<th>${c}</th>`).join('')}<th></th></tr></thead><tbody>${itens.map(i => htmlLinhaLoja(i, s, colunas)).join('')}</tbody></table></div>`;
     }).join('');
 }
+// Com busca: resultados de todas as categorias. Sem busca: categorias em sanfona, uma aberta por vez.
+function htmlLojaResultados() {
+    const q = normaliza(ui.loja.q), cat = ui.loja.cat || '';
+    if (q) {
+        const achados = db.loja.filter(i => permitido(i) && normaliza(i.nome + ' ' + i.nome_en).includes(q));
+        return achados.length ? htmlGruposLoja(achados) : '<p class="vazio">Nada encontrado.</p>';
+    }
+    return `<div class="loja-sanfona">${LOJA_CATS_UI.filter(([v]) => v !== 'todas').map(([v, t]) => {
+        const itens = db.loja.filter(i => i.cat === v && permitido(i)); if (!itens.length) return '';
+        const aberta = v === cat;
+        return `<section class="loja-cat${aberta ? ' aberta' : ''}"><button type="button" class="loja-cat-cab" aria-expanded="${aberta}" onclick="UI.lojaCategoria('${v}')"><span class="loja-cat-nome">${t}</span><small class="meta">${itens.length} ${itens.length === 1 ? 'item' : 'itens'}</small><i class="seta" aria-hidden="true"></i></button>${aberta ? `<div class="loja-cat-corpo">${htmlGruposLoja(itens)}</div>` : ''}</section>`;
+    }).join('')}</div>`;
+}
 function htmlLoja() {
-    const cat = ui.loja.cat || 'arma';
-    const lista = `<div class="abas-loja" role="tablist">${LOJA_CATS_UI.map(([v, t]) => `<button type="button" role="tab" aria-selected="${v === cat}" class="${v === cat ? 'ativo' : ''}" onclick="UI.lojaCategoria('${v}')">${t}</button>`).join('')}</div>
-        <div class="busca"><input type="search" id="busca-loja" placeholder="Buscar item (português ou inglês)..." value="${esc(ui.loja.q)}" oninput="UI.lojaBuscar(this.value)"></div><div id="loja-resultados">${htmlLojaResultados()}</div>`;
+    const lista = `<div class="busca"><input type="search" id="busca-loja" placeholder="Buscar item (português ou inglês)..." value="${esc(ui.loja.q)}" oninput="UI.lojaBuscar(this.value)"></div><div id="loja-resultados">${htmlLojaResultados()}</div>`;
     // Na ficha a loja tem um carrinho ao lado: os itens só são pagos quando o jogador confirma.
     return ui.lojaFicha ? `<div class="loja-layout"><div class="loja-lista">${lista}</div><aside class="loja-carrinho${ui.carrinhoAberto ? ' aberto' : ''}" id="loja-carrinho">${htmlCarrinho()}</aside></div>` : lista;
 }

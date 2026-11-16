@@ -328,6 +328,16 @@ body.janela-aberta { overflow: hidden; }
 .abas-loja button { background: var(--painel); color: var(--texto); border: 1px solid var(--borda); font-weight: 500; padding: .3rem .7rem; }
 .abas-loja button.ativo { border-color: var(--ouro); color: var(--ouro-claro); background: var(--painel2); }
 .loja-grupo { margin: 1rem 0 .3rem; color: var(--ouro-claro); }
+.loja-sanfona { display: grid; gap: .4rem; }
+.loja-cat { border: 1px solid var(--borda); border-radius: 6px; background: var(--painel); }
+.loja-cat.aberta { border-color: var(--ouro); }
+.loja-cat-cab { display: flex; align-items: center; gap: .6rem; width: 100%; padding: .65rem .8rem; background: transparent; border: 0; color: var(--texto); font-weight: 600; text-align: left; cursor: pointer; }
+.loja-cat.aberta .loja-cat-cab { color: var(--ouro-claro); }
+.loja-cat-nome { flex: 1; }
+.loja-cat-cab .seta { width: .55rem; height: .55rem; border: solid currentColor; border-width: 0 2px 2px 0; transform: rotate(45deg); margin: 0 .2rem .2rem; transition: transform .15s; }
+.loja-cat.aberta .loja-cat-cab .seta { transform: rotate(225deg); margin: .2rem .2rem 0; }
+.loja-cat-corpo { padding: 0 .8rem .8rem; }
+.loja-cat-corpo > .loja-grupo:first-child { margin-top: .2rem; }
 .car-resumo { display: none; }
 .loja-layout { display: grid; grid-template-columns: minmax(0, 1fr) 17rem; gap: 1rem; align-items: start; }
 .loja-carrinho { position: sticky; top: 0; z-index: 2; display: flex; flex-direction: column; max-height: calc(100vh - 11rem); border: 1px solid var(--borda); border-radius: 6px; padding: .7rem .8rem; background: var(--painel2); }

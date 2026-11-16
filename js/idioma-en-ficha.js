@@ -294,6 +294,8 @@
     Idioma.padrao(/^(.+) \(cópia\)$/, '$1 (copy)');
     Idioma.padrao(/^(?:## )?(Astuto|Andarilho|Incansável) \((\d+)º Nível\)$/, (m, n, l) => ({ 'Astuto': 'Canny', 'Andarilho': 'Roving', 'Incansável': 'Tireless' }[n]) + ' (Level ' + l + ')');
     Idioma.padrao(/^Mais (\d+) itens: refine a busca\.$/, '$1 more items: refine the search.');
+    Idioma.padrao(/^(\d+) itens$/, '$1 items');
+    Idioma.padrao(/^(\d+) item$/, '$1 item');
     Idioma.padrao(/^Sintonizados: (\d+)\/(\d+)$/, 'Attuned: $1/$2');
     Idioma.padrao(/^(.+) adicionado ao carrinho\.$/, '$1 added to the cart.');
     Idioma.padrao(/^Compra realizada: (\d+) item\(ns\) por (.+)\.$/, 'Purchase complete: $1 item(s) for $2.');
