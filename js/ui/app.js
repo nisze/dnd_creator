@@ -257,6 +257,8 @@ const ICO_PERS = {
     lixeira: _svgp('<path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14M10 10v6M14 10v6"/>')
 };
 if (document.addEventListener) document.addEventListener('click', e => document.querySelectorAll('.pers-menu[open]').forEach(d => { if (!d.contains(e.target)) d.open = false; }));
+// Painel de fontes do topo: clique fora recolhe (alvo já removido do DOM por um redesenho não conta como fora).
+if (document.addEventListener) document.addEventListener('click', e => { if (e.target.isConnected) document.querySelectorAll('details.fontes-topo[open]').forEach(d => { if (!d.contains(e.target)) d.open = false; }); });
 if (typeof window !== 'undefined' && window.addEventListener && document.getElementById) {
     const bt = document.getElementById('voltar-topo');
     if (bt) { bt.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' }); window.addEventListener('scroll', () => { bt.hidden = window.scrollY < 700; }, { passive: true }); }
