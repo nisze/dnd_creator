@@ -274,7 +274,7 @@
         'O que a multiclasse concede': 'What multiclassing grants',
         'abra pelo servidor local (o navegador bloqueia a leitura dos arquivos de dados ao abrir direto). No terminal, na pasta do projeto: node tools/serve.js  e depois http://127.0.0.1:5500/':
             'open it through the local server (the browser blocks reading the data files when opened directly). In a terminal, in the project folder: node tools/serve.js  and then http://127.0.0.1:5500/','Gigante de Pedra/Gelo': 'Stone/Frost Giant', 'Gigante de Fogo': 'Fire Giant', 'Gigante das Nuvens': 'Cloud Giant', 'Gigante da Tempestade': 'Storm Giant',
-        'Itens mágicos': 'Magic items', 'Nome do item': 'Item name', 'Bônus mágico': 'Magic bonus', 'Observação (opcional)': 'Note (optional)', 'Adicionar item mágico': 'Add magic item', 'Nenhum item mágico.': 'No magic items.',
+        'Itens mágicos': 'Magic items', 'Escolha': 'Choice', 'Nome do item': 'Item name', 'Bônus mágico': 'Magic bonus', 'Observação (opcional)': 'Note (optional)', 'Adicionar item mágico': 'Add magic item', 'Nenhum item mágico.': 'No magic items.',
         '(concedidos pelo mestre, sem preço)': '(granted by the DM, no price)',
         'Magias copiadas para o grimório. As magias preparadas do dia são marcadas na ficha.': "Spells copied into the spellbook. The day's prepared spells are marked on the sheet."
     });
@@ -294,6 +294,7 @@
     Idioma.padrao(/^(?:## )?(Astuto|Andarilho|Incansável) \((\d+)º Nível\)$/, (m, n, l) => ({ 'Astuto': 'Canny', 'Andarilho': 'Roving', 'Incansável': 'Tireless' }[n]) + ' (Level ' + l + ')');
     Idioma.padrao(/^Mais (\d+) itens: refine a busca\.$/, '$1 more items: refine the search.');
     Idioma.padrao(/^Sintonizados: (\d+)\/(\d+)$/, 'Attuned: $1/$2');
+    Idioma.padrao(/^\(com o escudo, sem empunhar a arma com as duas mãos: (\d+)\)$/, '(with the shield, without holding the weapon in both hands: $1)');
     Idioma.padrao(/^Itens mágicos do personagem\. Os que exigem sintonização contam no máximo de (\d+); a ficha é atualizada na hora\.$/, 'The character\'s magic items. Those that require attunement count toward the maximum of $1; the sheet updates immediately.');
     Idioma.padrao(/^(.+) adicionado aos itens mágicos\.$/, '$1 added to magic items.');
     Idioma.padrao(/^\+1 em (dois|\d+) valores de habilidade diferentes, à sua escolha\.$/, (m, n) => '+1 to ' + (n === 'dois' ? 'two' : n) + ' different ability scores of your choice.');

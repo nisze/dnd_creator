@@ -154,9 +154,10 @@ function caracteristicasDaFicha() {
         // Com mais de uma classe cada característica leva o nome da classe de origem.
         const subDe = (idx) => soClasse(idx, () => semMagias(() => { const r = escolhasResolvidas('classe').find(({ c }) => c.node.nivel_escolha !== undefined); const s = r && r.res.selecionados[0]; return s && s.node ? { nome: s.nome || nomeDe(s.node), node: s.node } : null; }));
         const grupos = cat === 'classe' && todasClasses().length > 1
-            ? todasClasses().map(cl => ({ rot: nomeCurtoDaClasse(cl.classe), nos: soClasse(cl.idx, () => nodesAtivos('classe')), nivelClasse: cl.nivel, subNode: subDe(cl.idx), classeId: cl.classe.id }))
-            : [{ rot: rotulo[cat], nos: nodesAtivos(cat), nivelClasse: cat === 'classe' ? (todasClasses()[0] || {}).nivel || null : null, subNode: cat === 'classe' ? subDe(0) : null, classeId: cat === 'classe' ? charState.classe.id : null }];
-        grupos.forEach(({ rot, nos, nivelClasse, subNode, classeId }) => {
+            ? todasClasses().map(cl => ({ rot: nomeCurtoDaClasse(cl.classe), nos: soClasse(cl.idx, () => nodesAtivos('classe')), nivelClasse: cl.nivel, subNode: subDe(cl.idx), classeId: cl.classe.id, idx: cl.idx }))
+            : [{ rot: rotulo[cat], nos: nodesAtivos(cat), nivelClasse: cat === 'classe' ? (todasClasses()[0] || {}).nivel || null : null, subNode: cat === 'classe' ? subDe(0) : null, classeId: cat === 'classe' ? charState.classe.id : null, idx: 0 }];
+        grupos.forEach(({ rot, nos, nivelClasse, subNode, classeId, idx }) => {
+            const inicio = out.length;
             // Características da subclasse escolhida ficam num grupo próprio; o texto genérico "escolha um arquétipo" (lista de opções) sai.
             const daSub = new Set(), coletar = (x) => { if (Array.isArray(x)) return x.forEach(coletar); if (!x || typeof x !== 'object') return; daSub.add(x); coletar(x.conteudo); };
             if (subNode) coletar(subNode.node.conteudo);
@@ -170,6 +171,20 @@ function caracteristicasDaFicha() {
                 const texto = cat === 'classe' ? textoDaFicha(n, completo, classeId) : completo;
                 out.push({ fonte: rot, nome, texto, completo, nivel: n.nivel || null, sub, nivelClasse });
             });
+            // Características em que o jogador escolhe uma opção sem texto próprio (Inimigo Favorito, Explorador Natural...): entram com o que foi escolhido, antes das demais do grupo.
+            if (cat !== 'antecedente') {
+                const escolhidas = [];
+                (cat === 'classe' ? soClasse(idx, () => escolhasResolvidas('classe')) : escolhasResolvidas(cat)).forEach(({ c, res }) => {
+                    const no = c.node, nome = String(no.nome || no.Nome || '').trim(), desc = String(no['descrição'] || no['Descrição'] || '').trim();
+                    if (!nome || !desc || typeof c.escolhaVal !== 'number' || no.nivel_escolha !== undefined || /^Per[ií]cias?\b/i.test(nome) || ignorar.test(nome)) return;
+                    const sels = res.selecionados.map(s => String(s.nome || s.Nome || s.texto || '').trim()).filter(Boolean);
+                    if (!sels.length || sels.every(s => out.some(x => x.fonte === rot && x.nome === s))) return; // as opções já aparecem com o próprio texto
+                    const k = rot + '||' + nome; if (vistos.has(k)) return; vistos.add(k);
+                    const base = cat === 'classe' ? textoDaFicha(no, desc, classeId) : desc;
+                    escolhidas.push({ fonte: rot, nome, texto: base + '\nEscolha: ' + sels.join(', '), completo: desc, nivel: no.nivel || null, sub: '', nivelClasse });
+                });
+                out.splice(inicio, 0, ...escolhidas);
+            }
         });
     });
     // Talentos escolhidos (nome + resumo) em seção própria, com a origem: raça, antecedente ou aumento de atributo de uma classe.
