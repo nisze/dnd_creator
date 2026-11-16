@@ -101,7 +101,7 @@ function _htmlPagina1(calc) {
 }
 
 function _htmlPaginaMagiasRecursos(calc) {
-    const conjs = conjuracoesDaFicha(calc), espacos = espacosDeMagia(), magias = magiasDaFicha(), recursos = recursosDaFicha(calc);
+    const conjs = conjuracoesDaFicha(calc), espacos = espacosDeMagia(), magias = magiasDaFicha(), recursos = recursosDaFicha(calc), metamagia = metamagiaDaFicha();
     if (!conjs.length && !magias.length && !recursos.length) return '';
     const grupos = {}; magias.forEach(m => { (grupos[m.nivel] = grupos[m.nivel] || []).push(m); });
     const secoes = Object.keys(grupos).map(Number).sort((a, b) => a - b).map(n => `<div class="f-mg-grupo"><h4>${n === 0 ? 'Truques' : _ord(n) + ' círculo'}</h4><ul>${grupos[n].map(m => `<li><i class="bola ${m.preparada && !m.troca ? 'cheia' : ''}"></i><b>${_t(m.exibir || m.nome)}</b><em>${_t(m.origem)}</em><small>${_t(m.resumo)}</small></li>`).join('')}</ul></div>`).join('');
@@ -115,6 +115,7 @@ function _htmlPaginaMagiasRecursos(calc) {
     ${espacos.length ? `<div class="f-slots">${espacos.map(e => `<div><small>${_ord(e.nivel)} círculo${e.pacto ? ' (pacto)' : ''}</small><span>${_bolas(e.total, 'caixa')}</span></div>`).join('')}</div>` : ''}</div>` : ''}
     <div class="f-caixa">${_tit('Recursos com usos')}${recursos.length ? `<ul class="f-rec">${recursos.map(r => `<li><div><b>${_t(r.nome)}</b><em>${r.recarga === 'curto' ? 'descanso curto' : 'descanso longo'}</em></div><div class="f-rec-cx">${r.ilimitado ? '<span class="f-ate">ilimitado</span>' : _caixas(r.max)}</div>${r.nota ? `<small>${_t(r.nota)}</small>` : ''}</li>`).join('')}</ul>` : '<p class="peq">Nenhum recurso com usos contado automaticamente. Os de subclasse estão nas características.</p>'}</div>
     </div>
+    ${metamagia.length ? `<div class="f-caixa">${_tit('Metamagia')}<ul class="f-rec f-meta">${metamagia.map(m => `<li><div><b>${_t(m.nome)}</b></div></li>`).join('')}</ul></div>` : ''}
     <div class="f-caixa">${_tit('Magias')}${secoes ? `<div class="f-mg-cols">${secoes}</div>` : '<p class="peq">Nenhuma magia escolhida.</p>'}${algumaTroca ? '<p class="peq">Bolinha vazia: marque a lápis as magias preparadas do dia. Bolinha cheia: sempre disponível.</p>' : ''}</div>
 </section>`;
 }

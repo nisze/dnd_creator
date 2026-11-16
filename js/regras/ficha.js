@@ -248,6 +248,15 @@ function tabelasDaFicha() {
     });
     return out;
 }
+// Opções de Metamagia escolhidas (Feiticeiro): nome e custo/efeito curtos, para a página de magias e recursos.
+function metamagiaDaFicha() {
+    const out = [];
+    todasClasses().forEach(cl => soClasse(cl.idx, () => escolhasResolvidas('classe').forEach(({ c, res }) => {
+        if (!/^(metamagic|metamagia)$/i.test(String(c.node.nome_ingles || c.node.nome || c.node.Nome || '').replace(/\s*\([^)]*\)\s*$/, '').trim())) return;
+        res.selecionados.forEach(s => { const n = s.node || s; out.push({ nome: s.nome || nomeDe(n), texto: textoDaFicha(n, String(n['descrição'] || n['Descrição'] || ''), cl.classe.id) }); });
+    })));
+    return out;
+}
 // Ações da página 1: características que dizem usar uma ação, ação bônus ou reação. Heurística por texto: vale a primeira menção; usos por descanso vêm de recursosDaFicha().
 const _TIPOS_ACAO = [
     ['bonus', /a[çc][ãa]o (adicional|b[ôo]nus)/i],

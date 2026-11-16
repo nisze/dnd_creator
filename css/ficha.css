@@ -265,6 +265,8 @@
 .f-rec em { font-size: 6.5pt; font-style: normal; color: #6a4f30; }
 .f-rec-cx { display: flex; flex-wrap: wrap; gap: 1mm; margin-top: 1mm; }
 .f-rec small { text-transform: none; letter-spacing: 0; font-size: 6.5pt; display: block; margin-top: .5mm; }
+.f-meta { columns: 2; column-gap: 6mm; }
+.f-meta li { break-inside: avoid; }
 .f-itens li { display: flex; align-items: center; gap: 1.5mm; border-bottom: .2mm solid rgba(91, 47, 18, .35); padding: .6mm 0; font-size: 8pt; }
 .f-itens li b { flex: 1; font-weight: 600; }
 .f-qtd { min-width: 7mm; text-align: center; font-weight: 700; }
