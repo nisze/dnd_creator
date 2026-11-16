@@ -27,10 +27,10 @@ function celulasLoja(i) {
     return [fmtPesoLoja(i.peso_lb), String((Idioma.atual === 'pt' && i.desc_pt) || i.desc_en || '').slice(0, 160) || '-'];
 }
 function htmlLinhaLoja(i, s) {
-    const semPreco = i.custo_po == null, caro = !semPreco && i.custo_po > s;
+    const semPreco = i.custo_po == null, caro = !semPreco && i.custo_po > s, noCarrinho = ui.lojaFicha && typeof qtdNoCarrinho === 'function' ? qtdNoCarrinho(i.id) : 0;
     const botao = semPreco ? '<span class="meta" title="Item sem preço de tabela: não pode ser comprado">Indisponível</span>'
-        : `<button type="button" class="sec mini" ${caro ? 'disabled title="Saldo insuficiente"' : ''} onclick="UI.lojaComprar('${esc(i.id)}')">Comprar</button>`;
-    return `<tr class="${semPreco ? 'sem-preco' : ''}"><td><b>${esc(nomeItem(i))}</b>${etiquetas(i)}</td><td>${semPreco ? '-' : esc(fmtMoeda(i.custo_po))}</td>${celulasLoja(i).map(c => `<td>${esc(c)}</td>`).join('')}<td>${botao}</td></tr>`;
+        : `<button type="button" class="sec mini" ${caro ? 'disabled title="Saldo insuficiente"' : ''} onclick="UI.lojaComprar('${esc(i.id)}')">${ui.lojaFicha ? 'Adicionar' : 'Comprar'}</button>`;
+    return `<tr class="${semPreco ? 'sem-preco' : ''}"><td><b>${esc(nomeItem(i))}</b>${etiquetas(i)}${noCarrinho ? ` <span class="tag fonte">no carrinho: ${noCarrinho}</span>` : ''}</td><td>${semPreco ? '-' : esc(fmtMoeda(i.custo_po))}</td>${celulasLoja(i).map(c => `<td>${esc(c)}</td>`).join('')}<td>${botao}</td></tr>`;
 }
 function htmlLojaResultados() {
     const q = normaliza(ui.loja.q), cat = ui.loja.cat || 'arma';
@@ -45,8 +45,10 @@ function htmlLojaResultados() {
 }
 function htmlLoja() {
     const cat = ui.loja.cat || 'arma';
-    return `<div class="abas-loja" role="tablist">${LOJA_CATS_UI.map(([v, t]) => `<button type="button" role="tab" aria-selected="${v === cat}" class="${v === cat ? 'ativo' : ''}" onclick="UI.lojaCategoria('${v}')">${t}</button>`).join('')}</div>
+    const lista = `<div class="abas-loja" role="tablist">${LOJA_CATS_UI.map(([v, t]) => `<button type="button" role="tab" aria-selected="${v === cat}" class="${v === cat ? 'ativo' : ''}" onclick="UI.lojaCategoria('${v}')">${t}</button>`).join('')}</div>
         <div class="busca"><input type="search" id="busca-loja" placeholder="Buscar item (português ou inglês)..." value="${esc(ui.loja.q)}" oninput="UI.lojaBuscar(this.value)"></div><div id="loja-resultados">${htmlLojaResultados()}</div>`;
+    // Na ficha a loja tem um carrinho ao lado: os itens só são pagos quando o jogador confirma.
+    return ui.lojaFicha ? `<div class="loja-layout"><div class="loja-lista">${lista}</div><aside class="loja-carrinho" id="loja-carrinho">${htmlCarrinho()}</aside></div>` : lista;
 }
 
 // Itens mágicos não têm preço: o mestre concede, então ficam fora da loja e valem em qualquer modo de equipamento.

@@ -54,7 +54,7 @@ let _toastTimer = null;
 function avisar(texto, erro) { const t = porId('toast'); t.textContent = semEmoji(texto); t.className = erro ? 'erro' : ''; t.style.display = 'block'; clearTimeout(_toastTimer); _toastTimer = setTimeout(() => { t.style.display = 'none'; }, erro ? 6000 : 3000); }
 function novoPersonagem() {
     Object.assign(charState, { nivel: 1, outras: [], raca: null, classe: null, antecedente: null, inventario: [], retrato: null, retratoOrig: null, retratoPos: null, atributosBase: { For: 8, Des: 8, Con: 8, Int: 8, Sab: 8, Car: 8 }, bonusRacial: {}, tashaUsa: {}, origemPersonalizada: false, justificativas: {}, escolhas: { raca: {}, classe: {}, antecedente: {} }, pvNiveis: [], pvAtual: null, pvTemp: 0, folha: novaFolha(), historico: [], nomePersonagem: '', idSalvo: null, equipInicial: { modo: 'equipamento', escolhas: {}, ouro: null, classeId: null, antecedenteNome: null } });
-    Object.assign(ui, { tela: 'criacao', etapa: 0, maxEtapa: 0, foco: {}, busca: {}, abasMagia: {}, aberto: {}, asi: {}, asiModo: {}, metodo: 'compra', rolagens: [], pad: {}, padIdx: {}, loja: { q: '', cat: '' }, confirmar: null, msgs: [], idSalvo: null });
+    Object.assign(ui, { tela: 'criacao', etapa: 0, maxEtapa: 0, foco: {}, busca: {}, abasMagia: {}, carrinho: [], aberto: {}, asi: {}, asiModo: {}, metodo: 'compra', rolagens: [], pad: {}, padIdx: {}, loja: { q: '', cat: '' }, confirmar: null, msgs: [], idSalvo: null });
 }
 // Descobre qual método de atributos explica os valores já definidos (ao abrir um personagem salvo).
 function inferirMetodo() {
@@ -485,7 +485,7 @@ const UI = {
     lojaBuscar(v) { ui.loja.q = v; porId('loja-resultados').innerHTML = htmlLojaResultados(); },
     async lojaCategoria(v) { ui.loja.cat = v; if (ui.lojaFicha) _renderLojaFicha(); else UI.redesenharEquip(); },
     magicoBuscar(v) { ui.magicosQ = v; porId('magicos-resultados').innerHTML = htmlMagicosResultados(); },
-    lojaComprar(id) { if (ui.lojaFicha) return UI.fichaLojaComprar(id); const l = id.startsWith('magico-') ? (db.magicos || []).find(m => m.id === id) : lojaPorId(id); if (!l) return; const e = inventarioAdicionar(l); if (e) return avisar(e, true); UI.redesenharEquip(); }
+    lojaComprar(id) { if (ui.lojaFicha) return ui.fichaModo === 'magicos' ? UI.fichaLojaComprar(id) : UI.carrinhoAdd(id); const l = id.startsWith('magico-') ? (db.magicos || []).find(m => m.id === id) : lojaPorId(id); if (!l) return; const e = inventarioAdicionar(l); if (e) return avisar(e, true); UI.redesenharEquip(); }
 };
 // Mantém o que o restauro já colocou em charState (usado ao continuar um rascunho).
 function novoPersonagemMantendo() { ui.foco = {}; ui.subFixo = null; ui.busca = {}; ui.aberto = {}; ui.asi = {}; ui.asiModo = {}; ui.rolagens = []; ui.pad = {}; ui.padIdx = {}; ui.msgs = []; ui.confirmar = null; ui.idSalvo = null; }

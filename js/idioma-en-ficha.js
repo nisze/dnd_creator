@@ -274,7 +274,8 @@
         'O que a multiclasse concede': 'What multiclassing grants',
         'abra pelo servidor local (o navegador bloqueia a leitura dos arquivos de dados ao abrir direto). No terminal, na pasta do projeto: node tools/serve.js  e depois http://127.0.0.1:5500/':
             'open it through the local server (the browser blocks reading the data files when opened directly). In a terminal, in the project folder: node tools/serve.js  and then http://127.0.0.1:5500/','Gigante de Pedra/Gelo': 'Stone/Frost Giant', 'Gigante de Fogo': 'Fire Giant', 'Gigante das Nuvens': 'Cloud Giant', 'Gigante da Tempestade': 'Storm Giant',
-        'Itens mágicos': 'Magic items', 'Escolha': 'Choice', 'Metamagia': 'Metamagic', 'Nome do item': 'Item name', 'Bônus mágico': 'Magic bonus', 'Observação (opcional)': 'Note (optional)', 'Adicionar item mágico': 'Add magic item', 'Nenhum item mágico.': 'No magic items.',
+        'Itens mágicos': 'Magic items', 'Escolha': 'Choice', 'Metamagia': 'Metamagic', 'Carrinho': 'Cart', 'Suas moedas': 'Your coins', 'Esvaziar': 'Empty', 'Adicionar': 'Add', 'Total': 'Total',
+        'Nenhum item. Use "Adicionar" na lista ao lado.': 'No items. Use "Add" in the list beside.', 'Moedas insuficientes para comprar tudo.': 'Not enough coins to buy everything.', 'Nome do item': 'Item name', 'Bônus mágico': 'Magic bonus', 'Observação (opcional)': 'Note (optional)', 'Adicionar item mágico': 'Add magic item', 'Nenhum item mágico.': 'No magic items.',
         '(concedidos pelo mestre, sem preço)': '(granted by the DM, no price)',
         'Magias copiadas para o grimório. As magias preparadas do dia são marcadas na ficha.': "Spells copied into the spellbook. The day's prepared spells are marked on the sheet."
     });
@@ -294,6 +295,11 @@
     Idioma.padrao(/^(?:## )?(Astuto|Andarilho|Incansável) \((\d+)º Nível\)$/, (m, n, l) => ({ 'Astuto': 'Canny', 'Andarilho': 'Roving', 'Incansável': 'Tireless' }[n]) + ' (Level ' + l + ')');
     Idioma.padrao(/^Mais (\d+) itens: refine a busca\.$/, '$1 more items: refine the search.');
     Idioma.padrao(/^Sintonizados: (\d+)\/(\d+)$/, 'Attuned: $1/$2');
+    Idioma.padrao(/^(.+) adicionado ao carrinho\.$/, '$1 added to the cart.');
+    Idioma.padrao(/^Compra realizada: (\d+) item\(ns\) por (.+)\.$/, 'Purchase complete: $1 item(s) for $2.');
+    Idioma.padrao(/^Faltam (.+) para comprar tudo\.$/, '$1 short to buy everything.');
+    Idioma.padrao(/^no carrinho: (\d+)$/, 'in cart: $1');
+    Idioma.padrao(/^(.+) cada$/, '$1 each');
     Idioma.padrao(/^\+(\d+) com escudo$/, '+$1 with shield');
     Idioma.padrao(/^Escudo: não vale junto de (.+) empunhada com as duas mãos\. A CA mostrada não conta o escudo: ele dá \+(\d+) se for empunhado sem usar a arma com as duas mãos\.$/, (m, a, v) => 'Shield: does not apply together with ' + a + ' held in both hands. The AC shown does not count the shield: it gives +' + v + ' if wielded without using the weapon in both hands.');
     Idioma.padrao(/^\(com o escudo, sem empunhar a arma com as duas mãos: (\d+)\)$/, '(with the shield, without holding the weapon in both hands: $1)');

@@ -376,6 +376,23 @@ let _tmrFicha = null;
 // Loja aberta a partir da ficha: janela com a loja inteira; as compras saem das moedas da ficha.
 const _htmlTopoLojaFicha = () => { const m = garantirFolha().moedas; return `<h3 style="margin:0 0 .6rem">Loja <span class="saldo" id="loja-ficha-moedas">${Object.keys(NOME_MOEDA).filter(k => m[k]).map(k => m[k] + ' ' + NOME_MOEDA[k]).join(' / ') || 'sem moedas'}</span></h3>`; };
 const _htmlTopoMagicosFicha = () => '<h3 style="margin:0 0 .6rem">Itens mágicos <small class="meta">(concedidos pelo mestre, sem preço)</small></h3>';
+
+// Carrinho da loja da ficha: itens escolhidos ficam numa lista e só são pagos (com as moedas da ficha) quando o jogador confirma.
+const _carrinho = () => ui.carrinho || (ui.carrinho = []);
+const qtdNoCarrinho = (id) => (_carrinho().find(x => x.id === id) || {}).qtd || 0;
+const totalCarrinhoPC = () => Math.round(_carrinho().reduce((s, x) => { const l = lojaPorId(x.id); return s + (l && l.custo_po != null ? l.custo_po * 100 * x.qtd : 0); }, 0));
+function htmlCarrinho() {
+    const itens = _carrinho().filter(x => lojaPorId(x.id)), total = totalCarrinhoPC(), tem = moedasEmPC(garantirFolha().moedas), falta = total - tem;
+    const linhas = itens.map(x => { const l = lojaPorId(x.id), id = esc(x.id); return `<li><div class="car-nome"><b>${esc(nomeItem(l))}</b><small>${esc(fmtMoeda(l.custo_po))} cada</small></div><div class="car-qtd"><button type="button" class="sec mini" onclick="UI.carrinhoQtd('${id}', -1)" aria-label="Diminuir">-</button><span>${x.qtd}</span><button type="button" class="sec mini" onclick="UI.carrinhoQtd('${id}', 1)" aria-label="Aumentar">+</button><button type="button" class="perigo mini" onclick="UI.carrinhoRemover('${id}')" aria-label="Remover do carrinho">&times;</button></div><span class="car-sub">${esc(fmtMoeda(l.custo_po * x.qtd))}</span></li>`; }).join('');
+    return `<h4>Carrinho</h4>${itens.length ? `<ul class="car-lista">${linhas}</ul>` : '<p class="vazio">Nenhum item. Use "Adicionar" na lista ao lado.</p>'}
+        <div class="car-total"><span>Total</span><b>${esc(fmtMoeda(total / 100))}</b></div><div class="car-total"><span>Suas moedas</span><b>${esc(fmtMoeda(tem / 100))}</b></div>
+        ${itens.length && falta > 0 ? `<p class="car-falta">Faltam ${esc(fmtMoeda(falta / 100))} para comprar tudo.</p>` : ''}
+        <div class="car-acoes"><button type="button" ${itens.length && falta <= 0 ? '' : 'disabled'} onclick="UI.carrinhoComprar()">Comprar</button><button type="button" class="sec" ${itens.length ? '' : 'disabled'} onclick="UI.carrinhoLimpar()">Esvaziar</button></div>`;
+}
+function _atualizarCarrinho() {
+    const c = porId('loja-carrinho'); if (c) c.innerHTML = htmlCarrinho();
+    const r = porId('loja-resultados'); if (r) r.innerHTML = htmlLojaResultados();
+}
 function _renderLojaFicha() {
     if (typeof document === 'undefined' || !document.body || !document.body.appendChild) return;
     let el = porId('loja-ficha');
@@ -438,7 +455,7 @@ function _retAbrir(img, pos, orig) {
     _retDesenhar(); el.scrollIntoView({ block: 'nearest' });
 }
 Object.assign(UI, {
-    fichaLoja() { ui.lojaFicha = true; ui.fichaModo = 'loja'; if (!ui.loja.cat) ui.loja.cat = 'arma'; _renderLojaFicha(); },
+    fichaLoja() { ui.lojaFicha = true; ui.fichaModo = 'loja'; if (ui.carrinhoDe !== ui.idSalvo) { ui.carrinho = []; ui.carrinhoDe = ui.idSalvo; } if (!ui.loja.cat) ui.loja.cat = 'arma'; _renderLojaFicha(); },
     fichaMagicos() { ui.lojaFicha = true; ui.fichaModo = 'magicos'; _renderLojaFicha(); },
     fichaLojaFechar() { ui.lojaFicha = false; const el = porId('loja-ficha'); if (el && el.remove) el.remove(); if (typeof document !== 'undefined' && document.body && document.body.classList) document.body.classList.remove('janela-aberta'); },
     fichaLojaComprar(id) {
@@ -453,6 +470,26 @@ Object.assign(UI, {
         const f = garantirFolha(), mo = porId('f-aj-moedas'); if (mo) mo.innerHTML = Object.keys(NOME_MOEDA).map(k => `<label class="aj-campo">${NOME_MOEDA[k]}<input type="number" min="0" value="${f.moedas[k] || 0}" onchange="UI.fmoeda('${k}', this.value)"></label>`).join('');
         const t = porId('loja-ficha-moedas'); if (t) t.outerHTML = _htmlTopoLojaFicha().match(/<span.*<\/span>/)[0];
         const r = porId('loja-resultados'); if (r) r.innerHTML = htmlLojaResultados();
+    },
+    carrinhoAdd(id) {
+        const l = lojaPorId(id); if (!l || l.custo_po == null) return;
+        const x = _carrinho().find(y => y.id === id); if (x) x.qtd++; else _carrinho().push({ id, qtd: 1 });
+        avisar(`${nomeItem(l)} adicionado ao carrinho.`); _atualizarCarrinho();
+    },
+    carrinhoQtd(id, d) { const c = _carrinho(), x = c.find(y => y.id === id); if (!x) return; x.qtd += d; if (x.qtd <= 0) c.splice(c.indexOf(x), 1); _atualizarCarrinho(); },
+    carrinhoRemover(id) { ui.carrinho = _carrinho().filter(x => x.id !== id); _atualizarCarrinho(); },
+    carrinhoLimpar() { ui.carrinho = []; _atualizarCarrinho(); },
+    carrinhoComprar() {
+        const c = _carrinho().filter(x => lojaPorId(x.id)); if (!c.length) return;
+        const total = totalCarrinhoPC(); if (total > moedasEmPC(garantirFolha().moedas)) return avisar('Moedas insuficientes para comprar tudo.', true);
+        let n = 0, erro = null;
+        for (const x of c) { const l = lojaPorId(x.id); for (let k = 0; k < x.qtd && !erro; k++) { erro = compraNaFicha(l); if (!erro) n++; } if (erro) break; }
+        ui.carrinho = [];
+        if (erro) avisar(`${erro} (${n} item(ns) comprado(s) antes).`, true); else avisar(`Compra realizada: ${n} item(ns) por ${fmtMoeda(total / 100)}.`);
+        _persistirFicha();
+        const f = garantirFolha(), mo = porId('f-aj-moedas'); if (mo) mo.innerHTML = Object.keys(NOME_MOEDA).map(k => `<label class="aj-campo">${NOME_MOEDA[k]}<input type="number" min="0" value="${f.moedas[k] || 0}" onchange="UI.fmoeda('${k}', this.value)"></label>`).join('');
+        const t = porId('loja-ficha-moedas'); if (t) t.outerHTML = _htmlTopoLojaFicha().match(/<span.*<\/span>/)[0];
+        _atualizarCarrinho();
     },
     fqtd(id, d) { const i = charState.inventario.find(x => String(x.id) === String(id)); if (!i) return; i.qtd = Math.max(0, (i.qtd || 0) + d); _persistirFicha(); },
     fqtdSet(id, v) { const i = charState.inventario.find(x => String(x.id) === String(id)); if (!i) return; i.qtd = Math.max(0, Math.floor(Number(v)) || 0); _persistirFicha(); },
