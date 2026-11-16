@@ -75,6 +75,11 @@ function magiasDaFicha() {
         Object.keys(ARCANUM).forEach(lv => nomes('arcana-' + lv).forEach(n => add(n, rot('Arcana Mística'), true)));
     }));
     magiasRaciais().filter(x => x.nivel <= nivelTotal()).forEach(x => add(x.nome, 'Racial', true));
+    // Magias escolhidas pelo jogador em características de raça, antecedente ou talento (Tocado pelas Fadas, Iniciado em Magia, elfo alto...); as de conjuração de classe já entraram acima.
+    [['raca', 'Racial'], ['antecedente', 'Antecedente'], ['classe', 'Talento']].forEach(([cat, rot]) => escolhasResolvidas(cat).forEach(({ c, res }) => {
+        if (!res.nodeOrigem || !res.nodeOrigem.magias || /^MAGIA-/.test(String(c.id))) return;
+        res.selecionados.forEach(s => { if (s.magia) add(s.nome, rot, true); });
+    }));
     return out.sort((a, b) => a.nivel - b.nivel || a.exibir.localeCompare(b.exibir, 'pt'));
 }
 
