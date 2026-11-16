@@ -384,13 +384,13 @@ const totalCarrinhoPC = () => Math.round(_carrinho().reduce((s, x) => { const l 
 function htmlCarrinho() {
     const itens = _carrinho().filter(x => lojaPorId(x.id)), total = totalCarrinhoPC(), tem = moedasEmPC(garantirFolha().moedas), falta = total - tem;
     const linhas = itens.map(x => { const l = lojaPorId(x.id), id = esc(x.id); return `<li><div class="car-nome"><b>${esc(nomeItem(l))}</b><small>${esc(fmtMoeda(l.custo_po))} cada</small></div><div class="car-qtd"><button type="button" class="sec mini" onclick="UI.carrinhoQtd('${id}', -1)" aria-label="Diminuir">-</button><span>${x.qtd}</span><button type="button" class="sec mini" onclick="UI.carrinhoQtd('${id}', 1)" aria-label="Aumentar">+</button><button type="button" class="perigo mini" onclick="UI.carrinhoRemover('${id}')" aria-label="Remover do carrinho">&times;</button></div><span class="car-sub">${esc(fmtMoeda(l.custo_po * x.qtd))}</span></li>`; }).join('');
-    return `<h4>Carrinho</h4>${itens.length ? `<ul class="car-lista">${linhas}</ul>` : '<p class="vazio">Nenhum item. Use "Adicionar" na lista ao lado.</p>'}
+    return `<button type="button" class="car-resumo" onclick="UI.carrinhoAlternar()" aria-expanded="${!!ui.carrinhoAberto}"><span>Carrinho (${itens.reduce((s, x) => s + x.qtd, 0)})</span><b>${esc(fmtMoeda(total / 100))}</b><span class="car-seta">${ui.carrinhoAberto ? '&#9660;' : '&#9650;'}</span></button><h4>Carrinho</h4>${itens.length ? `<ul class="car-lista">${linhas}</ul>` : '<p class="vazio">Nenhum item. Use "Adicionar" na lista ao lado.</p>'}
         <div class="car-total"><span>Total</span><b>${esc(fmtMoeda(total / 100))}</b></div><div class="car-total"><span>Suas moedas</span><b>${esc(fmtMoeda(tem / 100))}</b></div>
         ${itens.length && falta > 0 ? `<p class="car-falta">Faltam ${esc(fmtMoeda(falta / 100))} para comprar tudo.</p>` : ''}
         <div class="car-acoes"><button type="button" ${itens.length && falta <= 0 ? '' : 'disabled'} onclick="UI.carrinhoComprar()">Comprar</button><button type="button" class="sec" ${itens.length ? '' : 'disabled'} onclick="UI.carrinhoLimpar()">Esvaziar</button></div>`;
 }
 function _atualizarCarrinho() {
-    const c = porId('loja-carrinho'); if (c) c.innerHTML = htmlCarrinho();
+    const c = porId('loja-carrinho'); if (c) { c.innerHTML = htmlCarrinho(); c.classList.toggle('aberto', !!ui.carrinhoAberto); }
     const r = porId('loja-resultados'); if (r) r.innerHTML = htmlLojaResultados();
 }
 function _renderLojaFicha() {
@@ -479,6 +479,7 @@ Object.assign(UI, {
     carrinhoQtd(id, d) { const c = _carrinho(), x = c.find(y => y.id === id); if (!x) return; x.qtd += d; if (x.qtd <= 0) c.splice(c.indexOf(x), 1); _atualizarCarrinho(); },
     carrinhoRemover(id) { ui.carrinho = _carrinho().filter(x => x.id !== id); _atualizarCarrinho(); },
     carrinhoLimpar() { ui.carrinho = []; _atualizarCarrinho(); },
+    carrinhoAlternar() { ui.carrinhoAberto = !ui.carrinhoAberto; _atualizarCarrinho(); },
     carrinhoComprar() {
         const c = _carrinho().filter(x => lojaPorId(x.id)); if (!c.length) return;
         const total = totalCarrinhoPC(); if (total > moedasEmPC(garantirFolha().moedas)) return avisar('Moedas insuficientes para comprar tudo.', true);

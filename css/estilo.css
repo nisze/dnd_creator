@@ -328,6 +328,7 @@ body.janela-aberta { overflow: hidden; }
 .abas-loja button { background: var(--painel); color: var(--texto); border: 1px solid var(--borda); font-weight: 500; padding: .3rem .7rem; }
 .abas-loja button.ativo { border-color: var(--ouro); color: var(--ouro-claro); background: var(--painel2); }
 .loja-grupo { margin: 1rem 0 .3rem; color: var(--ouro-claro); }
+.car-resumo { display: none; }
 .loja-layout { display: grid; grid-template-columns: minmax(0, 1fr) 17rem; gap: 1rem; align-items: start; }
 .loja-carrinho { position: sticky; top: 0; z-index: 2; display: flex; flex-direction: column; max-height: calc(100vh - 11rem); border: 1px solid var(--borda); border-radius: 6px; padding: .7rem .8rem; background: var(--painel2); }
 .loja-carrinho > :not(.car-lista) { flex: none; }
@@ -342,7 +343,24 @@ body.janela-aberta { overflow: hidden; }
 .car-total { display: flex; justify-content: space-between; padding: .15rem 0; }
 .car-falta { color: #f0c2bc; font-size: .85rem; margin: .3rem 0; }
 .car-acoes { display: flex; gap: .5rem; margin-top: .6rem; }
-@media (max-width: 800px) { .loja-layout { grid-template-columns: 1fr; } .loja-carrinho { order: -1; max-height: 42vh; } }
+@media (max-width: 800px) {
+    .loja-layout { grid-template-columns: 1fr; gap: .6rem; }
+    /* Celular: o carrinho vira uma barra fixa no rodapé da janela, que abre para a lista completa. */
+    .loja-carrinho { order: 2; position: sticky; top: auto; bottom: -1rem; max-height: 72vh; margin: 0 -1rem -1rem; border-radius: 12px 12px 0 0; border-width: 1px 0 0; box-shadow: 0 -6px 16px rgba(0, 0, 0, .55); padding: .5rem 1rem .7rem; }
+    .loja-carrinho:not(.aberto) > :not(.car-resumo) { display: none; }
+    .loja-carrinho > h4 { display: none; }
+    .car-resumo { display: flex; align-items: center; gap: .6rem; width: 100%; background: transparent; border: 0; padding: .3rem 0; color: var(--texto); font-weight: 600; text-align: left; }
+    .car-resumo b { margin-left: auto; color: var(--ouro-claro); }
+    .loja-carrinho.aberto .car-resumo { border-bottom: 1px solid var(--borda); margin-bottom: .4rem; }
+    /* Tabela da loja em cartões: o botão Adicionar fica sempre à vista, sem rolar para o lado. */
+    .loja-tabela, .loja-tabela tbody, .loja-tabela tr, .loja-tabela td { display: block; }
+    .loja-tabela thead { display: none; }
+    .loja-tabela tr { display: grid; grid-template-columns: 1fr auto; gap: .1rem .6rem; padding: .5rem 0; border-bottom: 1px solid var(--borda); }
+    .loja-tabela td { border: 0; padding: .05rem 0; font-size: .82rem; grid-column: 1; }
+    .loja-tabela td.c-nome { font-size: .95rem; }
+    .loja-tabela td[data-rot]::before { content: attr(data-rot) ": "; color: var(--suave); }
+    .loja-tabela td.c-acao { grid-column: 2; grid-row: 1 / span 3; align-self: center; }
+}
 .tabela-rolagem { overflow-x: auto; }
 .loja-tabela { width: 100%; border-collapse: collapse; font-size: .85rem; }
 .loja-tabela th { text-align: left; color: var(--suave); font-weight: 600; padding: .3rem .5rem; border-bottom: 1px solid var(--borda); white-space: nowrap; }
