@@ -415,7 +415,7 @@ function _renderLojaFicha() {
     let el = porId('loja-ficha');
     if (!el) {
         el = document.createElement('div'); el.id = 'loja-ficha'; el.className = 'janela-fundo'; el.setAttribute('role', 'dialog'); el.setAttribute('aria-modal', 'true');
-        el.innerHTML = '<div class="janela janela-larga"><div class="janela-corpo" id="loja-ficha-corpo"></div><div class="janela-rodape"><button type="button" class="sec" onclick="UI.fichaLojaFechar()">Fechar</button></div></div>';
+        el.innerHTML = '<div class="janela janela-larga"><div class="janela-topo"><button type="button" class="janela-x" onclick="UI.fichaLojaFechar()" aria-label="Fechar" title="Fechar">&times;</button></div><div class="janela-corpo" id="loja-ficha-corpo"></div><div class="janela-rodape"><button type="button" class="sec" onclick="UI.fichaLojaFechar()">Fechar</button></div></div>';
         document.body.appendChild(el); if (document.body.classList) document.body.classList.add('janela-aberta');
     }
     porId('loja-ficha-corpo').innerHTML = ui.fichaModo === 'magicos' ? _htmlTopoMagicosFicha() + htmlMagicos() : _htmlTopoLojaFicha() + htmlLoja();

@@ -240,6 +240,9 @@ body:has(#app.inicio-tela) #etapas, body:has(#app.inicio-tela) #rodape { display
 .janela { width: min(100%, 640px); max-height: 100%; display: flex; flex-direction: column; background: var(--painel); border: 1px solid var(--ouro); border-radius: 10px; overflow: hidden; }
 .janela.janela-larga { width: min(100%, 1000px); height: min(100%, 38rem); }
 .janela-corpo { flex: 1; overflow-y: auto; padding: 1rem; }
+.janela-topo { display: flex; justify-content: flex-end; padding: .35rem .5rem 0; }
+.janela-x { width: 2rem; height: 2rem; min-height: 0; padding: 0; display: grid; place-items: center; font-size: 1.5rem; line-height: 1; background: transparent; border: 0; color: var(--suave); }
+.janela-x:hover { color: var(--ouro-claro); background: var(--painel2); }
 .janela .ilustracao { max-height: 170px; }
 .janela-rodape { display: flex; flex-wrap: wrap; justify-content: flex-end; align-items: center; gap: .5rem; padding: .7rem 1rem; border-top: 1px solid var(--borda); background: var(--painel2); }
 .janela-rodape .msg { flex: 1 1 100%; color: #f0c2bc; font-size: .85rem; }
