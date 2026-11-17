@@ -65,6 +65,7 @@
 :root[data-tema="ouro"] .ficha-janela > .fj-corpo button:not(.sec):not(.destaque) { background: linear-gradient(#cdb178, #a88d52); color: #1a1408; border-color: #e3cf9c; }
 .aj-opcao { font-size: .9rem; color: var(--suave); display: flex; gap: .4rem; align-items: center; }
 .aj-linha { display: flex; flex-wrap: wrap; gap: .6rem; }
+.aj-linha[hidden] { display: none; }
 .aj-linha > button { align-self: flex-end; }
 .aj-campo { display: grid; gap: .2rem; font-size: .85rem; color: var(--suave); }
 .aj-campo input[type=number] { width: 5.5rem; }

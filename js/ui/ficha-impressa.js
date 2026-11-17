@@ -286,7 +286,9 @@ function _htmlEditorItem(i) {
     const id = _t(i.id), pessoal = i.cat === 'personalizado';
     const cap = (s) => s.charAt(0).toUpperCase() + s.slice(1);
     const tipoDano = _temDano(i) ? `<label class="aj-campo">Tipo de dano<select id="ei-dano"><option value="">Padrão da arma (${_t(i.mec.tipo_dano || '-')})</option>${_TIPOS_DANO.map(t => `<option value="${t}" ${i.tipo_dano === t ? 'selected' : ''}>${cap(t)}</option>`).join('')}</select></label>` : '';
-    return `<div class="aj-editor"><div class="aj-linha"><label class="aj-campo larga">Nome do item<input type="text" id="ei-nome" maxlength="80" value="${_t(i.apelido || '')}" placeholder="${_t(nomeBaseItem(i))}"></label>${_podeMelhorar(i) ? `<label class="aj-campo">Bônus mágico<select id="ei-bonus">${[0, 1, 2, 3].map(n => `<option value="${n}" ${(i.bonus_magico || 0) === n ? 'selected' : ''}>${n ? '+' + n : 'nenhum'}</option>`).join('')}</select></label>` : ''}${tipoDano}<label class="aj-campo larga">Observação (opcional)<input type="text" id="ei-obs" maxlength="120" value="${_t(pessoal ? i.desc : i.obs)}"></label></div><div class="aj-linha"><button type="button" class="mini" onclick="UI.fitemSalvar('${id}')">Salvar</button><button type="button" class="sec mini" onclick="UI.fitemEditar(null)">Cancelar</button></div></div>`;
+    const ex = i.dano_extra;
+    const danoExtra = _temDano(i) ? `<div class="aj-linha"><label class="aj-opcao"><input type="checkbox" id="ei-extra" ${ex ? 'checked' : ''} onchange="porId('ei-extra-campos').hidden = !this.checked"> Dano adicional (somado ao dano da arma)</label></div><div class="aj-linha" id="ei-extra-campos" ${ex ? '' : 'hidden'}><label class="aj-campo">Dado<input type="text" id="ei-extra-dado" maxlength="8" placeholder="1d6" value="${_t(ex ? ex.dado : '')}"></label><label class="aj-campo">Tipo do dano adicional<select id="ei-extra-tipo">${_TIPOS_DANO.map(t => `<option value="${t}" ${(ex ? ex.tipo : 'trovejante') === t ? 'selected' : ''}>${cap(t)}</option>`).join('')}</select></label></div>` : '';
+    return `<div class="aj-editor"><div class="aj-linha"><label class="aj-campo larga">Nome do item<input type="text" id="ei-nome" maxlength="80" value="${_t(i.apelido || '')}" placeholder="${_t(nomeBaseItem(i))}"></label>${_podeMelhorar(i) ? `<label class="aj-campo">Bônus mágico<select id="ei-bonus">${[0, 1, 2, 3].map(n => `<option value="${n}" ${(i.bonus_magico || 0) === n ? 'selected' : ''}>${n ? '+' + n : 'nenhum'}</option>`).join('')}</select></label>` : ''}${tipoDano}<label class="aj-campo larga">Observação (opcional)<input type="text" id="ei-obs" maxlength="120" value="${_t(pessoal ? i.desc : i.obs)}"></label></div>${danoExtra}<div class="aj-linha"><button type="button" class="mini" onclick="UI.fitemSalvar('${id}')">Salvar</button><button type="button" class="sec mini" onclick="UI.fitemEditar(null)">Cancelar</button></div></div>`;
 }
 const _botoesQtd = (i) => { const id = _t(i.id); return `<button type="button" class="sec mini" onclick="UI.fqtd('${id}', -1)" aria-label="Diminuir">-</button><input type="number" min="0" value="${i.qtd || 0}" onchange="UI.fqtdSet('${id}', this.value)" aria-label="Quantidade"><button type="button" class="sec mini" onclick="UI.fqtd('${id}', 1)" aria-label="Aumentar">+</button>`; };
 function _htmlLinhaItem(i, extras) {
@@ -539,6 +541,14 @@ Object.assign(UI, {
         if (i.cat === 'personalizado') i.desc = obs; else if (obs) i.obs = obs; else delete i.obs;
         if (bonus && _podeMelhorar(i)) i.bonus_magico = parseInt(bonus.value, 10) || 0;
         const danoSel = porId('ei-dano'); if (danoSel && _temDano(i)) { if (danoSel.value) i.tipo_dano = danoSel.value; else delete i.tipo_dano; }
+        const extraOn = porId('ei-extra');
+        if (extraOn && _temDano(i)) {
+            if (extraOn.checked) {
+                const dado = (porId('ei-extra-dado').value || '').replace(/\s+/g, '').toLowerCase();
+                if (!/^\d{1,2}d\d{1,3}([+-]\d{1,2})?$/.test(dado)) return avisar('Dado do dano adicional inválido. Use o formato 1d6, 2d8 ou 1d4+1.', true);
+                i.dano_extra = { dado, tipo: porId('ei-extra-tipo').value };
+            } else delete i.dano_extra;
+        }
         ui.fichaEditaItem = null; _persistirFicha();
     },
     fsintonia(id) {
