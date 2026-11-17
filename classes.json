@@ -20253,10 +20253,6 @@
               {
                 "simbolo": "🕳️",
                 "nome": "Subterrâneo"
-              },
-              {
-                "simbolo": "🏙️",
-                "nome": "Urbano"
               }
             ],
             "grupo_unico": "terreno_favorito"
@@ -21927,10 +21923,6 @@
               {
                 "simbolo": "🕳️",
                 "nome": "Subterrâneo"
-              },
-              {
-                "simbolo": "🏙️",
-                "nome": "Urbano"
               }
             ],
             "grupo_unico": "terreno_favorito",
@@ -22032,10 +22024,6 @@
               {
                 "simbolo": "🕳️",
                 "nome": "Subterrâneo"
-              },
-              {
-                "simbolo": "🏙️",
-                "nome": "Urbano"
               }
             ],
             "grupo_unico": "terreno_favorito",
