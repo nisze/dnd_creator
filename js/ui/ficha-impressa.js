@@ -122,7 +122,7 @@ function _htmlPaginaMagiasRecursos(calc) {
 
 function _htmlPaginaEquipamento(calc) {
     const f = garantirFolha(), carga = cargaDaFicha(calc), itens = charState.inventario.filter(i => (i.qtd || 0) > 0);
-    const linhas = itens.map(i => { const kg = (parseFloat(i.peso_lb) || 0) * i.qtd; return `<li><span class="f-qtd">${i.qtd}</span><b>${_t(i.apelido || i.nome)}${i.bonus_magico ? ' +' + i.bonus_magico : ''}${i.sint ? (i.sintonizado ? ' (sintonizado)' : ' (requer sintonização)') : ''}${(i.cat === 'personalizado' ? i.desc : i.obs) ? ` <small>${_t(i.cat === 'personalizado' ? i.desc : i.obs)}</small>` : ''}</b>${tagArmadura(i)}<small>${kg ? emKg(kg).toString().replace('.', ',') + ' kg' : ''}</small></li>`; }).join('');
+    const linhas = itens.map(i => { const kg = (parseFloat(i.peso_lb) || 0) * i.qtd; return `<li><span class="f-qtd">${i.qtd}</span><b>${_t(i.apelido || i.nome)}${i.bonus_magico ? ' +' + i.bonus_magico : ''}${i.sint ? (i.sintonizado ? ' (sintonizado)' : ' (requer sintonização)') : ''}${(i.cat === 'personalizado' ? i.desc : i.obs) ? ` <small class="f-it-obs">${_t(i.cat === 'personalizado' ? i.desc : i.obs)}</small>` : ''}</b>${tagArmadura(i)}<small>${kg ? emKg(kg).toString().replace('.', ',') + ' kg' : ''}</small></li>`; }).join('');
     const pe = proficienciasEquipDaFicha();
     const moedas = Object.keys(NOME_MOEDA).map(k => `<div class="f-moeda"><b>${f.moedas[k] || '&nbsp;'}</b><small>${NOME_MOEDA[k]}</small></div>`).join('');
     const texto = (rot, k) => `<div class="f-caixa f-texto" data-k="${k}" data-rot="${_t(rot)}">${_tit(rot)}<p>${_multi(f[k])}</p></div>`;
