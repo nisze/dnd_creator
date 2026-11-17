@@ -13,6 +13,38 @@ const efeitosAtivos = () => (charState.inventario || []).map(efeitoDoItem).filte
 const totalSintonizados = () => (charState.inventario || []).filter(i => i.sint && i.sintonizado).length;
 const itemDeLoja = (l, extra) => ({ id: novoIdInv(), ref: l.id, cat: l.cat, nome: l.nome, nome_en: l.nome_en, qtd: 1, custo: 0, peso_lb: l.peso_lb, mec: l.mec || null, desc: l.desc_en || '', ...(l.cat === 'magico' ? { efeito: EFEITOS_ITENS[String(l.id).replace(/^magico-/, '')] || null, sint: !!l.sint, sintonizado: false } : {}), ...extra });
 
+// Pacotes de equipamento (PHB): o inventário recebe o conteúdo, não o pacote. [qtd, id da loja] ou [qtd, nome, nome em inglês] para o que a loja não tem.
+const PACOTES = {
+    'pacote-burglar-s-pack': [[1, 'equipamento-backpack'], [1, 'equipamento-ball-bearings-bag-of-1-000'], [1, 'Barbante (3 m)', 'String (10 feet)'], [1, 'equipamento-bell'], [5, 'equipamento-candle'], [1, 'equipamento-crowbar'], [1, 'equipamento-hammer'], [10, 'equipamento-piton'], [1, 'equipamento-lantern-hooded'], [2, 'equipamento-oil-flask'], [5, 'equipamento-rations-1-day'], [1, 'equipamento-tinderbox'], [1, 'equipamento-waterskin'], [1, 'equipamento-rope']],
+    'pacote-diplomat-s-pack': [[1, 'equipamento-chest'], [2, 'equipamento-case-map-scroll'], [1, 'equipamento-fine-clothes'], [1, 'equipamento-ink-1-oz'], [1, 'equipamento-ink-pen'], [1, 'equipamento-lamp'], [2, 'equipamento-oil-flask'], [5, 'equipamento-paper-1-sheet'], [1, 'equipamento-perfume-vial'], [1, 'equipamento-sealing-wax'], [1, 'Sabão', 'Soap']],
+    'pacote-dungeoneer-s-pack': [[1, 'equipamento-backpack'], [1, 'equipamento-crowbar'], [1, 'equipamento-hammer'], [10, 'equipamento-piton'], [10, 'equipamento-torch'], [1, 'equipamento-tinderbox'], [10, 'equipamento-rations-1-day'], [1, 'equipamento-waterskin'], [1, 'equipamento-rope']],
+    'pacote-entertainer-s-pack': [[1, 'equipamento-backpack'], [1, 'equipamento-bedroll'], [2, 'equipamento-costume'], [5, 'equipamento-candle'], [5, 'equipamento-rations-1-day'], [1, 'equipamento-waterskin'], [1, 'ferramenta-disguise-kit']],
+    'pacote-explorer-s-pack': [[1, 'equipamento-backpack'], [1, 'equipamento-bedroll'], [1, 'equipamento-mess-kit'], [1, 'equipamento-tinderbox'], [10, 'equipamento-torch'], [10, 'equipamento-rations-1-day'], [1, 'equipamento-waterskin'], [1, 'equipamento-rope']],
+    'pacote-priest-s-pack': [[1, 'equipamento-backpack'], [1, 'equipamento-blanket'], [10, 'equipamento-candle'], [1, 'equipamento-tinderbox'], [1, 'Caixa de esmolas', 'Alms box'], [2, 'Bloco de incenso', 'Block of incense'], [1, 'Incensário', 'Censer'], [1, 'Vestimentas', 'Vestments'], [2, 'equipamento-rations-1-day'], [1, 'equipamento-waterskin']],
+    'pacote-scholar-s-pack': [[1, 'equipamento-backpack'], [1, 'equipamento-book'], [1, 'equipamento-ink-1-oz'], [1, 'equipamento-ink-pen'], [10, 'equipamento-parchment-1-sheet'], [1, 'Bolsinha de areia', 'Little bag of sand'], [1, 'Faca pequena', 'Small knife']]
+};
+// Itens do pacote `l` (vezes `vezes`), ou null se `l` não for um pacote. O preço pago, se houver, é repartido entre os itens da loja na proporção dos preços.
+function itensDoPacote(l, extra, vezes, preco) {
+    const comp = PACOTES[l.id]; if (!comp) return null;
+    const itens = comp.map(c => {
+        if (c.length === 2) { const li = lojaPorId(c[1]); return li ? itemDeLoja(li, { qtd: c[0] * (vezes || 1), ...extra }) : null; }
+        return { id: novoIdInv(), cat: 'texto', nome: c[1], nome_en: c[2], qtd: c[0] * (vezes || 1), custo: 0, mec: null, desc: '', ...extra };
+    }).filter(Boolean);
+    if (preco > 0) {
+        const peso = itens.map(it => it.ref ? (lojaPorId(it.ref).custo_po || 0) * it.qtd : 0), total = peso.reduce((s, p) => s + p, 0);
+        if (total > 0) {
+            itens.forEach((it, k) => { it.custo = Math.round(preco * peso[k] / total * 100) / 100; });
+            const k = peso.indexOf(Math.max(...peso)); itens[k].custo = Math.round((itens[k].custo + preco - itens.reduce((s, it) => s + it.custo, 0)) * 100) / 100;
+        } else itens[0].custo = preco;
+    }
+    return itens;
+}
+// Soma na lista um item que já exista (mesma origem e mesmo item); senão acrescenta.
+function juntarItem(lista, it) {
+    const ja = lista.find(x => x.origem === it.origem && x.cat === it.cat && (it.ref ? x.ref === it.ref : x.nome === it.nome));
+    if (ja) { ja.qtd += it.qtd; ja.custo = Math.round(((ja.custo || 0) + (it.custo || 0)) * 100) / 100; } else lista.push(it);
+}
+
 // Divide por vírgula/ponto e vírgula fora de parênteses.
 function dividirFora(texto) {
     const out = []; let d = 0, cur = '';
@@ -77,6 +109,8 @@ function pagarComMoedas(m, custoPO) {
 function compraNaFicha(l) {
     if (l.custo_po == null) return 'Este item não tem preço de tabela e não pode ser comprado.';
     if (!pagarComMoedas(garantirFolha().moedas, l.custo_po)) return 'Moedas insuficientes.';
+    const pacote = itensDoPacote(l, { origem: 'ficha' });
+    if (pacote) { pacote.forEach(it => juntarItem(charState.inventario, it)); return null; }
     const ja = charState.inventario.find(i => i.ref === l.id && i.origem === 'ficha');
     if (ja) ja.qtd++; else charState.inventario.push(itemDeLoja(l, { origem: 'ficha', ...(l.ua ? { ua: true } : {}) }));
     return null;

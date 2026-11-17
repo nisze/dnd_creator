@@ -142,7 +142,7 @@ function equipInicialAplicar() {
         if (cfg) cfg.grupos.forEach((g, gi) => {
             const e = ei.escolhas[gi] || {}; const op = g.opcoes[g.escolha ? e.op : 0]; if (!op) return;
             op.itens.forEach((it, ii) => {
-                if (it.ref) { const l = lojaPorId(it.ref); if (l) novos.push(itemDeLoja(l, { qtd: it.qtd, origem: 'inicial' })); }
+                if (it.ref) { const l = lojaPorId(it.ref); if (l) { const pacote = itensDoPacote(l, { origem: 'inicial' }, it.qtd); if (pacote) pacote.forEach(x => juntarItem(novos, x)); else novos.push(itemDeLoja(l, { qtd: it.qtd, origem: 'inicial' })); } }
                 else if (it.tipo === 'texto') novos.push({ id: novoIdInv(), cat: 'texto', nome: it.nome, nome_en: '', qtd: 1, custo: 0, mec: null, desc: '', origem: 'inicial' });
                 else ((e.picks || {})[ii] || []).forEach(id => { const l = lojaPorId(id); if (l) novos.push(itemDeLoja(l, { origem: 'inicial' })); });
             });
@@ -170,6 +170,8 @@ function inventarioAdicionar(l) {
     }
     const c = l.custo_po || 0; if (c > saldo()) return 'Saldo insuficiente.';
     const origem = l.cat === 'magico' ? 'magico' : 'compra';
+    const pacote = itensDoPacote(l, { origem }, 1, c);
+    if (pacote) { pacote.forEach(it => juntarItem(charState.inventario, it)); return null; }
     const ja = charState.inventario.find(i => i.ref === l.id && i.origem === origem);
     if (ja && l.cat !== 'magico') { ja.qtd++; ja.custo += c; } else if (!ja) charState.inventario.push(itemDeLoja(l, { custo: c, origem, ...(l.ua ? { ua: true } : {}) }));
     return null;
