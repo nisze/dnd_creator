@@ -124,7 +124,7 @@ function _htmlPaginaEquipamento(calc) {
     const f = garantirFolha(), carga = cargaDaFicha(calc), itens = charState.inventario.filter(i => (i.qtd || 0) > 0);
     const linhas = itens.map(i => { const kg = (parseFloat(i.peso_lb) || 0) * i.qtd; return `<li><span class="f-qtd">${i.qtd}</span><b>${_t(i.apelido || i.nome)}${i.bonus_magico ? ' +' + i.bonus_magico : ''}${i.sint ? (i.sintonizado ? ' (sintonizado)' : ' (requer sintonização)') : ''}${(i.cat === 'personalizado' ? i.desc : i.obs) ? ` <small class="f-it-obs">${_t(i.cat === 'personalizado' ? i.desc : i.obs)}</small>` : ''}</b>${tagArmadura(i)}<small>${kg ? emKg(kg).toString().replace('.', ',') + ' kg' : ''}</small></li>`; }).join('');
     const pe = proficienciasEquipDaFicha();
-    const moedas = Object.keys(NOME_MOEDA).map(k => `<div class="f-moeda"><b>${f.moedas[k] || '&nbsp;'}</b><small>${NOME_MOEDA[k]}</small></div>`).join('');
+    const moedas = Object.keys(NOME_MOEDA).map(k => `<div class="f-moeda"><b>${f.moedasEmBranco ? '&nbsp;' : (f.moedas[k] || '&nbsp;')}</b><small>${NOME_MOEDA[k]}</small></div>`).join('');
     const texto = (rot, k) => `<div class="f-caixa f-texto" data-k="${k}" data-rot="${_t(rot)}">${_tit(rot)}<p>${_multi(f[k])}</p></div>`;
     return `<section class="folha livre eqp">
     <h2 class="f-h2">Equipamento e história</h2>
@@ -132,7 +132,7 @@ function _htmlPaginaEquipamento(calc) {
         <div class="f-caixa">${_tit('Equipamento')}<ul class="f-itens">${linhas}<li class="preench" aria-hidden="true"></li></ul>
             <div class="f-eq-rodape"><p>Peso total (equipamento + moedas): <b>${String(emKg(carga.peso)).replace('.', ',')} kg</b> de ${emKg(carga.capacidade).toString().replace('.', ',')} kg (limite).</p><p class="peq">Empurrar/arrastar/levantar: ${emKg(carga.empurrar).toString().replace('.', ',')} kg.</p></div></div>
         <div class="f-col">
-            <div class="f-caixa">${_tit('Moedas')}<div class="f-moedas">${moedas}</div><p class="peq">Total: ${String(moedasEmPO(f.moedas)).replace('.', ',')} PO</p></div>
+            <div class="f-caixa">${_tit('Moedas')}<div class="f-moedas">${moedas}</div><p class="peq">Total: ${f.moedasEmBranco ? '<span class="f-total-br"></span>' : String(moedasEmPO(f.moedas)).replace('.', ',')} PO</p></div>
             <div class="f-caixa f-profeq">${_tit('Proficiências de equipamento')}<ul class="f-pe">${pe.categorias.map(c => `<li><i class="bola${c.tem ? ' cheia' : ''}"></i><span>${_t(c.nome)}</span></li>`).join('')}</ul>${pe.excecoes.length ? `<ul class="f-pe f-pe-ex">${pe.excecoes.map(n => `<li><i class="bola cheia"></i><span>${_t(n)}</span></li>`).join('')}</ul>` : ''}</div>
             ${texto('Anotações', 'notas')}
             ${texto('Aliados e organizações', 'aliados')}
@@ -269,9 +269,11 @@ function _htmlPaginasTabelas() {
 }
 // Pergunta no fim da tela (fora da folha, não sai na impressão): cada tabela de rolagem das características do personagem entra na ficha só se for marcada.
 function _htmlOpcoesFinaisFicha() {
-    const ts = tabelasDaFicha(); if (!ts.length) return '';
-    const marcadas = garantirFolha().tabelas || {}, en = typeof Idioma !== 'undefined' && Idioma.atual === 'en';
-    return `<div id="ficha-opcoes" class="ficha-opcoes sem-impressao"><b>${en ? 'Tables from your features' : 'Tabelas das suas características'}</b>${ts.map((t, i) => `<label class="aj-opcao"><input type="checkbox" ${marcadas[t.chave] ? 'checked' : ''} onchange="UI.ftabela(${i}, this.checked)"> ${en ? `Include the "${_t(t.titulo)}" table (${_t(t.dado)}, ${t.itens.length} rows) on the sheet, after the features` : `Incluir a tabela "${_t(t.titulo)}" (${_t(t.dado)}, ${t.itens.length} linhas) na ficha, depois das características`}</label>`).join('')}</div>`;
+    const ts = tabelasDaFicha(), f = garantirFolha();
+    const marcadas = f.tabelas || {}, en = typeof Idioma !== 'undefined' && Idioma.atual === 'en';
+    const tabelas = ts.length ? `<b>${en ? 'Tables from your features' : 'Tabelas das suas características'}</b>${ts.map((t, i) => `<label class="aj-opcao"><input type="checkbox" ${marcadas[t.chave] ? 'checked' : ''} onchange="UI.ftabela(${i}, this.checked)"> ${en ? `Include the "${_t(t.titulo)}" table (${_t(t.dado)}, ${t.itens.length} rows) on the sheet, after the features` : `Incluir a tabela "${_t(t.titulo)}" (${_t(t.dado)}, ${t.itens.length} linhas) na ficha, depois das características`}</label>`).join('')}` : '';
+    const moedas = `<b>${en ? 'Coins' : 'Moedas'}</b><label class="aj-opcao"><input type="checkbox" ${f.moedasEmBranco ? 'checked' : ''} onchange="UI.fmoedasBranco(this.checked)"> ${en ? 'Leave the coins blank on the sheet (to fill in with pencil); the values stay saved in the character' : 'Deixar as moedas em branco na ficha (para preencher a lápis); os valores continuam salvos no personagem'}</label>`;
+    return `<div id="ficha-opcoes" class="ficha-opcoes sem-impressao">${tabelas}${moedas}</div>`;
 }
 
 function htmlPaginasFicha() {
@@ -517,6 +519,7 @@ Object.assign(UI, {
     fqtd(id, d) { const i = charState.inventario.find(x => String(x.id) === String(id)); if (!i) return; i.qtd = Math.max(0, (i.qtd || 0) + d); _persistirFicha(); },
     fqtdSet(id, v) { const i = charState.inventario.find(x => String(x.id) === String(id)); if (!i) return; i.qtd = Math.max(0, Math.floor(Number(v)) || 0); _persistirFicha(); },
     fmoeda(k, v) { const f = garantirFolha(); if (!(k in f.moedas)) return; f.moedas[k] = Math.max(0, Math.floor(Number(v)) || 0); _persistirFicha(); },
+    fmoedasBranco(on) { garantirFolha().moedasEmBranco = !!on; _persistirFicha(); },
     ftabela(i, on) { const t = tabelasDaFicha()[i]; if (!t) return; const f = garantirFolha(); f.tabelas = f.tabelas || {}; if (on) f.tabelas[t.chave] = true; else delete f.tabelas[t.chave]; _persistirFicha(); },
     fcampo(k, v) { const f = garantirFolha(); if (!(k in f)) return; f[k] = String(v); if (k === 'historia') f.historiaEditada = true; _persistirFicha(); },
     // Digitando: a caixa cresce com o texto e a ficha se atualiza logo depois de parar de digitar.
