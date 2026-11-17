@@ -21,21 +21,29 @@ const PACOTES = {
     'pacote-entertainer-s-pack': [[1, 'equipamento-backpack'], [1, 'equipamento-bedroll'], [2, 'equipamento-costume'], [5, 'equipamento-candle'], [5, 'equipamento-rations-1-day'], [1, 'equipamento-waterskin'], [1, 'ferramenta-disguise-kit']],
     'pacote-explorer-s-pack': [[1, 'equipamento-backpack'], [1, 'equipamento-bedroll'], [1, 'equipamento-mess-kit'], [1, 'equipamento-tinderbox'], [10, 'equipamento-torch'], [10, 'equipamento-rations-1-day'], [1, 'equipamento-waterskin'], [1, 'equipamento-rope']],
     'pacote-priest-s-pack': [[1, 'equipamento-backpack'], [1, 'equipamento-blanket'], [10, 'equipamento-candle'], [1, 'equipamento-tinderbox'], [1, 'Caixa de esmolas', 'Alms box'], [2, 'Bloco de incenso', 'Block of incense'], [1, 'Incensário', 'Censer'], [1, 'Vestimentas', 'Vestments'], [2, 'equipamento-rations-1-day'], [1, 'equipamento-waterskin']],
-    'pacote-scholar-s-pack': [[1, 'equipamento-backpack'], [1, 'equipamento-book'], [1, 'equipamento-ink-1-oz'], [1, 'equipamento-ink-pen'], [10, 'equipamento-parchment-1-sheet'], [1, 'Bolsinha de areia', 'Little bag of sand'], [1, 'Faca pequena', 'Small knife']]
+    'pacote-scholar-s-pack': [[1, 'equipamento-backpack'], [1, 'equipamento-book'], [1, 'equipamento-ink-1-oz'], [1, 'equipamento-ink-pen'], [10, 'equipamento-parchment-1-sheet'], [1, 'Bolsinha de areia', 'Little bag of sand'], [1, 'Faca pequena', 'Small knife']],
+    // Kits: o peso do kit é repartido entre as partes (4º valor: peso de cada uma, em libras).
+    'equipamento-healer-s-kit': [[1, 'Bandagens', 'Bandages', 1], [1, 'Unguentos', 'Salves', 1], [1, 'Talas', 'Splints', 1]],
+    'equipamento-climber-s-kit': [[1, 'Pitões especiais', 'Special pitons', 3], [1, 'Biqueiras de botas', 'Boot tips', 3], [1, 'Luvas de escalada', 'Climbing gloves', 3], [1, 'Arnês', 'Harness', 3]]
 };
+// Itens de texto do equipamento do antecedente que são kits da loja (entram desmembrados).
+const KITS_TEXTO = [[/kit de curandeiro|healer'?s kit/i, 'equipamento-healer-s-kit'], [/kit de escalada|climber'?s kit/i, 'equipamento-climber-s-kit']];
 // Itens do pacote `l` (vezes `vezes`), ou null se `l` não for um pacote. O preço pago, se houver, é repartido entre os itens da loja na proporção dos preços.
 function itensDoPacote(l, extra, vezes, preco) {
     const comp = PACOTES[l.id]; if (!comp) return null;
     const itens = comp.map(c => {
         if (c.length === 2) { const li = lojaPorId(c[1]); return li ? itemDeLoja(li, { qtd: c[0] * (vezes || 1), ...extra }) : null; }
-        return { id: novoIdInv(), cat: 'texto', nome: c[1], nome_en: c[2], qtd: c[0] * (vezes || 1), custo: 0, mec: null, desc: '', ...extra };
+        return { id: novoIdInv(), cat: 'texto', nome: c[1], nome_en: c[2], qtd: c[0] * (vezes || 1), custo: 0, mec: null, desc: '', ...(c[3] ? { peso_lb: c[3] } : {}), ...extra };
     }).filter(Boolean);
     if (preco > 0) {
         const peso = itens.map(it => it.ref ? (lojaPorId(it.ref).custo_po || 0) * it.qtd : 0), total = peso.reduce((s, p) => s + p, 0);
         if (total > 0) {
             itens.forEach((it, k) => { it.custo = Math.round(preco * peso[k] / total * 100) / 100; });
             const k = peso.indexOf(Math.max(...peso)); itens[k].custo = Math.round((itens[k].custo + preco - itens.reduce((s, it) => s + it.custo, 0)) * 100) / 100;
-        } else itens[0].custo = preco;
+        } else {
+            itens.forEach(it => { it.custo = Math.round(preco / itens.length * 100) / 100; });
+            itens[0].custo = Math.round((itens[0].custo + preco - itens.reduce((s, it) => s + it.custo, 0)) * 100) / 100;
+        }
     }
     return itens;
 }

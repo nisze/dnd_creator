@@ -147,7 +147,10 @@ function equipInicialAplicar() {
                 else ((e.picks || {})[ii] || []).forEach(id => { const l = lojaPorId(id); if (l) novos.push(itemDeLoja(l, { origem: 'inicial' })); });
             });
         });
-        equipDoAntecedente(charState.antecedente).itens.forEach(t => novos.push({ id: novoIdInv(), cat: 'texto', nome: t, nome_en: '', qtd: 1, custo: 0, mec: null, desc: '', origem: 'inicial' }));
+        equipDoAntecedente(charState.antecedente).itens.forEach(t => {
+            const kit = KITS_TEXTO.find(([re]) => re.test(t)), partes = kit && lojaPorId(kit[1]) && itensDoPacote(lojaPorId(kit[1]), { origem: 'inicial' });
+            if (partes) partes.forEach(x => juntarItem(novos, x)); else novos.push({ id: novoIdInv(), cat: 'texto', nome: t, nome_en: '', qtd: 1, custo: 0, mec: null, desc: '', origem: 'inicial' });
+        });
     }
     charState.inventario = novos.concat(charState.inventario);
 }
