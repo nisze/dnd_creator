@@ -194,6 +194,8 @@
     Idioma.padrao(/^(\d+)º círculo$/, (m, n) => ord(n) + ' level');
     Idioma.padrao(/^(\d+)º círculo \(pacto\)$/, (m, n) => ord(n) + ' level (pact)');
     Idioma.padrao(/^(\d+(?:d\d+)?(?: ?[+\-] ?\d+)?) (cont|cort|perf)\.$/, (m, v, t) => v + ' ' + (t === 'cont' ? 'bludg.' : t === 'cort' ? 'slash.' : 'pierc.'));
+    Idioma.padrao(/^(\d+d\d+(?: ?[+\-] ?\d+)?) (ácido|elétrico|energético|frio|fogo|necrótico|psíquico|radiante|trovejante|veneno|contundente|cortante|perfurante)( .*)?$/, (m, v, t, r) => v + ' ' + ({ 'ácido': 'acid', 'elétrico': 'lightning', 'energético': 'force', frio: 'cold', fogo: 'fire', 'necrótico': 'necrotic', 'psíquico': 'psychic', radiante: 'radiant', trovejante: 'thunder', veneno: 'poison', contundente: 'bludg.', cortante: 'slash.', perfurante: 'pierc.' })[t] + (r || ''));
+    Idioma.padrao(/^Padrão da arma \((.+)\)$/, (m, t) => 'Weapon default (' + T(t) + ')');
     Idioma.padrao(/^(.+) passiva$/, (m, n) => 'Passive ' + T(n));
     Idioma.padrao(/^(\d+(?:,\d+)?) m$/, (m, v) => mPes(v) + ' ft.');
     Idioma.padrao(/^(\d+(?:,\d+)?) kg$/, (m, v) => kgLb(v) + ' lb.');
@@ -275,7 +277,7 @@
         'abra pelo servidor local (o navegador bloqueia a leitura dos arquivos de dados ao abrir direto). No terminal, na pasta do projeto: node tools/serve.js  e depois http://127.0.0.1:5500/':
             'open it through the local server (the browser blocks reading the data files when opened directly). In a terminal, in the project folder: node tools/serve.js  and then http://127.0.0.1:5500/','Gigante de Pedra/Gelo': 'Stone/Frost Giant', 'Gigante de Fogo': 'Fire Giant', 'Gigante das Nuvens': 'Cloud Giant', 'Gigante da Tempestade': 'Storm Giant',
         'Itens mágicos': 'Magic items', 'Escolha': 'Choice', 'Metamagia': 'Metamagic', 'Carrinho': 'Cart', 'Suas moedas': 'Your coins', 'Esvaziar': 'Empty', 'Adicionar': 'Add', 'Total': 'Total',
-        'Nenhum item. Use "Adicionar" na lista ao lado.': 'No items. Use "Add" in the list beside.', 'Moedas insuficientes para comprar tudo.': 'Not enough coins to buy everything.', 'Nome do item': 'Item name', 'Bônus mágico': 'Magic bonus', 'Observação (opcional)': 'Note (optional)', 'Adicionar item mágico': 'Add magic item', 'Nenhum item mágico.': 'No magic items.',
+        'Nenhum item. Use "Adicionar" na lista ao lado.': 'No items. Use "Add" in the list beside.', 'Moedas insuficientes para comprar tudo.': 'Not enough coins to buy everything.', 'Nome do item': 'Item name', 'Tipo de dano': 'Damage type', 'Bônus mágico': 'Magic bonus', 'Observação (opcional)': 'Note (optional)', 'Adicionar item mágico': 'Add magic item', 'Nenhum item mágico.': 'No magic items.',
         '(concedidos pelo mestre, sem preço)': '(granted by the DM, no price)',
         'Magias copiadas para o grimório. As magias preparadas do dia são marcadas na ficha.': "Spells copied into the spellbook. The day's prepared spells are marked on the sheet."
     });
