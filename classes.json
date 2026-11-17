@@ -20274,7 +20274,80 @@
                 "nome_ingles": "Expertise",
                 "escolha": 1,
                 "descrição": "Esperto (Canny): escolha uma perícia em que você já é proficiente; o bônus de proficiência dela é dobrado.",
-                "conteudo": []
+                "conteudo": [
+                  {
+                    "simbolo": "🤸",
+                    "nome": "Acrobacia (Acrobatics)"
+                  },
+                  {
+                    "simbolo": "🔮",
+                    "nome": "Arcanismo (Arcana)"
+                  },
+                  {
+                    "simbolo": "💪",
+                    "nome": "Atletismo (Athletics)"
+                  },
+                  {
+                    "simbolo": "🎭",
+                    "nome": "Atuação (Performance)"
+                  },
+                  {
+                    "simbolo": "🤥",
+                    "nome": "Enganação (Deception)"
+                  },
+                  {
+                    "simbolo": "🤫",
+                    "nome": "Furtividade (Stealth)"
+                  },
+                  {
+                    "simbolo": "📜",
+                    "nome": "História (History)"
+                  },
+                  {
+                    "simbolo": "😠",
+                    "nome": "Intimidação (Intimidation)"
+                  },
+                  {
+                    "simbolo": "💡",
+                    "nome": "Intuição (Insight)"
+                  },
+                  {
+                    "simbolo": "🔍",
+                    "nome": "Investigação (Investigation)"
+                  },
+                  {
+                    "simbolo": "🐴",
+                    "nome": "Lidar com Animais (Animal Handling)"
+                  },
+                  {
+                    "simbolo": "⚕️",
+                    "nome": "Medicina (Medicine)"
+                  },
+                  {
+                    "simbolo": "🌿",
+                    "nome": "Natureza (Nature)"
+                  },
+                  {
+                    "simbolo": "👁️",
+                    "nome": "Percepção (Perception)"
+                  },
+                  {
+                    "simbolo": "🤝",
+                    "nome": "Persuasão (Persuasion)"
+                  },
+                  {
+                    "simbolo": "🖐️",
+                    "nome": "Prestidigitação (Sleight of Hand)"
+                  },
+                  {
+                    "simbolo": "📿",
+                    "nome": "Religião (Religion)"
+                  },
+                  {
+                    "simbolo": "🏕️",
+                    "nome": "Sobrevivência (Survival)"
+                  }
+                ]
               },
               {
                 "simbolo": "🗣️",
@@ -27683,7 +27756,80 @@
                 "nome_ingles": "Expertise",
                 "escolha": 1,
                 "descrição": "Esperto (Canny): escolha uma perícia em que você já é proficiente; o bônus de proficiência dela é dobrado.",
-                "conteudo": []
+                "conteudo": [
+                  {
+                    "simbolo": "🤸",
+                    "nome": "Acrobacia (Acrobatics)"
+                  },
+                  {
+                    "simbolo": "🔮",
+                    "nome": "Arcanismo (Arcana)"
+                  },
+                  {
+                    "simbolo": "💪",
+                    "nome": "Atletismo (Athletics)"
+                  },
+                  {
+                    "simbolo": "🎭",
+                    "nome": "Atuação (Performance)"
+                  },
+                  {
+                    "simbolo": "🤥",
+                    "nome": "Enganação (Deception)"
+                  },
+                  {
+                    "simbolo": "🤫",
+                    "nome": "Furtividade (Stealth)"
+                  },
+                  {
+                    "simbolo": "📜",
+                    "nome": "História (History)"
+                  },
+                  {
+                    "simbolo": "😠",
+                    "nome": "Intimidação (Intimidation)"
+                  },
+                  {
+                    "simbolo": "💡",
+                    "nome": "Intuição (Insight)"
+                  },
+                  {
+                    "simbolo": "🔍",
+                    "nome": "Investigação (Investigation)"
+                  },
+                  {
+                    "simbolo": "🐴",
+                    "nome": "Lidar com Animais (Animal Handling)"
+                  },
+                  {
+                    "simbolo": "⚕️",
+                    "nome": "Medicina (Medicine)"
+                  },
+                  {
+                    "simbolo": "🌿",
+                    "nome": "Natureza (Nature)"
+                  },
+                  {
+                    "simbolo": "👁️",
+                    "nome": "Percepção (Perception)"
+                  },
+                  {
+                    "simbolo": "🤝",
+                    "nome": "Persuasão (Persuasion)"
+                  },
+                  {
+                    "simbolo": "🖐️",
+                    "nome": "Prestidigitação (Sleight of Hand)"
+                  },
+                  {
+                    "simbolo": "📿",
+                    "nome": "Religião (Religion)"
+                  },
+                  {
+                    "simbolo": "🏕️",
+                    "nome": "Sobrevivência (Survival)"
+                  }
+                ]
               },
               {
                 "simbolo": "🗣️",
