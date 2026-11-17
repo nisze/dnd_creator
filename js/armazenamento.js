@@ -83,7 +83,7 @@ function restaurarEstado(e) {
     outrasSalvas.forEach((o, i) => Object.entries(o.escolhas || {}).forEach(([id, sel]) => { pendentes['classe#' + (i + 1) + ':' + id] = sel; }));
     // Escolhas aninhadas só aparecem depois das anteriores: repete até não haver progresso. As classes adicionais têm o próprio contexto (chave "classe#N").
     const fontes = [{ cat: 'raca', idx: 0 }, { cat: 'classe', idx: 0 }, { cat: 'antecedente', idx: 0 }].concat(outras.map((_, i) => ({ cat: 'classe', idx: i + 1 })));
-    for (let volta = 0; volta < 80; volta++) {
+    const percorrer = (parcial) => {
         let progresso = false;
         fontes.forEach(({ cat, idx }) => {
             comClasse(idx, () => {
@@ -95,14 +95,23 @@ function restaurarEstado(e) {
                     const opcoes = opcoesDaEscolha(cat, c, c.id).opcoes;
                     const brutas = Array.isArray(c.node.conteudo) ? c.node.conteudo.map(n => ({ nome: n.nome || n.Nome || n.texto, node: n })) : [];
                     const achadas = salvo.map(r => opcoes.find(o => _casaSelecao(o, r)) || brutas.find(o => _casaSelecao(o, r)));
-                    if (achadas.some(a => !a)) return;
+                    if (achadas.some(a => !a)) {
+                        // Última tentativa: guarda o que ainda existe (ex.: magia de um livro desligado) e avisa só do que se perdeu.
+                        if (!parcial || !achadas.some(Boolean)) return;
+                        perdas.push('Escolha não restaurada (' + prefixo + '): ' + salvo.filter((_, k) => !achadas[k]).map(r => r.nome).join(', '));
+                        charState.escolhas[cat][c.id] = { nodeOrigem: c.node, selecionados: achadas.filter(Boolean) };
+                        delete pendentes[chave]; progresso = true; return;
+                    }
                     charState.escolhas[cat][c.id] = { nodeOrigem: c.node, selecionados: achadas };
                     delete pendentes[chave]; progresso = true;
                 });
             });
         });
-        if (!progresso) break;
-    }
+        return progresso;
+    };
+    for (let volta = 0; volta < 80 && percorrer(false); volta++);
+    // Escolhas aninhadas só aparecem depois das anteriores: repete até não haver progresso. As classes adicionais têm o próprio contexto (chave "classe#N").
+    while (percorrer(true)) for (let volta = 0; volta < 80 && percorrer(false); volta++);
     // As magias preparadas não são mais escolhidas na criação (são marcadas na ficha): personagens antigos trazem essa escolha, que é descartada em silêncio.
     Object.entries(pendentes).forEach(([chave, sel]) => { if (/:MAGIA-preparadas$/.test(chave)) return; perdas.push('Escolha não restaurada (' + chave.split(':')[0] + '): ' + sel.map(r => r.nome).join(', ')); });
     return { ok: !!(raca && classe && ant), perdas };
