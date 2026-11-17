@@ -288,7 +288,7 @@ function _htmlEditorItem(i) {
     const tipoDano = _temDano(i) ? `<label class="aj-campo">Tipo de dano<select id="ei-dano"><option value="">Padrão da arma (${_t(i.mec.tipo_dano || '-')})</option>${_TIPOS_DANO.map(t => `<option value="${t}" ${i.tipo_dano === t ? 'selected' : ''}>${cap(t)}</option>`).join('')}</select></label>` : '';
     const ex = i.dano_extra;
     const danoExtra = _temDano(i) ? `<div class="aj-linha"><label class="aj-opcao"><input type="checkbox" id="ei-extra" ${ex ? 'checked' : ''} onchange="porId('ei-extra-campos').hidden = !this.checked"> Dano adicional (somado ao dano da arma)</label></div><div class="aj-linha" id="ei-extra-campos" ${ex ? '' : 'hidden'}><label class="aj-campo">Dado<input type="text" id="ei-extra-dado" maxlength="8" placeholder="1d6" value="${_t(ex ? ex.dado : '')}"></label><label class="aj-campo">Tipo do dano adicional<select id="ei-extra-tipo">${_TIPOS_DANO.map(t => `<option value="${t}" ${(ex ? ex.tipo : 'trovejante') === t ? 'selected' : ''}>${cap(t)}</option>`).join('')}</select></label></div>` : '';
-    return `<div class="aj-editor"><div class="aj-linha"><label class="aj-campo larga">Nome do item<input type="text" id="ei-nome" maxlength="80" value="${_t(i.apelido || '')}" placeholder="${_t(nomeBaseItem(i))}"></label>${_podeMelhorar(i) ? `<label class="aj-campo">Bônus mágico<select id="ei-bonus">${[0, 1, 2, 3].map(n => `<option value="${n}" ${(i.bonus_magico || 0) === n ? 'selected' : ''}>${n ? '+' + n : 'nenhum'}</option>`).join('')}</select></label>` : ''}${tipoDano}<label class="aj-campo larga">Observação (opcional)<input type="text" id="ei-obs" maxlength="120" value="${_t(pessoal ? i.desc : i.obs)}"></label></div>${danoExtra}<div class="aj-linha"><button type="button" class="mini" onclick="UI.fitemSalvar('${id}')">Salvar</button><button type="button" class="sec mini" onclick="UI.fitemEditar(null)">Cancelar</button></div></div>`;
+    return `<div class="aj-editor"><div class="aj-linha"><label class="aj-campo larga">Nome do item<input type="text" id="ei-nome" maxlength="80" value="${_t(i.apelido || '')}" placeholder="${_t(nomeBaseItem(i))}"></label>${_podeMelhorar(i) ? `<label class="aj-campo">Bônus mágico<select id="ei-bonus">${[0, 1, 2, 3].map(n => `<option value="${n}" ${(i.bonus_magico || 0) === n ? 'selected' : ''}>${n ? '+' + n : 'nenhum'}</option>`).join('')}</select></label>` : ''}${tipoDano}<label class="aj-campo larga">Observação (opcional)<input type="text" id="ei-obs" maxlength="120" value="${_t(pessoal ? i.desc : i.obs)}"></label></div>${danoExtra}<div class="aj-linha"><button type="button" class="mini" onclick="UI.fitemSalvar('${id}')">Salvar</button><button type="button" class="sec mini" onclick="UI.fitemEditar(null)">Cancelar</button>${(i.qtd || 0) > 1 ? `<button type="button" class="sec mini" onclick="UI.fitemSeparar('${id}')" title="Cria uma linha só com 1 unidade, para editar separadamente">Separar 1 unidade</button>` : ''}</div></div>`;
 }
 const _botoesQtd = (i) => { const id = _t(i.id); return `<button type="button" class="sec mini" onclick="UI.fqtd('${id}', -1)" aria-label="Diminuir">-</button><input type="number" min="0" value="${i.qtd || 0}" onchange="UI.fqtdSet('${id}', this.value)" aria-label="Quantidade"><button type="button" class="sec mini" onclick="UI.fqtd('${id}', 1)" aria-label="Aumentar">+</button>`; };
 function _htmlLinhaItem(i, extras) {
@@ -534,6 +534,14 @@ Object.assign(UI, {
         _persistirFicha();
     },
     fitemEditar(id) { ui.fichaEditaItem = id == null ? null : String(id); _persistirFicha(); },
+    // Item empilhado (ex.: 2 arcos longos): tira 1 unidade para uma linha própria, que se edita sem mexer nas outras.
+    fitemSeparar(id) {
+        const k = charState.inventario.findIndex(x => String(x.id) === String(id)); if (k < 0) return;
+        const it = charState.inventario[k]; if ((it.qtd || 0) < 2) return;
+        const un = it.custo ? it.custo / it.qtd : 0, nova = { ...JSON.parse(JSON.stringify(it)), id: novoIdInv(), qtd: 1, custo: Math.round(un * 100) / 100 };
+        it.qtd--; it.custo = it.custo ? Math.round((it.custo - nova.custo) * 100) / 100 : it.custo;
+        charState.inventario.splice(k + 1, 0, nova); ui.fichaEditaItem = String(nova.id); _persistirFicha();
+    },
     fitemSalvar(id) {
         const i = charState.inventario.find(x => String(x.id) === String(id)); if (!i) return;
         const nome = (porId('ei-nome').value || '').trim().slice(0, 80), obs = (porId('ei-obs').value || '').trim().slice(0, 120), bonus = porId('ei-bonus');

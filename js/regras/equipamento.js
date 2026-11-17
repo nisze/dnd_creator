@@ -47,9 +47,11 @@ function itensDoPacote(l, extra, vezes, preco) {
     }
     return itens;
 }
+// Itens editados pelo jogador não se juntam a novas unidades iguais compradas depois.
+const itemPersonalizado = (i) => !!(i.apelido || i.obs || i.bonus_magico || i.tipo_dano || i.dano_extra);
 // Soma na lista um item que já exista (mesma origem e mesmo item); senão acrescenta.
 function juntarItem(lista, it) {
-    const ja = lista.find(x => x.origem === it.origem && x.cat === it.cat && (it.ref ? x.ref === it.ref : x.nome === it.nome));
+    const ja = lista.find(x => x.origem === it.origem && x.cat === it.cat && !itemPersonalizado(x) && (it.ref ? x.ref === it.ref : x.nome === it.nome));
     if (ja) { ja.qtd += it.qtd; ja.custo = Math.round(((ja.custo || 0) + (it.custo || 0)) * 100) / 100; } else lista.push(it);
 }
 
@@ -119,7 +121,7 @@ function compraNaFicha(l) {
     if (!pagarComMoedas(garantirFolha().moedas, l.custo_po)) return 'Moedas insuficientes.';
     const pacote = itensDoPacote(l, { origem: 'ficha' });
     if (pacote) { pacote.forEach(it => juntarItem(charState.inventario, it)); return null; }
-    const ja = charState.inventario.find(i => i.ref === l.id && i.origem === 'ficha');
+    const ja = charState.inventario.find(i => i.ref === l.id && i.origem === 'ficha' && !itemPersonalizado(i));
     if (ja) ja.qtd++; else charState.inventario.push(itemDeLoja(l, { origem: 'ficha', ...(l.ua ? { ua: true } : {}) }));
     return null;
 }
