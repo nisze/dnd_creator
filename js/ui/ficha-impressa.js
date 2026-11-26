@@ -38,7 +38,7 @@ function _htmlPagina1(calc) {
     }).join('');    const ataques = calc.ataques.slice(0, 7), linhasAtq = ataques.map(a => `<tr><td>${_t(a.nome)}</td><td class="c">${formatMod(a.bonus)}</td><td>${_t(a.dano)}</td></tr>`).join('') + Array.from({ length: Math.max(0, 6 - ataques.length) }, () => '<tr><td>&nbsp;</td><td></td><td></td></tr>').join('');
     const prof = outrasProficienciasDaFicha().filter(p => !['Armaduras', 'Armas'].includes(p.rotulo)), idiomas = idiomasDaFicha();
     const visao = sent.find(s => s.nome === 'Visão no Escuro');
-    const notasAtq = calc.ataques.map(a => ({ nome: a.nome, txt: [...(a.props || []).map(p => traduzProp(p).toLowerCase()), ...(a.semProf ? ['sem proficiência'] : [])].join(', ') })).filter(a => a.txt);
+    const notasAtq = calc.ataques.map(a => ({ nome: a.nome, txt: [...(a.props || []).map(p => traduzProp(p).toLowerCase()), ...(a.semProf ? ['sem proficiência'] : []), ...(a.notas || [])].join(', ') })).filter(a => a.txt);
     let nNt = 0; const listaNotas = notasAtq.map(a => `<li data-r="${nNt++}"><b>${_t(a.nome)}</b><small>${_t(a.txt)}</small></li>`).join('');
     const defesas = defesasDaFicha(), defExtra = String(f.defesas || '').trim();
     const dvTxt = dv.map(d => `${d.total}d${d.dado}`).join(' + ');
