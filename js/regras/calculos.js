@@ -118,6 +118,7 @@ function calcularPersonagem() {
     const ctx = { ativos, estilos, corpo, temEscudo: temEscudo && !escudoSolto, escudoSolto, bonusEscudo, nomeClasse };
     const ca = calcularCA(mods, ctx);
 
+    const atiradorAgucado = talentosEscolhidos().some(t => /atirador agucado|^sharpshooter/.test(t));
     const ataques = charState.inventario.filter(i => i.mec && i.mec.categoria).map(i => {
         const m = i.mec; const usaDes = m.alcance === 'distancia' || (m.finesse && mods.Des > mods.For);
         const mod = usaDes ? mods.Des : mods.For; const prof = proficienteEquip(i, profEq);
@@ -129,6 +130,7 @@ function calcularPersonagem() {
         let dano = m.dano ? `${m.dano}${danoMod ? formatMod(danoMod) : ''} ${({ cortante: 'cort.', perfurante: 'perf.', contundente: 'cont.' })[i.tipo_dano || m.tipo_dano] || i.tipo_dano || m.tipo_dano || ''}${m.versatil ? ' (' + m.versatil + ')' : ''}`.trim() : (m.dano_en || '-');
         if (m.arremesso && m.dano && estilos.has('thrown weapon fighting')) dano += ` (arremessada: ${m.dano}${formatMod(danoMod + 2)})`;
         if (m.dano && i.dano_extra) dano += ` + ${i.dano_extra.dado} ${i.dano_extra.tipo}`;
+        if (m.dano && m.alcance === 'distancia' && atiradorAgucado) dano += ` | Atirador Aguçado: -5 acerto, ${m.dano}${formatMod(danoMod + 10)}`;
         return { nome: (i.apelido || i.nome) + (bonusMag ? ' +' + bonusMag : ''), bonus: mod + bonusMag + bonusEstilo + bonusCQS + (prof ? profBonus : 0), dano, props: m.propriedades || [], semProf: !prof };
     });
     { const luta = estilos.has('unarmed fighting'); ataques.push({ nome: 'Ataque desarmado', bonus: mods.For + profBonus, dano: luta ? `1d6${formatMod(mods.For)} cont. (1d8 sem armas/escudo)` : `${Math.max(1, 1 + mods.For)} cont.` }); }

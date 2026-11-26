@@ -27,11 +27,11 @@ function opcoesDaEscolha(tipo, escolha, idEscolha) {
             .filter(m => m.nivel === nivel && (m.classes.includes(classe) || (charState.tasha && m.classes_opcionais_tasha.includes(classe))))
             .map(m => ({ nome: m.nome, exibir: nomeMagia(m), ua: m.ua, fonte: m.fonte, desc: `${escolaMagia(m)} · ${resumoMagia(m).join(' · ')}`, magia: m }));
     } else if (tR === 'ASI') {
-        opcoes = opcoesASI();
+        opcoes = opcoesASI(idEscolha);
     } else if (tR === 'Atributo') {
         opcoes = ATTR_NAMES.filter(a => !atributosJaUsadosNoPai(tipo, escolha).has(a)).map(a => ({ nome: a }));
     } else if (tR === 'Talento') {
-        opcoes = opcoesTalento();
+        opcoes = opcoesTalento(idEscolha);
         if (Array.isArray(no.talentos_permitidos)) opcoes = opcoes.filter(o => no.talentos_permitidos.includes(o.nome));
     } else if (Array.isArray(no.conteudo)) {
         opcoes = no.conteudo.map(c => { const d = descricaoDaOpcao(c); return { nome: c.nome || c.Nome || c.texto, ua: nodeEhUA(c), homebrew: nodeEhHomebrew(c), desc: d.texto, descDerivada: d.derivada, node: c }; });

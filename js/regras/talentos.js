@@ -29,18 +29,29 @@ function checarPrereq(t, finais) {
     return r;
 }
 
-const opcoesTalento = () => {
+const opcoesTalento = (excetoId) => {
     const finais = db.talentos.some(t => t.prerequisito && t.prerequisito.atributos) ? calcularAtributosFinais() : null;
+    const ja = talentosJaEscolhidos(excetoId);
     return db.talentos.map(t => {
-        const c = checarPrereq(t, finais);
-        return { nome: t.nome || t.texto, ua: nodeEhUA(t), homebrew: !!t.homebrew, talento: true, fonte: t.fonte || null, fonteIndef: !t.fonte, node: talentoComEscolhas(t), bloqueado: c.bloqueios.join('; ') || null, conferir: c.conferir.join('; ') || null };
+        const c = checarPrereq(t, finais), nome = t.nome || t.texto;
+        const repetido = ja.has(nome) && !TALENTO_REPETIVEL.test(semAcento(nome + ' ' + (t.nome_ingles || '')));
+        return { nome, ua: nodeEhUA(t), homebrew: !!t.homebrew, talento: true, fonte: t.fonte || null, fonteIndef: !t.fonte, node: talentoComEscolhas(t), bloqueado: repetido ? 'Você já escolheu este talento.' : (c.bloqueios.join('; ') || null), jaTem: repetido, conferir: c.conferir.join('; ') || null };
     });
 };
 
-function opcoesASI() {
+// Talentos já escolhidos em outra escolha (raça, antecedente ou qualquer nível de classe).
+function talentosJaEscolhidos(excetoId) {
+    const s = new Set();
+    ['raca', 'classe', 'antecedente'].forEach(cat => escolhasResolvidas(cat).forEach(({ c, res }) => { if (c.id !== excetoId) res.selecionados.forEach(x => { if (x.talento) s.add(x.nome); }); }));
+    return s;
+}
+// Talentos que o livro permite pegar mais de uma vez.
+const TALENTO_REPETIVEL = /adepto elemental|elemental adept|iniciado em magia|magic initiate|resiliente|resilient|habilidoso|skilled/;
+
+function opcoesASI(excetoId) {
     const o = []; const nomes = Object.keys(ATTR_STEMS);
     nomes.forEach(a => o.push({ nome: `${a} +2`, grupo: '+2 em um atributo', asi: { [ATTR_MAP_KEY[a]]: 2 } }));
     for (let i = 0; i < nomes.length; i++) for (let j = i + 1; j < nomes.length; j++) o.push({ nome: `${nomes[i]} +1, ${nomes[j]} +1`, grupo: '+1 em dois atributos', asi: { [ATTR_MAP_KEY[nomes[i]]]: 1, [ATTR_MAP_KEY[nomes[j]]]: 1 } });
-    return o.concat(opcoesTalento().map(t => ({ ...t, grupo: 'Talento' })));
+    return o.concat(opcoesTalento(excetoId).map(t => ({ ...t, grupo: 'Talento' })));
 }
 

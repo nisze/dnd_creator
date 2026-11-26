@@ -11434,7 +11434,7 @@
             "simbolo": "⛲",
             "nome": "Fonte de Magia",
             "nome_ingles": "Font of Magic",
-            "descrição": "Você desbloqueia uma reserva de magia interna. Recebe 2 Pontos de Feitiçaria, que inicialmente podem ser usados para recuperar espaços de magia gastos (e, a partir do nível 3, usados para modificar feitiços com Metamágica).",
+            "descrição": "Você desbloqueia uma reserva de magia interna. Recebe 2 Pontos de Feitiçaria (mais conforme sobe de nível, conforme a tabela da classe), que voltam todos num descanso longo. Eles servem para Conjuração Flexível e, a partir do nível 3, para Metamagia.\nCriar espaço de magia: com uma ação bônus, gaste pontos para criar um espaço de magia de até 5º círculo. Custo: 1º = 2 pontos; 2º = 3; 3º = 5; 4º = 6; 5º = 7. O espaço criado some quando você termina um descanso longo.\nConverter espaço em pontos: com uma ação bônus, gaste um espaço de magia e ganhe pontos de feitiçaria iguais ao círculo do espaço.",
             "resumo": "Reserva interna para recuperar espaços."
           }
         ]

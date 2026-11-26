@@ -47,6 +47,14 @@ function basesSubstituidasDaRaca() {
 }
 const semBasesSubstituidas = (lista) => { const s = basesSubstituidasDaRaca(); return s.size ? (lista || []).filter(n => !s.has((n && (n.nome || n.Nome)) || '')) : lista; };
 
+// Nós substituídos por uma versão de dado maior (Inspiração de Bardo d6 -> d8 -> d10 -> d12).
+function dadosSuperados(nos) {
+    const dado = (n) => { const m = /^(.+?) \(d(\d+)\)$/i.exec(String(n.nome_ingles || '').trim()); return m ? { base: m[1].toLowerCase(), d: +m[2] } : null; };
+    const maior = {};
+    nos.forEach(n => { const x = dado(n); if (x && !(maior[x.base] >= x.d)) maior[x.base] = x.d; });
+    return new Set(nos.filter(n => { const x = dado(n); return x ? x.d < maior[x.base] : maior[String(n.nome_ingles || '').toLowerCase().trim()] !== undefined; }));
+}
+
 // Nós fixos (fora de escolhas não resolvidas) mais os nós das opções escolhidas.
 function nodesAtivos(cat) {
     if (cat === 'classe' && somandoClasses()) return porClasse(() => nodesAtivos('classe'));
@@ -63,7 +71,9 @@ function nodesAtivos(cat) {
     escolhasResolvidas(cat).forEach(({ res }) => res.selecionados.forEach(s => {
         if (s.node) { out.push(s.node); visitar(s.node.conteudo); }
     }));
-    return out;
+    if (cat !== 'classe') return out;
+    const sup = dadosSuperados(out);
+    return sup.size ? out.filter(n => !sup.has(n)) : out;
 }
 
 // Quantidade de escolhas que cresce com o nível (invocações, metamagia, manobras...): tabela por nível ou totais acumulados por nível de classe.

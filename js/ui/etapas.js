@@ -39,11 +39,12 @@ function detalheClasse(c) {
     const base = c.conteudo.filter(x => !ehNoDeNivel(x) && x.escolha === undefined);
     const eq = c.equip || {};
     const ate = niveis.filter(x => nivelDoNode(x) <= n), depois = niveis.filter(x => nivelDoNode(x) > n);
+    const sup = dadosSuperados(ate.flatMap(x => x.conteudo || []));
     return ilustracao(c, 'classe') + cabecalhoInfo(c) + avisoConteudo(c) + (descDe(c) ? `<p>${paragrafos(descDe(c))}</p>` : '')
         + '<h4>Resumo</h4>' + listaTracos(base)
         + (eq.armaduras_en || eq.armas_en ? `<ul class="detalhe-lista"><li><b>Armaduras:</b> ${esc(eq.armaduras_en || 'nenhuma')}</li><li><b>Armas:</b> ${esc(eq.armas_en || 'nenhuma')}</li></ul>` : '')
         + resumoConjuracao(c)
-        + `<h4>Características até o nível ${n}</h4>` + ate.map(x => `<details ${nivelDoNode(x) === n || nivelDoNode(x) === 1 ? 'open' : ''}><summary><b>Nível ${nivelDoNode(x)}</b></summary>${listaTracos(x.conteudo || [])}</details>`).join('')
+        + `<h4>Características até o nível ${n}</h4>` + ate.map(x => `<details ${nivelDoNode(x) === n || nivelDoNode(x) === 1 ? 'open' : ''}><summary><b>Nível ${nivelDoNode(x)}</b></summary>${listaTracos((x.conteudo || []).filter(f => !sup.has(f)))}</details>`).join('')
         + (depois.length ? `<h4>Próximos níveis</h4><ul class="detalhe-lista">${depois.map(x => `<li><b>Nível ${nivelDoNode(x)}:</b> ${(x.conteudo || []).filter(f => !oculto(f)).map(f => esc(nomeDe(f))).join(', ') || '-'}</li>`).join('')}</ul>` : '');
 }
 

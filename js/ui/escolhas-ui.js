@@ -100,7 +100,7 @@ function linhaTalento(cat, c, o, i, marcada) {
     const fonte = fonteDe(o), id = esc(c.id);
     return `<label class="opcao${marcada ? ' marcada' : ''}${o.bloqueado ? ' bloq' : ''}" onmouseenter="UI.focarTalento('${cat}','${id}',${i})" onclick="UI.focarTalento('${cat}','${id}',${i})">
         <input type="radio" name="op-${id}" ${marcada ? 'checked' : ''} ${o.bloqueado ? 'disabled' : ''} onclick="UI.marcar('${cat}','${id}',${i})">
-        <div class="corpo"><div class="titulo">${esc(o.nome)}${etiquetas(o)}${fonte ? `<span class="tag fonte">${esc(fonte)}</span>` : (o.fonteIndef ? '<span class="tag fonte">Fonte não identificada</span>' : '')}</div>${o.bloqueado ? `<div class="motivo">Pré-requisito não atendido: ${esc(o.bloqueado)}</div>` : ''}</div></label>`;
+        <div class="corpo"><div class="titulo">${esc(o.nome)}${etiquetas(o)}${fonte ? `<span class="tag fonte">${esc(fonte)}</span>` : (o.fonteIndef ? '<span class="tag fonte">Fonte não identificada</span>' : '')}</div>${o.bloqueado ? `<div class="motivo">${o.jaTem ? '' : 'Pré-requisito não atendido: '}${esc(o.bloqueado)}</div>` : ''}</div></label>`;
 }
 // Descrição completa do talento (painel ao lado da lista).
 function htmlDescTalento(o) {
@@ -108,7 +108,7 @@ function htmlDescTalento(o) {
     const no = o.node || {}, fonte = fonteDe(o);
     const partes = (no.conteudo || []).filter(n => nomeDe(n) || descDe(n)).map(n => `<h4>${esc(nomeDe(n) || '')}</h4><p>${paragrafos(descDe(n) || '')}</p>`).join('');
     return `<h3>${esc(o.nome)}${etiquetas(o)}</h3>${no.nome_ingles ? `<p class="meta">${esc(no.nome_ingles)}</p>` : ''}${fonte ? `<p class="meta"><span class="tag fonte">${esc(fonte)}</span></p>` : ''}`
-        + (o.bloqueado ? `<div class="aviso erro"><b>Pré-requisito não atendido</b>${esc(o.bloqueado)}</div>` : '') + (o.conferir ? `<div class="aviso info"><b>Confira o pré-requisito</b>${esc(o.conferir)}</div>` : '')
+        + (o.bloqueado ? `<div class="aviso erro"><b>${o.jaTem ? 'Talento já escolhido' : 'Pré-requisito não atendido'}</b>${esc(o.bloqueado)}</div>` : '') + (o.conferir ? `<div class="aviso info"><b>Confira o pré-requisito</b>${esc(o.conferir)}</div>` : '')
         + (partes || '<p class="vazio">Sem descrição.</p>');
 }
 const opcaoEmFocoTalento = (c, opcoes, sels) => { const i = (ui.focoTalento || {})[c.id]; if (i != null && opcoes[i]) return opcoes[i]; const s = sels[0]; return s && s.talento ? (opcoes.find(o => mesmaOpcao(o, s)) || s) : null; };

@@ -94,6 +94,7 @@
     "archdruid": ["Usos ilimitados de Forma Selvagem. Ignora componentes verbais, somáticos e materiais sem custo das magias de druida.", "Unlimited Wild Shape uses. Ignore verbal, somatic and non-costly material components of druid spells."]
   },
   "sorcerer": {
+    "font of magic": ["Pontos de feitiçaria (descanso longo). Ação bônus: criar espaço (máx. 5º): 1º=2 PF, 2º=3, 3º=5, 4º=6, 5º=7 (some no descanso longo). Ação bônus: gastar um espaço e ganhar PF = círculo do espaço.", "Sorcery points (long rest). Bonus action: create a slot (max 5th): 1st=2 SP, 2nd=3, 3rd=5, 4th=6, 5th=7 (vanishes on a long rest). Bonus action: expend a slot to gain SP = the slot's level."],
     "careful spell": ["1 PF: até (mod. de Car) criaturas escolhidas passam automaticamente na salvaguarda contra a magia.", "1 SP: up to (Cha modifier) chosen creatures automatically succeed on their save against the spell."],
     "distant spell": ["1 PF: dobra o alcance de uma magia (5 pés ou mais) ou dá a uma magia de toque alcance de 9 m.", "1 SP: double a spell's range (5 ft or more), or give a touch spell a range of 30 ft."],
     "empowered spell": ["1 PF: rerrola até (mod. de Car) dados de dano e usa os novos; pode combinar com outra Metamagia.", "1 SP: reroll up to (Cha modifier) damage dice and use the new rolls; can combine with another Metamagic."],
