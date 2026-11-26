@@ -130,9 +130,11 @@ function calcularPersonagem() {
         let dano = m.dano ? `${m.dano}${danoMod ? formatMod(danoMod) : ''} ${({ cortante: 'cort.', perfurante: 'perf.', contundente: 'cont.' })[i.tipo_dano || m.tipo_dano] || i.tipo_dano || m.tipo_dano || ''}${m.versatil ? ' (' + m.versatil + ')' : ''}`.trim() : (m.dano_en || '-');
         if (m.arremesso && m.dano && estilos.has('thrown weapon fighting')) dano += ` (arremessada: ${m.dano}${formatMod(danoMod + 2)})`;
         if (m.dano && i.dano_extra) dano += ` + ${i.dano_extra.dado} ${i.dano_extra.tipo}`;
-        const notas = m.alcance === 'distancia' && atiradorAgucado ? ['Atirador Aguçado: -5 no acerto, +10 no dano'] : [];
-        return { nome: (i.apelido || i.nome) + (bonusMag ? ' +' + bonusMag : ''), bonus: mod + bonusMag + bonusEstilo + bonusCQS + (prof ? profBonus : 0), dano, props: m.propriedades || [], notas, semProf: !prof };
+        return { nome: (i.apelido || i.nome) + (bonusMag ? ' +' + bonusMag : ''), bonus: mod + bonusMag + bonusEstilo + bonusCQS + (prof ? profBonus : 0), dano, props: m.propriedades || [], semProf: !prof };
     });
+    const emIngles = typeof Idioma !== 'undefined' && Idioma.atual === 'en';
+    const notasGerais = atiradorAgucado && charState.inventario.some(i => i.mec && i.mec.categoria && i.mec.alcance === 'distancia')
+        ? [{ nome: emIngles ? 'Sharpshooter' : 'Atirador Aguçado', txt: emIngles ? 'Before a ranged weapon attack you are proficient with, you can take -5 to the attack roll; if it hits, add +10 to the damage.' : 'Antes de um ataque com arma à distância em que é proficiente, pode sofrer -5 na jogada de ataque; se acertar, soma +10 ao dano.' }] : [];
     { const luta = estilos.has('unarmed fighting'); ataques.push({ nome: 'Ataque desarmado', bonus: mods.For + profBonus, dano: luta ? `1d6${formatMod(mods.For)} cont. (1d8 sem armas/escudo)` : `${Math.max(1, 1 + mods.For)} cont.` }); }
 
     const desl = calcularDeslocamento(atributos, ctx);
@@ -143,7 +145,7 @@ function calcularPersonagem() {
 
     return {
         nivel, profBonus, atributos, mods, ativos, estilos, nomeClasse, classes: todasClasses().map(c => ({ idx: c.idx, id: c.classe.id, nome: c.classe.nome || c.classe.Nome, nivel: c.nivel })), periciasTreinadas, especializadas, salvaguardas, bonusSalva,
-        pv, maxPV: pv.maximo, ca, caFinal: ca.final, ataques, avisosEquip, bonusMeio,
+        pv, maxPV: pv.maximo, ca, caFinal: ca.final, ataques, notasGerais, avisosEquip, bonusMeio,
         desl, pes: desl.pes, deslBase: desl.metros, marinheiroAtivo: ca.marinheiro, errante: desl.errante, deslNode: desl.deslNode, descRaca: desl.descRaca,
         iniciativa: mods.Des + bonusMeio('Des') + (talentosEscolhidos().some(t => t === 'alert' || t === 'alerta') ? 5 : 0)
             + (temAtivo(ativos, 'dread ambusher') ? mods.Sab : 0) + (temAtivo(ativos, 'rakish audacity') ? mods.Car : 0) + (temAtivo(ativos, 'tactical wit') ? mods.Int : 0)
